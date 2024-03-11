@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Anschlussrechner
+    </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h3> welcome to the first online faceplate joint calculator</h3>
+    <script src="script.js"></script>
+    <script src="beamdata.js"></script>
+
+    <p class="websiteheadings"><strong> configure the beam:</strong> </p>
+    <label for="Traegerprofil"> profile:</label>
+    <select id="Traegerwahl">
+        <option value="IPEa120">IPEa 120</option>
+         <option value="IPEa140">IPEa 140</option>
+         <option value="IPEa160">IPEa 160</option>
+         <option value="IPEa180">IPEa 180</option>
+         <option value="IPEa200">IPEa 200</option>
+         <option value="IPEa220">IPEa 220</option>
+         <option value="IPEa240">IPEa 240</option>
+         <option value="IPEa270">IPEa 270</option>
+         <option value="IPEa300">IPEa 300</option>
+         <option value="IPEa330">IPEa 330</option>
+         <option value="IPEa360">IPEa 360</option>
+         <option value="IPEa400">IPEa 400</option>
+         <option value="IPEa450">IPEa 450</option>
+         <option value="IPEa500">IPEa 500</option>
+         <option value="IPEa550">IPEa 550</option>
+         <option value="IPEa600">IPEa 600</option>
+         <option value="IPE100">IPE 100</option>
+         <option value="IPE120">IPE 120</option>
+         <option value="IPE140">IPE 140</option>
+         <option value="IPE160">IPE 160</option>
+         <option value="IPE180">IPE 180</option>
+         <option value="IPE200">IPE 200</option>
+         <option value="IPE220">IPE 220</option>
+         <option value="IPE240">IPE 240</option>
+         <option value="IPE270">IPE 270</option>
+         <option value="IPE300">IPE 300</option>
+         <option value="IPE330">IPE 330</option>
+         <option value="IPE360">IPE 360</option>
+         <option value="IPE400">IPE 400</option>
+         <option value="IPE450">IPE 450</option>
+         <option value="IPE500">IPE 500</option>
+         <option value="IPE550">IPE 550</option>
+         <option value="IPE600">IPE 600</option>
+         <option value="IPEo180">IPEo 180</option>
+         <option value="IPEo200">IPEo 200</option>
+        <option value="IPEo220">IPEo 220</option>
+        <option value="IPEo240">IPEo 240</option>
+        <option value="IPEo270">IPEo 270</option>
+        <option value="IPEo300">IPEo 300</option>
+        <option value="IPEo330">IPEo 330</option>
+        <option value="IPEo360">IPEo 360</option>
+        <option value="IPEo400">IPEo 400</option>
+        <option value="IPEo450">IPEo 450</option>
+        <option value="IPEo500">IPEo 500</option>
+        <option value="IPEo550">IPEo 550</option>
+        <option value="IPEo600">IPEo 600</option>
+        <option value="IPEv400">IPEv 400</option>
+        <option value="IPEv450">IPEv 450</option>
+        <option value="IPEv500">IPEv 500</option>
+        <option value="IPEv550">IPEv 550</option>
+        <option value="IPEv600">IPEv 600</option>
+        <option value="HEAA100">HEAA 100</option>
+        <option value="HEAA120">HEAA 120</option>
+        <option value="HEAA140">HEAA 140</option>
+        <option value="HEAA160">HEAA 160</option>
+        <option value="HEAA180">HEAA 180</option>
+        <option value="HEAA200">HEAA 200</option>
+        <option value="HEAA220">HEAA 220</option>
+        <option value="HEAA240">HEAA 240</option>
+        <option value="HEAA260">HEAA 260</option>
+        <option value="HEAA280">HEAA 280</option>
+        <option value="HEAA300">HEAA 300</option>
+        <option value="HEAA320">HEAA 320</option>
+        <option value="HEAA340">HEAA 340</option>
+        <option value="HEAA360">HEAA 360</option>
+        <option value="HEAA400">HEAA 400</option>
+        <option value="HEAA450">HEAA 450</option>
+        <option value="HEAA500">HEAA 550</option>
+        <option value="HEAA550">HEAA 550</option>
+        <option value="HEAA600">HEAA 600</option>
+        <option value="HEAA650">HEAA 650</option>
+        <option value="HEAA700">HEAA 700</option>
+        <option value="HEAA800">HEAA 800</option>
+        <option value="HEAA900">HEAA 900</option>
+        <option value="HEAA1000">HEAA 1000</option>
+        <option value="HEA100">HEA 100</option>
+        <option value="HEA120">HEA 120</option>
+        <option value="HEA140">HEA 140</option>
+        <option value="HEA160">HEA 160</option>
+        <option value="HEA180">HEA 180</option>
+        <option value="HEA200">HEA 200</option>
+        <option value="HEA220">HEA 220</option>
+        <option value="HEA240">HEA 240</option>
+        <option value="HEA260">HEA 260</option>
+          <option value="HEA280">HEA 280</option>
+          <option value="HEA300">HEA 300</option>
+          <option value="HEA320">HEA 320</option>
+          <option value="HEA340">HEA 340</option>
+          <option value="HEA360">HEA 360</option>
+          <option value="HEA400">HEA 400</option>
+          <option value="HEA450">HEA 450</option>
+          <option value="HEA500">HEA 500</option>
+          <option value="HEA550">HEA 550</option>
+          <option value="HEA600">HEA 600</option>
+          <option value="HEA650">HEA 650</option>
+          <option value="HEA700">HEA 700</option>
+          <option value="HEA800">HEA 800</option>
+          <option value="HEA900">HEA 900</option>
+          <option value="HEA1000">HEA 1000</option>
+          <option value="HEB100">HEB 100</option>
+          <option value="HEB120">HEB 120</option>
+          <option value="HEB140">HEB 140</option>
+          <option value="HEB160">HEB 160</option>
+          <option value="HEB180">HEB 180</option>
+          <option value="HEB200">HEB 200</option>
+          <option value="HEB220">HEB 220</option>
+          <option value="HEB240">HEB 240</option>
+          <option value="HEB260">HEB 260</option>
+          <option value="HEB280">HEB 280</option>
+          <option value="HEB300">HEB 300</option>
+          <option value="HEB320">HEB 320</option>
+          <option value="HEB340">HEB 340</option>
+          <option value="HEB360">HEB 360</option>
+          <option value="HEB400">HEB 400</option>
+          <option value="HEB450">HEB 450</option>
+          <option value="HEB500">HEB 500</option>
+          <option value="HEB550">HEB 550</option>
+          <option value="HEB600">HEB 600</option>
+          <option value="HEB650">HEB 650</option>
+          <option value="HEB700">HEB 700</option>
+          <option value="HEB800">HEB 800</option>
+          <option value="HEB900">HEB 900</option>
+          <option value="HEB1000">HEB 1000</option>
+          <option value="HEM100">HEM 100</option>
+          <option value="HEM100">HEM 100</option>
+          <option value="HEM120">HEM 120</option>
+          <option value="HEM140">HEM 140</option>
+          <option value="HEM160">HEM 160</option>
+          <option value="HEM180">HEM 180</option>
+          <option value="HEM200">HEM 200</option>
+          <option value="HEM220">HEM 220</option>
+          <option value="HEM240">HEM 240</option>
+          <option value="HEM260">HEM 260</option>
+          <option value="HEM280">HEM 280</option>
+          <option value="HEM300">HEM 300</option>
+          <option value="HEM320">HEM 320</option>
+          <option value="HEM340">HEM 340</option>
+          <option value="HEM360">HEM 360</option>
+          <option value="HEM400">HEM 400</option>
+          <option value="HEM450">HEM 450</option>
+          <option value="HEM500">HEM 500</option>
+          <option value="HEM550">HEM 550</option>
+          <option value="HEM600">HEM 600</option>
+          <option value="HEM650">HEM 650</option>
+          <option value="HEM700">HEM 700</option>
+          <option value="HEM800">HEM 800</option>
+          <option value="HEM900">HEM 900</option>
+          <option value="HEM1000">HEM 1000</option>
+         </select>
+    <script>
+        document.getElementById('Traegerwahl').addEventListener('change', function WerteBestimmen() {
+            var selectedProfile = this.value;
+            console.log('Traegerwahl', selectedProfile);
+        })
+    </script>
+    <label for="StahlsorteTraeger">steel type:</label>
+    <select id="Stahlguete">
+        <option value="S235">S 235</option>
+        <option value="S355">S 355</option>
+</select>
+    <button onclick="Beamdata()">show Beaminformation</button>
+    <script>
+        document.getElementById('Stahlguete').addEventListener('change', function QuerschnittsklasseBestimmen() {
+            var selectedSteel = this.value;
+            console.log('Stahlguete', selectedSteel);
+        }, )
+    </script>
+    <div id="SectionClassificationResult"></div>
+    <br>
+    <p class="websiteheadings"><strong>select weldingmeasures:</strong></p>
+    <label for="FlangeWelding">af:</label>
+    <select id="FlangeWelding">
+        <option value="3">3 mm</option>
+        <option value="4">4 mm</option>
+        <option value="5">5 mm</option>
+        <option value="6">6 mm</option>
+        <option value="7">7 mm</option>
+        <option value="8">8 mm</option>
+        <option value="9">9 mm</option>
+        <option value="10">10 mm</option>
+        <option value="11">11 mm</option>
+        <option value="12">12 mm</option>
+        <option value="13">13 mm</option>
+        <option value="14">14 mm</option>
+    </select>
+    <label for="BeameWelding">aw:</label>
+    <select id="BeamWelding">
+            <option value="3">3 mm</option>
+            <option value="4">4 mm</option>
+            <option value="5">5 mm</option>
+            <option value="6">6 mm</option>
+            <option value="7">7 mm</option>
+            <option value="8">8 mm</option>
+            <option value="9">9 mm</option>
+            <option value="10">10 mm</option>
+            <option value="11">11 mm</option>
+            <option value="12">12 mm</option>
+            <option value="13">13 mm</option>
+            <option value="14">14 mm</option>
+</select>
+    <p class="websiteheadings"><strong>  select Screws:</strong> </p>
+    <label for="ScrewShape">screw type:</label>
+    <select id="ScrewShape">
+        <option value="M12">M12</option>
+        <option value="M16">M16</option>
+        <option value="M20">M20</option>
+        <option value="M20">M20</option>
+        <option value="M22">M22</option>
+        <option value="M24">M24</option>
+        <option value="M27">M27</option>
+        <option value="M30">M30</option>
+        <option value="M36">M36</option>
+</select>
+    <script>
+        document.getElementById('ScrewShape').addEventListener('change', function WerteBestimmen() {
+            var selectedScrewShape = this.value;
+            console.log('ScrewShape', selectedScrewShape);
+        })
+    </script>
+    <label for="StrengthClass">strength class:</label>
+    <select id="StrengthClass">
+        <option value="4.6">4.6</option>
+        <option value="5.6">5.5</option>
+        <option value="8.8">8.8</option>
+        <option value="10.9">10.9</option>  
+</select>
+    <label for="ScrewRows">screwrows:</label>
+    <select id="ScrewRows" onchange="showImage()"> 
+        <option value="2">2</option>
+        <option value="3">3</option>   
+</select>
+    <script>
+        document.getElementById('StrengthClass').addEventListener('change', function WerteBestimmen() {
+            var selectedScrewstrength = this.value;
+            console.log('StrengthClass', selectedScrewstrength);
+        })
+    </script>
+    <script>
+        document.getElementById('ScrewRows').addEventListener('change', function WerteBestimmen() {
+            var selectedScrewrows = this.value;
+            console.log('ScrewRows', selectedScrewrows);
+        })
+    </script>
+    <br>
+    <br>
+    <img id="Image2SR" class="picture2SR" src="/images/optimized2SR.jpg" alt="Bild 1">
+    <img id="Image3SR" class="picture3SR" src="/images/optimized3SR.jpg" alt="Bild 2">
+    <script>
+        document.getElementById("Image2SR").style.display = "none";
+        document.getElementById("Image3SR").style.display = "none";
+    </script>
+    <script>
+        document.getElementById('ScrewRows').addEventListener('change', function showImage() {
+            var selectedScrewRows = document.getElementById("ScrewRows").value;
+
+            if (selectedScrewRows === "2") {
+                var selectedPicture = "Image2SR"
+            }
+            if (selectedScrewRows == "3") {
+                var selectedPicture = "Image3SR"
+            }
+            document.getElementById("Image2SR").style.display = "none";
+            document.getElementById("Image3SR").style.display = "none";
+
+            document.getElementById(selectedPicture).style.display = "block";
+
+            var inputboxex = document.getElementById("inputboxex");
+            if (selectedScrewRows == 2) {
+                inputboxex.style.display = "none"
+            }
+            if (selectedScrewRows == 3) {
+                inputboxex.style.display = "block"
+            }
+        })
+    </script>
+
+    <p class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
+    <form class="inputboxesFaceplatemeasures">
+        <label for="faceplateheight">hsp</label>
+        <input type="number" id="hsp" name="inputboxhsp" placeholder="mm" class="inputMM">
+        <label for="faceplatewidth">bsp</label>
+        <input type="number" id="bsp" name="inputboxbsp" placeholder="mm" class="inputMM">
+        <label for="faceplatethickness">tsp</label>
+        <input type="number" id="tsp" name="inputboxtsp" placeholder="mm" class="inputMM">
+    </form>
+    <p class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
+    <form class="inputboxesScrewmeasures">
+        <label for="inpute1" class="inputboxe">e:</label>
+        <input type="number" id="distancee1" name="inputboxe1" placeholder="mm" class="inputMM">
+        <label for="inputgo" class="inputboxgo">go:</label>
+        <input type="number" id="distancego" name="inputboxgo" placeholder="mm" class="inputMM">
+        <label for="inputgu" class="inputboxgu">gu:</label>
+        <input type="number" id="distancegu" name="inputboxgu" placeholder="mm" class="inputMM">
+        <label for="inputu1n" class="inputboxu1n">u1n:</label>
+        <input type="number" id="distanceu1n" name="inputboxu1n" placeholder="mm" class="inputMM">
+    </form>
+    <div id="inputboxex" style="display: none;">
+        <label for="inputex">ex:</label>
+        <input type="number" id="distanceex" class="inputex" placeholder="mm">
+    </div>
+    <br>
+    <button onclick="QSK()"> I-section classification </button>
+    <p id="beamresultIy" class="Output "> </p>
+    <p id="beamresultQsk" class="Output "> </p>
+    <p id="beamresultMcr" class="Output "> </p>
+    <p id="beamresultFcfbrd" class="Output "> </p>
+
+    <p id="Screwresult1" class="OutputHeading"> </p>
+    <p id="leffcpresult1" class="Output"></p>
+    <p id="leffncresult1" class="Output"></p>
+    <p id="Mpl1rdresult1" class="Output"></p>
+    <p id="Mpl2rdresult1" class="Output"></p>
+    <p id="Ft1rd1" class="Output"></p>
+    <p id="Ft2rd1" class="Output"></p>
+    <p id="Ft3rd1" class="Output"></p>
+
+    <p id="Screwresult2" class="OutputHeading"> </p>
+    <p id="leffcpresult2" class="Output"></p>
+    <p id="leffncresult2" class="Output"></p>
+    <p id="Mpl1rdresult2" class="Output"></p>
+    <p id="Mpl2rdresult2" class="Output"></p>
+    <p id="Ft1rd2" class="Output"></p>
+    <p id="Ft2rd2" class="Output"></p>
+    <p id="Ft3rd2" class="Output"></p>
+
+    <p id="Screwresult3" class="OutputHeading"></p>
+    <p id="leffcpresult3" class="Output"></p>
+    <p id="leffncresult3" class="Output"></p>
+    <p id="Mpl1rdresult3" class="Output"></p>
+    <p id="Mpl2rdresult3" class="Output"></p>
+    <p id="Ft1rd3" class="Output"></p>
+    <p id="Ft2rd3" class="Output"></p>
+    <p id="Ft3rd3" class="Output"></p>
+
+    <p id="TensionWebBeam" class="OutputHeading"></p>
+    <p id="befftwb" class="Output"></p>
+    <p id="Ftwbrd" class="Output"></p>
+
+    <p id="Mmaxresults" class="OutputHeading"></p>
+    <p id="Ft1eff" class="Output"></p>
+    <p id="Ft2eff" class="Output"></p>
+    <p id="Ft3eff" class="Output"></p>
+    <p id="Mmax" class="Outputsignificant"></p>
+
+    <p id="Vmaxresults" class="OutputHeading"></p>
+    <p id="Vloadbearingcapacity" class="Output"></p>
+    <p id="Vinteraction" class="Output"></p>
+    <p id="Vwelding" class="Output"></p>
+    <p id="VpunchingShear" class="Output"></p>
+    <p id="Vmax" class="Outputsignificant"></p>
+</body>
+
+</html>

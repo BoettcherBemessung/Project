@@ -1,0 +1,71 @@
+h3 {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    border: solid 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+body {
+    padding: 200px;
+    padding-top: 0px;
+}
+
+.picture2SR {
+    width: 141px;
+    height: 269px;
+    border: solid2px;
+    border-radius: 5px
+}
+
+.picture3SR {
+    width: 155px;
+    height: 276px;
+    border: solid2px;
+    border-radius: 5px
+}
+
+.Output {
+    background-color: bisque;
+    margin-left: 200px;
+    margin-right: 500px;
+}
+
+.inputboxe {
+    margin-left: 15px;
+}
+
+.inputboxgo {
+    margin-left: 6px;
+}
+
+.inputboxgu {
+    margin-left: 4px;
+}
+
+.inputMM {
+    width: 25x;
+}
+
+.inputex {
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.OutputHeading {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.Outputsignificant {
+    background-color: greenyellow;
+    color: red;
+    text-decoration: underline;
+    margin-left: 200px;
+    margin-right: 500px;
+}
+
+.websiteheadings {
+    text-decoration: underline;
+}
