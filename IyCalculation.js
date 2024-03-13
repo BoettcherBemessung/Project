@@ -17,9 +17,6 @@ function leffcpOCalculation() {
         var mvO = window.mvO;
         var mvM = window.mvM;
         var mvU = window.mvU;
-        var alphaO = window.alphaO;
-        var alphaM = window.alphaM;
-        var alphaU = window.alphaU;
         var w = window.w;
         var e = window.e;
         var leffcpO = window.leffcpO
