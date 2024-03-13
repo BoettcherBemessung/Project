@@ -77,6 +77,7 @@ function QSK() {
         ew = 12.5;
         As = 459;
         dzero = 30;
+
     }
     if (selectedScrewshape == "M30") {
         d = 30;
@@ -97,7 +98,6 @@ function QSK() {
     if (selectedScrewstrength == "5.6") { fub = 500; }
     if (selectedScrewstrength == "8.8") { fub = 800; }
     if (selectedScrewstrength == "10.9") { fub = 1000; }
-
 
     // === 1.2 Data of Profiles and obtaining of fitting values of variables===
 
@@ -1138,6 +1138,12 @@ function QSK() {
         r = 30;
     }
 
+    window.h = h;
+    window.b = b;
+    window.tw = tw;
+    window.tf = tf;
+    window.r = r;
+
     // === 1.3 Data of Steeltypes and obtaining of fitting values of variables===
 
     if (selectedSteel == "S235") {
@@ -1150,7 +1156,6 @@ function QSK() {
         CfTfQSK2 = 10;
         CfTfQSK3 = 14;
         betaw = 0.8;
-
     }
 
     if (selectedSteel == "S355") {
@@ -1163,8 +1168,10 @@ function QSK() {
         CfTfQSK2 = 8.1;
         CfTfQSK3 = 11.34;
         betaw = 0.9
-
     }
+
+    window.fy = fy
+    window.fu = fu
 
     // === 2.1 Calculation of Profilevalues===
     var cw = h - 2 * tf - 2 * r
@@ -1179,27 +1186,33 @@ function QSK() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
+    window.Iy = Iy;
+    window.Wely = Wely;
+    window.Wply = Wply;
+    window.Avzb = Avzb;
+
 
     // === 2.2 Classification of I-section===
     var qsk = 4;
     if (cw / tw < CwTwQSK3 && cf / tf < CfTfQSK3) { qsk = 3 }
     if (cw / tw < CwTwQSK2 && cf / tf < CfTfQSK2) { qsk = 2 }
     if (cw / tw < CwTwQSK1 && cf / tf < CfTfQSK1) { qsk = 1 }
-    console.log("Der Träger hat die Querschnittsklasse ", qsk)
-    console.log(Iy)
-    console.log(Wply)
+
+    window.qsk = qsk;
 
     // === 2.3 Calculation of max. beammoment===
     var mcr
     if (qsk == 3) { mcr = Wely * fy }
     if (qsk == 1 || qsk == 2) { mcr = Wply * fy }
-    console.log(mcr)
+
     document.getElementById("SectionClassificationResult").innerHML = "class: " + qsk + " maxM: " + mcr;
+
+    window.mcr = mcr
 
     // === 2.4 Calculation of max. Force before failure Flange of Beam ===
     var Fcfbrd = mcr / (h - tf)
-    console.log(Fcfbrd)
-    console.log(dzero)
+
+    window.Fcfbrd = Fcfbrd
 
     // === 3.0 Displaying some results on Webpage ===
     var IyOutput = (Iy / 1000000).toFixed(2)
@@ -1210,6 +1223,7 @@ function QSK() {
     document.getElementById("beamresultQsk").innerText = "QSK: " + qsk;
     document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
     document.getElementById("beamresultFcfbrd").innerText = "Fcfbrd: " + (FcfbRdOutput) + " kN";
+
 
     // === 3.1 Obtaining values of Userinput for faceplate and Screwconfigure on Webpage ===
     var hsp = parseFloat(document.getElementById("hsp").value);
@@ -1227,6 +1241,20 @@ function QSK() {
 
     var w = bsp - 2 * e
     var u1 = hsp - u1n - h
+
+    window.hsp = hsp;
+    window.bsp = bsp;
+    window.tsp = tsp;
+    window.e = e;
+    window.ex = ex;
+    window.go = go;
+    window.gu = gu;
+    window.u1n = u1n;
+    window.aw = aw;
+    window.af = af;
+    window.w = w;
+    window.u1 = u1;
+
 
     // === 3.3 Warning programms for impossible/forbidden joint-configurations ===
     if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
@@ -1260,6 +1288,11 @@ function QSK() {
     var AScrew = 3.1415926535897932384626433832795 * RScrew ** 2
     var Fvrd = AlphaV * fub * AScrew / GammaTwo
 
+    window.mh = mh;
+    window.AScrew = AScrew;
+    window.Fvrd = Fvrd;
+
+
     // === 4.1 calculations  endplate in bending 2 screwRows ===
 
     if (selectedScrewRows === 2) {
@@ -1270,15 +1303,16 @@ function QSK() {
         var alphaO = 1.25 / lambda1O + 2.75;
         var lambda2limO = 0.5 * lambda1O * alphaO;
 
+        window.mvO = mvO;
+        window.mvU = mvU;
+
+
         // === Additional Warning Programms for forbidden Userinput ===  
 
         if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
         if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
         if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
-        console.log(mvO)
-        console.log(mvU)
-        console.log(lambda1O)
-        console.log(lambda2O)
+        e
 
         if (lambda2limO > lambda2O || alphaO > 8 || alphaO < 4.45) {
             var alphaIterationO = 4.45;
@@ -1309,6 +1343,11 @@ function QSK() {
         var lambda2U = mvU / (mh + e);
         var alphaU = 1.25 / lambda1U + 2.75;
         var lambda2limU = 0.5 * lambda1U * alphaU;
+
+        window.leffcpO = leffcpO;
+        window.leffncO = leffncO;
+        window.alphaO = alphaO;
+
 
         if (lambda2limU > lambda2U || alphaU > 8 || alphaU < 4.45) {
             var alphaIterationU = 4.45;
@@ -1342,6 +1381,13 @@ function QSK() {
         var Mpl2rdO = 0.25 * leff2O * tsp ** 2 * fy;
         var Mpl1rdU = 0.25 * leff1U * tsp ** 2 * fy;
         var Mpl2rdU = 0.25 * leff2U * tsp ** 2 * fy;
+
+        window.leffcpU = leffcpU;
+        window.leffncU = leffncU;
+        window.alphaU = alphaU;
+        window.leff1O = leff1O;
+        window.leff2O = leff2O;
+
 
         var n = Math.min(e, 1.25 * mh)
 
@@ -1480,6 +1526,11 @@ function QSK() {
         var mvM = go - tf - 0.8 * af * 1.414213562;
         var mvU = gu - tf - 0.8 * af * 1.414213562;
 
+        window.mvO = mvO;
+        window.mvU = mvU;
+
+
+
         if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
         if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select lower ex or Rise height of faceplate !") }
         if (mvM < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
@@ -1493,7 +1544,7 @@ function QSK() {
         var alphaM = 1.25 / lambda1M + 2.75;
         var lambda2limM = 0.5 * lambda1M * alphaM;
         var iterationDoneM = 0
-        console.log("alpha vor Iteration =" + alphaM)
+
 
 
         // Iterarion for Screwrow at upper flange
@@ -1521,14 +1572,10 @@ function QSK() {
             alphaM = alphaIterationM
         }
 
-        console.log(alphaIterationM)
-        console.log(alphaM)
+
 
         var leffcpM = 2 * 3.1415926535897932384626433832795 * mh;
         var leffncM = alphaM * mh;
-
-
-
 
         //Iteration for lower Screwrow
         var lambda1U = mh / (mh + e);
@@ -1722,31 +1769,9 @@ function QSK() {
         document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
         document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
         document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-        document.getElementById("Vwelding").innerText = "max V due to Welding" + (Vmaxwelding / 1000).toFixed(2) + " kN";
+        document.getElementById("Vwelding").innerText = "max V due to Welding: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
         document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
         document.getElementById("Vmax").innerText = "max V :" + (Vmax / 1000).toFixed(2) + " kN";
     }
 
-
-
-
-    function getheff() { return h; }
-
-    function getbbeam() { return b; }
-
-    function gettwbeam() { return tw; }
-
-    function gettfbeam() { return tf; }
-
-    function getrbeam() { return r; }
-
-    function getAvbbeam() { return Avzb; }
-
-    function getWelybeam() { return Wely; }
-
-    function getWplybeam() { return Wply; }
-
-    function getIybeam() { return Iy; }
-
-    function getSybeam() { return Sy; }
 }

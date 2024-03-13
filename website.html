@@ -11,46 +11,49 @@
 <body>
     <h3> welcome to the first online faceplate joint calculator</h3>
     <script src="script.js"></script>
-    <script src="beamdata.js"></script>
-
+    <script src="Beamdata.js"></script>
+    <script src="IyCalculation.js"></script>
+    <script src="McrCalculation.js"></script>
+    <script src="FcfbrdCalculation.js"></script>
+    <script src="upperScrewrow.js"></script>
     <p class="websiteheadings"><strong> configure the beam:</strong> </p>
     <label for="Traegerprofil"> profile:</label>
     <select id="Traegerwahl">
         <option value="IPEa120">IPEa 120</option>
-         <option value="IPEa140">IPEa 140</option>
-         <option value="IPEa160">IPEa 160</option>
-         <option value="IPEa180">IPEa 180</option>
-         <option value="IPEa200">IPEa 200</option>
-         <option value="IPEa220">IPEa 220</option>
-         <option value="IPEa240">IPEa 240</option>
-         <option value="IPEa270">IPEa 270</option>
-         <option value="IPEa300">IPEa 300</option>
-         <option value="IPEa330">IPEa 330</option>
-         <option value="IPEa360">IPEa 360</option>
-         <option value="IPEa400">IPEa 400</option>
-         <option value="IPEa450">IPEa 450</option>
-         <option value="IPEa500">IPEa 500</option>
-         <option value="IPEa550">IPEa 550</option>
-         <option value="IPEa600">IPEa 600</option>
-         <option value="IPE100">IPE 100</option>
-         <option value="IPE120">IPE 120</option>
-         <option value="IPE140">IPE 140</option>
-         <option value="IPE160">IPE 160</option>
-         <option value="IPE180">IPE 180</option>
-         <option value="IPE200">IPE 200</option>
-         <option value="IPE220">IPE 220</option>
-         <option value="IPE240">IPE 240</option>
-         <option value="IPE270">IPE 270</option>
-         <option value="IPE300">IPE 300</option>
-         <option value="IPE330">IPE 330</option>
-         <option value="IPE360">IPE 360</option>
-         <option value="IPE400">IPE 400</option>
-         <option value="IPE450">IPE 450</option>
-         <option value="IPE500">IPE 500</option>
-         <option value="IPE550">IPE 550</option>
-         <option value="IPE600">IPE 600</option>
-         <option value="IPEo180">IPEo 180</option>
-         <option value="IPEo200">IPEo 200</option>
+        <option value="IPEa140">IPEa 140</option>
+        <option value="IPEa160">IPEa 160</option>
+        <option value="IPEa180">IPEa 180</option>
+        <option value="IPEa200">IPEa 200</option>
+        <option value="IPEa220">IPEa 220</option>
+        <option value="IPEa240">IPEa 240</option>
+        <option value="IPEa270">IPEa 270</option>
+        <option value="IPEa300">IPEa 300</option>
+        <option value="IPEa330">IPEa 330</option>
+        <option value="IPEa360">IPEa 360</option>
+        <option value="IPEa400">IPEa 400</option>
+        <option value="IPEa450">IPEa 450</option>
+        <option value="IPEa500">IPEa 500</option>
+        <option value="IPEa550">IPEa 550</option>
+        <option value="IPEa600">IPEa 600</option>
+        <option value="IPE100">IPE 100</option>
+        <option value="IPE120">IPE 120</option>
+        <option value="IPE140">IPE 140</option>
+        <option value="IPE160">IPE 160</option>
+        <option value="IPE180">IPE 180</option>
+        <option value="IPE200">IPE 200</option>
+        <option value="IPE220">IPE 220</option>
+        <option value="IPE240">IPE 240</option>
+        <option value="IPE270">IPE 270</option>
+        <option value="IPE300">IPE 300</option>
+        <option value="IPE330">IPE 330</option>
+        <option value="IPE360">IPE 360</option>
+        <option value="IPE400">IPE 400</option>
+        <option value="IPE450">IPE 450</option>
+        <option value="IPE500">IPE 500</option>
+        <option value="IPE550">IPE 550</option>
+        <option value="IPE600">IPE 600</option>
+        <option value="IPEo180">IPEo 180</option>
+        <option value="IPEo200">IPEo 200</option>
         <option value="IPEo220">IPEo 220</option>
         <option value="IPEo240">IPEo 240</option>
         <option value="IPEo270">IPEo 270</option>
@@ -100,75 +103,74 @@
         <option value="HEA220">HEA 220</option>
         <option value="HEA240">HEA 240</option>
         <option value="HEA260">HEA 260</option>
-          <option value="HEA280">HEA 280</option>
-          <option value="HEA300">HEA 300</option>
-          <option value="HEA320">HEA 320</option>
-          <option value="HEA340">HEA 340</option>
-          <option value="HEA360">HEA 360</option>
-          <option value="HEA400">HEA 400</option>
-          <option value="HEA450">HEA 450</option>
-          <option value="HEA500">HEA 500</option>
-          <option value="HEA550">HEA 550</option>
-          <option value="HEA600">HEA 600</option>
-          <option value="HEA650">HEA 650</option>
-          <option value="HEA700">HEA 700</option>
-          <option value="HEA800">HEA 800</option>
-          <option value="HEA900">HEA 900</option>
-          <option value="HEA1000">HEA 1000</option>
-          <option value="HEB100">HEB 100</option>
-          <option value="HEB120">HEB 120</option>
-          <option value="HEB140">HEB 140</option>
-          <option value="HEB160">HEB 160</option>
-          <option value="HEB180">HEB 180</option>
-          <option value="HEB200">HEB 200</option>
-          <option value="HEB220">HEB 220</option>
-          <option value="HEB240">HEB 240</option>
-          <option value="HEB260">HEB 260</option>
-          <option value="HEB280">HEB 280</option>
-          <option value="HEB300">HEB 300</option>
-          <option value="HEB320">HEB 320</option>
-          <option value="HEB340">HEB 340</option>
-          <option value="HEB360">HEB 360</option>
-          <option value="HEB400">HEB 400</option>
-          <option value="HEB450">HEB 450</option>
-          <option value="HEB500">HEB 500</option>
-          <option value="HEB550">HEB 550</option>
-          <option value="HEB600">HEB 600</option>
-          <option value="HEB650">HEB 650</option>
-          <option value="HEB700">HEB 700</option>
-          <option value="HEB800">HEB 800</option>
-          <option value="HEB900">HEB 900</option>
-          <option value="HEB1000">HEB 1000</option>
-          <option value="HEM100">HEM 100</option>
-          <option value="HEM100">HEM 100</option>
-          <option value="HEM120">HEM 120</option>
-          <option value="HEM140">HEM 140</option>
-          <option value="HEM160">HEM 160</option>
-          <option value="HEM180">HEM 180</option>
-          <option value="HEM200">HEM 200</option>
-          <option value="HEM220">HEM 220</option>
-          <option value="HEM240">HEM 240</option>
-          <option value="HEM260">HEM 260</option>
-          <option value="HEM280">HEM 280</option>
-          <option value="HEM300">HEM 300</option>
-          <option value="HEM320">HEM 320</option>
-          <option value="HEM340">HEM 340</option>
-          <option value="HEM360">HEM 360</option>
-          <option value="HEM400">HEM 400</option>
-          <option value="HEM450">HEM 450</option>
-          <option value="HEM500">HEM 500</option>
-          <option value="HEM550">HEM 550</option>
-          <option value="HEM600">HEM 600</option>
-          <option value="HEM650">HEM 650</option>
-          <option value="HEM700">HEM 700</option>
-          <option value="HEM800">HEM 800</option>
-          <option value="HEM900">HEM 900</option>
-          <option value="HEM1000">HEM 1000</option>
-         </select>
+        <option value="HEA280">HEA 280</option>
+        <option value="HEA300">HEA 300</option>
+        <option value="HEA320">HEA 320</option>
+        <option value="HEA340">HEA 340</option>
+        <option value="HEA360">HEA 360</option>
+        <option value="HEA400">HEA 400</option>
+        <option value="HEA450">HEA 450</option>
+        <option value="HEA500">HEA 500</option>
+        <option value="HEA550">HEA 550</option>
+        <option value="HEA600">HEA 600</option>
+        <option value="HEA650">HEA 650</option>
+        <option value="HEA700">HEA 700</option>
+        <option value="HEA800">HEA 800</option>
+        <option value="HEA900">HEA 900</option>
+        <option value="HEA1000">HEA 1000</option>
+        <option value="HEB100">HEB 100</option>
+        <option value="HEB120">HEB 120</option>
+        <option value="HEB140">HEB 140</option>
+        <option value="HEB160">HEB 160</option>
+        <option value="HEB180">HEB 180</option>
+        <option value="HEB200">HEB 200</option>
+        <option value="HEB220">HEB 220</option>
+        <option value="HEB240">HEB 240</option>
+        <option value="HEB260">HEB 260</option>
+        <option value="HEB280">HEB 280</option>
+        <option value="HEB300">HEB 300</option>
+        <option value="HEB320">HEB 320</option>
+        <option value="HEB340">HEB 340</option>
+        <option value="HEB360">HEB 360</option>
+        <option value="HEB400">HEB 400</option>
+        <option value="HEB450">HEB 450</option>
+        <option value="HEB500">HEB 500</option>
+        <option value="HEB550">HEB 550</option>
+        <option value="HEB600">HEB 600</option>
+        <option value="HEB650">HEB 650</option>
+        <option value="HEB700">HEB 700</option>
+        <option value="HEB800">HEB 800</option>
+        <option value="HEB900">HEB 900</option>
+        <option value="HEB1000">HEB 1000</option>
+        <option value="HEM100">HEM 100</option>
+        <option value="HEM100">HEM 100</option>
+        <option value="HEM120">HEM 120</option>
+        <option value="HEM140">HEM 140</option>
+        <option value="HEM160">HEM 160</option>
+        <option value="HEM180">HEM 180</option>
+        <option value="HEM200">HEM 200</option>
+        <option value="HEM220">HEM 220</option>
+        <option value="HEM240">HEM 240</option>
+        <option value="HEM260">HEM 260</option>
+        <option value="HEM280">HEM 280</option>
+        <option value="HEM300">HEM 300</option>
+        <option value="HEM320">HEM 320</option>
+        <option value="HEM340">HEM 340</option>
+        <option value="HEM360">HEM 360</option>
+        <option value="HEM400">HEM 400</option>
+        <option value="HEM450">HEM 450</option>
+        <option value="HEM500">HEM 500</option>
+        <option value="HEM550">HEM 550</option>
+        <option value="HEM600">HEM 600</option>
+        <option value="HEM650">HEM 650</option>
+        <option value="HEM700">HEM 700</option>
+        <option value="HEM800">HEM 800</option>
+        <option value="HEM900">HEM 900</option>
+        <option value="HEM1000">HEM 1000</option>
+        </select>
     <script>
         document.getElementById('Traegerwahl').addEventListener('change', function WerteBestimmen() {
             var selectedProfile = this.value;
-            console.log('Traegerwahl', selectedProfile);
         })
     </script>
     <label for="StahlsorteTraeger">steel type:</label>
@@ -180,7 +182,6 @@
     <script>
         document.getElementById('Stahlguete').addEventListener('change', function QuerschnittsklasseBestimmen() {
             var selectedSteel = this.value;
-            console.log('Stahlguete', selectedSteel);
         }, )
     </script>
     <div id="SectionClassificationResult"></div>
@@ -232,7 +233,6 @@
     <script>
         document.getElementById('ScrewShape').addEventListener('change', function WerteBestimmen() {
             var selectedScrewShape = this.value;
-            console.log('ScrewShape', selectedScrewShape);
         })
     </script>
     <label for="StrengthClass">strength class:</label>
@@ -250,13 +250,11 @@
     <script>
         document.getElementById('StrengthClass').addEventListener('change', function WerteBestimmen() {
             var selectedScrewstrength = this.value;
-            console.log('StrengthClass', selectedScrewstrength);
         })
     </script>
     <script>
         document.getElementById('ScrewRows').addEventListener('change', function WerteBestimmen() {
             var selectedScrewrows = this.value;
-            console.log('ScrewRows', selectedScrewrows);
         })
     </script>
     <br>
@@ -271,6 +269,7 @@
         document.getElementById('ScrewRows').addEventListener('change', function showImage() {
             var selectedScrewRows = document.getElementById("ScrewRows").value;
 
+            window.selectedScrewRows = selectedScrewRows;
             if (selectedScrewRows === "2") {
                 var selectedPicture = "Image2SR"
             }
@@ -318,17 +317,16 @@
     </div>
     <br>
     <button onclick="QSK()"> I-section classification </button>
-    <p id="beamresultIy" class="Output "> </p>
+    <p id="beamresultIy" class="Output " onclick="IyCalculation()"> </p>
     <p id="beamresultQsk" class="Output "> </p>
-    <p id="beamresultMcr" class="Output "> </p>
-    <p id="beamresultFcfbrd" class="Output "> </p>
-
+    <p id="beamresultMcr" class="Output " onclick="McrCalculation()"> </p>
+    <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
     <p id="Screwresult1" class="OutputHeading"> </p>
-    <p id="leffcpresult1" class="Output"></p>
-    <p id="leffncresult1" class="Output"></p>
-    <p id="Mpl1rdresult1" class="Output"></p>
-    <p id="Mpl2rdresult1" class="Output"></p>
-    <p id="Ft1rd1" class="Output"></p>
+    <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"></p>
+    <p id="leffncresult1" class="Output" onclick="leffncOnew()"></p>
+    <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"></p>
+    <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"></p>
+    <p id="Ft1rd1" class="Output" onclick="Ft1rdO()"></p>
     <p id="Ft2rd1" class="Output"></p>
     <p id="Ft3rd1" class="Output"></p>
 

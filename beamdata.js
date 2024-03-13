@@ -1,10 +1,18 @@
 function Beamdata() {
-
+    // === 0.1 registration of selected profils, steels...===
     var profileselection = document.getElementById("Traegerwahl");
     var selectedProfile = Traegerwahl.options[Traegerwahl.selectedIndex].value;
+
     var steelselection = document.getElementById("Stahlguete");
     var selectedSteel = Stahlguete.options[Stahlguete.selectedIndex].value;
 
+    var Screwshapeselection = document.getElementById("ScrewShape");
+    var selectedScrewshape = ScrewShape.options[ScrewShape.selectedIndex].value;
+
+    var Screwstrengthselection = document.getElementById("StrengthClass");
+    var selectedScrewstrength = StrengthClass.options[StrengthClass.selectedIndex].value;
+
+    // === 0.2 Declaration profiledependent variables===
     var h = 0;
     var b = 0;
     var tw = 0;
@@ -18,6 +26,80 @@ function Beamdata() {
     var CfTfQSK1 = 0;
     var CfTfQSK2 = 0;
     var CfTfQSK3 = 0;
+
+    var d = 0;
+    var dw = 0;
+    var ew = 0;
+    var As = 0;
+    var dzero = 0;
+    var fub = 0;
+
+    // === 1.1 Data of Screws and obtaining of fitting values of variables===
+    if (selectedScrewshape == "M12") {
+        d = 12;
+        dw = 24;
+        ew = 6;
+        As = 84.3;
+        dzero = 13;
+    }
+    if (selectedScrewshape == "M16") {
+        d = 16;
+        dw = 30;
+        ew = 7.5;
+        As = 157;
+        dzero = 18;
+    }
+    if (selectedScrewshape == "M20") {
+        d = 20;
+        dw = 37;
+        ew = 9.25;
+        As = 245;
+        dzero = 22;
+    }
+    if (selectedScrewshape == "M22") {
+        d = 22;
+        dw = 39;
+        ew = 9.75;
+        As = 303;
+        dzero = 24;
+    }
+    if (selectedScrewshape == "M24") {
+        d = 24;
+        dw = 44;
+        ew = 11;
+        As = 353;
+        dzero = 26;
+    }
+    if (selectedScrewshape == "M27") {
+        d = 27;
+        dw = 50;
+        ew = 12.5;
+        As = 459;
+        dzero = 30;
+
+    }
+    if (selectedScrewshape == "M30") {
+        d = 30;
+        dw = 56;
+        ew = 14;
+        As = 561;
+        dzero = 33;
+    }
+    if (selectedScrewshape == "M36") {
+        d = 36;
+        dw = 66;
+        ew = 16.5;
+        As = 817;
+        dzero = 39;
+    }
+
+    if (selectedScrewstrength == "4.6") { fub = 400; }
+    if (selectedScrewstrength == "5.6") { fub = 500; }
+    if (selectedScrewstrength == "8.8") { fub = 800; }
+    if (selectedScrewstrength == "10.9") { fub = 1000; }
+
+
+    // === 1.2 Data of Profiles and obtaining of fitting values of variables===
 
     if (selectedProfile == "IPEa120") {
         h = 117.6;
@@ -1055,6 +1137,42 @@ function Beamdata() {
         tf = 40;
         r = 30;
     }
+
+    window.h = h;
+    window.b = b;
+    window.tw = tw;
+    window.tf = tf;
+    window.r = r;
+
+    // === 1.3 Data of Steeltypes and obtaining of fitting values of variables===
+
+    if (selectedSteel == "S235") {
+        fy = 235;
+        fu = 360;
+        CwTwQSK1 = 72;
+        CwTwQSK2 = 83;
+        CwTwQSK3 = 124;
+        CfTfQSK1 = 9;
+        CfTfQSK2 = 10;
+        CfTfQSK3 = 14;
+        betaw = 0.8;
+    }
+
+    if (selectedSteel == "S355") {
+        fy = 355;
+        fu = 490;
+        CwTwQSK1 = 58.32;
+        CwTwQSK2 = 67.23;
+        CwTwQSK3 = 100.44;
+        CfTfQSK1 = 7.29;
+        CfTfQSK2 = 8.1;
+        CfTfQSK3 = 11.34;
+        betaw = 0.9
+    }
+
+    window.fy = fy
+    window.fu = fu
+
     // === 2.1 Calculation of Profilevalues===
     var cw = h - 2 * tf - 2 * r
     var cf = 0.5 * b - 0.5 * tw - r
@@ -1068,7 +1186,5 @@ function Beamdata() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
-
-    alert("h: " + h + " b: " + b + " tw: " + tw + " tf: " + tf + " r: " + r + " Avz: " + Avzb.toFixed(2) + " Wely: " + Wely.toFixed(2) + " Wply: " + Wply.toFixed(2) + " Iy: " + Iy.toFixed(2) + " Sy: " + Sy.toFixed(2));
-
+    alert("   h:" + h + "   b:" + b + "   tw:" + tw + "   tf:" + tf + "   Avz:" + Avzb.toFixed(0) + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0))
 }
