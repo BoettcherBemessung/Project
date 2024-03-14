@@ -1544,8 +1544,9 @@ function QSK() {
         document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
         document.getElementById("Vmax").innerText = "max V " + (Vmax / 1000).toFixed(2) + " kN";
     }
-
-    // === 4.2 calculations  endplate in bending 3 screwRows ===
+    //==============================================================================================================================================
+    // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================
+    //==============================================================================================================================================
     if (selectedScrewRows === 3) {
         var mvO = u1 - ex - 0.8 * af * 1.414213562;
         var mvM = go - tf - 0.8 * af * 1.414213562;

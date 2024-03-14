@@ -101,3 +101,21 @@ function Ft3rdOshowCalculationMethod() {
     var fub = window.fub
     alert("2*As*0,9*fub/1,25 = 2*" + As.toFixed(2) + "*0,9*" + fub + "/1,25")
 }
+
+function leffcpMCalculation() {
+    var mh = window.mh;
+    var mvM = window.mvM;
+    var w = window.w
+    var e = window.e
+    var leffcpO = window.leffcpO
+    alert("leffcp=  2*pi*m = 2*pi*" + mh.toFixed(2) + "=" + leffcpO.toFixed(2));
+}
+
+function leffncMCalculation() {
+
+    var alphaM = window.alphaO;
+    var mh = window.mh
+    alert("leffnc= alpha*m =" + alphaM.toFixed(2) + "*" + mh.toFixed(2))
+
+
+}
