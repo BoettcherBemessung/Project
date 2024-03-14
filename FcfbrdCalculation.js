@@ -17,5 +17,6 @@ function FcfbrdCalculation() {
     var h = window.h;
     var tf = window.tf;
     var mcr = window.mcr;
-    alert("Fcfbrd= Mcr/ (h-tf) = " + mcr + "/(" + h + "-" + tf + ")")
+    var Fcfbrd = window.Fcfbrd
+    alert("Fcfbrd= Mcr/ (h-tf) = " + mcr.toFixed(0) + "/(" + h + "-" + tf + ")=" + Fcfbrd.toFixed(0))
 }

@@ -12,7 +12,7 @@
     <h3> welcome to the first online faceplate joint calculator</h3>
     <script src="script.js"></script>
     <script src="Beamdata2.js"></script>
-    <script src="IyCalculation.js"></script>
+    <script src="resultOutput.js"></script>
     <script src="McrCalculation.js"></script>
     <script src="FcfbrdCalculation.js"></script>
     <script src="upperScrewrow.js"></script>
@@ -318,7 +318,7 @@
     <br>
     <button onclick="QSK()"> I-section classification </button>
     <h4 id="clickonresults" class="clicking"></h4>
-    <p id="beamresultIy" class="Output " onclick="IyCalculation()"> </p>
+    <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
     <p id="beamresultQsk" class="Output "> </p>
     <p id="beamresultMcr" class="Output " onclick="McrCalculation()"> </p>
     <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
@@ -327,37 +327,37 @@
     <p id="leffncresult1" class="Output" onclick="leffncOnew()"></p>
     <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"></p>
     <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"></p>
-    <p id="Ft1rd1" class="Output" onclick="Ft1rdO()"></p>
+    <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"></p>
     <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"></p>
     <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
 
     <p id="Screwresult2" class="OutputHeading"> </p>
     <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
     <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
-    <p id="Mpl1rdresult2" class="Output"></p>
-    <p id="Mpl2rdresult2" class="Output"></p>
-    <p id="Ft1rd2" class="Output"></p>
-    <p id="Ft2rd2" class="Output"></p>
-    <p id="Ft3rd2" class="Output"></p>
+    <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
+    <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
+    <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
+    <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
+    <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
 
     <p id="Screwresult3" class="OutputHeading"></p>
-    <p id="leffcpresult3" class="Output"></p>
-    <p id="leffncresult3" class="Output"></p>
-    <p id="Mpl1rdresult3" class="Output"></p>
-    <p id="Mpl2rdresult3" class="Output"></p>
-    <p id="Ft1rd3" class="Output"></p>
-    <p id="Ft2rd3" class="Output"></p>
-    <p id="Ft3rd3" class="Output"></p>
+    <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
+    <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
+    <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
+    <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
+    <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
+    <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
+    <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
 
     <p id="TensionWebBeam" class="OutputHeading"></p>
     <p id="befftwb" class="Output"></p>
-    <p id="Ftwbrd" class="Output"></p>
+    <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
 
     <p id="Mmaxresults" class="OutputHeading"></p>
     <p id="Ft1eff" class="Output"></p>
     <p id="Ft2eff" class="Output"></p>
     <p id="Ft3eff" class="Output"></p>
-    <p id="Mmax" class="Outputsignificant"></p>
+    <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
 
     <p id="Vmaxresults" class="OutputHeading"></p>
     <p id="Vloadbearingcapacity" class="Output"></p>

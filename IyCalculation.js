@@ -1,4 +1,4 @@
-function IyCalculation() {
+function ShowCalculationIy() {
     var Iy = window.Iy;
     var tw = window.tw;
     var b = window.b;

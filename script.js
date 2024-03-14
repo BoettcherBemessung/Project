@@ -1243,7 +1243,6 @@ function QSK() {
     var gu = parseFloat(document.getElementById("distancegu").value);
     var gu = parseFloat(document.getElementById("distancegu").value);
     var u1n = parseFloat(document.getElementById("distanceu1n").value);
-
     var aw = parseFloat(document.getElementById("BeamWelding").value);
     var af = parseFloat(document.getElementById("FlangeWelding").value);
 
@@ -1263,18 +1262,16 @@ function QSK() {
     window.w = w;
     window.u1 = u1;
 
-
     // === 3.3 Warning programms for impossible/forbidden joint-configurations ===
     if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
     if (bsp < b) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the width of the faceplate") }
-
     if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculation not possible screws touching web of beam") }
     if (e < 1.2 * dzero) { alert("Calculation not possible screws too close to faceplatmargin") }
     if (go - tf < 2 * ew) { alert("Calculation not possible inner screws touch upper flange") }
     if (gu - tf < 2 * ew) { alert("Calculation not possible inner screws touch lower flange") }
     if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
     if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
-
+    if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
 
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
 
@@ -1282,7 +1279,6 @@ function QSK() {
         if (ex < 1.2 * dzero) { alert("Calculation not possible screw spacing to upper margin too small ") }
         if (u1 - ex < 2 * ew) { alert("Calculation not possible screws touch flange! Please select smaller ex!") }
     }
-
 
     // === 4.0 Starting calculations for endplate in bending ===
 
@@ -1300,9 +1296,9 @@ function QSK() {
     window.AScrew = AScrew;
     window.Fvrd = Fvrd;
 
-
-    // === 4.1 calculations  endplate in bending 2 screwRows ===
-
+    //=============================================================================================================================================
+    // ================================= 4.1 calculations  endplate in bending 2 screwRows ========================================================
+    //=============================================================================================================================================
     if (selectedScrewRows === 2) {
         var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
         var mvU = gu - tf - 0.8 * (2 ** 0.5) * af;
@@ -1320,7 +1316,7 @@ function QSK() {
         if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
         if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
         if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
-        e
+
 
         if (lambda2limO > lambda2O || alphaO > 8 || alphaO < 4.45) {
             var alphaIterationO = 4.45;
@@ -1356,7 +1352,6 @@ function QSK() {
         window.leffncO = leffncO;
         window.alphaO = alphaO;
 
-
         if (lambda2limU > lambda2U || alphaU > 8 || alphaU < 4.45) {
             var alphaIterationU = 4.45;
             var lambda1UlimIteration = (1.25 / (alphaIterationU - 2.75));
@@ -1377,7 +1372,6 @@ function QSK() {
                 alphaIterationU = alphaIterationU + 0.00001
             }
             alphaU = alphaIterationU
-
         }
         var leffcpU = 2 * 3.1415926535897932384626433832795 * mh;
         var leffncU = alphaU * mh;
@@ -1400,34 +1394,30 @@ function QSK() {
         window.Mpl1rdU = Mpl1rdU;
         window.Mpl2rdU = Mpl2rdU;
 
+        var nRest = Math.min(e, 1.25 * mh)
+        var nO = nRest
+        window.nRest = nRest;
+        window.nO = nO;
 
-
-        var n = Math.min(e, 1.25 * mh)
-
-        window.n = n;
-
-
-        var Ft1rdO = ((8 * n - 2 * ew) * Mpl1rdO) / (2 * mh * n - ew * (mh + n))
+        var Ft1rdO = ((8 * nRest - 2 * ew) * Mpl1rdO) / (2 * mh * nRest - ew * (mh + nRest))
         var Ft3rdO = 2 * As * 0.9 * fub / 1.25
-        var Ft2rdO = (2 * Mpl2rdO + n * Ft3rdO) / (mh + n)
+        var Ft2rdO = (2 * Mpl2rdO + nRest * Ft3rdO) / (mh + nRest)
 
-        var Ft1rdU = (8 * n - 2 * ew) * Mpl1rdU / (2 * mh * n - ew * (mh + n))
+        var Ft1rdU = (8 * nRest - 2 * ew) * Mpl1rdU / (2 * mh * nRest - ew * (mh + nRest))
         var Ft3rdU = 2 * As * 0.9 * fub / 1.25
-        var Ft2rdU = (2 * Mpl2rdU + n * Ft3rdU) / (mh + n)
+        var Ft2rdU = (2 * Mpl2rdU + nRest * Ft3rdU) / (mh + nRest)
 
-        window.Ft1rdo = Ft1rdO;
+        window.Ft1rdO = Ft1rdO;
         window.Ft3rdO = Ft3rdO;
         window.Ft2rdO = Ft2rdO;
         window.Ft1rdU = Ft1rdU;
-        windowFt2rdU = Ft2rdU;
+        window.Ft2rdU = Ft2rdU;
         window.Ft3rdU = Ft3rdU;
 
-
-
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
-        document.getElementById("Screwresult2").innerHTML = "Results of lower Screwrow: "
-        document.getElementById("Screwresult3").innerHTML = ""
-        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam"
+        document.getElementById("Screwresult2").innerHTML = ""
+        document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: "
+        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:"
 
         document.getElementById("leffcpresult1").innerText = "leffcp: " + leffcpO.toFixed(2) + " mm";
         document.getElementById("leffncresult1").innerText = "leffnc: " + leffncO.toFixed(2) + " mm";
@@ -1437,21 +1427,21 @@ function QSK() {
         document.getElementById("Ft2rd1").innerText = "Ft2rd: " + (Ft2rdO / 1000).toFixed(2) + " kN";
         document.getElementById("Ft3rd1").innerText = "Ft3rd: " + (Ft3rdO / 1000).toFixed(2) + " kN";
 
-        document.getElementById("leffcpresult2").innerText = "leffcp: " + leffcpU.toFixed(2) + " mm";
-        document.getElementById("leffncresult2").innerText = "leffnc: " + leffncU.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult2").innerText = "Mpl1rd: " + (Mpl1rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult2").innerText = "Mpl2rd: " + (Mpl2rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd2").innerText = "Ft1rd: " + (Ft1rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd2").innerText = "Ft2rd: " + (Ft2rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd2").innerText = "Ft3rd: " + (Ft3rdU / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult3").innerText = "leffcp: " + leffcpU.toFixed(2) + " mm";
+        document.getElementById("leffncresult3").innerText = "leffnc: " + leffncU.toFixed(2) + " mm";
+        document.getElementById("Mpl1rdresult3").innerText = "Mpl1rd: " + (Mpl1rdU / 1000000).toFixed(2) + " kNm";
+        document.getElementById("Mpl2rdresult3").innerText = "Mpl2rd: " + (Mpl2rdU / 1000000).toFixed(2) + " kNm";
+        document.getElementById("Ft1rd3").innerText = "Ft1rd: " + (Ft1rdU / 1000).toFixed(2) + " kN";
+        document.getElementById("Ft2rd3").innerText = "Ft2rd: " + (Ft2rdU / 1000).toFixed(2) + " kN";
+        document.getElementById("Ft3rd3").innerText = "Ft3rd: " + (Ft3rdU / 1000).toFixed(2) + " kN";
 
-        document.getElementById("leffcpresult3").innerText = "";
-        document.getElementById("leffncresult3").innerText = "";
-        document.getElementById("Mpl1rdresult3").innerText = "";
-        document.getElementById("Mpl2rdresult3").innerText = "";
-        document.getElementById("Ft1rd3").innerText = "";
-        document.getElementById("Ft2rd3").innerText = "";
-        document.getElementById("Ft3rd3").innerText = "";
+        document.getElementById("leffcpresult2").innerText = "";
+        document.getElementById("leffncresult2").innerText = "";
+        document.getElementById("Mpl1rdresult2").innerText = "";
+        document.getElementById("Mpl2rdresult2").innerText = "";
+        document.getElementById("Ft1rd2").innerText = "";
+        document.getElementById("Ft2rd2").innerText = "";
+        document.getElementById("Ft3rd2").innerText = "";
 
         // === 4.11 calculations evidence of tension beam screwRows ===
 
@@ -1460,6 +1450,9 @@ function QSK() {
         if (Ft2rdO < Ft1rdO || Ft3rdO < Ft1rdO) { befftwb = leff2O }
 
         var Ftwbrd = befftwb * tw * fy
+
+        window.befftwb = befftwb
+        window.Ftwbrd = Ftwbrd
 
         document.getElementById("befftwb").innerText = "befftwb: " + befftwb.toFixed(2) + " mm";
         document.getElementById("Ftwbrd").innerText = "Ftwbrd: " + (Ftwbrd / 1000).toFixed(2) + " kN";
@@ -1484,6 +1477,15 @@ function QSK() {
 
         var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2
 
+        window.hs1 = hs1
+        window.hs2 = hs2
+        window.Mmax = Mmax
+        window.aFtrd1 = aFtrd1
+        window.aFtrd2 = aFtrd2
+
+
+
+        document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
         document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
         document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
         document.getElementById("Ft3eff").innerText = "";
@@ -1510,7 +1512,7 @@ function QSK() {
 
         //1.Screws "bite" to upper side
 
-        var alphaPunch1Up = Math.min(1.0, fub / fu)
+        var alphaPunch1Up = Math.min(1.0, (fub / fu))
         var kPunch1Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
         var Fbrd1Up = (kPunch1Up * alphaPunch1Up * fu * d * tsp / GammaTwo) * 2
 
@@ -1520,7 +1522,7 @@ function QSK() {
 
         //1.Screws "bite" downside 
 
-        var alphaPunch1Down = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
+        var alphaPunch1Down = Math.min(1.0, fub / fu, ((h - go - gu) / (3 * dzero)) - 0.25, )
         var kPunch1Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
         var Fbrd1Down = (kPunch1Down * alphaPunch1Down * fu * d * tsp / GammaTwo) * 2
 
@@ -1533,6 +1535,8 @@ function QSK() {
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down)
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
 
+        console.log(((h - go - gu) / (3 * dzero)) - 0.25)
+
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2
 
         var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
@@ -1540,9 +1544,9 @@ function QSK() {
         document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
         document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
         document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-        document.getElementById("Vwelding").innerText = "max V due to Welding" + (Vmaxwelding / 1000).toFixed(2) + " kN";
+        document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
         document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-        document.getElementById("Vmax").innerText = "max V " + (Vmax / 1000).toFixed(2) + " kN";
+        document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
     }
     //==============================================================================================================================================
     // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================
@@ -1553,9 +1557,8 @@ function QSK() {
         var mvU = gu - tf - 0.8 * af * 1.414213562;
 
         window.mvO = mvO;
+        window.mvM = mvM;
         window.mvU = mvU;
-
-
 
         if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
         if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select lower ex or Rise height of faceplate !") }
@@ -1571,7 +1574,9 @@ function QSK() {
         var lambda2limM = 0.5 * lambda1M * alphaM;
         var iterationDoneM = 0
 
-
+        window.leffncO = leffncO
+        window.leffcpO = leffcpO
+        window.alphaM = alphaM
 
         // Iterarion for Screwrow at upper flange
         if (lambda2limM > lambda2M || alphaM > 8 || alphaM < 4.45) {
@@ -1598,10 +1603,11 @@ function QSK() {
             alphaM = alphaIterationM
         }
 
-
-
         var leffcpM = 2 * 3.1415926535897932384626433832795 * mh;
         var leffncM = alphaM * mh;
+
+        window.leffcpM = leffcpM
+        window.leffncM = leffncM
 
         //Iteration for lower Screwrow
         var lambda1U = mh / (mh + e);
@@ -1647,9 +1653,14 @@ function QSK() {
         var Mpl1rdU = 0.25 * leff1U * tsp ** 2 * fy;
         var Mpl2rdU = 0.25 * leff2U * tsp ** 2 * fy;
 
-        var emin = Math.min(e, ex)
-        var n = Math.min(emin, 1.25 * mh)
-        window.n = n;
+        var nO = Math.min(e, ex, 1.25 * mh)
+        var nRest = Math.min(e, 1.25 * mh)
+
+        window.alphaU = alphaU;
+        window.leffcpU = leffcpU;
+        window.leffncU = leffncU;
+        window.nO = nO;
+        window.nRest = nRest;
         window.Mpl1rdO = Mpl1rdO;
         window.Mpl2rdO = Mpl2rdO;
         window.Mpl1rdM = Mpl1rdM;
@@ -1657,31 +1668,27 @@ function QSK() {
         window.Mpl1rdU = Mpl1rdU;
         window.Mpl2rdU = Mpl2rdU;
 
-        var Ft1rdO = (((8 * n - 2 * ew) * Mpl1rdO) / (2 * mvO * n - ew * (mvO + n)))
+        var Ft1rdO = (((8 * nO - 2 * ew) * Mpl1rdO) / (2 * mvO * nO - ew * (mvO + nO)))
         var Ft3rdO = 2 * As * 0.9 * fub / 1.25
-        var Ft2rdO = (2 * Mpl2rdO + n * Ft3rdO) / (mvO + n)
+        var Ft2rdO = (2 * Mpl2rdO + nO * Ft3rdO) / (mvO + nO)
 
-        var Ft1rdM = (8 * n - 2 * ew) * Mpl1rdM / (2 * mh * n - ew * (mh + n))
+        var Ft1rdM = (8 * nRest - 2 * ew) * Mpl1rdM / (2 * mh * nRest - ew * (mh + nRest))
         var Ft3rdM = 2 * As * 0.9 * fub / 1.25
-        var Ft2rdM = (2 * Mpl2rdM + n * Ft3rdM) / (mh + n)
+        var Ft2rdM = (2 * Mpl2rdM + nRest * Ft3rdM) / (mh + nRest)
 
-        var Ft1rdU = (8 * n - 2 * ew) * Mpl1rdU / (2 * mh * n - ew * (mh + n))
+        var Ft1rdU = (8 * nRest - 2 * ew) * Mpl1rdU / (2 * mh * nRest - ew * (mh + nRest))
         var Ft3rdU = 2 * As * 0.9 * fub / 1.25
-        var Ft2rdU = (2 * Mpl2rdU + n * Ft3rdU) / (mh + n)
+        var Ft2rdU = (2 * Mpl2rdU + nRest * Ft3rdU) / (mh + nRest)
 
-        window.Ft1rdo = Ft1rdO;
+        window.Ft1rdO = Ft1rdO;
         window.Ft3rdO = Ft3rdO;
         window.Ft2rdO = Ft2rdO;
         window.Ft1rdM = Ft1rdM;
         windowFt2rdM = Ft2rdM;
         window.Ft3rdM = Ft3rdM;
         window.Ft1rdU = Ft1rdU;
-        windowFt2rdU = Ft2rdU;
+        window.Ft2rdU = Ft2rdU;
         window.Ft3rdU = Ft3rdU;
-
-
-
-
 
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
         document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
@@ -1720,6 +1727,9 @@ function QSK() {
 
         var Ftwbrd = befftwb * tw * fy
 
+        window.befftwb = befftwb;
+        window.Ftwbrd = Ftwbrd;
+
         document.getElementById("befftwb").innerText = "befftwb: " + befftwb.toFixed(2) + " mm";
         document.getElementById("Ftwbrd").innerText = "Ftwbrd: " + (Ftwbrd / 1000).toFixed(2) + " kN";
 
@@ -1750,6 +1760,14 @@ function QSK() {
         if (aFtrd2 > 0.95 * Ft3rdO) { if (aFtrd3 > (aFtrd2 / hs2) * hs3) { aFtrd3 = (aFtrd2 / hs2) * hs3 } }
 
         var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2 + aFtrd3 * hs3
+
+        window.hs1 = hs1
+        window.hs2 = hs2
+        window.hs3 = hs3
+        window.Mmax = Mmax
+        window.aFtrd1 = aFtrd1
+        window.aFtrd2 = aFtrd2
+        window.aFtrd3 = aFtrd3
 
         document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
         document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
