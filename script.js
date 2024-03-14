@@ -1755,7 +1755,6 @@ function QSK() {
             aFtrd1 = Fcfbrd;
             aFtrd2 = 0
         }
-
         if (aFtrd1 > 0.95 * Ft3rdO) { if (aFtrd2 > (aFtrd1 / hs1) * hs2) { aFtrd2 = (aFtrd1 / hs1) * hs2 }; if (aFtrd3 > (aFtrd1 / hs1) * hs3) { aFtrd3 = (aFtrd1 / hs1) * hs3 } }
         if (aFtrd2 > 0.95 * Ft3rdO) { if (aFtrd3 > (aFtrd2 / hs2) * hs3) { aFtrd3 = (aFtrd2 / hs2) * hs3 } }
 
