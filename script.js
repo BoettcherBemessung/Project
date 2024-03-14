@@ -1684,7 +1684,7 @@ function QSK() {
         window.Ft3rdO = Ft3rdO;
         window.Ft2rdO = Ft2rdO;
         window.Ft1rdM = Ft1rdM;
-        windowFt2rdM = Ft2rdM;
+        window.Ft2rdM = Ft2rdM;
         window.Ft3rdM = Ft3rdM;
         window.Ft1rdU = Ft1rdU;
         window.Ft2rdU = Ft2rdU;

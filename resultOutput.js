@@ -154,7 +154,7 @@ function Ft2rdMShowResult() {
     var mh = window.mh
     var Ft3rdM = window.Ft3rdM
     console.log(nRest)
-    alert("Ft2rd= (2*Mpl2rd+n*Ft3rd)/(m+n) = (2*" + Mpl2rdM.toFixed(0) + "+" + nRest + "*" + Ft3rdM.toFixed(0) + ")/(" + mh.toFixed(2) + "+" + nRest + ") =" + Ft2rdO.toFixed(0))
+    alert("Ft2rd= (2*Mpl2rd+n*Ft3rd)/(m+n) = (2*" + Mpl2rdM.toFixed(0) + "+" + nRest + "*" + Ft3rdM.toFixed(0) + ")/(" + mh.toFixed(2) + "+" + nRest + ") =" + Ft2rdM.toFixed(0))
 }
 
 function Ft3rdMshowCalculationMethod() {
