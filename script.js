@@ -1143,6 +1143,13 @@ function QSK() {
     window.tw = tw;
     window.tf = tf;
     window.r = r;
+    window.d = d;
+    window.dw = dw;
+    window.ew = ew;
+    window.As = As;
+    window.dzero = dzero;
+    window.fub = fub;
+
 
     // === 1.3 Data of Steeltypes and obtaining of fitting values of variables===
 
@@ -1219,6 +1226,7 @@ function QSK() {
     var McrOutput = (mcr / 1000000).toFixed(2)
     var FcfbRdOutput = (Fcfbrd / 1000).toFixed(2)
 
+    document.getElementById("clickonresults").innerText = "You can click on the results to see detailed calculations methods!"
     document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput + " E+06 mm^4";
     document.getElementById("beamresultQsk").innerText = "QSK: " + qsk;
     document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
@@ -1387,9 +1395,17 @@ function QSK() {
         window.alphaU = alphaU;
         window.leff1O = leff1O;
         window.leff2O = leff2O;
+        window.Mpl1rdO = Mpl1rdO;
+        window.Mpl2rdO = Mpl2rdO;
+        window.Mpl1rdU = Mpl1rdU;
+        window.Mpl2rdU = Mpl2rdU;
+
 
 
         var n = Math.min(e, 1.25 * mh)
+
+        window.n = n;
+
 
         var Ft1rdO = ((8 * n - 2 * ew) * Mpl1rdO) / (2 * mh * n - ew * (mh + n))
         var Ft3rdO = 2 * As * 0.9 * fub / 1.25
@@ -1398,6 +1414,15 @@ function QSK() {
         var Ft1rdU = (8 * n - 2 * ew) * Mpl1rdU / (2 * mh * n - ew * (mh + n))
         var Ft3rdU = 2 * As * 0.9 * fub / 1.25
         var Ft2rdU = (2 * Mpl2rdU + n * Ft3rdU) / (mh + n)
+
+        window.Ft1rdo = Ft1rdO;
+        window.Ft3rdO = Ft3rdO;
+        window.Ft2rdO = Ft2rdO;
+        window.Ft1rdU = Ft1rdU;
+        windowFt2rdU = Ft2rdU;
+        window.Ft3rdU = Ft3rdU;
+
+
 
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
         document.getElementById("Screwresult2").innerHTML = "Results of lower Screwrow: "
@@ -1621,10 +1646,15 @@ function QSK() {
         var Mpl1rdU = 0.25 * leff1U * tsp ** 2 * fy;
         var Mpl2rdU = 0.25 * leff2U * tsp ** 2 * fy;
 
-
-
         var emin = Math.min(e, ex)
         var n = Math.min(emin, 1.25 * mh)
+        window.n = n;
+        window.Mpl1rdO = Mpl1rdO;
+        window.Mpl2rdO = Mpl2rdO;
+        window.Mpl1rdM = Mpl1rdM;
+        window.Mpl2rdM = Mpl2rdM;
+        window.Mpl1rdU = Mpl1rdU;
+        window.Mpl2rdU = Mpl2rdU;
 
         var Ft1rdO = (((8 * n - 2 * ew) * Mpl1rdO) / (2 * mvO * n - ew * (mvO + n)))
         var Ft3rdO = 2 * As * 0.9 * fub / 1.25
@@ -1637,6 +1667,20 @@ function QSK() {
         var Ft1rdU = (8 * n - 2 * ew) * Mpl1rdU / (2 * mh * n - ew * (mh + n))
         var Ft3rdU = 2 * As * 0.9 * fub / 1.25
         var Ft2rdU = (2 * Mpl2rdU + n * Ft3rdU) / (mh + n)
+
+        window.Ft1rdo = Ft1rdO;
+        window.Ft3rdO = Ft3rdO;
+        window.Ft2rdO = Ft2rdO;
+        window.Ft1rdM = Ft1rdM;
+        windowFt2rdM = Ft2rdM;
+        window.Ft3rdM = Ft3rdM;
+        window.Ft1rdU = Ft1rdU;
+        windowFt2rdU = Ft2rdU;
+        window.Ft3rdU = Ft3rdU;
+
+
+
+
 
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
         document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "

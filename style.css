@@ -69,3 +69,8 @@ body {
 .websiteheadings {
     text-decoration: underline;
 }
+
+.clicking {
+    background-color: lightblue;
+    border-radius: 10px;
+}

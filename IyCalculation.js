@@ -76,6 +76,28 @@ function MplrdO2() {
 }
 
 function Ft1rdO() {
+    var ew = window.ew
+    var n = window.n
+    var mh = window.mh
+    var Mpl1rdO = window.Mpl1rdO
+    console.log(n)
+    alert("(8*n-2*ew)*Mpl1rd/(2*m*n-ew*(m+n)) = (8*" + n + "-2*" + ew + ")*" + Mpl1rdO + "/(2*" + mh.toFixed(2) + "*" + n + "-" + ew + "*(" + mh.toFixed(2) + "+" + n + "))")
+}
 
-    alert("(8*n-2*ew)*Mpl1rd/(2*m*n-ew*(m+n)) = (8*" + n + "-2*" + ew + ")*" + Mpl1rd + "/(2*" + m + "*" + n + "-" + ew + "*(" + m + "+" + n + "))")
+function Ft2rdOshowcalculationMethod() {
+    var ew = window.ew;
+    var n = window.n;
+    var mvO = window.mvO;
+    var Mpl2rdO = window.Mpl2rdO;
+    var Ft3rdO = window.Ft3rdO;
+    var mh = window.mh
+    var Ft2rdO = window.Ft2rdO
+    console.log(n)
+    alert("Ft2rdO= (2*Mpl2rd+n*Ft3rd)/(m+n) = (2*" + Mpl2rdO.toFixed(2) + "+" + n + "*" + Ft3rdO.toFixed(2) + ")/(" + mh.toFixed(2) + "+" + n + ") =" + Ft2rdO.toFixed(2))
+}
+
+function Ft3rdOshowCalculationMethod() {
+    var As = window.As
+    var fub = window.fub
+    alert("2*As*0,9*fub/1,25 = 2*" + As.toFixed(2) + "*0,9*" + fub + "/1,25")
 }
