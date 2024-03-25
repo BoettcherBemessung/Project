@@ -78,4 +78,6 @@ body {
 .Attention {
     color: red;
     background-color: yellow;
+    text-align: center;
+    border-radius: 8px;
 }

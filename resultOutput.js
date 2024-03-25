@@ -17,7 +17,7 @@ function mxCalculation() {
         var Dmx = u1 - ex
         var mvO = u1 - ex - 0.8 * af * 1.414213562;
 
-        alert("mx =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+        alert("mx =" + Dmx.toFixed(2) + " - 0,8 * af * 2^0.5 = " + Dmx.toFixed(2) + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
     }
     if (selectedScrewRows == 2) {
         var go = window.go;
@@ -27,33 +27,47 @@ function mxCalculation() {
 
         var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
 
-        alert("m2 =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+        alert("m2 =" + Dmx.toFixed(2) + " - 0,8 * af * 2^0.5 = " + Dmx.toFixed(2) + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
     }
 
 }
 
 function m1OCalculation() {
     var selectedScrewRows = document.getElementById("ScrewRows").value
-    if (selectedScrewRows == 3) {
-        var u1 = window.u1;
-        var ex = window.ex;
-        var af = window.af;
-        var Dmx = u1 - ex
-        var mvO = u1 - ex - 0.8 * af * 1.414213562;
-
-        alert("mx =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
-    }
     if (selectedScrewRows == 2) {
-        var go = window.go;
-        var tf = window.tf;
-        var af = window.af;
-        var Dmx = go - tf
+        var bsp = window.bsp;
+        var e = window.e;
+        var tw = window.tw;
+        var aw = window.aw;
+        var Dm1O = (bsp / 2) - e - (tw / 2)
+        var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
 
-        var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
-
-        alert("m2 =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+        alert("m1 =" + Dm1O + " - 0,8 * aw * 2^0.5 = " + Dm1O + "- 0,8 * " + aw + " * 2^0.5 = " + mh.toFixed(2))
     }
 }
+
+function m1MCalculation() {
+    var bsp = window.bsp;
+    var e = window.e;
+    var tw = window.tw;
+    var aw = window.aw;
+    var Dm1M = (bsp / 2) - e - (tw / 2)
+    var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
+
+    alert("m1 =" + Dm1M + " - 0,8 * aw * 2^0.5 = " + Dm1M + "- 0,8 * " + aw + " * 2^0.5 = " + mh.toFixed(2))
+}
+
+function m2MCalculation() {
+    var go = window.go;
+    var tf = window.tf;
+    var af = window.af;
+    var DmM = go - tf
+    var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
+    alert("m2 =" + DmM.toFixed(2) + " - 0,8 * af * 2^0.5 = " + DmM.toFixed(2) + "- 0,8 * " + af + " * 2^0.5 = " + mvM.toFixed(2))
+}
+
+
+
 
 function m2UCalculation() {
     var gu = window.gu;
@@ -65,12 +79,13 @@ function m2UCalculation() {
 }
 
 function m1UCalculation() {
-    var gu = window.gu;
-    var tf = window.tf;
-    var af = window.af;
-    var Dmu2 = gu - tf;
-    var mvU = gu - tf - 0.8 * (2 ** 0.5) * af;
-    alert("m2 =" + Dmu2 + " - 0,8 * af * 2^0.5 = " + Dmu2 + "- 0,8 * " + af + " * 2^0.5 = " + mvU.toFixed(2))
+    var bsp = window.bsp;
+    var e = window.e;
+    var tw = window.tw;
+    var aw = window.aw;
+    var Dm1U = (bsp / 2) - e - (tw / 2)
+    var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
+    alert("m1 =" + Dm1U + " - 0,8 * aw * 2^0.5 = " + Dm1U + "- 0,8 * " + aw + " * 2^0.5 = " + mh.toFixed(2))
 }
 
 

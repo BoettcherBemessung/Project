@@ -1762,7 +1762,7 @@ function QSK() {
         document.getElementById("m1Oresult").innerText = "";
         document.getElementById("m2Mresult").innerText = "m2: " + mvM.toFixed(2) + " mm";
         document.getElementById("m1Mresult").innerText = "m1: " + mh.toFixed(2) + " mm";
-        document.getElementById("m1Uresult").innerText = "m2: " + mh.toFixed(2) + " mm";
+        document.getElementById("m1Uresult").innerText = "m1: " + mh.toFixed(2) + " mm";
         document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
 
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
