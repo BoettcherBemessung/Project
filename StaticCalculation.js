@@ -1,10 +1,10 @@
 function QSK() {
     // === 0.1 registration of selected profils, steels...===
-    var profileselection = document.getElementById("Traegerwahl");
-    var selectedProfile = Traegerwahl.options[Traegerwahl.selectedIndex].value;
+    var profileselection = document.getElementById("BeamSelection");
+    var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
 
-    var steelselection = document.getElementById("Stahlguete");
-    var selectedSteel = Stahlguete.options[Stahlguete.selectedIndex].value;
+    var steelselection = document.getElementById("YieldStrength");
+    var selectedSteel = YieldStrength.options[YieldStrength.selectedIndex].value;
 
     var Screwshapeselection = document.getElementById("ScrewShape");
     var selectedScrewshape = ScrewShape.options[ScrewShape.selectedIndex].value;
@@ -35,6 +35,8 @@ function QSK() {
     var fub = 0;
     var kScrew = 0;
     var mmaxScrew = 0;
+    var tscrew = 0;
+
 
     // === 1.1 Data of Screws and obtaining of fitting values of variables===
     if (selectedScrewshape == "M12") {
@@ -45,6 +47,7 @@ function QSK() {
         dzero = 13;
         kScrew = 8;
         mmaxScrew = 10;
+        tscrew = 3;
     }
     if (selectedScrewshape == "M16") {
         d = 16;
@@ -54,6 +57,7 @@ function QSK() {
         dzero = 18;
         kScrew = 10;
         mmaxScrew = 13;
+        tscrew = 4;
     }
     if (selectedScrewshape == "M20") {
         d = 20;
@@ -63,6 +67,7 @@ function QSK() {
         dzero = 22;
         kScrew = 13;
         mmaxScrew = 16;
+        tscrew = 4;
     }
     if (selectedScrewshape == "M22") {
         d = 22;
@@ -72,6 +77,7 @@ function QSK() {
         dzero = 24;
         kScrew = 14;
         mmaxScrew = 18;
+        tscrew = 4;
     }
     if (selectedScrewshape == "M24") {
         d = 24;
@@ -81,6 +87,7 @@ function QSK() {
         dzero = 26;
         kScrew = 15;
         mmaxScrew = 19;
+        tscrew = 4;
     }
     if (selectedScrewshape == "M27") {
         d = 27;
@@ -90,6 +97,7 @@ function QSK() {
         dzero = 30;
         kScrew = 17;
         mmaxScrew = 22;
+        tscrew = 5;
 
     }
     if (selectedScrewshape == "M30") {
@@ -100,6 +108,7 @@ function QSK() {
         dzero = 33;
         kScrew = 19;
         mmaxScrew = 24;
+        tscrew = 5;
     }
     if (selectedScrewshape == "M36") {
         d = 36;
@@ -109,6 +118,7 @@ function QSK() {
         dzero = 39;
         kScrew = 23;
         mmaxScrew = 29;
+        tscrew = 6;
     }
 
     if (selectedScrewstrength == "4.6") { fub = 400; }
@@ -1261,6 +1271,9 @@ function QSK() {
     var u1n = parseFloat(document.getElementById("distanceu1n").value);
     var aw = parseFloat(document.getElementById("BeamWelding").value);
     var af = parseFloat(document.getElementById("FlangeWelding").value);
+    var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
+    var Ved = parseFloat(document.getElementById("ValueVed").value) * 10 ** 3;
+
 
     var w = bsp - 2 * e
     var u1 = hsp - u1n - h
@@ -1536,6 +1549,7 @@ function QSK() {
         var kPunch2Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
         var Fbrd2Up = (kPunch2Up * alphaPunch2Up * fu * d * tsp / GammaTwo) * 2
 
+
         //1.Screws "bite" downside 
 
         var alphaPunch1Down = Math.min(1.0, fub / fu, ((h - go - gu) / (3 * dzero)) - 0.25, )
@@ -1551,6 +1565,9 @@ function QSK() {
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down)
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
 
+        console.log(Fbrdauthoritive1)
+        console.log(Fbrdauthoritive2)
+
 
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2
 
@@ -1562,6 +1579,34 @@ function QSK() {
         document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
         document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
         document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+
+
+        //Calculations of Rotationstiffnes
+
+        if (Med < 2 / 3 * Mmax) { var mueh = 1 }
+
+        if (Med > 2 / 3 * Mmax) { var mueh = (1.5 * Med / Mmax) ** 2.7 }
+
+        var k_fourO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mvO ** 3
+        var k_fiveO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mh
+        var k_ten = 1.6 * AScrew / (2 * tsp + 0.5 * kScrew + 0.5 * mmaxScrew)
+
+        var Sj = 210000 * hs1 ** 2 / (mueh * (1 / k_fiveO + 1 / k_ten))
+
+        var k_effO = 1 / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)
+        var zeq = (k_effO * hs1 ** 2) / (k_effO * hs1)
+        var k_eq = (k_effO * hs1) / zeq
+
+        var Sj = ((210000 * zeq ** 2) / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)) / 10 ** 6
+
+        console.log(k_ten)
+        console.log(k_fourO)
+        console.log(k_fiveO)
+        console.log(zeq)
+        console.log(k_eq)
+        console.log(mueh)
+        console.log(Sj)
+
     }
     //==============================================================================================================================================
     // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================
@@ -1849,78 +1894,38 @@ function QSK() {
         document.getElementById("Vwelding").innerText = "max V due to Welding: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
         document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
         document.getElementById("Vmax").innerText = "max V :" + (Vmax / 1000).toFixed(2) + " kN";
-    }
-
-    //Classification of the joint connection rotational stiffnes
-
-    var Med = parseFloat(document.getElementById("MedValue").value);
-    var Ved = parseFloat(document.getElementById("VedValue").value);
-
-    var Meduse = Med * 1000000
-    var VedUse = Ved * 1000
-    var mueh = 0
 
 
-    if (Meduse < (2 / 3) * Mmax) { mueh = 1 }
+        //Calculations of Rotationstiffnes
 
-    if (Meduse > (2 / 3) * Mmax) { mueh = 1.5 * (MedUse / Mmax) ** 2.7 }
+        if (Med < 2 / 3 * Mmax) { var mueh = 1 }
 
-    //Calculation of rotational stiffnes of single components
-    var lb = 2 * tsp + 0.5 * kScrew + 0.5 * mmaxScrew
+        if (Med > 2 / 3 * Mmax) { var mueh = (1.5 * Med / Mmax) ** 2.7 }
 
-    if (selectedScrewRows == 2) {
+        var k_fourO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mvO ** 3
+        var k_fiveO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mvO ** 3
+        var k_fiveM = 0.9 * Math.min(leff1M, leff2M) * tsp ** 3 / mh ** 3
+        var k_fourM = 0.9 * Math.min(leff1M, leff2M) * tsp ** 3 / mh ** 3
+        var k_fiveU = 0.9 * Math.min(leff1U, leff2U) * tsp ** 3 / mh ** 3
+        var k_fourU = 0.9 * Math.min(leff1U, leff2U) * tsp ** 3 / mh ** 3
 
+        var k_ten = 1.6 * As / (2 * tsp + 0.5 * kScrew + 0.5 * mmaxScrew + 2 * tscrew)
+        var k_effO = 1 / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)
+        var k_effM = 1 / (1 / k_fiveM + 1 / k_fourM + 1 / k_ten)
+        var k_effU = 1 / (1 / k_fiveU + 1 / k_fourU + 1 / k_ten)
+        var zeq = (k_effO * hs1 ** 2 + k_effM * hs2 ** 2) / (k_effO * hs1 + k_effM * hs2)
+        var k_eq = (k_effO * hs1 + k_effM * hs2) / zeq
 
-        var leffAuthoritiveO = Math.min(leffcpO, leffncO);
-        var leffAuthoritiveU = Math.min(leffcpU, leffncU);
-        var k5fO = 0.9 * leffAuthoritiveO * tsp ** 3 / mh ** 3
-        var k5fU = 0.9 * leffAuthoritiveU * tsp ** 3 / mh ** 3
+        var Sj = ((210000 * zeq ** 2) / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten + 1 / k_fourM + 1 / k_fiveM + 1 / k_ten)) / 10 ** 6
 
-        var k10O = 1.6 * As / lb
-        var k10U = 1.6 * As / lb
-
-        var keffrO = 1 / (1 / k5fO + 1 / k10O)
-        var keffrU = 1 / (1 / k5fU + 1 / k10U)
-
-        var zeq = (keffrO * hs1 ** 2 + keffrU * hs2 ** 2) / (keffrO * hs + keffrU * hs2)
-        var keq = (keffrO * hs1 + keffrU * hs2) / zeq
-
-        var Sj = 210000 * hs1 ** 2 / (mueh * (1 / k10O + 1 / k10U + 1 / keffrO + 1 / keffrU));
-        var Sjn = 0.5 * Sj;
-
-        console.log(zeq);
-        console.log(keq);
-        console.log(Sj);
-        console.log(Sjn);
+        console.log(k_ten)
+        console.log(k_fourO)
+        console.log(k_fourM)
+        console.log(zeq)
+        console.log(k_eq)
+        console.log(mueh)
+        console.log(Sj)
 
     }
-    if (selectedScrewRows == 3) {
-        var leffAuthoritiveO = Math.min(leffcpO, leffncO);
-        var leffAuthoritiveM = Math.min(leffcpM, leffncM);
-        var leffAuthoritiveU = Math.min(leffcpU, leffncU);
 
-        var k5fO = 0.9 * leffAuthoritiveO * tsp ** 3 / mvO ** 3
-        var k5fM = 0.9 * leffAuthoritiveM * tsp ** 3 / mh ** 3
-        var k5fU = 0.9 * leffAuthoritiveU * tsp ** 3 / mh ** 3
-
-        var k10O = 1.6 * As / lb
-        var k10M = 1.6 * As / lb
-        var k10U = 1.6 * As / lb
-
-        var keffrO = 1 / (1 / k5fO + 1 / k10O)
-        var keffrM = 1 / (1 / k5fM + 1 / k10M)
-        var keffrU = 1 / (1 / k5fU + 1 / k10U)
-
-        var zeq = (keffrO * hs1 ** 2 + keffrM * hs2 ** 2 * keffrU * hs3 ** 2) / (keffrO * hs + keffrM * hs2 + keffrU * hs3);
-        var keq = (keffrO * hs1 + keffrM * hs2 + keffrU * hs3) / zeq;
-
-        var Sj = 210000 * zeq ** 2 / (mueh * (1 / k10O + 1 / k10U + 1 / keffrO + 1 / keffrU));
-        var Sjn = 0.5 * Sj;
-
-        console.log(zeq);
-        console.log(keq);
-        console.log(Sj);
-        console.log(Sjn);
-
-    }
 }

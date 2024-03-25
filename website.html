@@ -10,15 +10,13 @@
 
 <body>
     <h3> welcome to the first online faceplate joint calculator</h3>
-    <script src="script.js"></script>
+    <script src="StaticCalculation.js"></script>
     <script src="Beamdata2.js"></script>
     <script src="resultOutput.js"></script>
-    <script src="McrCalculation.js"></script>
     <script src="FcfbrdCalculation.js"></script>
-    <script src="upperScrewrow.js"></script>
     <p class="websiteheadings"><strong> configure the beam:</strong> </p>
-    <label for="Traegerprofil"> profile:</label>
-    <select id="Traegerwahl">
+    <label for="BeamProfile"> profile:</label>
+    <select id="BeamSelection">
         <option value="IPEa120">IPEa 120</option>
         <option value="IPEa140">IPEa 140</option>
         <option value="IPEa160">IPEa 160</option>
@@ -169,18 +167,18 @@
         <option value="HEM1000">HEM 1000</option>
         </select>
     <script>
-        document.getElementById('Traegerwahl').addEventListener('change', function WerteBestimmen() {
+        document.getElementById('BeamSelection').addEventListener('change', function WerteBestimmen() {
             var selectedProfile = this.value;
         })
     </script>
-    <label for="StahlsorteTraeger">steel type:</label>
-    <select id="Stahlguete">
+    <label for="SteelTypeBeam">steel type:</label>
+    <select id="YieldStrength">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
     <button onclick="Beamdata()">show Beaminformation</button>
     <script>
-        document.getElementById('Stahlguete').addEventListener('change', function QuerschnittsklasseBestimmen() {
+        document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
             var selectedSteel = this.value;
         }, )
     </script>
@@ -262,7 +260,6 @@
     <img id="Image2SR" class="picture2SR" src="images\optimized2SR.jpg" alt="Bild 1">
     <img id="Image3SR" class="picture3SR" src="images\optimized3SR.jpg" alt="Bild 2">
     <script>
-        document.getElementById("Image2SR").style.display = "none";
         document.getElementById("Image3SR").style.display = "none";
     </script>
     <script>
@@ -315,7 +312,20 @@
         <label for="inputex">ex:</label>
         <input type="number" id="distanceex" class="inputex" placeholder="mm">
     </div>
+
+    <p class="websiteheadings"><strong>Insert Acting forces:</strong></p>
+    <form class="inputboxesForces">
+        <label for="inputMed" class="inputboxMed">Med:</label>
+        <input type="number" id="ValueMed" name="inputboxMed" placeholder="kNm" class="inputkNm">
+        <label for="inputVed" class="inputboxVed">Ved:</label>
+        <input type="number" id="ValueVed" name="inputboxVed" placeholder="kN" class="inputkN">
+
+    </form>
     <br>
+
+
+
+
     <button onclick="QSK()"> I-section classification </button>
     <h4 id="clickonresults" class="clicking"></h4>
     <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>

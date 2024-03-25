@@ -19,7 +19,7 @@ function leffcpOCalculation() {
         var mvU = window.mvU;
         var w = window.w;
         var e = window.e;
-        var leffcpO = window.leffcpO
+        var leffcpO = window.leffcpO;
         alert("leffcp= min( 2*pi*mx ; pi*mx + w ; pi*mx + 2*e)= min(2*pi*" + mvO.toFixed(2) + "; pi*" + mvO.toFixed(2) + "+" + w + "; pi*" + mvO.toFixed(2) + "+2*" + e + ") =" + leffcpO.toFixed(2));
     }
     if (selectedScrewRows == 2) {
@@ -53,7 +53,7 @@ function leffncOnew() {
         var bsp = window.bsp;
         var mvO = window.mvO;
         var leffncO = window.leffncO
-        console.log(emaßgebend)
+
         alert("leffnc = min(4*mx+ 1,25*ex ; e+2*mx+0,625*ex ; 0,5*bsp ; 0,5*w+2*mx+0,625*ex = min (4* " + mvO.toFixed(2) + "+1,25 * " + ex + "; " + emaßgebend + "+2*" + mvO.toFixed(2) + "+0,625*" + ex.toFixed(2) + "; 0,5*" + bsp + " ; 0,5*" + w + "+ 2*" + mvO.toFixed(2) + "+0,625*" + ex.toFixed(2) + "=" + leffncO.toFixed(2))
     }
 
@@ -79,7 +79,7 @@ function Ft1rdOshowResult() {
     var mh = window.mh
     var Ft1rdO = window.Ft1rdO
     var Mpl1rdO = window.Mpl1rdO
-    console.log(nO)
+
     alert("Ft1rd= (8*n-2*ew)*Mpl1rd/(2*m*n-ew*(m+n)) = (8*" + nO + "-2*" + ew + ")*" + Mpl1rdO.toFixed(0) + "/(2*" + mh.toFixed(2) +
         "*" + nO + "-" + ew + "*(" + mh.toFixed(2) + "+" + nO + "))=" + Ft1rdO.toFixed(0))
 }
@@ -92,7 +92,7 @@ function Ft2rdOshowcalculationMethod() {
     var Ft3rdO = window.Ft3rdO;
     var mh = window.mh
     var Ft2rdO = window.Ft2rdO
-    console.log(nO)
+
     alert("Ft2rdO= (2*Mpl2rd+n*Ft3rd)/(m+n) = (2*" + Mpl2rdO.toFixed(0) + "+" + nO + "*" + Ft3rdO.toFixed(0) + ")/(" + mh.toFixed(2) + "+" + nO + ") =" + Ft2rdO.toFixed(0))
 }
 

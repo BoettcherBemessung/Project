@@ -1,10 +1,10 @@
 function Beamdata() {
     // === 0.1 registration of selected profils, steels...===
-    var profileselection = document.getElementById("Traegerwahl");
-    var selectedProfile = Traegerwahl.options[Traegerwahl.selectedIndex].value;
+    var profileselection = document.getElementById("BeamSelection");
+    var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
 
-    var steelselection = document.getElementById("Stahlguete");
-    var selectedSteel = Stahlguete.options[Stahlguete.selectedIndex].value;
+    var steelselection = document.getElementById("YieldStrength");
+    var selectedSteel = YieldStrength.options[YieldStrength.selectedIndex].value;
 
     var Screwshapeselection = document.getElementById("ScrewShape");
     var selectedScrewshape = ScrewShape.options[ScrewShape.selectedIndex].value;
