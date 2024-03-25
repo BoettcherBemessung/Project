@@ -8,6 +8,74 @@ function ShowCalculationIy() {
     alert("Iy = 1/12 *tw*(h-2*tf)^3 + 2 * 1/12*b*tf^3 + 4*(7,545/1000)*r^4 + 2*b*tf*(0,5*h-0,5*tf)^2 + 4*0,2146*r^2 * (0,5*h-tf-0,2234*r)^2= 1/12*" + tw + "*(" + h + "-2*" + tf + ")^3+2*1/12 * " + b + "*" + tf + "^3 + (7,545/1000)*" + r + "^4 +2*" + tf + "*" + b + "*(0.5*" + h + "-0,5*" + tf + ")^2 + 4*0,2146*" + r + "^2 *(0,5*" + h + "-" + tf + "-0,2234*" + r + ")^2 = " + Iy.toFixed(0));
 }
 
+function mxCalculation() {
+    var selectedScrewRows = document.getElementById("ScrewRows").value
+    if (selectedScrewRows == 3) {
+        var u1 = window.u1;
+        var ex = window.ex;
+        var af = window.af;
+        var Dmx = u1 - ex
+        var mvO = u1 - ex - 0.8 * af * 1.414213562;
+
+        alert("mx =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+    }
+    if (selectedScrewRows == 2) {
+        var go = window.go;
+        var tf = window.tf;
+        var af = window.af;
+        var Dmx = go - tf
+
+        var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
+
+        alert("m2 =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+    }
+
+}
+
+function m1OCalculation() {
+    var selectedScrewRows = document.getElementById("ScrewRows").value
+    if (selectedScrewRows == 3) {
+        var u1 = window.u1;
+        var ex = window.ex;
+        var af = window.af;
+        var Dmx = u1 - ex
+        var mvO = u1 - ex - 0.8 * af * 1.414213562;
+
+        alert("mx =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+    }
+    if (selectedScrewRows == 2) {
+        var go = window.go;
+        var tf = window.tf;
+        var af = window.af;
+        var Dmx = go - tf
+
+        var mvO = go - tf - 0.8 * (2 ** 0.5) * af;
+
+        alert("m2 =" + Dmx + " - 0,8 * af * 2^0.5 = " + Dmx + "- 0,8 * " + af + " * 2^0.5 = " + mvO.toFixed(2))
+    }
+}
+
+function m2UCalculation() {
+    var gu = window.gu;
+    var tf = window.tf;
+    var af = window.af;
+    var Dmu2 = gu - tf;
+    var mvU = gu - tf - 0.8 * (2 ** 0.5) * af;
+    alert("m2 =" + Dmu2 + " - 0,8 * af * 2^0.5 = " + Dmu2 + "- 0,8 * " + af + " * 2^0.5 = " + mvU.toFixed(2))
+}
+
+function m1UCalculation() {
+    var gu = window.gu;
+    var tf = window.tf;
+    var af = window.af;
+    var Dmu2 = gu - tf;
+    var mvU = gu - tf - 0.8 * (2 ** 0.5) * af;
+    alert("m2 =" + Dmu2 + " - 0,8 * af * 2^0.5 = " + Dmu2 + "- 0,8 * " + af + " * 2^0.5 = " + mvU.toFixed(2))
+}
+
+
+
+
 function leffcpOCalculation() {
     var selectedScrewRows = document.getElementById("ScrewRows").value
     console.log("anzahlSchraubenreihen=" + selectedScrewRows)

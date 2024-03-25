@@ -1443,10 +1443,17 @@ function QSK() {
         window.Ft2rdU = Ft2rdU;
         window.Ft3rdU = Ft3rdU;
 
-        document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
+        document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
         document.getElementById("Screwresult2").innerHTML = ""
-        document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: "
-        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:"
+        document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
+        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:";
+
+        document.getElementById("mxresult").innerText = "m2: " + mvO.toFixed(2) + " mm";
+        document.getElementById("m1Oresult").innerText = "m1: " + mh.toFixed(2) + " mm";
+        document.getElementById("m2Mresult").innerText = "";
+        document.getElementById("m1Mresult").innerText = "";
+        document.getElementById("m1Uresult").innerText = "m1: " + mh.toFixed(2) + " mm";
+        document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
 
         document.getElementById("leffcpresult1").innerText = "leffcp: " + leffcpO.toFixed(2) + " mm";
         document.getElementById("leffncresult1").innerText = "leffnc: " + leffncO.toFixed(2) + " mm";
@@ -1749,6 +1756,14 @@ function QSK() {
         window.Ft1rdU = Ft1rdU;
         window.Ft2rdU = Ft2rdU;
         window.Ft3rdU = Ft3rdU;
+
+
+        document.getElementById("mxresult").innerText = "mx: " + mvO.toFixed(2) + " mm";
+        document.getElementById("m1Oresult").innerText = "";
+        document.getElementById("m2Mresult").innerText = "m2: " + mvM.toFixed(2) + " mm";
+        document.getElementById("m1Mresult").innerText = "m1: " + mh.toFixed(2) + " mm";
+        document.getElementById("m1Uresult").innerText = "m2: " + mh.toFixed(2) + " mm";
+        document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
 
         document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
         document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
