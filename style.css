@@ -88,3 +88,9 @@ body {
     border: solid 3px;
     border-radius: 4px;
 }
+
+.drawingfaceplate {
+    border: solid 1px;
+    height: 350px;
+    width: 350px;
+}

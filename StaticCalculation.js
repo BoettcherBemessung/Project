@@ -12,6 +12,8 @@ function QSK() {
     var Screwstrengthselection = document.getElementById("StrengthClass");
     var selectedScrewstrength = StrengthClass.options[StrengthClass.selectedIndex].value;
 
+    var language_english = window.language_english
+
     // === 0.2 Declaration profiledependent variables===
     var h = 0;
     var b = 0;
@@ -1239,8 +1241,13 @@ function QSK() {
     if (qsk == 3) { mcr = Wely * fy }
     if (qsk == 1 || qsk == 2) { mcr = Wply * fy }
 
-    document.getElementById("SectionClassificationResult").innerHML = "class: " + qsk + " maxM: " + mcr;
+    if (language_english == 1) {
+        document.getElementById("SectionClassificationResult").innerHML = "class: " + qsk + " maxM: " + mcr;
+    }
 
+    if (language_english == 0) {
+        document.getElementById("SectionClassificationResult").innerHML = "Querschnittsklasse: " + qsk + " maxM: " + mcr;
+    }
     window.mcr = mcr
 
     // === 2.4 Calculation of max. Force before failure Flange of Beam ===
@@ -1253,11 +1260,21 @@ function QSK() {
     var McrOutput = (mcr / 1000000).toFixed(2)
     var FcfbRdOutput = (Fcfbrd / 1000).toFixed(2)
 
-    document.getElementById("clickonresults").innerText = "You can click on the results to see detailed calculations methods!"
-    document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput + " E+06 mm^4";
-    document.getElementById("beamresultQsk").innerText = "QSK: " + qsk;
-    document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
-    document.getElementById("beamresultFcfbrd").innerText = "Fcfbrd: " + (FcfbRdOutput) + " kN";
+    if (language_english == 1) {
+        document.getElementById("clickonresults").innerText = "You can click on the results to see detailed calculations methods!"
+        document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput + " E+06 mm^4";
+        document.getElementById("beamresultQsk").innerText = "QSK: " + qsk;
+        document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
+        document.getElementById("beamresultFcfbrd").innerText = "Fcfbrd: " + (FcfbRdOutput) + " kN";
+    }
+
+    if (language_english == 0) {
+        document.getElementById("clickonresults").innerText = "Klicke auf die Ergebnisse um die genauen Rechenwege anzuzeigen!!"
+        document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput + " E+06 mm^4";
+        document.getElementById("beamresultQsk").innerText = "QSK: " + qsk;
+        document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
+        document.getElementById("beamresultFcfbrd").innerText = "Fcfbrd: " + (FcfbRdOutput) + " kN";
+    }
 
     // === 3.1 Obtaining values of Userinput for faceplate and Screwconfigure on Webpage ===
     var hsp = parseFloat(document.getElementById("hsp").value);
@@ -1292,21 +1309,41 @@ function QSK() {
     window.u1 = u1;
 
     // === 3.3 Warning programms for impossible/forbidden joint-configurations ===
-    if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
-    if (bsp < b) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the width of the faceplate") }
-    if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculation not possible screws touching web of beam") }
-    if (e < 1.2 * dzero) { alert("Calculation not possible screws too close to faceplatmargin") }
-    if (go - tf < 2 * ew) { alert("Calculation not possible inner screws touch upper flange") }
-    if (gu - tf < 2 * ew) { alert("Calculation not possible inner screws touch lower flange") }
-    if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
-    if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
-    if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
 
+    if (language_english == 1) {
+        if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
+        if (bsp < b) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the width of the faceplate") }
+        if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculation not possible screws touching web of beam") }
+        if (e < 1.2 * dzero) { alert("Calculation not possible screws too close to faceplatmargin") }
+        if (go - tf < 2 * ew) { alert("Calculation not possible inner screws touch upper flange") }
+        if (gu - tf < 2 * ew) { alert("Calculation not possible inner screws touch lower flange") }
+        if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
+        if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
+        if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+    }
+    if (language_english == 0) {
+        if (hsp < h) { alert("Berechnung nicht möglich, Stirnplatte kleiner als Trägerhöhe! Bitte wählen Sie eine höhere Stirnplatte") }
+        if (bsp < b) { alert("Berechnung nicht möglich, Stirnplatter kleiner als Trägerbreite! Bitte wählen Sie eine breitere Stirnplatte") }
+        if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg") }
+        if (e < 1.2 * dzero) { alert("Berechnung nicht möglich, Schrauben zu nahe am Stirnplattenrand") }
+        if (go - tf < 2 * ew) { alert("Berechnung nicht möglich,Die inneren oberen Schrauben liegen zu nah am Trägerflansch") }
+        if (gu - tf < 2 * ew) { alert("Berechnung nicht möglich,Die inneren unteren Schrauben liegen zu nah am Trägerflansch") }
+        if (h - go - gu < 2.2 * dzero) { "Berechnung nicht möglich Die inneren Schrauben liegen zu nah beieinander" }
+        if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
+        if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+    }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
 
     if (selectedScrewRows === 3) {
-        if (ex < 1.2 * dzero) { alert("Calculation not possible screw spacing to upper margin too small ") }
-        if (u1 - ex < 2 * ew) { alert("Calculation not possible screws touch flange! Please select smaller ex!") }
+
+        if (language_english == 1) {
+            if (ex < 1.2 * dzero) { alert("Calculation not possible screw spacing to upper margin too small ") }
+            if (u1 - ex < 2 * ew) { alert("Calculation not possible screws touch flange! Please select smaller ex!") }
+        }
+        if (language_english == 0) {
+            if (ex < 1.2 * dzero) { alert("Berechnung nicht möglich, Äußere Schraube zu nah am Rand der Stirnplatte wählen sie ein größeren Abstand ex ") }
+            if (u1 - ex < 2 * ew) { alert("Berechnung nicht möglich, äußere Schrauben zu nah am Trägerflansch! Bitte wählen Sie einen keineren Abstand ex!") }
+        }
     }
 
     // === 4.0 Starting calculations for endplate in bending ===
@@ -1342,9 +1379,16 @@ function QSK() {
 
         // === Additional Warning Programms for forbidden Userinput ===  
 
-        if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
-        if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
-        if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
+        if (language_english == 1) {
+            if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
+            if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
+            if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
+        }
+        if (language_english == 0) {
+            if (mh < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg. Bitte wählen sie einen geringeren Abstand e, oder erhöhen Sie die Stirnplattenbreite!") }
+            if (mvO < 2 * ew) { alert("Berechnung nicht möglich, Obere Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen höheren Abstand go !") }
+            if (mvU < 2 * ew) { alert("Berechnung nicht möglich, Untere Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen höheren Abstand gu!") }
+        }
 
 
         if (lambda2limO > lambda2O || alphaO > 8 || alphaO < 4.45) {
@@ -1443,10 +1487,18 @@ function QSK() {
         window.Ft2rdU = Ft2rdU;
         window.Ft3rdU = Ft3rdU;
 
-        document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
-        document.getElementById("Screwresult2").innerHTML = ""
-        document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
-        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:";
+        if (language_english == 1) {
+            document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
+            document.getElementById("Screwresult2").innerHTML = ""
+            document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
+            document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:";
+        }
+        if (language_english == 0) {
+            document.getElementById("Screwresult1").innerHTML = "Ergebnisse oberer Schraubenreihe: ";
+            document.getElementById("Screwresult2").innerHTML = ""
+            document.getElementById("Screwresult3").innerHTML = "Ergebnisse unterer Schraubenreihe: ";
+            document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
+        }
 
         document.getElementById("mxresult").innerText = "m2: " + mvO.toFixed(2) + " mm";
         document.getElementById("m1Oresult").innerText = "m1: " + mh.toFixed(2) + " mm";
@@ -1520,12 +1572,20 @@ function QSK() {
         window.aFtrd2 = aFtrd2
 
 
-
-        document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
-        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3eff").innerText = "";
-        document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+        if (language_english == 1) {
+            document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft3eff").innerText = "";
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+        }
+        if (language_english == 0) {
+            document.getElementById("Mmaxresults").innerText = "maßgebende Schraubenkräfte & Max M:";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft3eff").innerText = "";
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+        }
 
         // === 4.13 calculations max. shear force===
 
@@ -1580,13 +1640,22 @@ function QSK() {
 
         var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
 
-        document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-        document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
-        document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-        document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-        document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-        document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
-
+        if (language_english == 1) {
+            document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
+            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
+            document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
+            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
+            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+        }
+        if (language_english == 0) {
+            document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN";
+            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN";
+            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
+            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
+            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+        }
 
         //Calculations of Rotationstiffnes
 
@@ -1627,10 +1696,18 @@ function QSK() {
         window.mvM = mvM;
         window.mvU = mvU;
 
-        if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
-        if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select lower ex or Rise height of faceplate !") }
-        if (mvM < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
-        if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
+        if (language_english == 1) {
+            if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
+            if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select lower ex or Rise height of faceplate !") }
+            if (mvM < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
+            if (mvU < 2 * ew) { alert("Calculation not possible, Lower Screws too close to flange of beam. Pleaease select higher gu !") }
+        }
+        if (language_english == 0) {
+            if (mh < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg. Bitte wählen Sie einen geringeren Abstand e, oder erhöhen Sie die Breite der Stirnplatte!") }
+            if (mvO < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen geringeren Abstand ex oder erhöhen Sie die Höhe der Stirnplatte !") }
+            if (mvM < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen größeren Abstand go !") }
+            if (mvU < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen größeren Abstand gu !") }
+        }
 
         var leffcpO = Math.min(2 * 3.1415926535897932384626433832795 * mvO, 3.1415926535897932384626433832795 * mvO + w, 3.1415926535897932384626433832795 * mvO + 2 * e);
         var leffncO = Math.min(4 * mvO + 1.25 * ex, e + 2 * mvO + 0.625 * ex, 0.5 * bsp, 0.5 * w + 2 * mvO + 0.625 * ex)
@@ -1765,10 +1842,18 @@ function QSK() {
         document.getElementById("m1Uresult").innerText = "m1: " + mh.toFixed(2) + " mm";
         document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
 
-        document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
-        document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
-        document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: "
-        document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam"
+        if (language_english == 1) {
+            document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
+            document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
+            document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: "
+            document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam"
+        }
+        if (language_english == 0) {
+            document.getElementById("Screwresult1").innerHTML = "Ergebnisse oberer Schraubenreihe: "
+            document.getElementById("Screwresult2").innerHTML = "Ergebnisse mittlerer Schraubenreihe: "
+            document.getElementById("Screwresult3").innerHTML = "Ergebnisse unterer Schraubenreihe: "
+            document.getElementById("TensionWebBeam").innerHTML = "Ergebnisse Trägersteg auf Zugbeanspruchung"
+        }
 
         document.getElementById("leffcpresult1").innerText = "leffcp: " + leffcpO.toFixed(2) + " mm";
         document.getElementById("leffncresult1").innerText = "leffnc: " + leffncO.toFixed(2) + " mm";
@@ -1843,7 +1928,13 @@ function QSK() {
         window.aFtrd2 = aFtrd2
         window.aFtrd3 = aFtrd3
 
-        document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
+        if (language_english == 1) {
+            document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
+        }
+        if (language_english == 0) {
+            document.getElementById("Mmaxresults").innerText = "Berechnung von Mmax:";
+        }
+
         document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
         document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (aFtrd3 / 1000).toFixed(2) + " kN";
@@ -1903,12 +1994,22 @@ function QSK() {
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2 + Fbrdauthoritive3
         var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
 
-        document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-        document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
-        document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-        document.getElementById("Vwelding").innerText = "max V due to Welding: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-        document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-        document.getElementById("Vmax").innerText = "max V :" + (Vmax / 1000).toFixed(2) + " kN";
+        if (language_english == 1) {
+            document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
+            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
+            document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
+            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
+            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+        }
+        if (language_english == 0) {
+            document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN";
+            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN";
+            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
+            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
+            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+        }
 
 
         //Calculations of Rotationstiffnes

@@ -11,6 +11,10 @@
 <body>
     <script src="germanpage.js"></script>
     <p>choose language / Sprache wählen</p>
+    <script>
+        var language_english = 1
+        window.language_english = language_english
+    </script>
     <img id="Image_germanflag" class="pictureflag" src="images\germanflag.jpg" alt="Bild german" onclick="germanpage()">
     <img id="Image_englishflag" class="pictureflag" src="images\englishflag.jpg" alt="Bild english" onclick="englishpage()">
 
@@ -319,6 +323,10 @@
         <label for="inputex">ex:</label>
         <input type="number" id="distanceex" class="inputex" placeholder="mm">
     </div>
+    <br>
+    <br>
+
+    <canvas id="drawing_area" class="drawingfaceplate"></canvas>
 
     <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
     <form class="inputboxesForces">
@@ -329,6 +337,7 @@
 
     </form>
     <br>
+    <script src="Drawing.js"></script>
     <button id="CalculationsComplete" onclick="QSK()"> Start Calculations </button>
     <h4 id="clickonresults" class="clicking"></h4>
     <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>

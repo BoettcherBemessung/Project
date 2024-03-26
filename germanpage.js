@@ -1,5 +1,7 @@
 function germanpage() {
-
+    var language_english = window.language_english
+    language_english = 0
+    window.language_english = language_english
     document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
@@ -19,6 +21,9 @@ function germanpage() {
 }
 
 function englishpage() {
+    var language_english = window.language_english
+    language_english = 1
+    window.language_english = language_english
     document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
