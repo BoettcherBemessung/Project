@@ -9,15 +9,20 @@
 </head>
 
 <body>
-    <h3> welcome to the first online faceplate joint calculator</h3>
+    <script src="germanpage.js"></script>
+    <p>choose language / Sprache wählen</p>
+    <img id="Image_germanflag" class="pictureflag" src="images\germanflag.jpg" alt="Bild german" onclick="germanpage()">
+    <img id="Image_englishflag" class="pictureflag" src="images\englishflag.jpg" alt="Bild english" onclick="englishpage()">
 
-    <h4 class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
+    <h3 id="Website_Heading"> welcome to the first online faceplate joint calculator</h3>
+
+    <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
     <script src="StaticCalculation.js"></script>
     <script src="Beamdata2.js"></script>
     <script src="resultOutput.js"></script>
     <script src="FcfbrdCalculation.js"></script>
-    <p class="websiteheadings"><strong> configure the beam:</strong> </p>
-    <label for="BeamProfile"> profile:</label>
+    <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
+    <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
     <select id="BeamSelection">
         <option value="IPEa120">IPEa 120</option>
         <option value="IPEa140">IPEa 140</option>
@@ -173,12 +178,12 @@
             var selectedProfile = this.value;
         })
     </script>
-    <label for="SteelTypeBeam">steel type:</label>
+    <label id="Steeltype" for="SteelTypeBeam">steel type:</label>
     <select id="YieldStrength">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
-    <button onclick="Beamdata()">show Beaminformation</button>
+    <button id="Beamdata" onclick="Beamdata()">show Beaminformation</button>
     <script>
         document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
             var selectedSteel = this.value;
@@ -186,7 +191,7 @@
     </script>
     <div id="SectionClassificationResult"></div>
     <br>
-    <p class="websiteheadings"><strong>select weldingmeasures:</strong></p>
+    <p id="Weldingmeasures" class="websiteheadings"><strong>select weldingmeasures:</strong></p>
     <label for="FlangeWelding">af:</label>
     <select id="FlangeWelding">
         <option value="3">3 mm</option>
@@ -217,8 +222,8 @@
             <option value="13">13 mm</option>
             <option value="14">14 mm</option>
 </select>
-    <p class="websiteheadings"><strong>  select Screws:</strong> </p>
-    <label for="ScrewShape">screw type:</label>
+    <p id="ScrewselectionText" class="websiteheadings"><strong>  select Screws:</strong> </p>
+    <label id="ScrewshapeText" for="ScrewShape">screw type:</label>
     <select id="ScrewShape">
         <option value="M12">M12</option>
         <option value="M16">M16</option>
@@ -235,14 +240,14 @@
             var selectedScrewShape = this.value;
         })
     </script>
-    <label for="StrengthClass">strength class:</label>
+    <label for="StrengthClass" id="ScrewStrength">strength class:</label>
     <select id="StrengthClass">
         <option value="4.6">4.6</option>
         <option value="5.6">5.5</option>
         <option value="8.8">8.8</option>
         <option value="10.9">10.9</option>  
 </select>
-    <label for="ScrewRows">screwrows:</label>
+    <label for="ScrewRows" id="Screwrowstext">screwrows:</label>
     <select id="ScrewRows" onchange="showImage()"> 
         <option value="2">2</option>
         <option value="3">3</option>   
@@ -290,7 +295,7 @@
         })
     </script>
 
-    <p class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
+    <p id="faceplatemeasures" class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
     <form class="inputboxesFaceplatemeasures">
         <label for="faceplateheight">hsp</label>
         <input type="number" id="hsp" name="inputboxhsp" placeholder="mm" class="inputMM">
@@ -299,7 +304,7 @@
         <label for="faceplatethickness">tsp</label>
         <input type="number" id="tsp" name="inputboxtsp" placeholder="mm" class="inputMM">
     </form>
-    <p class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
+    <p id="Screwconfiguration" class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
     <form class="inputboxesScrewmeasures">
         <label for="inpute1" class="inputboxe">e:</label>
         <input type="number" id="distancee1" name="inputboxe1" placeholder="mm" class="inputMM">
@@ -315,7 +320,7 @@
         <input type="number" id="distanceex" class="inputex" placeholder="mm">
     </div>
 
-    <p class="websiteheadings"><strong>Insert Acting forces:</strong></p>
+    <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
     <form class="inputboxesForces">
         <label for="inputMed" class="inputboxMed">Med:</label>
         <input type="number" id="ValueMed" name="inputboxMed" placeholder="kNm" class="inputkNm">
@@ -324,7 +329,7 @@
 
     </form>
     <br>
-    <button onclick="QSK()"> I-section classification </button>
+    <button id="CalculationsComplete" onclick="QSK()"> Start Calculations </button>
     <h4 id="clickonresults" class="clicking"></h4>
     <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
     <p id="beamresultQsk" class="Output "> </p>
