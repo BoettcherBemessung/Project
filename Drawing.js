@@ -18,6 +18,7 @@ document.getElementById('hsp').addEventListener('input', function() {
 function draw_faceplate_width(bsp) {
     var bsp = parseFloat(document.getElementById("bsp").value);
     var hsp = parseFloat(document.getElementById("hsp").value);
+    bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
     bsp_context.moveTo(10, 145);
     bsp_context.lineTo(10 + 250 * bsp / hsp, 145);
@@ -27,7 +28,7 @@ function draw_faceplate_width(bsp) {
     bsp_context.stroke();
 }
 
-document.getElementById('tsp').addEventListener('input', function() {
+document.getElementById('bsp').addEventListener('input', function() {
     var tsp = this.value;
     draw_faceplate_width(bsp);
 });
@@ -57,6 +58,12 @@ function draw_screws() {
     var x_factor = 250 / hsp
 
     //Drawing of lower Flange
+    flu_context.clearRect(11, 21, 246, 123);
+    flo_context.clearRect(11, 21, 246, 123);
+    LeftWeb_context.clearRect(11, 21, 246, 123);
+    RightWeb_context.clearRect(11, 21, 246, 123);
+
+
     flu_context.beginPath();
     flu_context.moveTo(10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
     flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp);
@@ -100,12 +107,9 @@ function draw_screws() {
     Left_Low_sec_context.stroke();
     Left_Low_sec_context.closePath();
 
-
-
-
 }
 
-document.getElementById('distanceex').addEventListener('input', function() {
+document.getElementById('distanceu1n').addEventListener('input', function() {
     var tsp = this.value;
     draw_screws();
 });
