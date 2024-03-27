@@ -58,10 +58,10 @@ function draw_screws() {
     var x_factor = 250 / hsp
 
     //Drawing of lower Flange
-    flu_context.clearRect(11, 21, 246, 123);
-    flo_context.clearRect(11, 21, 246, 123);
-    LeftWeb_context.clearRect(11, 21, 246, 123);
-    RightWeb_context.clearRect(11, 21, 246, 123);
+    flu_context.clearRect(11, 21, 136, 123);
+    flo_context.clearRect(11, 21, 136, 123);
+    LeftWeb_context.clearRect(11, 21, 136, 123);
+    RightWeb_context.clearRect(11, 21, 136, 123);
 
 
     flu_context.beginPath();
