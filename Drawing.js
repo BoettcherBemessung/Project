@@ -28,6 +28,10 @@ function draw_faceplate_width(bsp) {
     bsp_context.stroke();
 }
 
+document.getElementById('hsp').addEventListener('input', function() {
+    draw_faceplate_width();
+});
+
 document.getElementById('bsp').addEventListener('input', function() {
     var tsp = this.value;
     draw_faceplate_width(bsp);
@@ -58,10 +62,10 @@ function draw_screws() {
     var x_factor = 250 / hsp
 
     //Drawing of lower Flange
-    flu_context.clearRect(11, 21, 136, 123);
-    flo_context.clearRect(11, 21, 136, 123);
-    LeftWeb_context.clearRect(11, 21, 136, 123);
-    RightWeb_context.clearRect(11, 21, 136, 123);
+    flu_context.clearRect(11, 21, 7 + 227 * bsp / hsp, 123);
+    flo_context.clearRect(11, 21, 7 + 227 * bsp / hsp, 123);
+    LeftWeb_context.clearRect(11, 21, 7 + 227 * bsp / hsp, 123);
+    RightWeb_context.clearRect(11, 21, 7 + 227 * bsp / hsp, 123);
 
 
     flu_context.beginPath();
