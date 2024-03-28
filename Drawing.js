@@ -170,76 +170,71 @@ function draw_screws() {
     Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
 
-
-
-
-
-
     //Drawing of lower Screws
+
     Low_screw_left_context.beginPath();
     Low_screw_left_context.moveTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
     Low_screw_left_context.lineTo(10 + e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
     Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hs - 5);
-    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hs + 5);
+    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_left_context.stroke();
 
     Low_screw_right_context.beginPath();
-    Low_screw_right_context.moveTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + 250 * bsp / hsp - e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + 250 * bsp / hsp - e * x_factor - 5, 45 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
-    Low_screw_right_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
+    Low_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_right_context.stroke();
 
     //Drawing of inner upper Screws
+    mid_screw_right_context.beginPath();
+    mid_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
+    mid_screw_right_context.stroke();
+
     mid_screw_left_context.beginPath();
-    mid_screw_left_context.moveTo(10 + e * x_factor, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor - 5, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (h + u1n - go) * 125 / hsp - 5);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (h + u1n - go) * 125 / hsp + 5);
+    mid_screw_left_context.moveTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(10 + e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_left_context.stroke();
 
-    mid_screw_right_context.beginPath();
-    mid_screw_left_context.moveTo(0 + 250 * bsp / hsp - e * x_factor, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + 250 * bsp / hsp - e * x_factor + 5, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + 250 * bsp / hsp - e * x_factor - 5, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (h + u1n - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (h + u1n - go) * 125 / hsp + 5);
-    mid_screw_left_context.lineTo(10 + 250 * bsp / hsp - e * x_factor, 145 - (h + u1n - go) * 125 / hsp - 5);
-    mid_screw_right_context.stroke();
 
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
     var selectedScrewRows = document.getElementById("ScrewRows").value
     if (selectedScrewRows == 3) {
-        up_screw_left_context.beginPath();
-        up_screw_left_context.moveTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor - 5, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor + 5, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp + 5);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp - 5);
-        up_screw_left_context.stroke();
 
-        up_screw_right_context.beginPath();
-        up_screw_right_context.moveTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(10 + e * x_factor - 5, 20 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(10 + e * x_factor + 5, 20 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp + 5);
-        up_screw_right_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp - 5);
-        up_screw_right_context.stroke();
+
+
     }
-
-
 
 }
 
 document.getElementById('distanceu1n').addEventListener('input', function() {
-    var tsp = this.value;
+    draw_screws();
+})
+document.getElementById('distancee1').addEventListener('input', function() {
+    draw_screws();
+})
+document.getElementById('distancego').addEventListener('input', function() {
+
+    draw_screws();
+})
+document.getElementById('distancegu').addEventListener('input', function() {
+
+    draw_screws();
+})
+document.getElementById('distanceex').addEventListener('input', function() {
+
     draw_screws();
 })
