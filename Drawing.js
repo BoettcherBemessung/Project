@@ -214,8 +214,23 @@ function draw_screws() {
     var selectedScrewRows = document.getElementById("ScrewRows").value
     if (selectedScrewRows == 3) {
 
+        up_screw_right_context.beginPath();
+        up_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp + 5)
+        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp - 5)
+        up_screw_right_context.stroke();
 
-
+        up_screw_left_context.beginPath();
+        up_screw_left_context.moveTo(10 + e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(10 + e * x_factor + 5, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(10 + e * x_factor - 5, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp + 5);
+        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp - 5);
+        up_screw_left_context.stroke();
     }
 
 }
