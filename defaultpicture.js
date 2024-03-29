@@ -446,24 +446,17 @@ function showdefault2() {
     go_number.fillStyle = 'black';
     go_number.fillText("go", 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
-    if (selectedScrewRows == 2) {
-        var u1_number = canvas.getContext('2d');
-        u1_number.font = '9px Arial';
-        u1_number.fillStyle = 'black';
-        u1_number.fillText("u1", 100 + 250 * bsp / hsp, 24 + 0.5 * u1 * y_factor)
-    }
 
-    if (selectedScrewRows == 3) {
-        var eO_number = canvas.getContext('2d');
-        eO_number.font = '9px Arial';
-        eO_number.fillStyle = 'black';
-        eO_number.fillText("ex", 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
+    var eO_number = canvas.getContext('2d');
+    eO_number.font = '9px Arial';
+    eO_number.fillStyle = 'black';
+    eO_number.fillText("ex", 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
 
-        var mvE_number = canvas.getContext('2d');
-        mvE_number.font = '9px Arial';
-        mvE_number.fillStyle = 'black';
-        mvE_number.fillText("-", 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
-    }
+    var mvE_number = canvas.getContext('2d');
+    mvE_number.font = '9px Arial';
+    mvE_number.fillStyle = 'black';
+    mvE_number.fillText("mx", 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
+
 
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '9px Arial';
