@@ -69,6 +69,8 @@ function draw_screws() {
     //Umrechnungsfaktor für x-Wert von Höhen zu Pixel in Grafik
 
     var x_factor = 250 / hsp
+    var y_factor = 125 / hsp;
+
 
     //Drawing of lower Flange
     flu_context.clearRect(21, 21, 246 * bsp / hsp, 123);
@@ -91,6 +93,35 @@ function draw_screws() {
     hsp_measure.lineTo(0, 20);
     hsp_measure.lineTo(8, 20);
     hsp_measure.stroke();
+
+    var e_measures = canvas.getContext('2d');
+    e_measures.beginPath();
+    e_measures.moveTo(32 + 250 * bsp / hsp, 145);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - gu * y_factor);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - gu * y_factor);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - gu * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - gu * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 20 + ex * y_factor);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 20 + ex * y_factor);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 20 + ex * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 20 + ex * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 20);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 20);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 20);
+    e_measures.stroke();
+
+
+
 
     var bsp_measures = canvas.getContext('2d');
     bsp_measures.beginPath();
@@ -119,13 +150,6 @@ function draw_screws() {
     bsp_m_sum.lineTo(20 + bsp * x_factor, 8);
     bsp_m_sum.lineTo(20 + bsp * x_factor, 4);
     bsp_m_sum.stroke();
-
-
-
-
-
-
-
 
     flu_context.beginPath();
     flu_context.moveTo(20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
