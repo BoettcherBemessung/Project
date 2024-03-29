@@ -26,6 +26,7 @@
     <script src="Beamdata2.js"></script>
     <script src="resultOutput.js"></script>
     <script src="FcfbrdCalculation.js"></script>
+    <script src="defaultpicture.js"></script>
     <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
     <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
     <select id="BeamSelection">
@@ -269,8 +270,10 @@
     </script>
     <br>
     <br>
-    <img id="Image2SR" class="picture2SR" src="images\optimized2SR.jpg" alt="Bild 1">
-    <img id="Image3SR" class="picture3SR" src="images\optimized3SR.jpg" alt="Bild 2">
+    <canvas id="drawing_area" class="drawingfaceplate"></canvas>
+    <script>
+        showdefault()
+    </script>
     <script>
         document.getElementById("Image3SR").style.display = "none";
     </script>
@@ -280,23 +283,17 @@
 
             window.selectedScrewRows = selectedScrewRows;
             if (selectedScrewRows === "2") {
-                var selectedPicture = "Image2SR"
-            }
-            if (selectedScrewRows == "3") {
-                var selectedPicture = "Image3SR"
-            }
-            document.getElementById("Image2SR").style.display = "none";
-            document.getElementById("Image3SR").style.display = "none";
-
-            document.getElementById(selectedPicture).style.display = "block";
-
-            var inputboxex = document.getElementById("inputboxex");
-            if (selectedScrewRows == 2) {
+                showdefault()
+                var inputboxex = document.getElementById("inputboxex");
                 inputboxex.style.display = "none"
             }
-            if (selectedScrewRows == 3) {
+            if (selectedScrewRows == "3") {
+                var inputboxex = document.getElementById("inputboxex");
                 inputboxex.style.display = "block"
+                showdefault2()
+
             }
+
         })
     </script>
 
@@ -327,7 +324,6 @@
     <br>
     <br>
 
-    <canvas id="drawing_area" class="drawingfaceplate" style="display: none;"></canvas>
 
     <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
     <form class="inputboxesForces">

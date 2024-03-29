@@ -167,12 +167,12 @@ function draw_screws() {
 
     var h_number = canvas.getContext('2d');
     h_number.font = '7px Arial';
-    u1nleft_number.fillStyle = 'black';
-    u1nleft_number.fillText(h, 26, 149 - (u1n + 0.5 * h) * y_factor);
+    h_number.fillStyle = 'black';
+    h_number.fillText(h, 26, 149 - (u1n + 0.5 * h) * y_factor);
 
     var u1_number_left = canvas.getContext('2d');
-    h_number.font = '7px Arial';
-    u1nleft_number.fillStyle = 'black';
+    u1_number_left.font = '7px Arial';
+    u1_number_left.fillStyle = 'black';
     u1_number_left.fillText(u1, 26, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var e_measures = canvas.getContext('2d');
