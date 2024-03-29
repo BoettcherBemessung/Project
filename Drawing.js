@@ -3,6 +3,7 @@ var bsp_context = canvas.getContext('2d');
 var hsp_context = canvas.getContext('2d');
 var flu_context = canvas.getContext('2d');
 var flo_context = canvas.getContext('2d');
+var hsp_measure = canvas.getContext('2d');
 
 var LeftWeb_context = canvas.getContext('2d');
 var RightWeb_context = canvas.getContext('2d');
@@ -27,12 +28,14 @@ function draw_faceplate_width(bsp) {
     var hsp = parseFloat(document.getElementById("hsp").value);
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
-    bsp_context.moveTo(10, 145);
-    bsp_context.lineTo(10 + 250 * bsp / hsp, 145);
-    bsp_context.lineTo(10 + 250 * bsp / hsp, (20));
-    bsp_context.lineTo(10, 20);
-    bsp_context.lineTo(10, 145);
+    bsp_context.moveTo(20, 145);
+    bsp_context.lineTo(20 + 250 * bsp / hsp, 145);
+    bsp_context.lineTo(20 + 250 * bsp / hsp, (20));
+    bsp_context.lineTo(20, 20);
+    bsp_context.lineTo(20, 145);
     bsp_context.stroke();
+
+    draw_screws()
 }
 
 document.getElementById('hsp').addEventListener('input', function() {
@@ -68,49 +71,95 @@ function draw_screws() {
     var x_factor = 250 / hsp
 
     //Drawing of lower Flange
-    flu_context.clearRect(11, 21, 246 * bsp / hsp, 123);
-    flo_context.clearRect(11, 21, 246 * bsp / hsp, 123);
-    LeftWeb_context.clearRect(11, 21, 246 * bsp / hsp, 123);
-    RightWeb_context.clearRect(11, 21, 246 * bsp / hsp, 123);
-    flu_context.clearRect(0, 0, 9, 150, )
-    flo_context.clearRect(10 + 250 * bsp / hsp, 0, 10 + 300 * bsp / hsp, 150)
-    flu_context.clearRect(0, 0, 10 + 250 * bsp / hsp, 19);
-    flo_context.clearRect(0, 146, 10 + 250 * bsp / hsp, 160);
+    flu_context.clearRect(21, 21, 246 * bsp / hsp, 123);
+    flo_context.clearRect(21, 21, 246 * bsp / hsp, 123);
+    LeftWeb_context.clearRect(21, 21, 246 * bsp / hsp, 123);
+    RightWeb_context.clearRect(21, 21, 246 * bsp / hsp, 123);
+    flu_context.clearRect(0, 0, 19, 150, )
+    flo_context.clearRect(20 + 250 * bsp / hsp, 0, 10 + 300 * bsp / hsp, 150)
+    flu_context.clearRect(0, 0, 20 + 250 * bsp / hsp, 19);
+    flo_context.clearRect(0, 146, 20 + 250 * bsp / hsp, 160);
+
+
+    //Code for dimension chains
+    var hsp_measure = canvas.getContext('2d');
+    hsp_measure.beginPath();
+    hsp_measure.moveTo(0, 145);
+    hsp_measure.lineTo(8, 145);
+    hsp_measure.lineTo(4, 145);
+    hsp_measure.lineTo(4, 20);
+    hsp_measure.lineTo(0, 20);
+    hsp_measure.lineTo(8, 20);
+    hsp_measure.stroke();
+
+    var bsp_measures = canvas.getContext('2d');
+    bsp_measures.beginPath();
+    bsp_measures.moveTo(20, 14);
+    bsp_measures.lineTo(20, 10);
+    bsp_measures.lineTo(20, 12);
+    bsp_measures.lineTo(20 + e * x_factor, 12);
+    bsp_measures.lineTo(20 + e * x_factor, 10);
+    bsp_measures.lineTo(20 + e * x_factor, 14);
+    bsp_measures.lineTo(20 + e * x_factor, 12);
+    bsp_measures.lineTo(20 + (bsp - e) * x_factor, 12);
+    bsp_measures.lineTo(20 + (bsp - e) * x_factor, 10);
+    bsp_measures.lineTo(20 + (bsp - e) * x_factor, 14);
+    bsp_measures.lineTo(20 + (bsp - e) * x_factor, 12);
+    bsp_measures.lineTo(20 + bsp * x_factor, 12);
+    bsp_measures.lineTo(20 + bsp * x_factor, 14);
+    bsp_measures.lineTo(20 + bsp * x_factor, 10);
+    bsp_measures.stroke();
+
+    var bsp_m_sum = canvas.getContext('2d');
+    bsp_m_sum.beginPath();
+    bsp_m_sum.moveTo(20, 8)
+    bsp_m_sum.lineTo(20, 4);
+    bsp_m_sum.lineTo(20, 6);
+    bsp_m_sum.lineTo(20 + bsp * x_factor, 6);
+    bsp_m_sum.lineTo(20 + bsp * x_factor, 8);
+    bsp_m_sum.lineTo(20 + bsp * x_factor, 4);
+    bsp_m_sum.stroke();
+
+
+
+
+
+
 
 
     flu_context.beginPath();
-    flu_context.moveTo(10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 145 - u1n * 125 / hsp);
-    flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp);
-    flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.moveTo(20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(20 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(20 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 145 - u1n * 125 / hsp);
+    flu_context.lineTo(20 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp);
+    flu_context.lineTo(20 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 145 - u1n * 125 / hsp - tf * 125 / hsp);
     flu_context.stroke();
 
     //Drawing of upper flange
     flo_context.beginPath();
-    flo_context.moveTo(10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(10 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(10 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 145 - u1n * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(10 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(10 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.moveTo(20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(20 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(20 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 145 - u1n * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(20 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(20 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 145 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
     flo_context.stroke();
 
     //Drawing of left Web
     LeftWeb_context.beginPath();
-    LeftWeb_context.moveTo(10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
-    LeftWeb_context.lineTo(10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
+    LeftWeb_context.moveTo(20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
+    LeftWeb_context.lineTo(20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
     LeftWeb_context.stroke();
 
     //Drawing of right Web
     RightWeb_context.beginPath();
-    RightWeb_context.moveTo(10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
-    RightWeb_context.lineTo(10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
+    RightWeb_context.moveTo(20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
+    RightWeb_context.lineTo(20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
     RightWeb_context.stroke();
 
     //Drawing of left lower sector
-    var centerX_left_low = 10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor
+    var centerX_left_low = 20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor
     var centerY_left_low = 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp
     var startangle_left_low = 0
     var radius_X = r * 250 / hsp;
@@ -128,7 +177,7 @@ function draw_screws() {
     Left_Low_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of right lower sector
-    var centerX_right_low = 10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor
+    var centerX_right_low = 20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor
     var centerY_right_low = 145 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp
     var startangle_right_low = Math.PI / 2;
     var radius_X = r * 250 / hsp;
@@ -146,7 +195,7 @@ function draw_screws() {
     Right_Low_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of right upper sector
-    var centerX_right_up = 10 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor;
+    var centerX_right_up = 20 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor;
     var centerY_right_up = 145 - (u1n + h - tf - r) * 125 / hsp;
     var startangle_right_up = Math.PI;
     var endangle_right_up = 1.5 * Math.PI;
@@ -160,7 +209,7 @@ function draw_screws() {
     Right_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of left upper sector 
-    var centerX_left_up = 10 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor;
+    var centerX_left_up = 20 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor;
     var centerY_left_up = 145 - (u1n + h - tf - r) * 125 / hsp;
     var startangle_left_up = 1.5 * Math.PI
     var endangle_left_up = 0;
@@ -177,40 +226,40 @@ function draw_screws() {
     //Drawing of lower Screws
 
     Low_screw_left_context.beginPath();
-    Low_screw_left_context.moveTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
-    Low_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
+    Low_screw_left_context.moveTo(20 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(20 + e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(20 + e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_left_context.stroke();
 
     Low_screw_right_context.beginPath();
-    Low_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
-    Low_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
+    Low_screw_right_context.moveTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_right_context.stroke();
 
     //Drawing of inner upper Screws
     mid_screw_right_context.beginPath();
-    mid_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
-    mid_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
+    mid_screw_right_context.moveTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_right_context.stroke();
 
     mid_screw_left_context.beginPath();
-    mid_screw_left_context.moveTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
-    mid_screw_left_context.lineTo(10 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
+    mid_screw_left_context.moveTo(20 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(20 + e * x_factor + 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(20 + e * x_factor - 5, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_left_context.lineTo(20 + e * x_factor, 145 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_left_context.stroke();
 
 
@@ -219,21 +268,21 @@ function draw_screws() {
     if (selectedScrewRows == 3) {
 
         up_screw_right_context.beginPath();
-        up_screw_right_context.moveTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor + 5, 20 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor - 5, 20 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp + 5)
-        up_screw_right_context.lineTo(10 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp - 5)
+        up_screw_right_context.moveTo(20 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor + 5, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor - 5, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp + 5)
+        up_screw_right_context.lineTo(20 + bsp * x_factor - e * x_factor, 20 + ex * 125 / hsp - 5)
         up_screw_right_context.stroke();
 
         up_screw_left_context.beginPath();
-        up_screw_left_context.moveTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor + 5, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor - 5, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp + 5);
-        up_screw_left_context.lineTo(10 + e * x_factor, 20 + ex * 125 / hsp - 5);
+        up_screw_left_context.moveTo(20 + e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(20 + e * x_factor + 5, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(20 + e * x_factor - 5, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(20 + e * x_factor, 20 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(20 + e * x_factor, 20 + ex * 125 / hsp + 5);
+        up_screw_left_context.lineTo(20 + e * x_factor, 20 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
     }
 

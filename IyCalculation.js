@@ -81,8 +81,8 @@ function Ft1rdOshowResult() {
     var Ft1rdO = window.Ft1rdO
     var Mpl1rdO = window.Mpl1rdO
     console.log(nO)
-    alert("Ft1rd= (8*n-2*ew)*Mpl1rd/(2*m*n-ew*(m+n)) = (8*" + nO + "-2*" + ew + ")*" + Mpl1rdO + "/(2*" + mh.toFixed(2)
-        " + *" + nO + "-" + ew + "*(" + mh.toFixed(2) + "+" + nO + "))=" + Ft1rdO.tofFixed(2))
+    alert("Ft1rd= (8*n-2*ew)*Mpl1rd/(2*m*n-ew*(m+n)) = (8*" + nO + "-2*" + ew + ")*" + Mpl1rdO + "/(2*" + mh.toFixed(2) +
+        " *" + nO + "-" + ew + "*(" + mh.toFixed(2) + "+" + nO + "))=" + Ft1rdO.tofFixed(2))
 
 }
 
