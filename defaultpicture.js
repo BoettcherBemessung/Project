@@ -1,5 +1,4 @@
 function showdefault() {
-
     var canvas = document.getElementById("drawing_area");
     var bsp_context = canvas.getContext('2d');
     var hsp_context = canvas.getContext('2d');
