@@ -82,19 +82,42 @@ function draw_screws() {
     hsp_measure.lineTo(68, 24);
     hsp_measure.stroke();
 
+
+    var h2_measure = canvas.getContext('2d');
+    h2_measure.beginPath();
+    h2_measure.moveTo(50, 149);
+    h2_measure.lineTo(42, 149);
+    h2_measure.lineTo(46, 149);
+    h2_measure.lineTo(46, 149 - u1n * y_factor);
+    h2_measure.lineTo(50, 149 - u1n * y_factor);
+    h2_measure.lineTo(42, 149 - u1n * y_factor);
+    h2_measure.lineTo(46, 149 - u1n * y_factor);
+    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(42, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(50, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(46, 24);
+    h2_measure.lineTo(50, 24);
+    h2_measure.lineTo(42, 24);
+    h2_measure.stroke()
+
+
     //Ziffer Maßkette gesamte Breite
     var bsp_number = canvas.getContext('2d');
     bsp_number.font = '7px Arial';
     bsp_number.fillStyle = 'black';
     bsp_number.fillText(bsp, 80 + 125 * bsp / hsp, 8);
 
+
     //Maßketten für Schraubenabstände vertikal
 
     //Ziffer für Maßketten vertikale
-    var u1n_number = canvas.getContext('2d');
-    u1n_number.font = '7px Arial';
-    u1n_number.fillStyle = 'black';
-    u1n_number.fillText(u1n, 100 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
+    if (u1n !== 0) {
+        var u1n_number = canvas.getContext('2d');
+        u1n_number.font = '7px Arial';
+        u1n_number.fillStyle = 'black';
+        u1n_number.fillText(u1n, 100 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
+    }
 
     var gu_number = canvas.getContext('2d');
     gu_number.font = '7px Arial';
@@ -130,7 +153,27 @@ function draw_screws() {
         mvE_number.fillText((u1 - ex).toFixed(2), 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
     }
 
+    var hsp_number = canvas.getContext('2d');
+    hsp_number.font = '7px Arial';
+    hsp_number.fillStyle = 'black';
+    hsp_number.fillText(hsp, 50, 149 - 0.5 * hsp * y_factor)
 
+    if (u1n !== 0) {
+        var u1nleft_number = canvas.getContext('2d');
+        u1nleft_number.font = '7px Arial';
+        u1nleft_number.fillStyle = 'black';
+        u1nleft_number.fillText(u1n, 28, 149 - 0.5 * u1n * y_factor);
+    }
+
+    var h_number = canvas.getContext('2d');
+    h_number.font = '7px Arial';
+    u1nleft_number.fillStyle = 'black';
+    u1nleft_number.fillText(h, 26, 149 - (u1n + 0.5 * h) * y_factor);
+
+    var u1_number_left = canvas.getContext('2d');
+    h_number.font = '7px Arial';
+    u1nleft_number.fillStyle = 'black';
+    u1_number_left.fillText(u1, 26, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var e_measures = canvas.getContext('2d');
     e_measures.beginPath();
