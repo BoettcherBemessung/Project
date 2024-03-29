@@ -99,10 +99,14 @@ function draw_screws() {
     e_measures.moveTo(32 + 250 * bsp / hsp, 145);
     e_measures.lineTo(40 + 250 * bsp / hsp, 145);
     e_measures.lineTo(36 + 250 * bsp / hsp, 145);
-    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - gu * y_factor);
-    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - gu * y_factor);
-    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - gu * y_factor);
-    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - gu * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - u1n * y_factor);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - u1n * y_factor);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - u1n * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - u1n * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (gu + u1n) * y_factor);
+    e_measures.lineTo(32 + 250 * bsp / hsp, 145 - (gu + u1n) * y_factor);
+    e_measures.lineTo(40 + 250 * bsp / hsp, 145 - (gu + u1n) * y_factor);
+    e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (gu + u1n) * y_factor);
     e_measures.lineTo(36 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
     e_measures.lineTo(32 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
     e_measures.lineTo(40 + 250 * bsp / hsp, 145 - (u1n + h - go) * 125 / hsp);
