@@ -1500,28 +1500,28 @@ function QSK() {
             document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
         }
 
-        document.getElementById("mxresult").innerText = "m2: " + mvO.toFixed(2) + " mm";
-        document.getElementById("m1Oresult").innerText = "m1: " + mh.toFixed(2) + " mm";
+        document.getElementById("mxresult").innerText = "m2: " + " mm " + mvO.toFixed(2);
+        document.getElementById("m1Oresult").innerText = "m1: " + " mm " + mh.toFixed(2);
         document.getElementById("m2Mresult").innerText = "";
         document.getElementById("m1Mresult").innerText = "";
-        document.getElementById("m1Uresult").innerText = "m1: " + mh.toFixed(2) + " mm";
-        document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
+        document.getElementById("m1Uresult").innerText = "m1: " + " mm " + mh.toFixed(2);
+        document.getElementById("m2Uresult").innerText = "m2: " + " mm " + mvU.toFixed(2);
 
-        document.getElementById("leffcpresult1").innerText = "leffcp: " + leffcpO.toFixed(2) + " mm";
-        document.getElementById("leffncresult1").innerText = "leffnc: " + leffncO.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult1").innerText = "Mpl1rd: " + (Mpl1rdO / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult1").innerText = "Mpl2rd: " + (Mpl2rdO / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd1").innerText = "Ft1rd: " + (Ft1rdO / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd1").innerText = "Ft2rd: " + (Ft2rdO / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd1").innerText = "Ft3rd: " + (Ft3rdO / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult1").innerText = "leffcp: " + " mm " + leffcpO.toFixed(2);
+        document.getElementById("leffncresult1").innerText = "leffnc: " + " mm " + leffncO.toFixed(2);
+        document.getElementById("Mpl1rdresult1").innerText = "Mpl1rd: " + " kNm " + (Mpl1rdO / 1000000).toFixed(2);
+        document.getElementById("Mpl2rdresult1").innerText = "Mpl2rd: " + " kNm " + (Mpl2rdO / 1000000).toFixed(2);
+        document.getElementById("Ft1rd1").innerText = "Ft1rd: " + " kN " + (Ft1rdO / 1000).toFixed(2);
+        document.getElementById("Ft2rd1").innerText = "Ft2rd: " + " kN " + (Ft2rdO / 1000).toFixed(2);
+        document.getElementById("Ft3rd1").innerText = "Ft3rd: " + " kN " + (Ft3rdO / 1000).toFixed(2);
 
-        document.getElementById("leffcpresult3").innerText = "leffcp: " + leffcpU.toFixed(2) + " mm";
-        document.getElementById("leffncresult3").innerText = "leffnc: " + leffncU.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult3").innerText = "Mpl1rd: " + (Mpl1rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult3").innerText = "Mpl2rd: " + (Mpl2rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd3").innerText = "Ft1rd: " + (Ft1rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd3").innerText = "Ft2rd: " + (Ft2rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd3").innerText = "Ft3rd: " + (Ft3rdU / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult3").innerText = "leffcp: " + " mm " + leffcpU.toFixed(2);
+        document.getElementById("leffncresult3").innerText = "leffnc: " + " mm " + leffncU.toFixed(2);
+        document.getElementById("Mpl1rdresult3").innerText = "Mpl1rd: " + " kNm " + (Mpl1rdU / 1000000).toFixed(2);
+        document.getElementById("Mpl2rdresult3").innerText = "Mpl2rd: " + " kNm " + (Mpl2rdU / 1000000).toFixed(2);
+        document.getElementById("Ft1rd3").innerText = "Ft1rd: " + " kN " + (Ft1rdU / 1000).toFixed(2);
+        document.getElementById("Ft2rd3").innerText = "Ft2rd: " + " kN " + (Ft2rdU / 1000).toFixed(2);
+        document.getElementById("Ft3rd3").innerText = "Ft3rd: " + " kN " + (Ft3rdU / 1000).toFixed(2);
 
         document.getElementById("leffcpresult2").innerText = "";
         document.getElementById("leffncresult2").innerText = "";
@@ -1542,8 +1542,8 @@ function QSK() {
         window.befftwb = befftwb
         window.Ftwbrd = Ftwbrd
 
-        document.getElementById("befftwb").innerText = "befftwb: " + befftwb.toFixed(2) + " mm";
-        document.getElementById("Ftwbrd").innerText = "Ftwbrd: " + (Ftwbrd / 1000).toFixed(2) + " kN";
+        document.getElementById("befftwb").innerText = "befftwb: " + " kN " + befftwb.toFixed(2);
+        document.getElementById("Ftwbrd").innerText = "Ftwbrd: " + " kN " + (Ftwbrd / 1000).toFixed(2);
 
         // === 4.13 calculations max. Moment===
 
@@ -1574,17 +1574,17 @@ function QSK() {
 
         if (language_english == 1) {
             document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
             document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+            document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
         }
         if (language_english == 0) {
             document.getElementById("Mmaxresults").innerText = "maßgebende Schraubenkräfte & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
             document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+            document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
         }
 
         // === 4.13 calculations max. shear force===
@@ -1642,19 +1642,19 @@ function QSK() {
 
         if (language_english == 1) {
             document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
-            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-            document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + " kN " + (FvedSum / 1000).toFixed(2);
+            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + " kN " + (VoInteraction / 1000).toFixed(2);
+            document.getElementById("Vwelding").innerText = "max V due to Welding : " + " kN " + (Vmaxwelding / 1000).toFixed(2);
+            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + " kN " + (VmaxPunshShear / 1000).toFixed(2);
+            document.getElementById("Vmax").innerText = "max V : " + " kN" + (Vmax / 1000).toFixed(2);
         }
         if (language_english == 0) {
             document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN";
-            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN";
-            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + " kN " + (FvedSum / 1000).toFixed(2);
+            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + " kN " + (VoInteraction / 1000).toFixed(2);
+            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + " kN " + (Vmaxwelding / 1000).toFixed(2);
+            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + " kN " + (VmaxPunshShear / 1000).toFixed(2);
+            document.getElementById("Vmax").innerText = "max V : " + " kN " + (Vmax / 1000).toFixed(2);
         }
 
         //Calculations of Rotationstiffnes
@@ -1835,12 +1835,12 @@ function QSK() {
         window.Ft3rdU = Ft3rdU;
 
 
-        document.getElementById("mxresult").innerText = "mx: " + mvO.toFixed(2) + " mm";
+        document.getElementById("mxresult").innerText = "mx " + " mm " + mvO.toFixed(2);
         document.getElementById("m1Oresult").innerText = "";
-        document.getElementById("m2Mresult").innerText = "m2: " + mvM.toFixed(2) + " mm";
-        document.getElementById("m1Mresult").innerText = "m1: " + mh.toFixed(2) + " mm";
-        document.getElementById("m1Uresult").innerText = "m1: " + mh.toFixed(2) + " mm";
-        document.getElementById("m2Uresult").innerText = "m2: " + mvU.toFixed(2) + " mm";
+        document.getElementById("m2Mresult").innerText = "m2 " + " mm " + mvM.toFixed(2);
+        document.getElementById("m1Mresult").innerText = "m1 " + " mm " + mh.toFixed(2);
+        document.getElementById("m1Uresult").innerText = "m1 " + " mm " + mh.toFixed(2);
+        document.getElementById("m2Uresult").innerText = "m2 " + " mm " + mvU.toFixed(2);
 
         if (language_english == 1) {
             document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
@@ -1855,29 +1855,29 @@ function QSK() {
             document.getElementById("TensionWebBeam").innerHTML = "Ergebnisse Trägersteg auf Zugbeanspruchung"
         }
 
-        document.getElementById("leffcpresult1").innerText = "leffcp: " + leffcpO.toFixed(2) + " mm";
-        document.getElementById("leffncresult1").innerText = "leffnc: " + leffncO.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult1").innerText = "Mpl1rd: " + (Mpl1rdO / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult1").innerText = "Mpl2rd: " + (Mpl2rdO / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd1").innerText = "Ft1rd: " + (Ft1rdO / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd1").innerText = "Ft2rd: " + (Ft2rdO / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd1").innerText = "Ft3rd: " + (Ft3rdO / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult1").innerText = "leffcp " + " mm " + leffcpO.toFixed(2);
+        document.getElementById("leffncresult1").innerText = "leffnc " + " mm " + leffncO.toFixed(2);
+        document.getElementById("Mpl1rdresult1").innerText = "Mpl1rd " + " kNm " + (Mpl1rdO / 1000000).toFixed(2);
+        document.getElementById("Mpl2rdresult1").innerText = "Mpl2rd " + " kNm " + (Mpl2rdO / 1000000).toFixed(2);
+        document.getElementById("Ft1rd1").innerText = "Ft1rd: " + " kNm " + (Ft1rdO / 1000).toFixed(2);
+        document.getElementById("Ft2rd1").innerText = "Ft2rd: " + " kN " + (Ft2rdO / 1000).toFixed(2);
+        document.getElementById("Ft3rd1").innerText = "Ft3rd: " + " kN " + (Ft3rdO / 1000).toFixed(2);
 
-        document.getElementById("leffcpresult2").innerText = "leffcp: " + leffcpM.toFixed(2) + " mm";
-        document.getElementById("leffncresult2").innerText = "leffnc: " + leffncM.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult2").innerText = "Mpl1rd: " + (Mpl1rdM / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult2").innerText = "Mpl2rd: " + (Mpl2rdM / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd2").innerText = "Ft1rd: " + (Ft1rdM / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd2").innerText = "Ft2rd: " + (Ft2rdM / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd2").innerText = "Ft3rd: " + (Ft3rdM / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult2").innerText = "leffcp: " + " mm " + leffcpM.toFixed(2);
+        document.getElementById("leffncresult2").innerText = "leffnc: " + " mm " + leffncM.toFixed(2);
+        document.getElementById("Mpl1rdresult2").innerText = "Mpl1rd: " + " kNm " + (Mpl1rdM / 1000000).toFixed(2);
+        document.getElementById("Mpl2rdresult2").innerText = "Mpl2rd: " + " kNm " + (Mpl2rdM / 1000000).toFixed(2);
+        document.getElementById("Ft1rd2").innerText = "Ft1rd: " + " kN " + (Ft1rdM / 1000).toFixed(2);
+        document.getElementById("Ft2rd2").innerText = "Ft2rd: " + " kN " + (Ft2rdM / 1000).toFixed(2);
+        document.getElementById("Ft3rd2").innerText = "Ft3rd: " + " kN " + (Ft3rdM / 1000).toFixed(2);
 
-        document.getElementById("leffcpresult3").innerText = "leffcp: " + leffcpU.toFixed(2) + " mm";
-        document.getElementById("leffncresult3").innerText = "leffnc: " + leffncU.toFixed(2) + " mm";
-        document.getElementById("Mpl1rdresult3").innerText = "Mpl1rd: " + (Mpl1rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Mpl2rdresult3").innerText = "Mpl2rd: " + (Mpl2rdU / 1000000).toFixed(2) + " kNm";
-        document.getElementById("Ft1rd3").innerText = "Ft1rd: " + (Ft1rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2rd3").innerText = "Ft2rd: " + (Ft2rdU / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3rd3").innerText = "Ft3rd: " + (Ft3rdU / 1000).toFixed(2) + " kN";
+        document.getElementById("leffcpresult3").innerText = "leffcp: " + " mm " + leffcpU.toFixed(2);
+        document.getElementById("leffncresult3").innerText = "leffnc: " + " mm " + leffncU.toFixed(2);
+        document.getElementById("Mpl1rdresult3").innerText = "Mpl1rd: " + " kNm " + (Mpl1rdU / 1000000).toFixed(2);
+        document.getElementById("Mpl2rdresult3").innerText = "Mpl2rd: " + " kNm " + (Mpl2rdU / 1000000).toFixed(2);
+        document.getElementById("Ft1rd3").innerText = "Ft1rd: " + " kN " + (Ft1rdU / 1000).toFixed(2);
+        document.getElementById("Ft2rd3").innerText = "Ft2rd: " + " kN " + (Ft2rdU / 1000).toFixed(2);
+        document.getElementById("Ft3rd3").innerText = "Ft3rd: " + " kN " + (Ft3rdU / 1000).toFixed(2);
 
         // === 4.21 calculations evidence of tension beam screwRows ===
 
@@ -1890,8 +1890,8 @@ function QSK() {
         window.befftwb = befftwb;
         window.Ftwbrd = Ftwbrd;
 
-        document.getElementById("befftwb").innerText = "befftwb: " + befftwb.toFixed(2) + " mm";
-        document.getElementById("Ftwbrd").innerText = "Ftwbrd: " + (Ftwbrd / 1000).toFixed(2) + " kN";
+        document.getElementById("befftwb").innerText = "befftwb " + " mm " + befftwb.toFixed(2);
+        document.getElementById("Ftwbrd").innerText = "Ftwbrd " + " mm " + (Ftwbrd / 1000).toFixed(2);
 
         // === 4.23 calculations max. Moment===
 
@@ -1935,10 +1935,10 @@ function QSK() {
             document.getElementById("Mmaxresults").innerText = "Berechnung von Mmax:";
         }
 
-        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN";
-        document.getElementById("Ft3eff").innerText = "Fteff3: " + (aFtrd3 / 1000).toFixed(2) + " kN";
-        document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm";
+        document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
+        document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
+        document.getElementById("Ft3eff").innerText = "Fteff3: " + " kN " + (aFtrd3 / 1000).toFixed(2);
+        document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
 
         // === 4.13 calculations max. shear force===
 
@@ -1996,19 +1996,19 @@ function QSK() {
 
         if (language_english == 1) {
             document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN";
-            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN";
-            document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + " kN " + (FvedSum / 1000).toFixed(2);
+            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + " kN " + (VoInteraction / 1000).toFixed(2);
+            document.getElementById("Vwelding").innerText = "max V due to Welding : " + " kN" + (Vmaxwelding / 1000).toFixed(2);
+            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + " kN " + (VmaxPunshShear / 1000).toFixed(2);
+            document.getElementById("Vmax").innerText = "max V : " + " kN" + (Vmax / 1000).toFixed(2);
         }
         if (language_english == 0) {
             document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN";
-            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN";
-            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
+            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + " kN " + (FvedSum / 1000).toFixed(2);
+            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + " kN " + (VoInteraction / 1000).toFixed(2);
+            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + " kN " + (Vmaxwelding / 1000).toFixed(2);
+            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + " kN " + (VmaxPunshShear / 1000).toFixed(2);
+            document.getElementById("Vmax").innerText = "max V  " + " kN " + (Vmax / 1000).toFixed(2);
         }
 
 

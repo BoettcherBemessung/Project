@@ -34,9 +34,8 @@ h3 {
 }
 
 .Output {
-    background-color: bisque;
-    margin-left: 100px;
-    margin-right: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .OutputHeading {
@@ -48,8 +47,8 @@ h3 {
     background-color: greenyellow;
     color: red;
     text-decoration: underline;
-    margin-left: 200px;
-    margin-right: 500px;
+    margin-left: 100px;
+    margin-right: 400px;
 }
 
 .websiteheadings {
@@ -210,5 +209,9 @@ h3 {
 .solutionblock {
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-right: 350px;
+    margin-right: 300px;
+    display: flex;
+    background-color: bisque;
+    border: solid 2px;
+    border-radius: 5px;
 }
