@@ -1242,11 +1242,11 @@ function QSK() {
     if (qsk == 1 || qsk == 2) { mcr = Wply * fy }
 
     if (language_english == 1) {
-        document.getElementById("SectionClassificationResult").innerHML = "class: " + qsk + " maxM: " + mcr;
+        document.getElementById("beamresultQsk").innerHML = "class: " + qsk + " maxM: " + mcr;
     }
 
     if (language_english == 0) {
-        document.getElementById("SectionClassificationResult").innerHML = "Querschnittsklasse: " + qsk + " maxM: " + mcr;
+        document.getElementById("beamresultQsk").innerHML = "Querschnittsklasse: " + qsk + " maxM: " + mcr;
     }
     window.mcr = mcr
 

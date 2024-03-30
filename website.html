@@ -23,7 +23,7 @@
     <img id="Image_germanflag" class="pictureflag" src="images\germanflag.jpg" alt="Bild german" onclick="germanpage()">
     <img id="Image_englishflag" class="pictureflag" src="images\englishflag.jpg" alt="Bild english" onclick="englishpage()">
 
-    <h3 id="Website_Heading"> welcome to the first online faceplate joint calculator</h3>
+    <h1 id="Website_Heading" class="Attention"> welcome to the first online faceplate joint calculator</h1>
 
     <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
     <script src="StaticCalculation.js"></script>
@@ -32,9 +32,10 @@
     <script src="resultOutput.js"></script>
     <script src="FcfbrdCalculation.js"></script>
     <script src="defaultpicture.js"></script>
-    <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
-    <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
-    <select id="BeamSelection">
+    <div class="configuration">
+        <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
+        <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
+        <select id="BeamSelection">
         <option value="IPEa120">IPEa 120</option>
         <option value="IPEa140">IPEa 140</option>
         <option value="IPEa160">IPEa 160</option>
@@ -184,27 +185,29 @@
         <option value="HEM900">HEM 900</option>
         <option value="HEM1000">HEM 1000</option>
         </select>
-    <script>
-        document.getElementById('BeamSelection').addEventListener('change', function WerteBestimmen() {
-            var selectedProfile = this.value;
-        })
-    </script>
-    <label id="Steeltype" for="SteelTypeBeam">steel type:</label>
-    <select id="YieldStrength">
+        <script>
+            document.getElementById('BeamSelection').addEventListener('change', function WerteBestimmen() {
+                var selectedProfile = this.value;
+            })
+        </script>
+        <label id="Steeltype" for="SteelTypeBeam">steel type:</label>
+        <select id="YieldStrength">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
-    <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
-    <script>
-        document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
-            var selectedSteel = this.value;
-        }, )
-    </script>
-    <div id="SectionClassificationResult"></div>
-    <br>
-    <p id="Weldingmeasures" class="websiteheadings"><strong>select weldingmeasures:</strong></p>
-    <label for="FlangeWelding">af:</label>
-    <select id="FlangeWelding">
+        <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
+        <script>
+            document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
+                var selectedSteel = this.value;
+            }, )
+        </script>
+
+        <br>
+        <div class="configurationContainer">
+            <div class="weldinconfiguration">
+                <p id="Weldingmeasures" class="websiteheadings"><strong>select weldingmeasures:</strong></p>
+                <label for="FlangeWelding">af:</label>
+                <select id="FlangeWelding">
         <option value="3">3 mm</option>
         <option value="4">4 mm</option>
         <option value="5">5 mm</option>
@@ -217,9 +220,9 @@
         <option value="12">12 mm</option>
         <option value="13">13 mm</option>
         <option value="14">14 mm</option>
-    </select>
-    <label for="BeameWelding">aw:</label>
-    <select id="BeamWelding">
+     </select>
+                <label for="BeameWelding">aw:</label>
+                <select id="BeamWelding">
             <option value="3">3 mm</option>
             <option value="4">4 mm</option>
             <option value="5">5 mm</option>
@@ -232,12 +235,14 @@
             <option value="12">12 mm</option>
             <option value="13">13 mm</option>
             <option value="14">14 mm</option>
-</select>
-    <br>
-    <br>
-    <p id="ScrewselectionText" class="websiteheadings"><strong>  select Screws:</strong> </p>
-    <label id="ScrewshapeText" for="ScrewShape">screw type:</label>
-    <select id="ScrewShape">
+    </select>
+            </div>
+            <br>
+            <br>
+            <div class="Screwconfiguration">
+                <p id="ScrewselectionText" class="websiteheadings"><strong>  select Screws:</strong> </p>
+                <label id="ScrewshapeText" for="ScrewShape">screw type:</label>
+                <select id="ScrewShape">
         <option value="M12">M12</option>
         <option value="M16">M16</option>
         <option value="M20">M20</option>
@@ -247,24 +252,28 @@
         <option value="M27">M27</option>
         <option value="M30">M30</option>
         <option value="M36">M36</option>
-</select>
-    <script>
-        document.getElementById('ScrewShape').addEventListener('change', function WerteBestimmen() {
-            var selectedScrewShape = this.value;
-        })
-    </script>
-    <label for="StrengthClass" id="ScrewStrength">strength class:</label>
-    <select id="StrengthClass">
+    </select>
+                <script>
+                    document.getElementById('ScrewShape').addEventListener('change', function WerteBestimmen() {
+                        var selectedScrewShape = this.value;
+                    })
+                </script>
+                <label for="StrengthClass" id="ScrewStrength">strength class:</label>
+                <select id="StrengthClass">
         <option value="4.6">4.6</option>
         <option value="5.6">5.5</option>
         <option value="8.8">8.8</option>
         <option value="10.9">10.9</option>  
-</select>
-    <label for="ScrewRows" id="Screwrowstext">screwrows:</label>
-    <select id="ScrewRows" onchange="showImage()"> 
+    </select>
+                <label for="ScrewRows" id="Screwrowstext">screwrows:</label>
+                <select id="ScrewRows" onchange="showImage()"> 
         <option value="2">2</option>
         <option value="3">3</option>   
-</select>
+    </select>
+            </div>
+        </div>
+    </div>
+    </div>
     <script>
         document.getElementById('StrengthClass').addEventListener('change', function WerteBestimmen() {
             var selectedScrewstrength = this.value;
@@ -332,18 +341,21 @@
 
     </div>
     <br>
+    <div class="StartCalc">
+        <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
+        <div class="innerStartCalc">
+            <form class="inputboxesForces">
+                <label for="inputMed" class="inputboxMed">Med:</label>
+                <input type="number" id="ValueMed" name="inputboxMed" placeholder="kNm" class="inputkNm">
+                <label for="inputVed" class="inputboxVed">Ved:</label>
+                <input type="number" id="ValueVed" name="inputboxVed" placeholder="kN" class="inputkN">
 
-    <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
-    <form class="inputboxesForces">
-        <label for="inputMed" class="inputboxMed">Med:</label>
-        <input type="number" id="ValueMed" name="inputboxMed" placeholder="kNm" class="inputkNm">
-        <label for="inputVed" class="inputboxVed">Ved:</label>
-        <input type="number" id="ValueVed" name="inputboxVed" placeholder="kN" class="inputkN">
-
-    </form>
-    <br>
-    <script src="Drawing.js"></script>
-    <button id="CalculationsComplete" class="buttons" onclick="QSK()"> Start Calculations </button>
+            </form>
+            <br>
+            <script src="Drawing.js"></script>
+            <button id="CalculationsComplete" class="buttons" onclick="QSK()"> Start Calculations </button>
+        </div>
+    </div>
     <h4 id="clickonresults" class="clicking"></h4>
     <div class="solutionblock">
         <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>

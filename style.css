@@ -20,6 +20,7 @@ body {
     padding: 3px;
     border: solid 2px;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 h3 {
@@ -61,17 +62,18 @@ h3 {
     background-color: lightblue;
     border-radius: 10px;
     text-align: center;
-    margin-right: 300px;
-    margin-left: 100px;
+    margin-right: 420px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .Attention {
     color: red;
-    background-color: yellow;
+    background-color: rgb(251, 251, 233);
     text-align: center;
     border-radius: 8px;
+    margin-right: 250px;
+    border: solid 1px;
 }
 
 .pictureflag {
@@ -84,7 +86,7 @@ h3 {
 .drawingfaceplate {
     height: 400px;
     width: 400px;
-    background-color: beige;
+    background-color: rgb(255, 254, 252);
     border-radius: 25px;
     border: solid 2px;
 }
@@ -102,6 +104,26 @@ h3 {
     border-radius: 5px;
     border: solid 2px;
     height: 250px;
+}
+
+.configuration {
+    border: solid 2px;
+    margin-top: 15px;
+    margin-right: 400px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    border-radius: 25px;
+    padding-left: 5px;
+    background-color: rgb(196, 199, 8)
+}
+
+.configurationContainer {
+    display: flex;
+    margin-top: 15px;
+}
+
+.Screwconfiguration {
+    margin-left: 50px;
 }
 
 .container1 {
@@ -171,6 +193,18 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+}
+
+.StartCalc {
+    padding: 30px;
+    border: solid 2px;
+    border-radius: 40px;
+    background-color: rgb(247, 106, 106);
+    margin-right: 420px;
+}
+
+.innerStartCalc {
+    display: flex;
 }
 
 .solutionblock {
