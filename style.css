@@ -1,306 +1,363 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    height: 100%;
-    background-image: url("images\backgroungSteel.jpg");
-    font-family: 'Open-Sans', sans-serif;
-    background-color: rgb(128, 112, 146);
-    padding: 200px;
-    padding-top: 0px;
-}
-
-.language {
-    color: white;
-}
-
-.buttons {
-    padding: 3px;
-    border: solid 2px;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-h3 {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(142, 184, 17);
-    border: solid 2px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.Output {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.Outputsignificant {
-    background-color: greenyellow;
-    color: red;
-    text-decoration: underline;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.websiteheadings {
-    text-decoration: underline;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-.Attention {
-    color: red;
-    background-color: rgb(251, 251, 233);
-    text-align: center;
-    border-radius: 8px;
-    margin-right: 250px;
-    border: solid 1px;
-}
-
-.pictureflag {
-    width: 50px;
-    height: 25px;
-    border: solid 3px;
-    border-radius: 4px;
-}
-
-.drawingfaceplate {
-    height: 400px;
-    width: 400px;
-    background-color: rgb(255, 254, 252);
-    border-radius: 25px;
-    border: solid 2px;
-}
-
-.welcomeBöttcher {
-    text-align: center;
-    border-radius: 15px;
-    border: solid 2px;
-    font-family: Impact, Charcoal, sans-serif;
-    margin-left: 250px;
-    margin-right: 250px;
-}
-
-.pictureselection {
-    border-radius: 5px;
-    border: solid 2px;
-    height: 250px;
-}
-
-.configuration {
-    border: solid 2px;
-    margin-top: 15px;
-    margin-right: 400px;
-    padding-bottom: 15px;
-    padding-top: 10px;
-    border-radius: 25px;
-    padding-left: 5px;
-    background-color: rgb(196, 199, 8)
-}
-
-.configurationContainer {
-    display: flex;
-    margin-top: 15px;
-}
-
-.dropdownmenu {
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-.Screwconfiguration {
-    margin-left: 50px;
-}
-
-.container1 {
-    display: flex;
-}
-
-.inputs {
-    margin-top: 15px;
-    margin-left: 15px;
-    border: solid 2px;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 20px;
-    background-color: rgb(196, 199, 8)
-}
-
-.inputhsp {
-    margin-left: 4px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-#hsp {
-    text-align: center;
-}
-
-.inputbsp {
-    margin-left: 4px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-#bsp {
-    text-align: center;
-}
-
-.inputtsp {
-    margin-left: 8px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-#tsp {
-    text-align: center;
-}
-
-.inpute {
-    margin-left: 17px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-#distancee1 {
-    text-align: center;
-}
-
-.inputgo {
-    margin-left: 10px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-#distancego {
-    text-align: center;
-}
-
-#distancegu {
-    text-align: center;
-}
-
-#distanceu1n {
-    text-align: center;
-}
-
-#distanceex {
-    text-align: center;
-}
-
-#ValueMed {
-    text-align: center;
-}
-
-#ValueVed {
-    text-align: center;
-}
-
-.inputgu {
-    margin-left: 10px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-.inputu1n {
-    margin-top: 8px;
-    background-color: white;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-.inputex {
-    margin-left: 10px;
-    width: 25x;
-    background-color: white;
-    margin-top: 8px;
-    border: solid 2px;
-    border-radius: 8px;
-}
-
-.inputkNm {
-    border: solid 2px;
-    border-radius: 8px;
-    background-color: white;
-    width: 80px;
-}
-
-.inputkN {
-    border: solid 2px;
-    border-radius: 8px;
-    background-color: white;
-    width: 80px;
-}
-
-.StartCalc {
-    padding-top: 5px;
-    padding-right: 0px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    border: solid 2px;
-    border-radius: 40px;
-    background-color: rgb(247, 106, 106);
-    margin-right: 600px;
-}
-
-.innerStartCalc {
-    display: flex;
-}
-
-.containerresults {
-    border: solid 5px;
-    border-radius: 50px;
-    background-color: rgb(250, 252, 254);
-    margin-right: 200px;
-    margin-top: 15px;
-}
-
-.clicking {
-    background-color: lightblue;
-    border-radius: 10px;
-    text-align: center;
-    margin-right: 80px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 80px;
-}
-
-.OutputHeading {
-    font-weight: bold;
-    text-decoration: underline;
-    margin-left: 25px;
-}
-
-.solutionblock {
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 50px;
-    display: flex;
-    background-color: bisque;
-    border: solid 2px;
-    border-radius: 25px;
-}
+                    * {
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    
+                    body {
+                        height: 100%;
+                        font-family: 'Open-Sans', sans-serif;
+                        background-color: rgb(128, 112, 146);
+                        padding: 200px;
+                        padding-top: 0px;
+                    }
+                    
+                    .language {
+                        color: white;
+                    }
+                    
+                    .buttons {
+                        padding: 3px;
+                        border: solid 2px;
+                        border-radius: 5px;
+                        margin-left: 10px;
+                        font-family: 'Open-Sans', sans-serif;
+                    }
+                    
+                    h3 {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: rgb(142, 184, 17);
+                        border: solid 2px;
+                        border-radius: 10px;
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .Output {
+                        margin-left: 20px;
+                        margin-right: 20px;
+                    }
+                    
+                    .Outputsignificant {
+                        background-color: greenyellow;
+                        color: red;
+                        text-decoration: underline;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                    }
+                    
+                    .websiteheadings {
+                        text-decoration: underline;
+                        margin-bottom: 7px;
+                        font-weight: bold;
+                    }
+                    
+                    .Attention {
+                        color: red;
+                        background-color: rgb(251, 251, 233);
+                        text-align: center;
+                        border-radius: 8px;
+                        margin-right: 250px;
+                        border: solid 1px;
+                    }
+                    
+                    .pictureflag {
+                        width: 50px;
+                        height: 25px;
+                        border: solid 3px;
+                        border-radius: 4px;
+                    }
+                    
+                    .drawingfaceplate {
+                        height: 400px;
+                        width: 400px;
+                        background-color: rgb(255, 254, 252);
+                        border-radius: 25px;
+                        border: solid 2px;
+                    }
+                    
+                    .welcomeBöttcher {
+                        text-align: center;
+                        border-radius: 15px;
+                        border: solid 2px;
+                        font-family: Impact, Charcoal, sans-serif;
+                        margin-left: 250px;
+                        margin-right: 250px;
+                    }
+                    
+                    .pictureselection {
+                        border-radius: 5px;
+                        border: solid 2px;
+                        height: 250px;
+                    }
+                    
+                    .configuration {
+                        border: solid 2px;
+                        margin-top: 15px;
+                        margin-right: 430px;
+                        padding-bottom: 15px;
+                        padding-top: 10px;
+                        border-radius: 25px;
+                        padding-left: 5px;
+                        background-color: rgb(196, 199, 8)
+                    }
+                    
+                    .configurationContainer {
+                        display: flex;
+                        margin-top: 15px;
+                    }
+                    
+                    .dropdownmenu {
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    .Screwconfiguration {
+                        margin-left: 50px;
+                    }
+                    
+                    .container1 {
+                        display: flex;
+                    }
+                    
+                    .inputs {
+                        margin-top: 15px;
+                        margin-left: 15px;
+                        border: solid 2px;
+                        border-radius: 10px;
+                        padding-top: 10px;
+                        padding-left: 5px;
+                        padding-right: 20px;
+                        background-color: rgb(196, 199, 8)
+                    }
+                    
+                    .inputhsp {
+                        margin-left: 4px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    #hsp {
+                        text-align: center;
+                    }
+                    
+                    .inputbsp {
+                        margin-left: 4px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    #bsp {
+                        text-align: center;
+                    }
+                    
+                    .inputtsp {
+                        margin-left: 8px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    #tsp {
+                        text-align: center;
+                    }
+                    
+                    .inpute {
+                        margin-left: 17px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    #distancee1 {
+                        text-align: center;
+                    }
+                    
+                    .inputgo {
+                        margin-left: 10px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    #distancego {
+                        text-align: center;
+                    }
+                    
+                    #distancegu {
+                        text-align: center;
+                    }
+                    
+                    #distanceu1n {
+                        text-align: center;
+                    }
+                    
+                    #distanceex {
+                        text-align: center;
+                    }
+                    
+                    #ValueMed {
+                        text-align: center;
+                    }
+                    
+                    #ValueVed {
+                        text-align: center;
+                    }
+                    
+                    .inputgu {
+                        margin-left: 10px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    .inputu1n {
+                        margin-top: 8px;
+                        background-color: white;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    .inputex {
+                        margin-left: 10px;
+                        width: 25x;
+                        background-color: white;
+                        margin-top: 8px;
+                        border: solid 2px;
+                        border-radius: 8px;
+                    }
+                    
+                    .inputkNm {
+                        border: solid 2px;
+                        border-radius: 8px;
+                        background-color: white;
+                        width: 80px;
+                    }
+                    
+                    .inputkN {
+                        border: solid 2px;
+                        border-radius: 8px;
+                        background-color: white;
+                        width: 80px;
+                    }
+                    
+                    .StartCalc {
+                        padding-top: 5px;
+                        padding-right: 0px;
+                        padding-bottom: 5px;
+                        padding-left: 20px;
+                        border: solid 2px;
+                        border-radius: 40px;
+                        background-color: rgb(247, 106, 106);
+                        margin-right: 650px;
+                    }
+                    
+                    .innerStartCalc {
+                        display: flex;
+                    }
+                    
+                    .containerresults {
+                        border: solid 5px;
+                        border-radius: 50px;
+                        background-color: rgb(250, 252, 254);
+                        margin-right: 200px;
+                        margin-top: 15px;
+                    }
+                    
+                    .clicking {
+                        background-color: lightblue;
+                        border-radius: 10px;
+                        text-align: center;
+                        margin-right: 80px;
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+                        margin-left: 80px;
+                    }
+                    
+                    .OutputHeading {
+                        font-weight: bold;
+                        text-decoration: underline;
+                        margin-left: 25px;
+                    }
+                    
+                    .solutionblock {
+                        margin-left: 15px;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        margin-right: 50px;
+                        display: flex;
+                        background-color: bisque;
+                        border: solid 2px;
+                        border-radius: 25px;
+                    }
+                    
+                    @media (max-width: 1000px) {
+                        body {
+                            padding: 0px;
+                        }
+                        .websiteheadings {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+                        .Attention {
+                            margin: 0px;
+                        }
+                        .configuration {
+                            margin: 0px;
+                        }
+                        .Screwconfiguration {
+                            margin-top: 5px;
+                            margin-left: 100px;
+                        }
+                        .configurationContainer {
+                            margin: 0px;
+                        }
+                        .container1 {
+                            margin-left: 0px;
+                            margin-top: 0px;
+                        }
+                        .inputhsp {
+                            width: 80px;
+                        }
+                        .inputbsp {
+                            width: 80px;
+                        }
+                        .inputtsp {
+                            width: 80px;
+                        }
+                        .inpute {
+                            width: 80px;
+                        }
+                        .inputgo {
+                            width: 80px;
+                        }
+                        .inputgu {
+                            width: 80px;
+                        }
+                        .inputex {
+                            width: 80px,
+                        }
+                        .inputu1n {
+                            width: 80px;
+                        }
+                        .StartCalc {
+                            margin-right: 120px;
+                        }
+                        .containerresults {
+                            margin: 0px;
+                        }
+                    }

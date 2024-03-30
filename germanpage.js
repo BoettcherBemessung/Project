@@ -30,7 +30,7 @@ function englishpage() {
     document.getElementById("ProfilConfiguration").innerText = " profile:"
     document.getElementById("Steeltype").innerText = "steel type:"
     document.getElementById("Beamdata").innerText = "show Beaminformation"
-    document.getElementById("Weldingmeasures").innerText = "select weldingmeasures:"
+    document.getElementById("Weldingmeasures").innerText = "weldingmeasures:"
     document.getElementById("ScrewselectionText").innerText = "select Screws:"
     document.getElementById("ScrewshapeText").innerText = "screw type:"
     document.getElementById("ScrewStrength").innerText = "strength class:"
