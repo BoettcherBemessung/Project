@@ -121,6 +121,11 @@ h3 {
     margin-top: 15px;
 }
 
+.dropdownmenu {
+    border: solid 2px;
+    border-radius: 8px;
+}
+
 .Screwconfiguration {
     margin-left: 50px;
 }
@@ -145,6 +150,12 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+#hsp {
+    text-align: center;
 }
 
 .inputbsp {
@@ -152,6 +163,12 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+#bsp {
+    text-align: center;
 }
 
 .inputtsp {
@@ -159,6 +176,12 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+#tsp {
+    text-align: center;
 }
 
 .inpute {
@@ -166,6 +189,12 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+#distancee1 {
+    text-align: center;
 }
 
 .inputgo {
@@ -173,6 +202,32 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+#distancego {
+    text-align: center;
+}
+
+#distancegu {
+    text-align: center;
+}
+
+#distanceu1n {
+    text-align: center;
+}
+
+#distanceex {
+    text-align: center;
+}
+
+#ValueMed {
+    text-align: center;
+}
+
+#ValueVed {
+    text-align: center;
 }
 
 .inputgu {
@@ -180,11 +235,15 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
 }
 
 .inputu1n {
     margin-top: 8px;
     background-color: white;
+    border: solid 2px;
+    border-radius: 8px;
 }
 
 .inputex {
@@ -192,14 +251,33 @@ h3 {
     width: 25x;
     background-color: white;
     margin-top: 8px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+.inputkNm {
+    border: solid 2px;
+    border-radius: 8px;
+    background-color: white;
+    width: 80px;
+}
+
+.inputkN {
+    border: solid 2px;
+    border-radius: 8px;
+    background-color: white;
+    width: 80px;
 }
 
 .StartCalc {
-    padding: 30px;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 20px;
     border: solid 2px;
     border-radius: 40px;
     background-color: rgb(247, 106, 106);
-    margin-right: 420px;
+    margin-right: 600px;
 }
 
 .innerStartCalc {

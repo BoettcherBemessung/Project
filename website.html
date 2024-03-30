@@ -35,7 +35,7 @@
     <div class="configuration">
         <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
         <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
-        <select id="BeamSelection">
+        <select id="BeamSelection" class="dropdownmenu">
         <option value="IPEa120">IPEa 120</option>
         <option value="IPEa140">IPEa 140</option>
         <option value="IPEa160">IPEa 160</option>
@@ -191,7 +191,7 @@
             })
         </script>
         <label id="Steeltype" for="SteelTypeBeam">steel type:</label>
-        <select id="YieldStrength">
+        <select id="YieldStrength" class="dropdownmenu">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
@@ -207,7 +207,7 @@
             <div class="weldinconfiguration">
                 <p id="Weldingmeasures" class="websiteheadings"><strong>select weldingmeasures:</strong></p>
                 <label for="FlangeWelding">af:</label>
-                <select id="FlangeWelding">
+                <select id="FlangeWelding" class="dropdownmenu">
         <option value="3">3 mm</option>
         <option value="4">4 mm</option>
         <option value="5">5 mm</option>
@@ -222,7 +222,7 @@
         <option value="14">14 mm</option>
      </select>
                 <label for="BeameWelding">aw:</label>
-                <select id="BeamWelding">
+                <select id="BeamWelding" class="dropdownmenu">
             <option value="3">3 mm</option>
             <option value="4">4 mm</option>
             <option value="5">5 mm</option>
@@ -242,7 +242,7 @@
             <div class="Screwconfiguration">
                 <p id="ScrewselectionText" class="websiteheadings"><strong>  select Screws:</strong> </p>
                 <label id="ScrewshapeText" for="ScrewShape">screw type:</label>
-                <select id="ScrewShape">
+                <select id="ScrewShape" class="dropdownmenu">
         <option value="M12">M12</option>
         <option value="M16">M16</option>
         <option value="M20">M20</option>
@@ -259,14 +259,14 @@
                     })
                 </script>
                 <label for="StrengthClass" id="ScrewStrength">strength class:</label>
-                <select id="StrengthClass">
+                <select id="StrengthClass" class="dropdownmenu">
         <option value="4.6">4.6</option>
         <option value="5.6">5.5</option>
         <option value="8.8">8.8</option>
         <option value="10.9">10.9</option>  
     </select>
                 <label for="ScrewRows" id="Screwrowstext">screwrows:</label>
-                <select id="ScrewRows" onchange="showImage()"> 
+                <select id="ScrewRows" class="dropdownmenu" onchange="showImage()"> 
         <option value="2">2</option>
         <option value="3">3</option>   
     </select>
@@ -346,9 +346,9 @@
         <div class="innerStartCalc">
             <form class="inputboxesForces">
                 <label for="inputMed" class="inputboxMed">Med:</label>
-                <input type="number" id="ValueMed" name="inputboxMed" placeholder="kNm" class="inputkNm">
+                <input type="number" id="ValueMed" name="inputboxMed" placeholder="[kNm]" class="inputkNm">
                 <label for="inputVed" class="inputboxVed">Ved:</label>
-                <input type="number" id="ValueVed" name="inputboxVed" placeholder="kN" class="inputkN">
+                <input type="number" id="ValueVed" name="inputboxVed" placeholder="[kN]" class="inputkN">
 
             </form>
             <br>
