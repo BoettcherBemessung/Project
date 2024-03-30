@@ -1,56 +1,41 @@
-h3 {
-    display: flex;
-    flex-direction: column;
-    background-color: lightblue;
-    border: solid 2px;
-    border-radius: 10px;
-    text-align: center;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
+    height: 100%;
+    background-image: url("images\backgroungSteel.jpg");
+    font-family: 'Open-Sans', sans-serif;
+    background-color: rgb(128, 112, 146);
     padding: 200px;
     padding-top: 0px;
 }
 
-.picture2SR {
-    width: 141px;
-    height: 269px;
-    border: solid2px;
-    border-radius: 5px
+.language {
+    color: white;
 }
 
-.picture3SR {
-    width: 155px;
-    height: 276px;
-    border: solid2px;
-    border-radius: 5px
+.buttons {
+    padding: 3px;
+    border: solid 2px;
+    border-radius: 5px;
+}
+
+h3 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(142, 184, 17);
+    border: solid 2px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 .Output {
     background-color: bisque;
     margin-left: 100px;
     margin-right: 300px;
-}
-
-.inputboxe {
-    margin-left: 15px;
-}
-
-.inputboxgo {
-    margin-left: 6px;
-}
-
-.inputboxgu {
-    margin-left: 4px;
-}
-
-.inputMM {
-    width: 25x;
-}
-
-.inputex {
-    margin-top: 3px;
-    margin-left: 7px;
 }
 
 .OutputHeading {
@@ -68,11 +53,18 @@ body {
 
 .websiteheadings {
     text-decoration: underline;
+    margin-bottom: 7px;
+    font-weight: bold;
 }
 
 .clicking {
     background-color: lightblue;
     border-radius: 10px;
+    text-align: center;
+    margin-right: 300px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .Attention {
@@ -90,8 +82,11 @@ body {
 }
 
 .drawingfaceplate {
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
+    background-color: beige;
+    border-radius: 25px;
+    border: solid 2px;
 }
 
 .welcomeBöttcher {
@@ -107,4 +102,79 @@ body {
     border-radius: 5px;
     border: solid 2px;
     height: 250px;
+}
+
+.container1 {
+    display: flex;
+}
+
+.inputs {
+    margin-top: 15px;
+    margin-left: 15px;
+    border: solid 2px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 20px;
+    background-color: rgb(196, 199, 8)
+}
+
+.inputhsp {
+    margin-left: 4px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inputbsp {
+    margin-left: 4px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inputtsp {
+    margin-left: 8px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inpute {
+    margin-left: 17px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inputgo {
+    margin-left: 10px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inputgu {
+    margin-left: 10px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.inputu1n {
+    margin-top: 8px;
+    background-color: white;
+}
+
+.inputex {
+    margin-left: 10px;
+    width: 25x;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.solutionblock {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 350px;
 }

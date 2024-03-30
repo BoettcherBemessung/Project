@@ -27,11 +27,11 @@ function draw_faceplate_width(bsp) {
     var hsp = parseFloat(document.getElementById("hsp").value);
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
-    bsp_context.moveTo(80, 149);
-    bsp_context.lineTo(80 + 250 * bsp / hsp, 149);
-    bsp_context.lineTo(80 + 250 * bsp / hsp, 24);
-    bsp_context.lineTo(80, 24);
-    bsp_context.lineTo(80, 149);
+    bsp_context.moveTo(55, 149);
+    bsp_context.lineTo(55 + 250 * bsp / hsp, 149);
+    bsp_context.lineTo(55 + 250 * bsp / hsp, 24);
+    bsp_context.lineTo(55, 24);
+    bsp_context.lineTo(55, 149);
     bsp_context.stroke();
 
     draw_screws()
@@ -74,31 +74,31 @@ function draw_screws() {
 
     //Code for dimension chains
     hsp_measure.beginPath();
-    hsp_measure.moveTo(60, 149);
-    hsp_measure.lineTo(68, 149);
-    hsp_measure.lineTo(64, 149);
-    hsp_measure.lineTo(64, 24);
-    hsp_measure.lineTo(60, 24);
-    hsp_measure.lineTo(68, 24);
+    hsp_measure.moveTo(35, 149);
+    hsp_measure.lineTo(43, 149);
+    hsp_measure.lineTo(39, 149);
+    hsp_measure.lineTo(39, 24);
+    hsp_measure.lineTo(35, 24);
+    hsp_measure.lineTo(43, 24);
     hsp_measure.stroke();
 
 
     var h2_measure = canvas.getContext('2d');
     h2_measure.beginPath();
-    h2_measure.moveTo(50, 149);
-    h2_measure.lineTo(42, 149);
-    h2_measure.lineTo(46, 149);
-    h2_measure.lineTo(46, 149 - u1n * y_factor);
-    h2_measure.lineTo(50, 149 - u1n * y_factor);
-    h2_measure.lineTo(42, 149 - u1n * y_factor);
-    h2_measure.lineTo(46, 149 - u1n * y_factor);
-    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(42, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(50, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(46, 24);
-    h2_measure.lineTo(50, 24);
-    h2_measure.lineTo(42, 24);
+    h2_measure.moveTo(25, 149);
+    h2_measure.lineTo(17, 149);
+    h2_measure.lineTo(21, 149);
+    h2_measure.lineTo(21, 149 - u1n * y_factor);
+    h2_measure.lineTo(25, 149 - u1n * y_factor);
+    h2_measure.lineTo(17, 149 - u1n * y_factor);
+    h2_measure.lineTo(21, 149 - u1n * y_factor);
+    h2_measure.lineTo(21, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(17, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(25, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(21, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(21, 24);
+    h2_measure.lineTo(25, 24);
+    h2_measure.lineTo(17, 24);
     h2_measure.stroke()
 
 
@@ -106,7 +106,7 @@ function draw_screws() {
     var bsp_number = canvas.getContext('2d');
     bsp_number.font = '7px Arial';
     bsp_number.fillStyle = 'black';
-    bsp_number.fillText(bsp, 80 + 125 * bsp / hsp, 8);
+    bsp_number.fillText(bsp, 55 + 125 * bsp / hsp, 8);
 
 
     //Maßketten für Schraubenabstände vertikal
@@ -116,93 +116,93 @@ function draw_screws() {
         var u1n_number = canvas.getContext('2d');
         u1n_number.font = '7px Arial';
         u1n_number.fillStyle = 'black';
-        u1n_number.fillText(u1n, 100 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
+        u1n_number.fillText(u1n, 75 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
     }
 
     var gu_number = canvas.getContext('2d');
     gu_number.font = '7px Arial';
     gu_number.fillStyle = 'black';
-    gu_number.fillText(gu, 100 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
+    gu_number.fillText(gu, 75 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
 
     var wh_number = canvas.getContext('2d');
     wh_number.font = '7px Arial';
     wh_number.fillStyle = 'black';
-    wh_number.fillText(h - go - gu, 100 + 250 * bsp / hsp, 149 - (gu + u1n + 0.5 * (h - go - gu)) * y_factor);
+    wh_number.fillText(h - go - gu, 75 + 250 * bsp / hsp, 149 - (gu + u1n + 0.5 * (h - go - gu)) * y_factor);
 
     var go_number = canvas.getContext('2d');
     go_number.font = '7px Arial';
     go_number.fillStyle = 'black';
-    go_number.fillText(go, 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
+    go_number.fillText(go, 75 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
     if (selectedScrewRows == 2) {
         var u1_number = canvas.getContext('2d');
         u1_number.font = '7px Arial';
         u1_number.fillStyle = 'black';
-        u1_number.fillText(u1, 100 + 250 * bsp / hsp, 24 + 0.5 * u1 * y_factor)
+        u1_number.fillText(u1, 75 + 250 * bsp / hsp, 24 + 0.5 * u1 * y_factor)
     }
 
     if (selectedScrewRows == 3) {
         var eO_number = canvas.getContext('2d');
         eO_number.font = '7px Arial';
         eO_number.fillStyle = 'black';
-        eO_number.fillText(ex, 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
+        eO_number.fillText(ex, 75 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
 
         var mvE_number = canvas.getContext('2d');
         mvE_number.font = '7px Arial';
         mvE_number.fillStyle = 'black';
-        mvE_number.fillText((u1 - ex).toFixed(2), 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
+        mvE_number.fillText((u1 - ex).toFixed(2), 75 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
     }
 
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '7px Arial';
     hsp_number.fillStyle = 'black';
-    hsp_number.fillText(hsp, 50, 149 - 0.5 * hsp * y_factor)
+    hsp_number.fillText(hsp, 25, 149 - 0.5 * hsp * y_factor)
 
     if (u1n !== 0) {
         var u1nleft_number = canvas.getContext('2d');
         u1nleft_number.font = '7px Arial';
         u1nleft_number.fillStyle = 'black';
-        u1nleft_number.fillText(u1n, 28, 149 - 0.5 * u1n * y_factor);
+        u1nleft_number.fillText(u1n, 3, 149 - 0.5 * u1n * y_factor);
     }
 
     var h_number = canvas.getContext('2d');
     h_number.font = '7px Arial';
     h_number.fillStyle = 'black';
-    h_number.fillText(h, 26, 149 - (u1n + 0.5 * h) * y_factor);
+    h_number.fillText(h, 1, 149 - (u1n + 0.5 * h) * y_factor);
 
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '7px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText(u1, 26, 149 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText(u1, 1, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var e_measures = canvas.getContext('2d');
     e_measures.beginPath();
-    e_measures.moveTo(92 + 250 * bsp / hsp, 149);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 149);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - u1n * y_factor);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 149 - u1n * y_factor);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 149 - u1n * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - u1n * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 24 + ex * y_factor);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 24 + ex * y_factor);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 24 + ex * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 24 + ex * y_factor);
-    e_measures.lineTo(96 + 250 * bsp / hsp, 24);
-    e_measures.lineTo(100 + 250 * bsp / hsp, 24);
-    e_measures.lineTo(92 + 250 * bsp / hsp, 24);
+    e_measures.moveTo(67 + 250 * bsp / hsp, 149);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 149);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - u1n * y_factor);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 149 - u1n * y_factor);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 149 - u1n * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - u1n * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (gu + u1n) * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (u1n + h - go) * 125 / hsp);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 149 - (u1n + h) * 125 / hsp);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 24 + ex * y_factor);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 24 + ex * y_factor);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 24 + ex * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 24 + ex * y_factor);
+    e_measures.lineTo(71 + 250 * bsp / hsp, 24);
+    e_measures.lineTo(75 + 250 * bsp / hsp, 24);
+    e_measures.lineTo(67 + 250 * bsp / hsp, 24);
     e_measures.stroke();
 
     //Maßkette für Abstände in Breite
@@ -211,80 +211,80 @@ function draw_screws() {
     var e_number1 = canvas.getContext('2d');
     e_number1.font = '7px Arial';
     e_number1.fillStyle = 'black';
-    e_number1.fillText(e, 80 + 0.5 * e * x_factor, 17);
+    e_number1.fillText(e, 55 + 0.5 * e * x_factor, 17);
 
     var e_number2 = canvas.getContext('2d');
     e_number2.font = '7px Arial';
     e_number2.fillStyle = 'black';
-    e_number2.fillText(e, 80 + (bsp - 0.5 * e) * x_factor, 17);
+    e_number2.fillText(e, 55 + (bsp - 0.5 * e) * x_factor, 17);
 
     var w_number = canvas.getContext('2d');
     w_number.font = '7px Arial';
     w_number.fillStyle = 'black';
-    w_number.fillText(bsp - 2 * e, 80 + (0.5 * bsp) * x_factor, 17);
+    w_number.fillText(bsp - 2 * e, 55 + (0.5 * bsp) * x_factor, 17);
 
     var bsp_measures = canvas.getContext('2d');
     bsp_measures.beginPath();
-    bsp_measures.moveTo(80, 20);
-    bsp_measures.lineTo(80, 16);
-    bsp_measures.lineTo(80, 18);
-    bsp_measures.lineTo(80 + e * x_factor, 18);
-    bsp_measures.lineTo(80 + e * x_factor, 16);
-    bsp_measures.lineTo(80 + e * x_factor, 20);
-    bsp_measures.lineTo(80 + e * x_factor, 18);
-    bsp_measures.lineTo(80 + (bsp - e) * x_factor, 18);
-    bsp_measures.lineTo(80 + (bsp - e) * x_factor, 16);
-    bsp_measures.lineTo(80 + (bsp - e) * x_factor, 20);
-    bsp_measures.lineTo(80 + (bsp - e) * x_factor, 18);
-    bsp_measures.lineTo(80 + bsp * x_factor, 18);
-    bsp_measures.lineTo(80 + bsp * x_factor, 20);
-    bsp_measures.lineTo(80 + bsp * x_factor, 16);
+    bsp_measures.moveTo(55, 20);
+    bsp_measures.lineTo(55, 16);
+    bsp_measures.lineTo(55, 18);
+    bsp_measures.lineTo(55 + e * x_factor, 18);
+    bsp_measures.lineTo(55 + e * x_factor, 16);
+    bsp_measures.lineTo(55 + e * x_factor, 20);
+    bsp_measures.lineTo(55 + e * x_factor, 18);
+    bsp_measures.lineTo(55 + (bsp - e) * x_factor, 18);
+    bsp_measures.lineTo(55 + (bsp - e) * x_factor, 16);
+    bsp_measures.lineTo(55 + (bsp - e) * x_factor, 20);
+    bsp_measures.lineTo(55 + (bsp - e) * x_factor, 18);
+    bsp_measures.lineTo(55 + bsp * x_factor, 18);
+    bsp_measures.lineTo(55 + bsp * x_factor, 20);
+    bsp_measures.lineTo(55 + bsp * x_factor, 16);
     bsp_measures.stroke();
 
     //Maßkette für Breitegesamt
     var bsp_m_sum = canvas.getContext('2d');
     bsp_m_sum.beginPath();
-    bsp_m_sum.moveTo(80, 11)
-    bsp_m_sum.lineTo(80, 7);
-    bsp_m_sum.lineTo(80, 9);
-    bsp_m_sum.lineTo(80 + bsp * x_factor, 9);
-    bsp_m_sum.lineTo(80 + bsp * x_factor, 11);
-    bsp_m_sum.lineTo(80 + bsp * x_factor, 7);
+    bsp_m_sum.moveTo(55, 11)
+    bsp_m_sum.lineTo(55, 7);
+    bsp_m_sum.lineTo(55, 9);
+    bsp_m_sum.lineTo(55 + bsp * x_factor, 9);
+    bsp_m_sum.lineTo(55 + bsp * x_factor, 11);
+    bsp_m_sum.lineTo(55 + bsp * x_factor, 7);
     bsp_m_sum.stroke();
 
     flu_context.beginPath();
-    flu_context.moveTo(80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 149 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(80 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(80 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 149 - u1n * 125 / hsp);
-    flu_context.lineTo(80 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp);
-    flu_context.lineTo(80 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp);
-    flu_context.lineTo(80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 149 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.moveTo(55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 149 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(55 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(55 + 250 * 0.5 * bsp / hsp - b * x_factor / 2, 149 - u1n * 125 / hsp);
+    flu_context.lineTo(55 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp);
+    flu_context.lineTo(55 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp);
+    flu_context.lineTo(55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 149 - u1n * 125 / hsp - tf * 125 / hsp);
     flu_context.stroke();
 
     //Drawing of upper flange
     flo_context.beginPath();
-    flo_context.moveTo(80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(80 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(80 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 149 - u1n * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(80 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(80 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
-    flo_context.lineTo(80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.moveTo(55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(55 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(55 + 250 * 0.5 * bsp / hsp - (b * x_factor / 2), 149 - u1n * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(55 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(55 + 250 * 0.5 * bsp / hsp + b * x_factor / 2, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
+    flo_context.lineTo(55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor, 149 - u1n * 125 / hsp + tf * 125 / hsp - h * 125 / hsp);
     flo_context.stroke();
 
     //Drawing of left Web
     LeftWeb_context.beginPath();
-    LeftWeb_context.moveTo(80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
-    LeftWeb_context.lineTo(80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
+    LeftWeb_context.moveTo(55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
+    LeftWeb_context.lineTo(55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
     LeftWeb_context.stroke();
 
     //Drawing of right Web
     RightWeb_context.beginPath();
-    RightWeb_context.moveTo(80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
-    RightWeb_context.lineTo(80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
+    RightWeb_context.moveTo(55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp);
+    RightWeb_context.lineTo(55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2, 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp - (h * 125 / hsp - 2 * tf * 125 / hsp - 2 * r * 125 / hsp));
     RightWeb_context.stroke();
 
     //Drawing of left lower sector
-    var centerX_left_low = 80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor
+    var centerX_left_low = 55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor
     var centerY_left_low = 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp
     var startangle_left_low = 0
     var radius_X = r * 250 / hsp;
@@ -302,7 +302,7 @@ function draw_screws() {
     Left_Low_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of right lower sector
-    var centerX_right_low = 80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor
+    var centerX_right_low = 55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor
     var centerY_right_low = 149 - u1n * 125 / hsp - tf * 125 / hsp - r * 125 / hsp
     var startangle_right_low = Math.PI / 2;
     var radius_X = r * 250 / hsp;
@@ -320,7 +320,7 @@ function draw_screws() {
     Right_Low_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of right upper sector
-    var centerX_right_up = 80 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor;
+    var centerX_right_up = 55 + 250 * 0.5 * bsp / hsp + tw * x_factor / 2 + r * x_factor;
     var centerY_right_up = 149 - (u1n + h - tf - r) * 125 / hsp;
     var startangle_right_up = Math.PI;
     var endangle_right_up = 1.5 * Math.PI;
@@ -334,7 +334,7 @@ function draw_screws() {
     Right_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of left upper sector 
-    var centerX_left_up = 80 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor;
+    var centerX_left_up = 55 + 250 * 0.5 * bsp / hsp - tw * x_factor / 2 - r * x_factor;
     var centerY_left_up = 149 - (u1n + h - tf - r) * 125 / hsp;
     var startangle_left_up = 1.5 * Math.PI
     var endangle_left_up = 0;
@@ -347,72 +347,67 @@ function draw_screws() {
     Left_Up_sec_context.closePath();
     Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
-
     //Drawing of lower Screws
-
     Low_screw_left_context.beginPath();
-    Low_screw_left_context.moveTo(80 + e * x_factor, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(80 + e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(80 + e * x_factor + 5, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
-    Low_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
+    Low_screw_left_context.moveTo(55 + e * x_factor, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(55 + e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(55 + e * x_factor + 5, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_left_context.stroke();
 
     Low_screw_right_context.beginPath();
-    Low_screw_right_context.moveTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor + 5, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
-    Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
-    Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
+    Low_screw_right_context.moveTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor + 5, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
+    Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
+    Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_right_context.stroke();
 
     //Drawing of inner upper Screws
     mid_screw_right_context.beginPath();
-    mid_screw_right_context.moveTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
-    mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
+    mid_screw_right_context.moveTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_right_context.stroke();
 
     mid_screw_left_context.beginPath();
-    mid_screw_left_context.moveTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(80 + e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(80 + e * x_factor - 5, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
-    mid_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
-    mid_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
+    mid_screw_left_context.moveTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(55 + e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(55 + e * x_factor - 5, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
+    mid_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
+    mid_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_left_context.stroke();
-
 
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
     var selectedScrewRows = document.getElementById("ScrewRows").value
     if (selectedScrewRows == 3) {
 
         up_screw_right_context.beginPath();
-        up_screw_right_context.moveTo(80 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp);
-        up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor + 5, 24 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor - 5, 24 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp)
-        up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp + 5)
-        up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp - 5)
+        up_screw_right_context.moveTo(55 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp);
+        up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor + 5, 24 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor - 5, 24 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp)
+        up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp + 5)
+        up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp - 5)
         up_screw_right_context.stroke();
 
         up_screw_left_context.beginPath();
-        up_screw_left_context.moveTo(80 + e * x_factor, 24 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(80 + e * x_factor + 5, 24 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(80 + e * x_factor - 5, 24 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp);
-        up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp + 5);
-        up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp - 5);
+        up_screw_left_context.moveTo(55 + e * x_factor, 24 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(55 + e * x_factor + 5, 24 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(55 + e * x_factor - 5, 24 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp);
+        up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp + 5);
+        up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
     }
-
 }
-
 document.getElementById('distanceu1n').addEventListener('input', function() {
     draw_faceplate_width();
 })

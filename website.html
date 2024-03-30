@@ -10,7 +10,7 @@
 
 <body>
     <script src="germanpage.js"></script>
-    <p>choose language / Sprache wählen</p>
+    <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
         window.language_english = language_english
@@ -189,7 +189,7 @@
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
-    <button id="Beamdata" onclick="Beamdata()">show Beaminformation</button>
+    <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
     <script>
         document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
             var selectedSteel = this.value;
@@ -228,6 +228,8 @@
             <option value="13">13 mm</option>
             <option value="14">14 mm</option>
 </select>
+    <br>
+    <br>
     <p id="ScrewselectionText" class="websiteheadings"><strong>  select Screws:</strong> </p>
     <label id="ScrewshapeText" for="ScrewShape">screw type:</label>
     <select id="ScrewShape">
@@ -270,57 +272,61 @@
     </script>
     <br>
     <br>
-    <canvas id="drawing_area" class="drawingfaceplate"></canvas>
-    <script>
-        showdefault()
-    </script>
-    <script>
-        document.getElementById("Image3SR").style.display = "none";
-    </script>
-    <script>
-        document.getElementById('ScrewRows').addEventListener('change', function showImage() {
-            var selectedScrewRows = document.getElementById("ScrewRows").value;
+    <div class="container1">
+        <canvas id="drawing_area" class="drawingfaceplate"></canvas>
+        <script>
+            showdefault()
+            document.getElementById('ScrewRows').addEventListener('change', function showImage() {
+                var selectedScrewRows = document.getElementById("ScrewRows").value;
 
-            window.selectedScrewRows = selectedScrewRows;
-            if (selectedScrewRows === "2") {
-                showdefault()
-                var inputboxex = document.getElementById("inputboxex");
-                inputboxex.style.display = "none"
-            }
-            if (selectedScrewRows == "3") {
-                var inputboxex = document.getElementById("inputboxex");
-                inputboxex.style.display = "block"
-                showdefault2()
+                window.selectedScrewRows = selectedScrewRows;
+                if (selectedScrewRows === "2") {
+                    showdefault()
+                    var inputboxex = document.getElementById("inputboxex");
+                    inputboxex.style.display = "none"
+                }
+                if (selectedScrewRows == "3") {
+                    var inputboxex = document.getElementById("inputboxex");
+                    inputboxex.style.display = "block"
+                    showdefault2()
 
-            }
+                }
 
-        })
-    </script>
+            })
+        </script>
+        <br>
+        <br>
+        <div class="inputs">
+            <p id="faceplatemeasures" class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
+            <form class="inputboxesFaceplatemeasures">
+                <label for="faceplateheight">hsp:</label>
+                <input type="number" id="hsp" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
+                <label for="faceplatewidth">bsp:</label>
+                <input type="number" id="bsp" name="inputboxbsp" placeholder="[mm]" class="inputbsp"><br>
+                <label for="faceplatethickness">tsp:</label>
+                <input type="number" id="tsp" name="inputboxtsp" placeholder="[mm]" class="inputtsp"><br>
+            </form>
+            <br>
+            <br>
+            <p id="Screwconfiguration" class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
+            <form class="inputboxesScrewmeasures">
+                <label for="inpute1" class="inputbox">e:</label>
+                <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inpute"><br>
+                <label for="inputgo" class="inputbox">go:</label>
+                <input type="number" id="distancego" name="inputboxgo" placeholder="[mm]" class="inputgo"><br>
+                <label for="inputgu" class="inputbox">gu:</label>
+                <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputgu"><br>
+                <label for="inputu1n" class="inputbox">u1n:</label>
+                <input type="number" id="distanceu1n" name="inputboxu1n" placeholder="[mm]" class="inputu1n"><br>
+            </form>
+            <div id="inputboxex" style="display: none;">
+                <label for="inputex">ex:</label>
+                <input type="number" id="distanceex" placeholder="[mm]" class="inputex">
+            </div>
+        </div>
 
-    <p id="faceplatemeasures" class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
-    <form class="inputboxesFaceplatemeasures">
-        <label for="faceplateheight">hsp:</label>
-        <input type="number" id="hsp" name="inputboxhsp" placeholder="[mm]" class="inputMM">
-        <label for="faceplatewidth">bsp:</label>
-        <input type="number" id="bsp" name="inputboxbsp" placeholder="[mm]" class="inputMM">
-        <label for="faceplatethickness">tsp:</label>
-        <input type="number" id="tsp" name="inputboxtsp" placeholder="[mm]" class="inputMM">
-    </form>
-    <p id="Screwconfiguration" class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
-    <form class="inputboxesScrewmeasures">
-        <label for="inpute1" class="inputboxe">e:</label>
-        <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inputMM">
-        <label for="inputgo" class="inputboxgo">go:</label>
-        <input type="number" id="distancego" name="inputboxgo" placeholder="[mm]" class="inputMM">
-        <label for="inputgu" class="inputboxgu">gu:</label>
-        <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputMM">
-        <label for="inputu1n" class="inputboxu1n">u1n:</label>
-        <input type="number" id="distanceu1n" name="inputboxu1n" placeholder="[mm]" class="inputMM">
-    </form>
-    <div id="inputboxex" style="display: none;">
-        <label for="inputex">ex:</label>
-        <input type="number" id="distanceex" class="inputex" placeholder="[mm]">
     </div>
+    <br>
 
     <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
     <form class="inputboxesForces">
@@ -332,61 +338,72 @@
     </form>
     <br>
     <script src="Drawing.js"></script>
-    <button id="CalculationsComplete" onclick="QSK()"> Start Calculations </button>
+    <button id="CalculationsComplete" class="buttons" onclick="QSK()"> Start Calculations </button>
     <h4 id="clickonresults" class="clicking"></h4>
-    <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
-    <p id="beamresultQsk" class="Output "> </p>
-    <p id="beamresultMcr" class="Output " onclick="McrCalculation()"> </p>
-    <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
+    <div class="solutionblock">
+        <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
+        <p id="beamresultQsk" class="Output "> </p>
+        <p id="beamresultMcr" class="Output " onclick="McrCalculation()"> </p>
+        <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
+    </div>
     <p id="Screwresult1" class="OutputHeading"> </p>
-    <P id="m1Oresult" class="Output" onclick="m1OCalculation()"></P>
-    <p id="mxresult" class="Output" onclick="mxCalculation()"></p>
-
-    <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"> </p>
-    <p id="leffncresult1" class="Output" onclick="leffncOnew()"> </p>
-    <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"> </p>
-    <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"> </p>
-    <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"> </p>
-    <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"> </p>
-    <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
+    <div class="solutionblock">
+        <P id="m1Oresult" class="Output" onclick="m1OCalculation()"></P>
+        <p id="mxresult" class="Output" onclick="mxCalculation()"></p>
+        <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"> </p>
+        <p id="leffncresult1" class="Output" onclick="leffncOnew()"> </p>
+        <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"> </p>
+        <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"> </p>
+        <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"> </p>
+        <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"> </p>
+        <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
+    </div>
     <p id="Screwresult2" class="OutputHeading"> </p>
-    <p id="m1Mresult" class="Output" onclick="m1MCalculation()"></p>
-    <p id="m2Mresult" class="Output" onclick="m2MCalculation()"></p>
-    <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
-    <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
-    <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
-    <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
-    <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
-    <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
-    <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
+    <div class="solutionblock">
+        <p id="m1Mresult" class="Output" onclick="m1MCalculation()"></p>
+        <p id="m2Mresult" class="Output" onclick="m2MCalculation()"></p>
+        <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
+        <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
+        <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
+        <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
+        <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
+        <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
+        <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
+    </div>
 
     <p id="Screwresult3" class="OutputHeading"></p>
-    <p id="m1Uresult" class="Output" onclick="m1UCalculation()"></p>
-    <p id="m2Uresult" class="Output" onclick="m2UCalculation()"></p>
-    <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
-    <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
-    <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
-    <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
-    <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
-    <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
-    <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
+    <div class="solutionblock">
+        <p id="m1Uresult" class="Output" onclick="m1UCalculation()"></p>
+        <p id="m2Uresult" class="Output" onclick="m2UCalculation()"></p>
+        <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
+        <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
+        <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
+        <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
+        <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
+        <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
+        <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
+    </div>
 
-    <p id="TensionWebBeam" class="OutputHeading"></p>
-    <p id="befftwb" class="Output"></p>
-    <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
-
+    <div class="solutionblock">
+        <p id="TensionWebBeam" class="OutputHeading"></p>
+        <p id="befftwb" class="Output"></p>
+        <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
+    </div>
     <p id="Mmaxresults" class="OutputHeading"></p>
-    <p id="Ft1eff" class="Output"></p>
-    <p id="Ft2eff" class="Output"></p>
-    <p id="Ft3eff" class="Output"></p>
-    <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
-
+    <div class="solutionblock">
+        <p id="Ft1eff" class="Output"></p>
+        <p id="Ft2eff" class="Output"></p>
+        <p id="Ft3eff" class="Output"></p>
+        <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
+    </div>
     <p id="Vmaxresults" class="OutputHeading"></p>
-    <p id="Vloadbearingcapacity" class="Output"></p>
-    <p id="Vinteraction" class="Output"></p>
-    <p id="Vwelding" class="Output"></p>
-    <p id="VpunchingShear" class="Output"></p>
-    <p id="Vmax" class="Outputsignificant"></p>
+    <div class="solutionblock">
+        <p id="Vloadbearingcapacity" class="Output"></p>
+        <p id="Vinteraction" class="Output"></p>
+        <p id="Vwelding" class="Output"></p>
+        <p id="VpunchingShear" class="Output"></p>
+        <p id="Vmax" class="Outputsignificant"></p>
+    </div>
 </body>
 
 </html>
