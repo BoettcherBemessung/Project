@@ -1642,18 +1642,18 @@ function QSK() {
 
         if (language_english == 1) {
             document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Vbearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "max V of interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "max V due to Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "max V due to PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vloadbearingcapacity").innerText = "bearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vinteraction").innerText = "interaction: " + (VoInteraction / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vwelding").innerText = " Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
+            document.getElementById("VpunchingShear").innerText = "PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
             document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
         }
         if (language_english == 0) {
             document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
-            document.getElementById("Vloadbearingcapacity").innerText = "max Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "max V durch Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "max V durch Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "max V durch Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vloadbearingcapacity").innerText = "Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vinteraction").innerText = "Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vwelding").innerText = "Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
+            document.getElementById("VpunchingShear").innerText = "Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
             document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN ";
         }
 
@@ -1997,7 +1997,7 @@ function QSK() {
         if (language_english == 1) {
             document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
             document.getElementById("Vloadbearingcapacity").innerText = "bearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "interactionavoiding: " + (VoInteraction / 1000).toFixed(2) + " kN ";
+            document.getElementById("Vinteraction").innerText = "interaction: " + (VoInteraction / 1000).toFixed(2) + " kN ";
             document.getElementById("Vwelding").innerText = " Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
             document.getElementById("VpunchingShear").innerText = "PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
             document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";

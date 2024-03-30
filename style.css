@@ -38,32 +38,18 @@ h3 {
     margin-right: 20px;
 }
 
-.OutputHeading {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 .Outputsignificant {
     background-color: greenyellow;
     color: red;
     text-decoration: underline;
-    margin-left: 100px;
-    margin-right: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .websiteheadings {
     text-decoration: underline;
     margin-bottom: 7px;
     font-weight: bold;
-}
-
-.clicking {
-    background-color: lightblue;
-    border-radius: 10px;
-    text-align: center;
-    margin-right: 420px;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 .Attention {
@@ -284,12 +270,37 @@ h3 {
     display: flex;
 }
 
+.containerresults {
+    border: solid 5px;
+    border-radius: 50px;
+    background-color: rgb(250, 252, 254);
+    margin-right: 200px;
+    margin-top: 15px;
+}
+
+.clicking {
+    background-color: lightblue;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 80px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.OutputHeading {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 25px;
+}
+
 .solutionblock {
+    margin-left: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-right: 300px;
+    margin-right: 50px;
     display: flex;
     background-color: bisque;
     border: solid 2px;
-    border-radius: 5px;
+    border-radius: 25px;
 }
