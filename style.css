@@ -351,17 +351,22 @@
                         }
                         .inputs {
                             width: 330px;
-                            height: 300px;
+                            height: 180px;
                             border-radius: 50px;
                             margin-top: 0px;
                             padding: 3px;
+                            display: flex;
+                        }
+                        .faceplate {
+                            font-size: 10px;
                         }
                         .inputfirst {
-                            margin-left: 45px;
+                            margin-left: 15px;
+                            margin-top: 15px;
                         }
                         .inputsecond {
                             margin-left: 45px;
-                            margin-top: 0px;
+                            margin-top: 15px;
                         }
                         .inputhsp {
                             width: 80px;
