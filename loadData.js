@@ -2,6 +2,7 @@ function dataload() {
     // === 0.1 registration of selected profils, steels...===
     var profileselection = document.getElementById("BeamSelection");
     var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
+    window.selectedProfile = selectedProfile
 
     var steelselection = document.getElementById("YieldStrength");
     var selectedSteel = YieldStrength.options[YieldStrength.selectedIndex].value;
