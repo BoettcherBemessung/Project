@@ -385,6 +385,7 @@ function showdefault2() {
     var mid_screw_left_context = canvas.getContext('2d');
     var up_screw_left_context = canvas.getContext('2d');
     var up_screw_right_context = canvas.getContext('2d');
+    var selectedScrewRows = document.getElementById("ScrewRows").value
 
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
@@ -861,15 +862,7 @@ function getdraw() {
     go_number.fillText("go = " + go, 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
 
-    var eO_number = canvas.getContext('2d');
-    eO_number.font = '9px Arial';
-    eO_number.fillStyle = 'black';
-    eO_number.fillText("ex = " + ex, 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
 
-    var mvE_number = canvas.getContext('2d');
-    mvE_number.font = '9px Arial';
-    mvE_number.fillStyle = 'black';
-    mvE_number.fillText("mx = " + ex, 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
 
 
     var hsp_number = canvas.getContext('2d');
@@ -903,12 +896,12 @@ function getdraw() {
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText("u1=", 16, 149 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText("u1=", 14, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText(u1, 16, 159 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText(u1, 8, 159 - (u1n + h + 0.5 * u1) * y_factor);
 
     var profile = canvas.getContext('2d');
     profile.font = '9px Arial';
@@ -1149,6 +1142,16 @@ function getdraw() {
         up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp + 5);
         up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
+
+        var eO_number = canvas.getContext('2d');
+        eO_number.font = '9px Arial';
+        eO_number.fillStyle = 'black';
+        eO_number.fillText("ex = " + ex, 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
+
+        var mvE_number = canvas.getContext('2d');
+        mvE_number.font = '9px Arial';
+        mvE_number.fillStyle = 'black';
+        mvE_number.fillText("mx = " + ex, 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
     }
 
 
