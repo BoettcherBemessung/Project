@@ -315,19 +315,52 @@
                         }
                         .Attention {
                             margin: 0px;
+                            font-size: 15px;
                         }
                         .configuration {
+                            border: solid 2px;
                             margin: 0px;
-                        }
-                        .Screwconfiguration {
-                            margin-top: 5px;
-                            margin-left: 100px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;
+                            border-radius: 25px;
+                            padding-left: 5px;
                         }
                         .configurationContainer {
-                            margin: 0px;
+                            display: unset;
+                            margin-top: 15px;
+                        }
+                        .weldingconfiguration {
+                            margin-top: 15px;
+                            padding: 3px;
+                        }
+                        .Screwconfiguration {
+                            margin-top: 0px;
+                            margin-left: 0px;
                         }
                         .container1 {
                             margin-left: 0px;
+                            margin-top: 0px;
+                            display: unset;
+                            margin-bottom: 0px;
+                        }
+                        .drawingfaceplate {
+                            margin-left: 10px;
+                            height: 350px;
+                            width: 350px;
+                            margin-bottom: 0px;
+                        }
+                        .inputs {
+                            width: 330px;
+                            height: 300px;
+                            border-radius: 50px;
+                            margin-top: 0px;
+                            padding: 3px;
+                        }
+                        .inputfirst {
+                            margin-left: 45px;
+                        }
+                        .inputsecond {
+                            margin-left: 45px;
                             margin-top: 0px;
                         }
                         .inputhsp {
@@ -349,13 +382,15 @@
                             width: 80px;
                         }
                         .inputex {
-                            width: 80px,
+                            width: 80px;
                         }
                         .inputu1n {
                             width: 80px;
                         }
                         .StartCalc {
-                            margin-right: 120px;
+                            margin-right: 35px;
+                            padding: 35px;
+                            margin-left: 20px;
                         }
                         .containerresults {
                             margin: 0px;

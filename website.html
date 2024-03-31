@@ -206,7 +206,7 @@
 
         <br>
         <div class="configurationContainer">
-            <div class="weldinconfiguration">
+            <div class="weldingconfiguration">
                 <p id="Weldingmeasures" class="websiteheadings"><strong> weldingmeasures:</strong></p>
                 <label for="FlangeWelding">af:</label>
                 <select id="FlangeWelding" class="dropdownmenu">
@@ -307,37 +307,41 @@
                     showdefault2()
 
                 }
-
             })
         </script>
         <br>
         <br>
         <div class="inputs">
-            <p id="faceplatemeasures" class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
-            <form class="inputboxesFaceplatemeasures">
-                <label for="faceplateheight">hsp:</label>
-                <input type="number" id="hsp" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
-                <label for="faceplatewidth">bsp:</label>
-                <input type="number" id="bsp" name="inputboxbsp" placeholder="[mm]" class="inputbsp"><br>
-                <label for="faceplatethickness">tsp:</label>
-                <input type="number" id="tsp" name="inputboxtsp" placeholder="[mm]" class="inputtsp"><br>
+            <div class="inputfirst">
+                <p id="faceplatemeasures" class="websiteheadings"><strong>Insert faceplatemeasures: </strong></p>
+                <form class="inputboxesFaceplatemeasures">
+                    <label for="faceplateheight">hsp:</label>
+                    <input type="number" id="hsp" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
+                    <label for="faceplatewidth">bsp:</label>
+                    <input type="number" id="bsp" name="inputboxbsp" placeholder="[mm]" class="inputbsp"><br>
+                    <label for="faceplatethickness">tsp:</label>
+                    <input type="number" id="tsp" name="inputboxtsp" placeholder="[mm]" class="inputtsp"><br>
+            </div>
             </form>
             <br>
             <br>
-            <p id="Screwconfiguration" class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
-            <form class="inputboxesScrewmeasures">
-                <label for="inpute1" class="inputbox">e:</label>
-                <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inpute"><br>
-                <label for="inputgo" class="inputbox">go:</label>
-                <input type="number" id="distancego" name="inputboxgo" placeholder="[mm]" class="inputgo"><br>
-                <label for="inputgu" class="inputbox">gu:</label>
-                <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputgu"><br>
-                <label for="inputu1n" class="inputbox">u1n:</label>
-                <input type="number" id="distanceu1n" name="inputboxu1n" placeholder="[mm]" class="inputu1n"><br>
-            </form>
-            <div id="inputboxex" style="display: none;">
-                <label for="inputex">ex:</label>
-                <input type="number" id="distanceex" placeholder="[mm]" class="inputex">
+            <div class="inputsecond">
+                <p id="Screwconfiguration" class="websiteheadings"><strong>Insert Screwconfiguration:</strong></p>
+                <form class="inputboxesScrewmeasures">
+                    <label for="inputu1n" class="inputbox">u1n:</label>
+                    <input type="number" id="distanceu1n" name="inputboxu1n" placeholder="[mm]" class="inputu1n"><br>
+                    <label for="inpute1" class="inputbox">e:</label>
+                    <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inpute"><br>
+                    <label for="inputgo" class="inputbox">go:</label>
+                    <input type="number" id="distancego" name="inputboxgo" placeholder="[mm]" class="inputgo"><br>
+                    <label for="inputgu" class="inputbox">gu:</label>
+                    <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputgu"><br>
+
+                </form>
+                <div id="inputboxex" style="display: none;">
+                    <label for="inputex">ex:</label>
+                    <input type="number" id="distanceex" placeholder="[mm]" class="inputex">
+                </div>
             </div>
         </div>
 
