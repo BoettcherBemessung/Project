@@ -42,72 +42,87 @@ function showdefault() {
 
     var h2_measure = canvas.getContext('2d');
     h2_measure.beginPath();
-    h2_measure.moveTo(50, 149);
-    h2_measure.lineTo(42, 149);
-    h2_measure.lineTo(46, 149);
-    h2_measure.lineTo(46, 149 - 10 * y_factor);
-    h2_measure.lineTo(50, 149 - 10 * y_factor);
-    h2_measure.lineTo(42, 149 - 10 * y_factor);
-    h2_measure.lineTo(46, 149 - 10 * y_factor);
-    h2_measure.lineTo(46, 149 - (10 + 117.6) * y_factor);
-    h2_measure.lineTo(42, 149 - (10 + 117.6) * y_factor);
-    h2_measure.lineTo(50, 149 - (10 + 117.6) * y_factor);
-    h2_measure.lineTo(46, 149 - (10 + 117.6) * y_factor);
-    h2_measure.lineTo(46, 24);
-    h2_measure.lineTo(50, 24);
-    h2_measure.lineTo(42, 24);
+    h2_measure.moveTo(30, 149);
+    h2_measure.lineTo(22, 149);
+    h2_measure.lineTo(26, 149);
+    h2_measure.lineTo(26, 149 - 10 * y_factor);
+    h2_measure.lineTo(30, 149 - 10 * y_factor);
+    h2_measure.lineTo(22, 149 - 10 * y_factor);
+    h2_measure.lineTo(26, 149 - 10 * y_factor);
+    h2_measure.lineTo(26, 149 - (10 + 117.6) * y_factor);
+    h2_measure.lineTo(22, 149 - (10 + 117.6) * y_factor);
+    h2_measure.lineTo(30, 149 - (10 + 117.6) * y_factor);
+    h2_measure.lineTo(26, 149 - (10 + 117.6) * y_factor);
+    h2_measure.lineTo(26, 24);
+    h2_measure.lineTo(30, 24);
+    h2_measure.lineTo(22, 24);
     h2_measure.stroke()
 
     //Ziffer Maßkette gesamte Breite
     var bsp_number = canvas.getContext('2d');
     bsp_number.font = '9px Arial';
     bsp_number.fillStyle = 'black';
-    bsp_number.fillText("bsp", 80 + 125 * 64 / 140, 8);
+    bsp_number.fillText("bsp = 64", 70 + 125 * 64 / 140, 8);
 
     var u1n_number = canvas.getContext('2d');
     u1n_number.font = '9px Arial';
     u1n_number.fillStyle = 'black';
-    u1n_number.fillText("u1n", 100 + 250 * 64 / 140, 149 - 0.5 * 10 * y_factor);
+    u1n_number.fillText(" u1n = 10", 100 + 250 * 64 / 140, 149 - 0.5 * 10 * y_factor);
 
     var gu_number = canvas.getContext('2d');
     gu_number.font = '9px Arial';
     gu_number.fillStyle = 'black';
-    gu_number.fillText("gu", 100 + 250 * 64 / 140, 149 - (0.5 * 25 + 10) * y_factor);
+    gu_number.fillText(" gu = 25", 100 + 250 * 64 / 140, 149 - (0.5 * 25 + 10) * y_factor);
 
     var wh_number = canvas.getContext('2d');
     wh_number.font = '9px Arial';
     wh_number.fillStyle = 'black';
-    wh_number.fillText("p", 100 + 250 * 64 / 140, 149 - (25 + 10 + 0.5 * (117.6 - 25 - 25)) * y_factor);
+    wh_number.fillText(" p = 67,6", 100 + 250 * 64 / 140, 149 - (25 + 10 + 0.5 * (117.6 - 25 - 25)) * y_factor);
 
     var go_number = canvas.getContext('2d');
     go_number.font = '9px Arial';
     go_number.fillStyle = 'black';
-    go_number.fillText("go", 100 + 250 * 64 / 140, 149 - (10 + 117.6 - 0.5 * 25) * y_factor);
+    go_number.fillText(" go = 25", 100 + 250 * 64 / 140, 149 - (10 + 117.6 - 0.5 * 25) * y_factor);
 
     var u1_number = canvas.getContext('2d');
     u1_number.font = '9px Arial';
     u1_number.fillStyle = 'black';
-    u1_number.fillText("u1", 100 + 250 * 64 / 140, 24 + 0.5 * 10 * y_factor);
+    u1_number.fillText(" u1 = 12,4", 100 + 250 * 64 / 140, 24 + 0.5 * 10 * y_factor);
 
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '9px Arial';
     hsp_number.fillStyle = 'black';
-    hsp_number.fillText("hsp", 50, 149 - 0.5 * 140 * y_factor);
+    hsp_number.fillText("hsp=", 40, 149 - 0.5 * 140 * y_factor);
+
+    var hsp_number = canvas.getContext('2d');
+    hsp_number.font = '9px Arial';
+    hsp_number.fillStyle = 'black';
+    hsp_number.fillText("140", 40, 159 - 0.5 * 140 * y_factor);
 
     var u1nleft_number = canvas.getContext('2d');
     u1nleft_number.font = '9px Arial';
     u1nleft_number.fillStyle = 'black';
-    u1nleft_number.fillText("u1n", 28, 149 - 0.5 * 10 * y_factor);
+    u1nleft_number.fillText("u1n", 6, 149 - 0.5 * 10 * y_factor);
 
     var h_number = canvas.getContext('2d');
     h_number.font = '9px Arial';
     h_number.fillStyle = 'black';
-    h_number.fillText("h", 26, 149 - (10 + 0.5 * 117.6) * y_factor);
+    h_number.fillText("h=", 8, 149 - (10 + 0.5 * 117.6) * y_factor);
+
+    var h_number = canvas.getContext('2d');
+    h_number.font = '9px Arial';
+    h_number.fillStyle = 'black';
+    h_number.fillText("117,6", 2, 159 - (10 + 0.5 * 117.6) * y_factor);
 
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText("u1", 26, 149 - (10 + 117.6 + 0.5 * 10) * y_factor);
+    u1_number_left.fillText("u1", 6, 149 - (10 + 117.6 + 0.5 * 10) * y_factor);
+
+    var profile = canvas.getContext('2d');
+    profile.font = '9px Arial';
+    profile.fillStyle = 'black';
+    profile.fillText("IPEa 120", 12, 10);
 
     var e_measures = canvas.getContext('2d');
     e_measures.beginPath();
@@ -292,7 +307,6 @@ function showdefault() {
     Left_Up_sec_context.closePath();
     Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
-
     //Drawing of lower Screws
 
     Low_screw_left_context.beginPath();
@@ -397,20 +411,20 @@ function showdefault2() {
 
     var h2_measure = canvas.getContext('2d');
     h2_measure.beginPath();
-    h2_measure.moveTo(50, 149);
-    h2_measure.lineTo(42, 149);
-    h2_measure.lineTo(46, 149);
-    h2_measure.lineTo(46, 149 - u1n * y_factor);
-    h2_measure.lineTo(50, 149 - u1n * y_factor);
-    h2_measure.lineTo(42, 149 - u1n * y_factor);
-    h2_measure.lineTo(46, 149 - u1n * y_factor);
-    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(42, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(50, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(46, 149 - (u1n + h) * y_factor);
-    h2_measure.lineTo(46, 24);
-    h2_measure.lineTo(50, 24);
-    h2_measure.lineTo(42, 24);
+    h2_measure.moveTo(40, 149);
+    h2_measure.lineTo(32, 149);
+    h2_measure.lineTo(36, 149);
+    h2_measure.lineTo(36, 149 - u1n * y_factor);
+    h2_measure.lineTo(40, 149 - u1n * y_factor);
+    h2_measure.lineTo(32, 149 - u1n * y_factor);
+    h2_measure.lineTo(36, 149 - u1n * y_factor);
+    h2_measure.lineTo(36, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(32, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(40, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(36, 149 - (u1n + h) * y_factor);
+    h2_measure.lineTo(36, 24);
+    h2_measure.lineTo(40, 24);
+    h2_measure.lineTo(32, 24);
     h2_measure.stroke()
 
 
@@ -467,18 +481,18 @@ function showdefault2() {
         var u1nleft_number = canvas.getContext('2d');
         u1nleft_number.font = '9px Arial';
         u1nleft_number.fillStyle = 'black';
-        u1nleft_number.fillText("u1n", 28, 149 - 0.5 * u1n * y_factor);
+        u1nleft_number.fillText("u1n", 18, 149 - 0.5 * u1n * y_factor);
     }
 
     var h_number = canvas.getContext('2d');
     h_number.font = '9px Arial';
     h_number.fillStyle = 'black';
-    h_number.fillText("h", 26, 149 - (u1n + 0.5 * h) * y_factor);
+    h_number.fillText("h", 16, 149 - (u1n + 0.5 * h) * y_factor);
 
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText("u1", 26, 149 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText("u1", 16, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var e_measures = canvas.getContext('2d');
     e_measures.beginPath();
