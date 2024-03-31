@@ -1,7 +1,10 @@
 function germanpage() {
     var language_english = window.language_english
+    var language_spanish = window.language_spanish
     language_english = 0
+    language_spanish = 0
     window.language_english = language_english
+    window.language_spanish = language_spanish
     document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
@@ -22,8 +25,11 @@ function germanpage() {
 
 function englishpage() {
     var language_english = window.language_english
+    var language_spanish = window.language_spanish
+    language_spanish = 0
     language_english = 1
     window.language_english = language_english
+    window.language_spanish = language_spanish
     document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
@@ -40,5 +46,28 @@ function englishpage() {
     document.getElementById("ActingForces").innerText = "Insert Acting forces:"
     document.getElementById("CalculationsComplete").innerText = " Start Calculations"
 
+
+}
+
+function spanishpage() {
+    var language_english = window.language_english
+    var language_spanish = 1
+    window.language_spanish = language_spanish
+    window.language_english = language_english
+    document.getElementById("Website_Heading").innerText = "bienvenido al pimer programa de cálculo de conexiones en linea"
+    document.getElementById("Attention!").innerText = "Attencion! No usa ese programa por proyectos reales! solamente es hecho para experimentar y estudiar!!"
+    document.getElementById("Beamconfiguration").innerText = "elige la viga:"
+    document.getElementById("ProfilConfiguration").innerText = " perfil:"
+    document.getElementById("Steeltype").innerText = "tipo de acero:"
+    document.getElementById("Beamdata").innerText = "muestra informaciones de la viga"
+    document.getElementById("Weldingmeasures").innerText = "dimensiones de la soldadura:"
+    document.getElementById("ScrewselectionText").innerText = "elige tornillos:"
+    document.getElementById("ScrewshapeText").innerText = "tipo de tornillo:"
+    document.getElementById("ScrewStrength").innerText = "clase de resistencia:"
+    document.getElementById("Screwrowstext").innerText = "filas de tornillos:"
+    document.getElementById("faceplatemeasures").innerText = "elige dimensiones de la placa frontal: "
+    document.getElementById("Screwconfiguration").innerText = "elige distancias de los tornillos:"
+    document.getElementById("ActingForces").innerText = "elige actuandas fuerzas:"
+    document.getElementById("CalculationsComplete").innerText = " empiza las calculaciones"
 
 }
