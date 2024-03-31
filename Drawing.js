@@ -407,6 +407,13 @@ function draw_screws() {
         up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
     }
+    var profileselection = document.getElementById("BeamSelection");
+    var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
+
+    var profile = canvas.getContext('2d');
+    profile.font = '9px Arial';
+    profile.fillStyle = 'black';
+    profile.fillText(selectedProfile, 10, 10);
 }
 document.getElementById('distanceu1n').addEventListener('input', function() {
     draw_faceplate_width();
