@@ -221,7 +221,7 @@ function draw_screws() {
     var w_number = canvas.getContext('2d');
     w_number.font = '7px Arial';
     w_number.fillStyle = 'black';
-    w_number.fillText((bsp - 2 * e, 55 + (0.5 * bsp) * x_factor).toFixed(2), 17);
+    w_number.fillText(bsp - 2 * e, 55 + (0.5 * bsp) * x_factor, 17);
 
     var bsp_measures = canvas.getContext('2d');
     bsp_measures.beginPath();
