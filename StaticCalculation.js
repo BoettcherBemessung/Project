@@ -1345,7 +1345,7 @@ function QSK() {
     }
 
     if (language_spanish == 1) {
-        if (hsp < h) { alert("Calculacion no possible, placa frontal menor que  alutra de la viga! elige placa frontal mas alta por favor") }
+        if (hsp < h) { alert("Calculacion no possible, placa frontal menor que  altura de la viga! elige placa frontal mas alta por favor") }
         if (bsp < b) { alert("Calculacion no possible, placa frontal menor que ancho de la viga! elige placa frontal mas ancho por favor") }
         if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculacion no possible, tornillos demasiadio cerca a la alma") }
         if (e < 1.2 * dzero) { alert("Calculacion no possible, tornillos demasido cerca al margen de la placa frontal") }

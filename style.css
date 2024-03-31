@@ -302,6 +302,7 @@
                         background-color: bisque;
                         border: solid 2px;
                         border-radius: 25px;
+                        display: flex;
                     }
                     
                     .solutionlength {
