@@ -19,11 +19,7 @@ function getdraw() {
     var gu = tf + 45
     var u1n = 30
     var u1 = (hsp - u1n - h).toFixed(2);
-    var ex = 0.5 * u1
     var w = hsp - u1 - u1n - go - gu
-    var mx = u1 - ex
-
-
 
     if (h <= 180) {
         hsp = h + 30
@@ -31,8 +27,10 @@ function getdraw() {
         gu = tf + 25
         u1n = 15
         tsp = 10
+        var u1 = (hsp - u1n - h).toFixed(2);
         if (selectedScrewRows == 3) {
             hsp = hsp + 30
+            var u1 = (hsp - u1n - h).toFixed(2);
         }
     }
     if (h >= 490) {
@@ -40,6 +38,8 @@ function getdraw() {
         gu = tf + 65
         tsp = 30
     }
+    var ex = 0.5 * u1
+    var mx = u1 - ex
     window.hsp = hsp
     window.bsp = bsp
     window.go = go
