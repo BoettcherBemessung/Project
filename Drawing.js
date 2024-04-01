@@ -22,9 +22,16 @@ document.getElementById('hsp').addEventListener('input', function() {
 
 });
 
-function draw_faceplate_width(bsp) {
+function draw_faceplate_width() {
     var bsp = parseFloat(document.getElementById("bsp").value);
+    if (isNaN(bsp)) {
+        bsp = window.bsp
+    }
+
     var hsp = parseFloat(document.getElementById("hsp").value);
+    if (isNaN(hsp)) {
+        hsp = window.hsp;
+    }
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
     bsp_context.moveTo(55, 149);
@@ -43,7 +50,7 @@ document.getElementById('hsp').addEventListener('input', function() {
 
 document.getElementById('bsp').addEventListener('input', function() {
     var tsp = this.value;
-    draw_faceplate_width(bsp);
+    draw_faceplate_width();
 });
 
 
@@ -56,14 +63,40 @@ function draw_screws() {
     var tw = window.tw
     var tf = window.tf
     var r = window.r
+
     var hsp = parseFloat(document.getElementById("hsp").value);
+    if (isNaN(hsp)) {
+        hsp = window.hsp;
+    }
     var bsp = parseFloat(document.getElementById("bsp").value);
+    if (isNaN(bsp)) {
+        bsp = window.bsp
+    }
     var tsp = parseFloat(document.getElementById("tsp").value);
+    if (isNaN(tsp)) {
+        tsp = window.tsp
+    }
     var e = parseFloat(document.getElementById("distancee1").value);
+    if (isNaN(e)) {
+        e = window.e
+    }
     var ex = parseFloat(document.getElementById("distanceex").value);
+    if (isNaN(ex)) {
+        ex = window.ex
+    }
     var go = parseFloat(document.getElementById("distancego").value);
+    if (isNaN(go)) {
+        go = window.go
+    }
     var gu = parseFloat(document.getElementById("distancegu").value);
+    if (isNaN(gu)) {
+        gu = window.gu
+    }
+
     var u1n = parseFloat(document.getElementById("distanceu1n").value);
+    if (isNaN(u1n)) {
+        u1n = window.u1n
+    }
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var u1 = (hsp - u1n - h).toFixed(2);
 
