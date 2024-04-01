@@ -1,5 +1,6 @@
 function getdraw() {
     dataload()
+    var ew = window.ew
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var bsp = b
     var hsp = h + 60
@@ -379,6 +380,23 @@ function getdraw() {
     Low_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_left_context.stroke();
 
+    //Drawing of screwwashers 
+    var centerX_left_up = 80 + e * x_factor;
+    var centerY_left_up = 149 - (u1n + gu) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
+    console.log("ew=" + ew)
+
+
     Low_screw_right_context.beginPath();
     Low_screw_right_context.moveTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
     Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
@@ -387,6 +405,19 @@ function getdraw() {
     Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
     Low_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_right_context.stroke();
+
+    var centerX_left_up = 80 + bsp * x_factor - e * x_factor;
+    var centerY_left_up = 149 - (u1n + gu) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of inner upper Screws
     mid_screw_right_context.beginPath();
@@ -398,6 +429,20 @@ function getdraw() {
     mid_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_right_context.stroke();
 
+    var centerX_left_up = 80 + bsp * x_factor - e * x_factor;
+    var centerY_left_up = 149 - (u1n + h - go) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
+
     mid_screw_left_context.beginPath();
     mid_screw_left_context.moveTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
     mid_screw_left_context.lineTo(80 + e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
@@ -406,6 +451,19 @@ function getdraw() {
     mid_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
     mid_screw_left_context.lineTo(80 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_left_context.stroke();
+
+    var centerX_left_up = 80 + e * x_factor;
+    var centerY_left_up = 149 - (u1n + h - go) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
 
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
@@ -421,6 +479,19 @@ function getdraw() {
         up_screw_right_context.lineTo(80 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp - 5)
         up_screw_right_context.stroke();
 
+        var centerX_left_up = 80 + bsp * x_factor - e * x_factor;
+        var centerY_left_up = 24 + ex * 125 / hsp;
+        var startangle_left_up = 0;
+        var endangle_left_up = 2 * Math.PI;
+
+        Left_Up_sec_context.scale(scale_X, scale_y);
+        Left_Up_sec_context.beginPath();
+        Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+        Left_Up_sec_context.lindeWidth = 2;
+        Left_Up_sec_context.stroke();
+        Left_Up_sec_context.closePath();
+        Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
         up_screw_left_context.beginPath();
         up_screw_left_context.moveTo(80 + e * x_factor, 24 + ex * 125 / hsp);
         up_screw_left_context.lineTo(80 + e * x_factor + 5, 24 + ex * 125 / hsp);
@@ -429,6 +500,19 @@ function getdraw() {
         up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp + 5);
         up_screw_left_context.lineTo(80 + e * x_factor, 24 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
+
+        var centerX_left_up = 80 + e * x_factor;
+        var centerY_left_up = 24 + ex * 125 / hsp;
+        var startangle_left_up = 0;
+        var endangle_left_up = 2 * Math.PI;
+
+        Left_Up_sec_context.scale(scale_X, scale_y);
+        Left_Up_sec_context.beginPath();
+        Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+        Left_Up_sec_context.lindeWidth = 2;
+        Left_Up_sec_context.stroke();
+        Left_Up_sec_context.closePath();
+        Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
         var eO_number = canvas.getContext('2d');
         eO_number.font = '9px Arial';

@@ -1186,5 +1186,5 @@ function Beamdata() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
-    alert("   h:" + h + "   b:" + b + "   tw:" + tw + "   tf:" + tf + "   Avz:" + Avzb.toFixed(0) + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0))
+    alert("   h: " + h + "mm   b: " + b + "mm   tw: " + tw + "mm   tf: " + tf + "mm    r: " + r + "mm                  " + " Avz: " + Avzb.toFixed(0) + "mm^2" + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0))
 }

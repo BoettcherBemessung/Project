@@ -1194,6 +1194,7 @@ function dataload() {
     window.Wely = Wely
     window.Wply = Wply
     window.Avzb = Avzb
+    window.ew = ew
 
 
 }
