@@ -2,6 +2,7 @@ function getdraw() {
     dataload()
     var ew = window.ew
     var selectedScrewRows = document.getElementById("ScrewRows").value
+    var selectedScrewshape = document.getElementById("ScrewShape").value;
     var bsp = b
     var hsp = h + 60
     var tsp = 15
@@ -144,10 +145,6 @@ function getdraw() {
     go_number.fillStyle = 'black';
     go_number.fillText("go = " + go, 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
-
-
-
-
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '9px Arial';
     hsp_number.fillStyle = 'black';
@@ -190,6 +187,11 @@ function getdraw() {
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
     profile.fillText(selectedProfile, 3, 10);
+
+    var screwtype = canvas.getContext('2d');
+    profile.font = '9px Arial';
+    profile.fillStyle = 'black';
+    profile.fillText(selectedScrewshape, 3, 18);
 
     var tsp_show = canvas.getContext('2d');
     tsp_show.font = '9px Arial';

@@ -193,7 +193,19 @@
         <script>
             document.getElementById('BeamSelection').addEventListener('change', function WerteBestimmen() {
                 var selectedProfile = this.value;
-                getdraw()
+                var selectedScrewShape = this.value;
+                var hsp = parseFloat(document.getElementById("hsp").value);
+                var bsp = parseFloat(document.getElementById("bsp").value);
+                var go = parseFloat(document.getElementById("distancego").value);
+                var gu = parseFloat(document.getElementById("distancegu").value);
+                var u1n = parseFloat(document.getElementById("distanceu1n").value);
+                var e = parseFloat(document.getElementById("distancee1").value);
+
+                if (isNaN(hsp) && isNaN(bsp) && isNaN(e) && isNaN(go) && isNaN(gu) && isNaN(u1n)) {
+                    getdraw()
+                } else {
+                    draw_faceplate_width()
+                }
             })
         </script>
         <label id="Steeltype" for="SteelTypeBeam">steel type:</label>

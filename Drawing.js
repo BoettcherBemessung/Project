@@ -16,6 +16,7 @@ var mid_screw_right_context = canvas.getContext('2d');
 var mid_screw_left_context = canvas.getContext('2d');
 var up_screw_left_context = canvas.getContext('2d');
 var up_screw_right_context = canvas.getContext('2d');
+var selectedScrewshape = document.getElementById("ScrewShape").value;
 
 document.getElementById('hsp').addEventListener('input', function() {
     document.getElementById("drawing_area").style.display = "block";
@@ -527,6 +528,11 @@ function draw_screws() {
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
     profile.fillText(selectedProfile, 10, 10);
+
+    var screwtype = canvas.getContext('2d');
+    profile.font = '9px Arial';
+    profile.fillStyle = 'black';
+    profile.fillText(selectedScrewshape, 3, 18);
 }
 document.getElementById('distanceu1n').addEventListener('input', function() {
     draw_faceplate_width();
