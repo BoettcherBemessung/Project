@@ -532,7 +532,7 @@ function draw_screws() {
     var screwtype = canvas.getContext('2d');
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
-    profile.fillText(selectedScrewshape, 3, 18);
+    profile.fillText(selectedScrewshape, 5, 18);
 }
 document.getElementById('distanceu1n').addEventListener('input', function() {
     draw_faceplate_width();

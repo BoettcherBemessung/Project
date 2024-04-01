@@ -2111,7 +2111,6 @@ function QSK() {
             document.getElementById("Vmax").innerText = "max V  " + (Vmax / 1000).toFixed(2) + " kN ";
         }
 
-
         //Calculations of Rotationstiffnes
 
         if (Med < 2 / 3 * Mmax) { var mueh = 1 }
@@ -2143,5 +2142,15 @@ function QSK() {
         console.log(Sj)
 
     }
+    //utilization
+
+    var etaV = Ved / (Vmax)
+    var etaM = Med / (Mmax)
+    var eta = Math.max(etaV, etaM)
+    console.log("eta =" + eta)
+    document.getElementById("Endresults").innerText = "Utilization"
+    document.getElementById("UtilizationV").innerText = "\u03B7 = " + etaV.toFixed(2);
+    document.getElementById("UtiliziationM").innerText = "\u03B7 = " + etaM.toFixed(2);
+    document.getElementById("Utilization").innerText = "\u03B7 = " + eta.toFixed(2);
 
 }

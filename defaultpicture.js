@@ -191,7 +191,7 @@ function getdraw() {
     var screwtype = canvas.getContext('2d');
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
-    profile.fillText(selectedScrewshape, 3, 18);
+    profile.fillText(selectedScrewshape, 5, 18);
 
     var tsp_show = canvas.getContext('2d');
     tsp_show.font = '9px Arial';
