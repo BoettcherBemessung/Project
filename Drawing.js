@@ -63,7 +63,7 @@ function draw_screws() {
     var tw = window.tw
     var tf = window.tf
     var r = window.r
-
+    var ew = window.ew;
     var hsp = parseFloat(document.getElementById("hsp").value);
     if (isNaN(hsp)) {
         hsp = window.hsp;
@@ -390,6 +390,20 @@ function draw_screws() {
     Low_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_left_context.stroke();
 
+    //Drawing of screwwashers 
+    var centerX_left_up = 55 + e * x_factor;
+    var centerY_left_up = 149 - (u1n + gu) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
     Low_screw_right_context.beginPath();
     Low_screw_right_context.moveTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp);
     Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor - 5, 149 - (u1n + gu) * 125 / hsp);
@@ -398,6 +412,19 @@ function draw_screws() {
     Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp + 5);
     Low_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + gu) * 125 / hsp - 5);
     Low_screw_right_context.stroke();
+
+    var centerX_left_up = 55 + bsp * x_factor - e * x_factor;
+    var centerY_left_up = 149 - (u1n + gu) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of inner upper Screws
     mid_screw_right_context.beginPath();
@@ -409,6 +436,20 @@ function draw_screws() {
     mid_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_right_context.stroke();
 
+    var centerX_left_up = 55 + bsp * x_factor - e * x_factor;
+    var centerY_left_up = 149 - (u1n + h - go) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
+
     mid_screw_left_context.beginPath();
     mid_screw_left_context.moveTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp);
     mid_screw_left_context.lineTo(55 + e * x_factor + 5, 149 - (u1n + h - go) * 125 / hsp);
@@ -417,6 +458,19 @@ function draw_screws() {
     mid_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp + 5);
     mid_screw_left_context.lineTo(55 + e * x_factor, 149 - (u1n + h - go) * 125 / hsp - 5);
     mid_screw_left_context.stroke();
+
+    var centerX_left_up = 55 + e * x_factor;
+    var centerY_left_up = 149 - (u1n + h - go) * 125 / hsp;
+    var startangle_left_up = 0;
+    var endangle_left_up = 2 * Math.PI;
+
+    Left_Up_sec_context.scale(scale_X, scale_y);
+    Left_Up_sec_context.beginPath();
+    Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+    Left_Up_sec_context.lindeWidth = 2;
+    Left_Up_sec_context.stroke();
+    Left_Up_sec_context.closePath();
+    Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
     var selectedScrewRows = document.getElementById("ScrewRows").value
@@ -431,6 +485,19 @@ function draw_screws() {
         up_screw_right_context.lineTo(55 + bsp * x_factor - e * x_factor, 24 + ex * 125 / hsp - 5)
         up_screw_right_context.stroke();
 
+        var centerX_left_up = 55 + bsp * x_factor - e * x_factor;
+        var centerY_left_up = 24 + ex * 125 / hsp;
+        var startangle_left_up = 0;
+        var endangle_left_up = 2 * Math.PI;
+
+        Left_Up_sec_context.scale(scale_X, scale_y);
+        Left_Up_sec_context.beginPath();
+        Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+        Left_Up_sec_context.lindeWidth = 2;
+        Left_Up_sec_context.stroke();
+        Left_Up_sec_context.closePath();
+        Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
+
         up_screw_left_context.beginPath();
         up_screw_left_context.moveTo(55 + e * x_factor, 24 + ex * 125 / hsp);
         up_screw_left_context.lineTo(55 + e * x_factor + 5, 24 + ex * 125 / hsp);
@@ -439,6 +506,19 @@ function draw_screws() {
         up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp + 5);
         up_screw_left_context.lineTo(55 + e * x_factor, 24 + ex * 125 / hsp - 5);
         up_screw_left_context.stroke();
+
+        var centerX_left_up = 55 + e * x_factor;
+        var centerY_left_up = 24 + ex * 125 / hsp;
+        var startangle_left_up = 0;
+        var endangle_left_up = 2 * Math.PI;
+
+        Left_Up_sec_context.scale(scale_X, scale_y);
+        Left_Up_sec_context.beginPath();
+        Left_Up_sec_context.arc(centerX_left_up / scale_X, centerY_left_up / scale_y, 2 * ew * 250 / hsp, startangle_left_up, endangle_left_up);
+        Left_Up_sec_context.lindeWidth = 2;
+        Left_Up_sec_context.stroke();
+        Left_Up_sec_context.closePath();
+        Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
     }
     var profileselection = document.getElementById("BeamSelection");
     var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
