@@ -757,17 +757,51 @@ function showdefault2() {
 
 function getdraw() {
     dataload()
+    var selectedScrewRows = document.getElementById("ScrewRows").value
     var bsp = b
-    var hsp = h + 90
-    var e = 0.5 * (0.5 * b - r - 0.5 * tw)
+    var hsp = h + 60
+    var tsp = 15
+    if (h >= 320) { hsp = hsp + 20 }
+    if (selectedScrewRows == 3) {
+        hsp = hsp + 30
+    }
 
+    var e = 0.5 * (0.5 * b - r - 0.5 * tw)
     var go = tf + 45
     var gu = tf + 45
-    var u1n = 40
+    var u1n = 30
     var u1 = (hsp - u1n - h).toFixed(2);
     var ex = 0.5 * u1
     var w = hsp - u1 - u1n - go - gu
     var mx = u1 - ex
+
+
+
+    if (h <= 180) {
+        hsp = h + 30
+        go = tf + 25
+        gu = tf + 25
+        u1n = 15
+        tsp = 10
+        if (selectedScrewRows == 3) {
+            hsp = hsp + 30
+        }
+    }
+    if (h >= 490) {
+        go = tf + 65
+        gu = tf + 65
+        tsp = 30
+    }
+    window.hsp = hsp
+    window.bsp = bsp
+    window.go = go
+    window.gu = gu
+    window.ex = ex
+    window.e = e
+    window.u1n = u1n
+    window.u1 = u1
+    window.tsp = tsp
+
     var canvas = document.getElementById("drawing_area");
     var bsp_context = canvas.getContext('2d');
     var hsp_context = canvas.getContext('2d');
@@ -1122,7 +1156,7 @@ function getdraw() {
 
 
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
-    var selectedScrewRows = document.getElementById("ScrewRows").value
+
     if (selectedScrewRows == 3) {
 
         up_screw_right_context.beginPath();

@@ -1289,19 +1289,43 @@ function QSK() {
 
     // === 3.1 Obtaining values of Userinput for faceplate and Screwconfigure on Webpage ===
     var hsp = parseFloat(document.getElementById("hsp").value);
+    if (isNaN(hsp)) {
+        hsp = window.hsp;
+    }
     var bsp = parseFloat(document.getElementById("bsp").value);
+    if (isNaN(bsp)) {
+        bsp = window.bsp
+    }
     var tsp = parseFloat(document.getElementById("tsp").value);
+    if (isNaN(tsp)) {
+        tsp = window.tsp
+    }
     var e = parseFloat(document.getElementById("distancee1").value);
+    if (isNaN(e)) {
+        e = window.e
+    }
     var ex = parseFloat(document.getElementById("distanceex").value);
+    if (isNaN(ex)) {
+        ex = window.ex
+    }
     var go = parseFloat(document.getElementById("distancego").value);
+    if (isNaN(go)) {
+        go = window.go
+    }
     var gu = parseFloat(document.getElementById("distancegu").value);
-    var gu = parseFloat(document.getElementById("distancegu").value);
+    if (isNaN(gu)) {
+        gu = window.gu
+    }
+
     var u1n = parseFloat(document.getElementById("distanceu1n").value);
+    if (isNaN(u1n)) {
+        u1n = window.u1n
+    }
+
     var aw = parseFloat(document.getElementById("BeamWelding").value);
     var af = parseFloat(document.getElementById("FlangeWelding").value);
     var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
     var Ved = parseFloat(document.getElementById("ValueVed").value) * 10 ** 3;
-
 
     var w = bsp - 2 * e
     var u1 = hsp - u1n - h
@@ -1612,24 +1636,24 @@ function QSK() {
 
         if (language_english == 1 && language_spanish == 0) {
             document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
             document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
         }
         if (language_english == 0 && language_spanish == 0) {
             document.getElementById("Mmaxresults").innerText = "maßgebende Schraubenkräfte & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
             document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
         }
         if (language_spanish == 1) {
             document.getElementById("Mmaxresults").innerText = "fuerzas de tornillos predominantes & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
             document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
         }
 
         // === 4.13 calculations max. shear force===
@@ -2003,10 +2027,10 @@ function QSK() {
             document.getElementById("Mmaxresults").innerText = "Calculacion de Mmax:";
         }
 
-        document.getElementById("Ft1eff").innerText = "Fteff1: " + " kN " + (aFtrd1 / 1000).toFixed(2);
-        document.getElementById("Ft2eff").innerText = "Fteff2: " + " kN " + (aFtrd2 / 1000).toFixed(2);
-        document.getElementById("Ft3eff").innerText = "Fteff3: " + " kN " + (aFtrd3 / 1000).toFixed(2);
-        document.getElementById("Mmax").innerText = "Mmax: " + " kNm " + (Mmax / 1000000).toFixed(2);
+        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft3eff").innerText = "Fteff3: " + (aFtrd3 / 1000).toFixed(2) + " kN ";
+        document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
 
         // === 4.13 calculations max. shear force===
 
