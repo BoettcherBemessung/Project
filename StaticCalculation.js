@@ -1348,7 +1348,7 @@ function QSK() {
     if (language_english == 1 && language_spanish == 0) {
         if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
         if (bsp < b) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the width of the faceplate") }
-        if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculation not possible screws touching web of beam") }
+        if (0.5 * bsp - e - 0.5 * tw < 2 * ew) { alert("Calculation not possible screws touching web of beam") }
         if (e < 1.2 * dzero) { alert("Calculation not possible screws too close to faceplatmargin") }
         if (go - tf < 2 * ew) { alert("Calculation not possible inner screws touch upper flange") }
         if (gu - tf < 2 * ew) { alert("Calculation not possible inner screws touch lower flange") }
@@ -1359,7 +1359,7 @@ function QSK() {
     if (language_english == 0 && language_spanish == 0) {
         if (hsp < h) { alert("Berechnung nicht möglich, Stirnplatte kleiner als Trägerhöhe! Bitte wählen Sie eine höhere Stirnplatte") }
         if (bsp < b) { alert("Berechnung nicht möglich, Stirnplatter kleiner als Trägerbreite! Bitte wählen Sie eine breitere Stirnplatte") }
-        if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg") }
+        if (0.5 * bsp - e - 0.5 * tw < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg") }
         if (e < 1.2 * dzero) { alert("Berechnung nicht möglich, Schrauben zu nahe am Stirnplattenrand") }
         if (go - tf < 2 * ew) { alert("Berechnung nicht möglich,Die inneren oberen Schrauben liegen zu nah am Trägerflansch") }
         if (gu - tf < 2 * ew) { alert("Berechnung nicht möglich,Die inneren unteren Schrauben liegen zu nah am Trägerflansch") }
@@ -1371,7 +1371,7 @@ function QSK() {
     if (language_spanish == 1) {
         if (hsp < h) { alert("Calculacion no possible, placa frontal menor que  altura de la viga! elige placa frontal mas alta por favor") }
         if (bsp < b) { alert("Calculacion no possible, placa frontal menor que ancho de la viga! elige placa frontal mas ancho por favor") }
-        if (0.5 * bsp - e - 0.5 * tw < 1 * ew) { alert("Calculacion no possible, tornillos demasiadio cerca a la alma") }
+        if (0.5 * bsp - e - 0.5 * tw < 2 * ew) { alert("Calculacion no possible, tornillos demasiadio cerca a la alma") }
         if (e < 1.2 * dzero) { alert("Calculacion no possible, tornillos demasido cerca al margen de la placa frontal") }
         if (go - tf < 2 * ew) { alert("Calculacion no possible,los tornillos adentros estan demasiado cerca a la ala del perfil") }
         if (gu - tf < 2 * ew) { alert("Calculacion no possible,los tornillos bajos estan demasiado cerca a la ala del perfil") }

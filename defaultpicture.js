@@ -9,7 +9,12 @@ function getdraw() {
         hsp = hsp + 30
     }
 
-    var e = 0.5 * (0.5 * b - r - 0.5 * tw) + 2
+    var e = 0.5 * (0.5 * b - r - 0.5 * tw)
+    if (bsp <= 82) {
+        bsp = bsp + 15
+        e = e + 7
+    }
+    console.log("e=" + e)
     var go = tf + 45
     var gu = tf + 45
     var u1n = 30
