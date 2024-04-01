@@ -2149,8 +2149,8 @@ function QSK() {
     var eta = Math.max(etaV, etaM)
     console.log("eta =" + eta)
     document.getElementById("Endresults").innerText = "Utilization"
-    document.getElementById("UtilizationV").innerText = "\u03B7 = " + etaV.toFixed(2);
-    document.getElementById("UtiliziationM").innerText = "\u03B7 = " + etaM.toFixed(2);
-    document.getElementById("Utilization").innerText = "\u03B7 = " + eta.toFixed(2);
+    document.getElementById("UtilizationV").innerText = "Utilization of shearforce:            " + "\u03B7 = " + etaV.toFixed(2);
+    document.getElementById("UtiliziationM").innerText = "Utilization of moment:               " + "\u03B7 = " + etaM.toFixed(2);
+    document.getElementById("Utilization").innerText = "Utilization authoritive:               " + "\u03B7 = " + eta.toFixed(2);
 
 }
