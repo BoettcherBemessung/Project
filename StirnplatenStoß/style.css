@@ -15,6 +15,24 @@
                         color: white;
                     }
                     
+                    .websitecontainer {
+                        display: flex;
+                        background-color: white;
+                        border: solid 1px;
+                        margin-bottom: 25px;
+                    }
+                    
+                    .BBS {
+                        height: 100px;
+                        border: solid 1px;
+                    }
+                    
+                    .websiteHead {
+                        background-color: white;
+                        margin: 40px;
+                        margin-top: 40px;
+                    }
+                    
                     .buttons {
                         padding: 3px;
                         border: solid 2px;
