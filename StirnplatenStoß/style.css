@@ -30,6 +30,8 @@
                         background-color: white;
                         margin: 40px;
                         margin-top: 40px;
+                        padding-left: 20px;
+                        border-left: solid 1px;
                     }
                     
                     .buttons {
