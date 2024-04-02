@@ -1,37 +1,22 @@
-function englishnmenu() {
-    document.getElementById("startpage").innerText = "home"
-    document.getElementById("products").innerText = "products"
-    document.getElementById("service").innerText = "service"
-}
-
-function germannmenu() {
-    document.getElementById("startpage").innerText = "Startseite"
-    document.getElementById("products").innerText = "Produkte"
-    document.getElementById("service").innerText = "service"
-}
-
-function spanishnmenu() {
-    document.getElementById("startpage").innerText = "Pagina Principal"
-    document.getElementById("products").innerText = "Productos"
-    document.getElementById("service").innerText = "servicio"
-}
-
-
-
 function germanpage() {
-    germannmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_english = 0
     language_spanish = 0
     window.language_english = language_english
     window.language_spanish = language_spanish
-    document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
+    document.getElementById("Website_Heading").innerText = "Biegesteife Rahmenecken"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
     document.getElementById("ProfilConfiguration").innerText = "I-Profil:"
     document.getElementById("Steeltype").innerText = "Stahlgüte:"
     document.getElementById("Beamdata").innerText = "Anzeigen der Trägerkenndaten"
+
+    document.getElementById("Columnconfiguration").innerText = "Wählen Sie hier die Kenndaten der Stütze"
+    document.getElementById("ProfilConfiguration").innerText = "I-Profil:"
+    document.getElementById("Steeltype").innerText = "Stahlgüte:"
+    document.getElementById("Columndata").innerText = "Anzeigen der Stützenkenndaten"
+
     document.getElementById("Weldingmeasures").innerText = "Schweißnahtabmessungen:"
     document.getElementById("ScrewselectionText").innerText = "Wahl der Schrauben:"
     document.getElementById("ScrewshapeText").innerText = "Schraubentyp:"
@@ -42,23 +27,26 @@ function germanpage() {
     document.getElementById("ActingForces").innerText = "Eingabe der Belastung:"
     document.getElementById("CalculationsComplete").innerText = "hier klicken Für Ergebnisse"
 
-
 }
 
 function englishpage() {
-    englishnmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_spanish = 0
     language_english = 1
     window.language_english = language_english
     window.language_spanish = language_spanish
-    document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
+    document.getElementById("Website_Heading").innerText = "Rigidframe connection calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
     document.getElementById("ProfilConfiguration").innerText = " profile:"
     document.getElementById("Steeltype").innerText = "steel type:"
     document.getElementById("Beamdata").innerText = "show Beaminformation"
+
+    document.getElementById("Columnconfiguration").innerText = "Choose Columnconfiguration"
+    document.getElementById("ProfilConfiguration").innerText = "profile:"
+    document.getElementById("Columndata").innerText = "show Columninformation"
+
     document.getElementById("Weldingmeasures").innerText = "weldingmeasures:"
     document.getElementById("ScrewselectionText").innerText = "select Screws:"
     document.getElementById("ScrewshapeText").innerText = "screw type:"
@@ -70,11 +58,9 @@ function englishpage() {
     document.getElementById("CalculationsComplete").innerText = " Start Calculations"
 
 
-
 }
 
 function spanishpage() {
-    spanishnmenu()
     var language_english = window.language_english
     var language_spanish = 1
     window.language_spanish = language_spanish
@@ -94,6 +80,5 @@ function spanishpage() {
     document.getElementById("Screwconfiguration").innerText = "elige distancias de los tornillos:"
     document.getElementById("ActingForces").innerText = "elige actuandas fuerzas:"
     document.getElementById("CalculationsComplete").innerText = " empiza las calculaciones"
-
 
 }

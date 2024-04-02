@@ -41,6 +41,7 @@
 .productlink {
     text-align: center;
     background-color: white;
-    margin-left: 250px;
+    margin-left: 50px;
     margin-right: 250px;
+    font-weight: bold;
 }

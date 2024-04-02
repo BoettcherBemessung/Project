@@ -2,23 +2,22 @@
 <html>
 
 <head>
-    <title>BöttcherBemessungsSoftware</title>
-    <link rel="stylesheet" href="product.css" />
+    <title>
+        Anschlussrechner
+    </title>
     <link rel="stylesheet" href="../StirnplatenStoß/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 </head>
 
+
 <body>
-    <script src="../StirnplatenStoß/germanpage.js"></script>
-    <script src="websitechange.js"></script>
-    <p>choose language / Sprache wählen</p>
+    <script src="../StirnplatenStoß//germanpage.js"></script>
+    <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
+        var language_spanish = 0
         window.language_english = language_english
-    </script>
-    <img id="linklogo" class="linklogo" src="../images/BBS.jpg">
-    <script>
-        var linklogo = document.getElementById("linklogo");
-        linklogo.style.display = "none"
+        window.language_spanish = language_spanish
     </script>
     <img id="Image_germanflag" class="pictureflag" src="../images/germanflag.jpg" alt="Bild german" onclick="germanpage()">
     <img id="Image_englishflag" class="pictureflag" src="../images/englishflag.jpg" alt="Bild english" onclick="englishpage()">
@@ -31,7 +30,7 @@
         <a href="../Products/products.html">
             <p id="products" class="websiteHead">Produkte</p>
         </a>
-        <a href="../Berechnungsgrundlagen/Berechnungsgrundlagen.html">
+        <a href="/Berechnungsgrundlagen.html">
             <p id="Berechnungsgrundlagen" class="websiteHead">Berechnungsgrundlagen</p>
         </a>
         <a href="../Service/Service.html">

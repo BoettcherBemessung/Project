@@ -11,7 +11,7 @@
 
 
 <body>
-    <script src="germanpage.js"></script>
+    <script src="../StirnplatenStoß//germanpage.js"></script>
     <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
@@ -25,14 +25,16 @@
     <div class="websitecontainer">
         <img id="BBS" class="BBS" src="..//images/BBS.jpg" alt="Bild BBS">
         <a href="../Homepage/index.html">
-            <p class="websiteHead">Startseite</p>
+            <p id="startpage" class="websiteHead">Startseite</p>
         </a>
         <a href="../Products/products.html">
-            <p class="websiteHead">Produkte</p>
+            <p id="products" class="websiteHead">Produkte</p>
         </a>
-        <p class="websiteHead">Berechnungsgrundlagen</p>
+        <a href="../Berechnungsgrundlagen/Berechnungsgrundlagen.html">
+            <p id="Berechnungsgrundlagen" class="websiteHead">Berechnungsgrundlagen</p>
+        </a>
         <a href="../Service/Service.html">
-            <p class="websiteHead">Service</p>
+            <p id="service" class="websiteHead">Service</p>
         </a>
     </div>
 
@@ -556,11 +558,14 @@
                     <label for="inputgu" class="inputbox">gu:</label>
                     <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputgu"><br>
 
+
                 </form>
                 <div id="inputboxex" style="display: none;">
                     <label for="inputex">ex:</label>
                     <input type="number" id="distanceex" placeholder="[mm]" class="inputex">
                 </div>
+                <label for="inputgu" class="inputbox">e1:</label>
+                <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inpute1"><br>
             </div>
         </div>
 
@@ -587,15 +592,7 @@
         </script>
         <br>
         <br>
-        <div class="inputs">
-            <div class="inputfirst">
-                <p id="faceplatemeasures" class="websiteheadings faceplate"><strong>Insert faceplatemeasures: </strong></p>
-                <form class="inputboxesFaceplatemeasures">
-                    <label for="faceplateheight">e1:</label>
-                    <input type="number" id="e3" name="inputboxhsp" placeholder="[mm]" class="inpute3"><br>
-            </div>
-            </form>
-        </div>
+
     </div>
     <br>
     <div class="StartCalc">

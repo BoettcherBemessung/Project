@@ -2133,13 +2133,13 @@ function QSK() {
 
         var Sj = ((210000 * zeq ** 2) / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten + 1 / k_fourM + 1 / k_fiveM + 1 / k_ten)) / 10 ** 6
 
-        console.log(k_ten)
-        console.log(k_fourO)
-        console.log(k_fourM)
-        console.log(zeq)
-        console.log(k_eq)
-        console.log(mueh)
-        console.log(Sj)
+        console.log("k10=" + k_ten)
+        console.log("k4oben=" + k_fourO)
+        console.log("k4imtte=" + k_fourM)
+        console.log("zeg=" + zeq)
+        console.log("keq=" + k_eq)
+        console.log("mueh=" + mueh)
+        console.log("Sj=" + Sj)
 
     }
     //utilization

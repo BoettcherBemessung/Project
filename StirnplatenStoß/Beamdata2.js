@@ -1192,10 +1192,10 @@ function Beamdata() {
 function Columndata() {
     // === 0.1 registration of selected profils, steels...===
     var profileselection = document.getElementById("ColumnSelection");
-    var selectedProfile = BeamSelection.options[BeamSelection.selectedIndex].value;
+    var selectedProfile = ColumnSelection.options[ColumnSelection.selectedIndex].value;
 
-    var steelselection = document.getElementById("YieldStrength");
-    var selectedSteel = YieldStrength.options[YieldStrength.selectedIndex].value;
+    var steelselection = document.getElementById("ColumnYieldStrength");
+    var selectedSteel = ColumnYieldStrength.options[ColumnYieldStrength.selectedIndex].value;
 
     var Screwshapeselection = document.getElementById("ScrewShape");
     var selectedScrewshape = ScrewShape.options[ScrewShape.selectedIndex].value;
@@ -2329,11 +2329,11 @@ function Columndata() {
         r = 30;
     }
 
-    window.h = h;
-    window.b = b;
-    window.tw = tw;
-    window.tf = tf;
-    window.r = r;
+    window.hc = h;
+    window.bc = b;
+    window.twc = tw;
+    window.tfc = tf;
+    window.rc = r;
 
     // === 1.3 Data of Steeltypes and obtaining of fitting values of variables===
 
@@ -2361,8 +2361,7 @@ function Columndata() {
         betaw = 0.9
     }
 
-    window.fy = fy
-    window.fu = fu
+
 
     // === 2.1 Calculation of Profilevalues===
     var cw = h - 2 * tf - 2 * r

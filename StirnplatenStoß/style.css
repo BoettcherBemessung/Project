@@ -252,6 +252,14 @@
                         border-radius: 8px;
                     }
                     
+                    .inpute1 {
+                        margin-top: 8px;
+                        background-color: white;
+                        border: solid 2px;
+                        border-radius: 15px;
+                        margin-left: 8px;
+                    }
+                    
                     .inputex {
                         margin-left: 10px;
                         width: 25x;
