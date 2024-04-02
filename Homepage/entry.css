@@ -1,0 +1,49 @@
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    body {
+        height: 100%;
+        font-family: 'Open-Sans', sans-serif;
+        background-color: rgb(128, 112, 146);
+        padding: 200px;
+        padding-top: 0px;
+    }
+    
+    .pictureflag {
+        width: 50px;
+        height: 25px;
+        border: solid 3px;
+        border-radius: 4px;
+    }
+    
+    .title {
+        text-align: center;
+    }
+    
+    .picturecontainer1 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .picturecontainer2 {
+        margin-top: 50px;
+        border: solid 2px;
+        border-radius: 35px;
+        margin-right: 0px;
+        background-color: white;
+        margin-right: 10px;
+    }
+    
+    .pictureselection {
+        width: 400px;
+        height: 225px;
+        border: solid 2px;
+        border-radius: 35px;
+    }
+    
+    .picturetext {
+        padding-bottom: 5px;
+        text-align: center;
+    }

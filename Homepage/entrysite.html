@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BöttcherBemessungsSoftware</title>
+    <link rel="stylesheet" href="entry.css" />
+</head>
+
+<body>
+    <script src="germanpage.js"></script>
+    <script src="websitechange.js"></script>
+    <p>choose language / Sprache wählen</p>
+    <script>
+        var language_english = 1
+        window.language_english = language_english
+    </script>
+    <img id="Image_germanflag" class="pictureflag" src="../images/germanflag.jpg" alt="Bild german" onclick="germanpage()">
+    <img id="Image_englishflag" class="pictureflag" src="../images/englishflag.jpg" alt="Bild english" onclick="englishpage()">
+    <img id="Image_spanishflag" class="pictureflag" src="../images/spanishflag.jpg" alt="Bild spanish" onclick="spanishpage()">
+
+    <h1 id="Website_Heading" class="title"> Welcome To Böttcher-Bemessung-Software</h1>
+    <div class="picturecontainer1">
+        <div class="picturecontainer2">
+            <a href="../StirnplatenStoß/website.html">
+                <img src="../images/AnschlussStirnplatte.jpg" class="pictureselection" id="rigid_connection">
+            </a>
+            <p id="Stirnstoß" class="picturetext">Test the faceplate joint calculator</p>
+        </div>
+        <div class="picturecontainer2">
+            <a href="../Rahmenecke/rahmenecke.html">
+                <img src="../images/biegesteifecke.jpg" class="pictureselection" id="rigid_connection">
+            </a>
+            <p id="Stirnstoß" class="picturetext">Test the rigid frame connection calculator</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
