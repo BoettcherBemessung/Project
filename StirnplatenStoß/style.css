@@ -6,7 +6,7 @@
                     body {
                         height: 100%;
                         font-family: 'Open-Sans', sans-serif;
-                        background-color: rgb(128, 112, 146);
+                        background-color: white;
                         padding: 200px;
                         padding-top: 0px;
                     }
@@ -18,13 +18,12 @@
                     .websitecontainer {
                         display: flex;
                         background-color: white;
-                        border: solid 1px;
+                        border-bottom: solid 1px;
                         margin-bottom: 25px;
                     }
                     
                     .BBS {
                         height: 100px;
-                        border: solid 1px;
                     }
                     
                     .websiteHead {
@@ -371,6 +370,7 @@
                             height: 350px;
                             width: 350px;
                             margin-bottom: 0px;
+                            background-color: rgb(230, 239, 247);
                         }
                         .inputs {
                             width: 330px;
