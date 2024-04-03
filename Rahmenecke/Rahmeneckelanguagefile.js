@@ -1,21 +1,43 @@
+function englishnmenu() {
+    document.getElementById("startpage").innerText = "home"
+    document.getElementById("products").innerText = "products"
+    document.getElementById("service").innerText = "service"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Calculation Basis"
+}
+
+function germannmenu() {
+    document.getElementById("startpage").innerText = "Startseite"
+    document.getElementById("products").innerText = "Produkte"
+    document.getElementById("service").innerText = "service"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Berechnungsgrundlagen"
+}
+
+function spanishnmenu() {
+    document.getElementById("startpage").innerText = "Pagina Principal"
+    document.getElementById("products").innerText = "Productos"
+    document.getElementById("service").innerText = "servicio"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Basis de calculacion"
+}
+
 function germanpage() {
+    germannmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_english = 0
     language_spanish = 0
     window.language_english = language_english
     window.language_spanish = language_spanish
-    document.getElementById("Website_Heading").innerText = "Biegesteife Rahmenecken"
+    document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
     document.getElementById("ProfilConfiguration").innerText = "I-Profil:"
     document.getElementById("Steeltype").innerText = "Stahlgüte:"
     document.getElementById("Beamdata").innerText = "Anzeigen der Trägerkenndaten"
 
-    document.getElementById("Columnconfiguration").innerText = "Wählen Sie hier die Kenndaten der Stütze"
-    document.getElementById("ProfilConfiguration").innerText = "I-Profil:"
-    document.getElementById("Steeltype").innerText = "Stahlgüte:"
+    document.getElementById("Columnconfiguration").innerText = "Wählen Sie ein Stüzenprofil"
+    document.getElementById("ColumnSteeltype").innerText = "Stahlgüte:"
     document.getElementById("Columndata").innerText = "Anzeigen der Stützenkenndaten"
+
 
     document.getElementById("Weldingmeasures").innerText = "Schweißnahtabmessungen:"
     document.getElementById("ScrewselectionText").innerText = "Wahl der Schrauben:"
@@ -26,26 +48,26 @@ function germanpage() {
     document.getElementById("Screwconfiguration").innerText = "Eingabe der Schraubenabstände:"
     document.getElementById("ActingForces").innerText = "Eingabe der Belastung:"
     document.getElementById("CalculationsComplete").innerText = "hier klicken Für Ergebnisse"
-
 }
 
 function englishpage() {
+    englishnmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_spanish = 0
     language_english = 1
     window.language_english = language_english
     window.language_spanish = language_spanish
-    document.getElementById("Website_Heading").innerText = "Rigidframe connection calculator"
+    document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
     document.getElementById("ProfilConfiguration").innerText = " profile:"
     document.getElementById("Steeltype").innerText = "steel type:"
     document.getElementById("Beamdata").innerText = "show Beaminformation"
 
-    document.getElementById("Columnconfiguration").innerText = "Choose Columnconfiguration"
-    document.getElementById("ProfilConfiguration").innerText = "profile:"
-    document.getElementById("Columndata").innerText = "show Columninformation"
+    document.getElementById("Columnconfiguration").innerText = "configure the column"
+    document.getElementById("ColumnSteeltype").innerText = "steel type:"
+    document.getElementById("Columndata").innerText = "show columninformation"
 
     document.getElementById("Weldingmeasures").innerText = "weldingmeasures:"
     document.getElementById("ScrewselectionText").innerText = "select Screws:"
@@ -56,11 +78,10 @@ function englishpage() {
     document.getElementById("Screwconfiguration").innerText = "Insert Screwconfiguration:"
     document.getElementById("ActingForces").innerText = "Insert Acting forces:"
     document.getElementById("CalculationsComplete").innerText = " Start Calculations"
-
-
 }
 
 function spanishpage() {
+    spanishnmenu()
     var language_english = window.language_english
     var language_spanish = 1
     window.language_spanish = language_spanish
@@ -71,6 +92,11 @@ function spanishpage() {
     document.getElementById("ProfilConfiguration").innerText = " perfil:"
     document.getElementById("Steeltype").innerText = "tipo de acero:"
     document.getElementById("Beamdata").innerText = "muestra informaciones de la viga"
+
+    document.getElementById("Columnconfiguration").innerText = "elige la columna"
+    document.getElementById("ColumnSteeltype").innerText = "tipo de acero:"
+    document.getElementById("Columndata").innerText = "smuestra informaciones de la columna"
+
     document.getElementById("Weldingmeasures").innerText = "dimensiones de la soldadura:"
     document.getElementById("ScrewselectionText").innerText = "elige tornillos:"
     document.getElementById("ScrewshapeText").innerText = "tipo de tornillo:"
@@ -80,5 +106,4 @@ function spanishpage() {
     document.getElementById("Screwconfiguration").innerText = "elige distancias de los tornillos:"
     document.getElementById("ActingForces").innerText = "elige actuandas fuerzas:"
     document.getElementById("CalculationsComplete").innerText = " empiza las calculaciones"
-
 }
