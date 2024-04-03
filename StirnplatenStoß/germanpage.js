@@ -1,25 +1,28 @@
-function englishnmenu() {
+function englishheadings() {
     document.getElementById("startpage").innerText = "home"
     document.getElementById("products").innerText = "products"
     document.getElementById("service").innerText = "service"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Calculation Basis"
 }
 
-function germannmenu() {
+function germanheadings() {
     document.getElementById("startpage").innerText = "Startseite"
     document.getElementById("products").innerText = "Produkte"
     document.getElementById("service").innerText = "service"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Berechnungsgrundlagen"
 }
 
-function spanishnmenu() {
+function spanishheadings() {
     document.getElementById("startpage").innerText = "Pagina Principal"
     document.getElementById("products").innerText = "Productos"
     document.getElementById("service").innerText = "servicio"
+    document.getElementById("Berechnungsgrundlagen").innerText = "Basis de calculacion"
 }
 
 
 
-function germanpage() {
-    germannmenu()
+function deutsch() {
+    germanheadings()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_english = 0
@@ -45,8 +48,8 @@ function germanpage() {
 
 }
 
-function englishpage() {
-    englishnmenu()
+function englisch() {
+    englishheadings()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_spanish = 0
@@ -73,8 +76,8 @@ function englishpage() {
 
 }
 
-function spanishpage() {
-    spanishnmenu()
+function spanisch() {
+    spanishheadings()
     var language_english = window.language_english
     var language_spanish = 1
     window.language_spanish = language_spanish
