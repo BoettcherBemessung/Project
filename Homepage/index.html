@@ -9,11 +9,23 @@
 
 <body>
     <script src="/Homepage/HomeTranslation.js"></script>
-    <p>choose language / Sprache wählen</p>
     <script>
-        var language_english = 1
-        window.language_english = language_english
+        var language_english = window.language_english
+        var language_spanish = window.language_spanish
+        var language_german = window.language_german
+
+        if (language_english == 1) {
+            englisch()
+        }
+        if (language_german == 1) {
+            deutsch()
+        }
+        if (language_spanish == 1) {
+            spanisch()
+        }
     </script>
+    <p>choose language / Sprache wählen</p>
+
     <img id="linklogo" class="linklogo" src="../images/BBS.jpg">
     <script>
         var linklogo = document.getElementById("linklogo");

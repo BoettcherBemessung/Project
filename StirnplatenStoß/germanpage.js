@@ -23,10 +23,13 @@ function germanpage() {
     germannmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
     language_english = 0
     language_spanish = 0
+    language_german = 1
     window.language_english = language_english
     window.language_spanish = language_spanish
+    window.language_german = language_german
     document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
@@ -48,10 +51,13 @@ function englishpage() {
     englishnmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
     language_spanish = 0
     language_english = 1
+    language_german = 0
     window.language_english = language_english
     window.language_spanish = language_spanish
+    window.language_german = language_german
     document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
@@ -72,9 +78,14 @@ function englishpage() {
 function spanishpage() {
     spanishnmenu()
     var language_english = window.language_english
+    var language_german = window.language_german
+    var language_spanish = window.language_spanish
     var language_spanish = 1
+    var language_german = 0
+    var language_english = 0
     window.language_spanish = language_spanish
     window.language_english = language_english
+    window.language_german = language_german
     document.getElementById("Website_Heading").innerText = "bienvenido al pimer programa de cálculo de conexiones en linea"
     document.getElementById("Attention!").innerText = "Attencion! No usa ese programa por proyectos reales! solamente es hecho para experimentar y estudiar!!"
     document.getElementById("Beamconfiguration").innerText = "elige la viga:"

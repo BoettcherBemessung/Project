@@ -23,10 +23,13 @@ function deutsch() {
     germannmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
     language_english = 0
     language_spanish = 0
+    language_german = 1
     window.language_english = language_english
     window.language_spanish = language_spanish
+    window.language_german = language_german
     document.getElementById("introductionheading").innerText = "Statik im Netz mit uns bemesst ihr auch in Situ!"
     document.getElementById("introductiontext").innerText = "Als erstes Unternehmen ermöglicht BöttcherBemessung Statiken direkt im Browser berechnen zu lassen sämtliche Produkte sind nutzbar direkt im Web ohne Download, Plugins oder Vorinstallationen. Am Handy, Am Computer am Tablet womöglich bald an eurem Kühlschrank wenn ihr einen smartfridge habt ;D Als junges Unternehmen wollen wir natürlich besonders auf Transparenz der Rechenprozesse und Ergebnisse setzen, weshalb in sämtlichen Anwendungen die Zwischenergebnisse und Ergebnisse per Mausklick(am handy display berühren) anklickbar sind, sodass die Rechenwege mit Formel und eingesetzen Parametern angezeigt werden."
     document.getElementById("Program1heading").innerText = "Stirnplattenstoß"
@@ -42,10 +45,13 @@ function englisch() {
     englishnmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
     language_spanish = 0
     language_english = 1
+    language_german = 0
     window.language_english = language_english
     window.language_spanish = language_spanish
+    window.language_german = language_german
     document.getElementById("introductionheading").innerText = "Statics online with us, and you can also measure in situ!"
     document.getElementById("introductiontext").innerText = "The first company, BöttcherBemessung, enables the direct calculation of statics in the browser. All products are usable directly on the web without the need for download, plugins, or pre-installations. On mobile phones, computers, tablets, and possibly soon on your fridge if you have a smart fridge ;D As a young company, we naturally aim for transparency in the calculation processes and results. Therefore, in all applications, the intermediate results and final results are clickable with a mouse click (or touch on mobile displays), allowing the calculation paths with formulas and input parameters to be displayed."
     document.getElementById("Program1heading").innerText = "Unión de placa frontal Empalme de placa frontal"
@@ -59,9 +65,14 @@ function englisch() {
 function spanisch() {
     spanishnmenu()
     var language_english = window.language_english
+    var language_german = window.language_german
+    var language_spanish = window.language_spanish
     var language_spanish = 1
+    var language_german = 0
+    var language_english = 0
     window.language_spanish = language_spanish
     window.language_english = language_english
+    window.language_german = language_german
     document.getElementById("introductionheading").innerText = "¡Con nosotros, puedes calcular la estática en línea e in situ!"
     document.getElementById("introductiontext").innerText = "La primera empresa, BöttcherBemessung, permite el cálculo directo de la estática en el navegador. Todos los productos son utilizables directamente en la web sin necesidad de descargas, complementos o preinstalaciones. En teléfonos móviles, computadoras, tabletas y posiblemente pronto en tu nevera si tienes una nevera inteligente ;D Como empresa joven, naturalmente buscamos la transparencia en los procesos de cálculo y resultados. Por lo tanto, en todas las aplicaciones, los resultados intermedios y finales son clicables con un clic del mouse (o toque en pantallas móviles), lo que permite mostrar los caminos de cálculo con fórmulas y parámetros de entrada."
     document.getElementById("Program1heading").innerText = "Esquine"
