@@ -1,28 +1,26 @@
-function englishheadings() {
+function englishnmenu() {
     document.getElementById("startpage").innerText = "home"
     document.getElementById("products").innerText = "products"
     document.getElementById("service").innerText = "service"
     document.getElementById("Berechnungsgrundlagen").innerText = "Calculation Basis"
 }
 
-function germanheadings() {
+function germannmenu() {
     document.getElementById("startpage").innerText = "Startseite"
     document.getElementById("products").innerText = "Produkte"
     document.getElementById("service").innerText = "service"
     document.getElementById("Berechnungsgrundlagen").innerText = "Berechnungsgrundlagen"
 }
 
-function spanishheadings() {
+function spanishnmenu() {
     document.getElementById("startpage").innerText = "Pagina Principal"
     document.getElementById("products").innerText = "Productos"
     document.getElementById("service").innerText = "servicio"
     document.getElementById("Berechnungsgrundlagen").innerText = "Basis de calculacion"
 }
 
-
-
-function deutsch() {
-    germanheadings()
+function germanpage() {
+    germannmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_english = 0
@@ -44,12 +42,10 @@ function deutsch() {
     document.getElementById("Screwconfiguration").innerText = "Eingabe der Schraubenabstände:"
     document.getElementById("ActingForces").innerText = "Eingabe der Belastung:"
     document.getElementById("CalculationsComplete").innerText = "hier klicken Für Ergebnisse"
-
-
 }
 
-function englisch() {
-    englishheadings()
+function englishpage() {
+    englishnmenu()
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     language_spanish = 0
@@ -71,13 +67,10 @@ function englisch() {
     document.getElementById("Screwconfiguration").innerText = "Insert Screwconfiguration:"
     document.getElementById("ActingForces").innerText = "Insert Acting forces:"
     document.getElementById("CalculationsComplete").innerText = " Start Calculations"
-
-
-
 }
 
-function spanisch() {
-    spanishheadings()
+function spanishpage() {
+    spanishnmenu()
     var language_english = window.language_english
     var language_spanish = 1
     window.language_spanish = language_spanish
@@ -97,6 +90,4 @@ function spanisch() {
     document.getElementById("Screwconfiguration").innerText = "elige distancias de los tornillos:"
     document.getElementById("ActingForces").innerText = "elige actuandas fuerzas:"
     document.getElementById("CalculationsComplete").innerText = " empiza las calculaciones"
-
-
 }
