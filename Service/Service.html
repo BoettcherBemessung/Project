@@ -10,6 +10,7 @@
 <body>
     <script src="../StirnplatenStoß/germanpage.js"></script>
     <script src="../Service/service.js"></script>
+    <script src="../Service/serviceTranslation.js"></script>
     <p>choose language / Sprache wählen</p>
     <script>
         var language_english = 1
@@ -20,9 +21,9 @@
         var linklogo = document.getElementById("linklogo");
         linklogo.style.display = "none"
     </script>
-    <img id="Image_germanflag" class="pictureflag" src="../images/germanflag.jpg" alt="Bild german" onclick="germanpage()">
-    <img id="Image_englishflag" class="pictureflag" src="../images/englishflag.jpg" alt="Bild english" onclick="englishpage()">
-    <img id="Image_spanishflag" class="pictureflag" src="../images/spanishflag.jpg" alt="Bild spanish" onclick="spanishpage()">
+    <img id="Image_germanflag" class="pictureflag" src="../images/germanflag.jpg" alt="Bild german" onclick="deutsch()">
+    <img id="Image_englishflag" class="pictureflag" src="../images/englishflag.jpg" alt="Bild english" onclick="englisch()">
+    <img id="Image_spanishflag" class="pictureflag" src="../images/spanishflag.jpg" alt="Bild spanish" onclick="spanisch()">
     <div class="websitecontainer">
         <img id="BBS" class="BBS" src="..//images/BBS.jpg" alt="Bild BBS">
         <a href="../Homepage/index.html">
@@ -40,16 +41,16 @@
     </div>
     <div class="service">
         <div class="critic">
-            <h2>Hinterlassen Sie hier Kritik oder Stellen Fragen und geben Anregung auf Verbesserung unserer Programme/Website</h2>
+            <h2 id="criticheading">Hinterlassen Sie hier Kritik oder Stellen Fragen und geben Anregung auf Verbesserung unserer Programme/Website</h2>
             <div class="input">
                 <input type="text" class="inputbox" id="textInput" placeholder="Geben Sie Hier Kritik ein">
-                <button class="buttonaddtext" onclick="addText()">Hinzufügen</button>
+                <button id="addingbutton" class="buttonaddtext" onclick="addText()">Hinzufügen</button>
             </div>
             <div id="output" class="output"></div>
         </div>
         <div class="contact">
-            <h2>Hauptsitz in Bretten</h2>
-            <p class="information">BöttcherBemessungSoftware Gmbh</p>
+            <h2 id="companycity">Hauptsitz in Bretten</h2>
+            <p id="companyname" class="information">BöttcherBemessungSoftware Gmbh</p>
             <p class="information">Email: nick.boettcher@gmx.de</p>
             <div class="socialmedia information">
                 <p class="information">Facebook: </p>

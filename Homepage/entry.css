@@ -11,6 +11,14 @@
         padding-top: 100px;
     }
     
+    .content {
+        background-image: url(../images/backgroungSteel.jpg);
+        background-color: (255, 255, 255, 0.1);
+        background-position: center;
+        overflow: visible;
+        height: 1500px;
+    }
+    
     .pictureflag {
         width: 50px;
         height: 25px;
@@ -20,6 +28,8 @@
     
     .title {
         text-align: center;
+        background-color: white;
+        opacity: 0.8;
     }
     
     .picturecontainer1 {
