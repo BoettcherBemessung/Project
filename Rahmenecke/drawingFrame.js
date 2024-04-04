@@ -11,6 +11,7 @@ function framedraw() {
     var bsp = window.bsp;
     var tsp = window.tsp;
     var tfc = window.tfc;
+    var u2 = window.u2;
 
 
     var selectedScrewRows = document.getElementById("ScrewRows").value
@@ -44,7 +45,6 @@ function framedraw() {
     columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 10)
     columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 130)
     columnflange_context.stroke();
-
 
     //Drawing of facepalte
     var beam_context = canvasColumn.getContext('2d');
@@ -125,12 +125,10 @@ function framedraw() {
     dimensioncolumn_context.stroke()
 
     //numbers of columndimensionchain
-
     var tfc1_number = canvasColumn.getContext('2d');
     tfc1_number.font = '9px Arial';
     tfc1_number.fillStyle = 'black';
     tfc1_number.fillText(tfc, (10 + 10 + tfc * xC_factor) / 2 - 4, 140)
-
 
     var hwc_number = canvasColumn.getContext('2d');
     hwc_number.font = '9px Arial';
@@ -148,39 +146,19 @@ function framedraw() {
     tsp_number.fillText(tsp, (10 + (hc + tsp) * xC_factor + 10 + hc * xC_factor) / 2, 140)
 
     //Drawing of dimension chain e1
+    var u2_context = canvasColumn.getContext('2d');
+    u2_context.beginPath();
+    u2_context.moveTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 20)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 20)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 10)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 10)
+    u2_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 10)
+    u2_context.stroke()
 
-    var e1_context = canvasColumn.getContext('2d');
-    if (selectedScrewRows == 3) {
-        e1_context.beginPath();
-        e1_context.moveTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + ex * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 20 + ex * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 20 + ex * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + ex * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 10)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 10)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 10)
-        e1_context.stroke()
-
-        var e1_number = canvasColumn.getContext('2d');
-        e1_number.font = '9px Arial';
-        e1_number.fillStyle = 'black';
-        e1_number.fillText(eOne, 10 + hc * xC_factor + tsp * xC_factor + 30, (20 + ex * yC_factor + 10) / 2)
-    }
-
-    if (selectedScrewRows == 2) {
-        e1_context.beginPath();
-        e1_context.moveTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + u1 * yC_factor + go * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 20 + u1 * yC_factor + go * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 20 + u1 * yC_factor + go * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + u1 * yC_factor + go * yC_factor)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 10)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 10)
-        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 10)
-        e1_context.stroke()
-
-        var e1_number = canvasColumn.getContext('2d');
-        e1_number.font = '9px Arial';
-        e1_number.fillStyle = 'black';
-        e1_number.fillText("e1=" + eOne, 10 + hc * xC_factor + tsp * xC_factor + 30, (20 + u1 * yC_factor + go * yC_factor + 10) / 2)
-    }
+    var u2_number = canvasColumn.getContext('2d');
+    u2_number.font = '9px Arial';
+    u2_number.fillStyle = 'black';
+    u2_number.fillText("u2=" + u2, 10 + hc * xC_factor + tsp * xC_factor + 30, 15)
 }

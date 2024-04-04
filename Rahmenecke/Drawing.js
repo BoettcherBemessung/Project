@@ -85,9 +85,9 @@ function draw_screws() {
     if (isNaN(ex)) {
         ex = window.ex
     }
-    var eOne = parseFloat(document.getElementById("distancee1").value);
-    if (isNaN(eOne)) {
-        eOne = window.eOne
+    var u2 = parseFloat(document.getElementById("distanceu2").value);
+    if (isNaN(u2)) {
+        u2 = window.u2
     }
     var go = parseFloat(document.getElementById("distancego").value);
     if (isNaN(go)) {
@@ -110,9 +110,10 @@ function draw_screws() {
     window.bsp = bsp;
     window.gu = gu;
     window.tsp = tsp;
+    window.u2 = u2;
 
     var selectedScrewRows = document.getElementById("ScrewRows").value
-    var u1 = (hsp - u1n - h).toFixed(2);
+    var u1 = hsp - u1n - h;
 
     //Umrechnungsfaktor für x-Wert von Höhen zu Pixel in Grafik
 
@@ -566,6 +567,11 @@ document.getElementById('distancegu').addEventListener('input', function() {
     draw_faceplate_width();
 })
 document.getElementById('distanceex').addEventListener('input', function() {
+
+    draw_faceplate_width();
+})
+
+document.getElementById('distanceu2').addEventListener('input', function() {
 
     draw_faceplate_width();
 })

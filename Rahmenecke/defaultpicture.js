@@ -42,15 +42,9 @@ function getdraw() {
     }
     var ex = 0.5 * u1
     var mx = u1 - ex
-    if (selectedScrewRows == 2) {
-        var eOne = u1 + go
-    }
+    var u2 = 50
 
-    if (selectedScrewRows == 3) {
-        var eOne = ex + 20
-    }
-
-    window.eOne = eOne
+    window.u2 = u2
     window.hsp = hsp
     window.bsp = bsp
     window.go = go
