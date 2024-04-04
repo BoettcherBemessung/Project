@@ -171,4 +171,21 @@ function framedraw() {
     u2_number.font = '9px Arial';
     u2_number.fillStyle = 'black';
     u2_number.fillText("u2=" + u2, 10 + hc * xC_factor + tsp * xC_factor + 30, 15)
+
+    //Showing of chosen profile
+
+    var selectedColumnprofile = document.getElementById('ColumnSelection').value
+    var selectedbeamprofile = document.getElementById('BeamSelection').value
+
+    var columnprofile = canvasColumn.getContext('2d');
+    columnprofile.font = '9px Arial';
+    columnprofile.fillStyle = 'black';
+    columnprofile.fillText(selectedColumnprofile, (10 + 10 + hc * xC_factor) / 2 - 10, 125)
+
+    var beamprofile = canvasColumn.getContext('2d');
+    beamprofile.font = '9px Arial';
+    beamprofile.fillStyle = 'black';
+    beamprofile.fillText(selectedbeamprofile, 260, (20 + hsp * yC_factor - u1n * yC_factor + 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor) / 2 - 15)
+
+
 }
