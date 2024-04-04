@@ -10,6 +10,8 @@ function framedraw() {
     var hsp = window.hsp;
     var bsp = window.bsp;
     var tsp = window.tsp;
+    var tfc = window.tfc;
+
 
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var selectedScrewshape = document.getElementById("ScrewShape").value;
@@ -27,20 +29,20 @@ function framedraw() {
 
     //Drawing of Column
     columnheight_context.beginPath();
-    columnheight_context.moveTo(10, 145);
+    columnheight_context.moveTo(10, 130);
     columnheight_context.lineTo(10, 10);
     columnheight_context.lineTo(10 + hc * xC_factor, 10);
-    columnheight_context.lineTo(10 + hc * xC_factor, 145);
-    columnheight_context.lineTo(10, 145);
+    columnheight_context.lineTo(10 + hc * xC_factor, 130);
+    columnheight_context.lineTo(10, 130);
     columnheight_context.stroke();
 
     //Drawing of Columnflange
     var columnflange_context = canvasColumn.getContext('2d')
     columnflange_context.beginPath();
-    columnflange_context.moveTo(10 + tfc * xC_factor, 145)
+    columnflange_context.moveTo(10 + tfc * xC_factor, 130)
     columnflange_context.lineTo(10 + tfc * xC_factor, 10)
     columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 10)
-    columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 145)
+    columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 130)
     columnflange_context.stroke();
 
 
@@ -98,9 +100,52 @@ function framedraw() {
         upperScrew_context.stroke();
     }
 
+    //Drawing of dimensionchains Column
+    var dimensioncolumn_context = canvasColumn.getContext('2d');
+    dimensioncolumn_context.beginPath();
+    dimensioncolumn_context.moveTo(10, 145)
+    dimensioncolumn_context.lineTo(10, 140);
+    dimensioncolumn_context.lineTo(10, 150);
+    dimensioncolumn_context.lineTo(10, 145);
+    dimensioncolumn_context.lineTo(10 + tfc * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + tfc * xC_factor, 140);
+    dimensioncolumn_context.lineTo(10 + tfc * xC_factor, 150);
+    dimensioncolumn_context.lineTo(10 + tfc * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + (hc - tfc) * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + (hc - tfc) * xC_factor, 140);
+    dimensioncolumn_context.lineTo(10 + (hc - tfc) * xC_factor, 150);
+    dimensioncolumn_context.lineTo(10 + (hc - tfc) * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + hc * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + hc * xC_factor, 150);
+    dimensioncolumn_context.lineTo(10 + hc * xC_factor, 140);
+    dimensioncolumn_context.lineTo(10 + hc * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + (hc + tsp) * xC_factor, 145);
+    dimensioncolumn_context.lineTo(10 + (hc + tsp) * xC_factor, 150);
+    dimensioncolumn_context.lineTo(10 + (hc + tsp) * xC_factor, 140);
+    dimensioncolumn_context.stroke()
+
+    //numbers of columndimensionchain
+
+    var tfc1_number = canvasColumn.getContext('2d');
+    tfc1_number.font = '9px Arial';
+    tfc1_number.fillStyle = 'black';
+    tfc1_number.fillText(tfc, (10 + 10 + tfc * xC_factor) / 2 - 4, 140)
 
 
+    var hwc_number = canvasColumn.getContext('2d');
+    hwc_number.font = '9px Arial';
+    hwc_number.fillStyle = 'black';
+    hwc_number.fillText((h - 2 * tfc).toFixed(2), (10 + tfc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 4, 140)
 
+    var tfc2_number = canvasColumn.getContext('2d');
+    tfc2_number.font = '9px Arial';
+    tfc2_number.fillStyle = 'black';
+    tfc2_number.fillText(tfc, (10 + hc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 7, 140)
+
+    var tsp_number = canvasColumn.getContext('2d');
+    tsp_number.font = '9px Arial';
+    tsp_number.fillStyle = 'black';
+    tsp_number.fillText(tsp, (10 + (hc + tsp) * xC_factor + 10 + hc * xC_factor) / 2, 140)
 
 
 }
