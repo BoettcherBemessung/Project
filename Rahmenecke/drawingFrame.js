@@ -64,6 +64,11 @@ function framedraw() {
     u1n_context.lineTo(280, 20 + hsp * yC_factor - u1n * yC_factor);
     u1n_context.stroke();
 
+    u1n_context.beginPath();
+    u1n_context.moveTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor)
+    u1n_context.lineTo(280, 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor)
+    u1n_context.stroke();
+
     //Drawing of Beam upper Flange
     var topflange_context = canvasColumn.getContext('2d');
     topflange_context.beginPath();
@@ -71,6 +76,11 @@ function framedraw() {
     topflange_context.lineTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor);
     topflange_context.lineTo(280, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor);
     topflange_context.stroke();
+
+    topflange_context.beginPath();
+    topflange_context.moveTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + tf * yC_factor)
+    topflange_context.lineTo(280, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + tf * yC_factor);
+    topflange_context.stroke()
 
     //Drawing of lower ScrewRow
     var lowerScrew_context = canvasColumn.getContext('2d');
