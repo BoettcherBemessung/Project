@@ -135,17 +135,52 @@ function framedraw() {
     var hwc_number = canvasColumn.getContext('2d');
     hwc_number.font = '9px Arial';
     hwc_number.fillStyle = 'black';
-    hwc_number.fillText((h - 2 * tfc).toFixed(2), (10 + tfc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 4, 140)
+    hwc_number.fillText((h - 2 * tfc).toFixed(2), (10 + tfc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 10, 140)
 
     var tfc2_number = canvasColumn.getContext('2d');
     tfc2_number.font = '9px Arial';
     tfc2_number.fillStyle = 'black';
-    tfc2_number.fillText(tfc, (10 + hc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 7, 140)
+    tfc2_number.fillText(tfc, (10 + hc * xC_factor + 10 + (hc - tfc) * xC_factor) / 2 - 9, 140)
 
     var tsp_number = canvasColumn.getContext('2d');
     tsp_number.font = '9px Arial';
     tsp_number.fillStyle = 'black';
     tsp_number.fillText(tsp, (10 + (hc + tsp) * xC_factor + 10 + hc * xC_factor) / 2, 140)
 
+    //Drawing of dimension chain e1
 
+    var e1_context = canvasColumn.getContext('2d');
+    if (selectedScrewRows == 3) {
+        e1_context.beginPath();
+        e1_context.moveTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + ex * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 20 + ex * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 20 + ex * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + ex * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 10)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 10)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 10)
+        e1_context.stroke()
+
+        var e1_number = canvasColumn.getContext('2d');
+        e1_number.font = '9px Arial';
+        e1_number.fillStyle = 'black';
+        e1_number.fillText(eOne, 10 + hc * xC_factor + tsp * xC_factor + 30, (20 + ex * yC_factor + 10) / 2)
+    }
+
+    if (selectedScrewRows == 2) {
+        e1_context.beginPath();
+        e1_context.moveTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + u1 * yC_factor + go * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 20 + u1 * yC_factor + go * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 20 + u1 * yC_factor + go * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 20 + u1 * yC_factor + go * yC_factor)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 20, 10)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 15, 10)
+        e1_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 25, 10)
+        e1_context.stroke()
+
+        var e1_number = canvasColumn.getContext('2d');
+        e1_number.font = '9px Arial';
+        e1_number.fillStyle = 'black';
+        e1_number.fillText("e1=" + eOne, 10 + hc * xC_factor + tsp * xC_factor + 30, (20 + u1 * yC_factor + go * yC_factor + 10) / 2)
+    }
 }

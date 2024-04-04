@@ -85,6 +85,10 @@ function draw_screws() {
     if (isNaN(ex)) {
         ex = window.ex
     }
+    var eOne = parseFloat(document.getElementById("distancee1").value);
+    if (isNaN(eOne)) {
+        eOne = window.eOne
+    }
     var go = parseFloat(document.getElementById("distancego").value);
     if (isNaN(go)) {
         go = window.go
