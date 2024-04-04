@@ -98,6 +98,15 @@ function draw_screws() {
     if (isNaN(u1n)) {
         u1n = window.u1n
     }
+
+    window.u1n = u1n;
+    window.ex = ex;
+    window.go = go;
+    window.hsp = hsp;
+    window.bsp = bsp;
+    window.gu = gu;
+    window.tsp = tsp;
+
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var u1 = (hsp - u1n - h).toFixed(2);
 
@@ -533,6 +542,9 @@ function draw_screws() {
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
     profile.fillText(selectedScrewshape, 5, 18);
+
+    framedraw()
+
 
 }
 document.getElementById('distanceu1n').addEventListener('input', function() {

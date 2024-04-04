@@ -3,6 +3,14 @@ function framedraw() {
     loadColumndata()
 
     var ew = window.ew
+    var go = window.gu
+    var ex = window.ex
+    var gu = window.ex
+    var u1n = window.u1n
+    var hsp = window.hsp;
+    var bsp = window.bsp;
+    var tsp = window.tsp;
+
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var selectedScrewshape = document.getElementById("ScrewShape").value;
     var canvasColumn = document.getElementById("canvasframe");
