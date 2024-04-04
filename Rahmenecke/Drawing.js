@@ -50,7 +50,11 @@ document.getElementById('hsp').addEventListener('input', function() {
 });
 
 document.getElementById('bsp').addEventListener('input', function() {
-    var tsp = this.value;
+
+    draw_faceplate_width();
+});
+document.getElementById('tsp').addEventListener('input', function() {
+
     draw_faceplate_width();
 });
 
