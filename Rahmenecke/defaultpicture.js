@@ -527,7 +527,7 @@ function getdraw() {
         mvE_number.fillText("mx = " + ex, 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
     }
 
-
+    framedraw()
 
 
 }
