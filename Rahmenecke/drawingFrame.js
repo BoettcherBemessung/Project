@@ -3,9 +3,9 @@ function framedraw() {
     loadColumndata()
 
     var ew = window.ew
-    var go = window.gu
+    var go = window.go
     var ex = window.ex
-    var gu = window.ex
+    var gu = window.gu
     var u1n = window.u1n
     var hsp = window.hsp;
     var bsp = window.bsp;
@@ -33,6 +33,16 @@ function framedraw() {
     columnheight_context.lineTo(10 + hc * xC_factor, 145);
     columnheight_context.lineTo(10, 145);
     columnheight_context.stroke();
+
+    //Drawing of Columnflange
+    var columnflange_context = canvasColumn.getContext('2d')
+    columnflange_context.beginPath();
+    columnflange_context.moveTo(10 + tfc * xC_factor, 145)
+    columnflange_context.lineTo(10 + tfc * xC_factor, 10)
+    columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 10)
+    columnflange_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 145)
+    columnflange_context.stroke();
+
 
     //Drawing of facepalte
     var beam_context = canvasColumn.getContext('2d');
@@ -66,7 +76,7 @@ function framedraw() {
     lowerScrew_context.moveTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor)
     lowerScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor, 20 + (hsp - (u1n + gu)) * yC_factor)
     lowerScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 10, 20 + (hsp - (u1n + gu)) * yC_factor)
-    lowerScrew_context.lineTo(10 + hc * xC_factor - 10, 20 + (hsp - (u1n + gu)) * yC_factor)
+    lowerScrew_context.lineTo(10 + hc * xC_factor - tfc * xC_factor - 10, 20 + (hsp - (u1n + gu)) * yC_factor)
     lowerScrew_context.stroke();
 
     //Drawing of middle Screwros
@@ -75,7 +85,7 @@ function framedraw() {
     middleScrew_context.moveTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor)
     middleScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + go * yC_factor)
     middleScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 10, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + go * yC_factor)
-    middleScrew_context.lineTo(10 + hc * xC_factor - 10, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + go * yC_factor)
+    middleScrew_context.lineTo(10 + hc * xC_factor - tfc * xC_factor - 10, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + go * yC_factor)
     middleScrew_context.stroke();
 
     //Drawing of upper Screwrows
@@ -84,7 +94,7 @@ function framedraw() {
         upperScrew_context.beginPath();
         upperScrew_context.moveTo(10 + hc * xC_factor + tsp * xC_factor, 20 + ex * yC_factor)
         upperScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 10, 20 + ex * yC_factor)
-        upperScrew_context.lineTo(10 + hc * xC_factor - 10, 20 + ex * yC_factor)
+        upperScrew_context.lineTo(10 + hc * xC_factor - tfc * xC_factor - 10, 20 + ex * yC_factor)
         upperScrew_context.stroke();
     }
 
