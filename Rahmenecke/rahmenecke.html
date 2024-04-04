@@ -6,6 +6,7 @@
         Anschlussrechner
     </title>
     <link rel="stylesheet" href="../StirnplatenStoß/style.css" />
+    <link rel="stylesheet" href="/Rahmenecke/Rahmenecke.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 </head>
 
@@ -44,10 +45,12 @@
     <script src="../Rahmenecke/RigidframeStaticFaceplat.js"></script>
     <script src="../StirnplatenStoß/loadData.js"></script>
     <script src="../StirnplatenStoß/Beamdata2.js"></script>
-    <script src="../resultOutput.js"></script>
-    <script src="../FcfbrdCalculation.js"></script>
+    <script src="../StirnplatenStoß/resultOutput.js"></script>
+    <script src="../StirnplatenStoß/FcfbrdCalculation.js"></script>
     <script src="../StirnplatenStoß//defaultpicture.js"></script>
-    <script src="../StirnplatenStoß/Drawing.js"></script>
+    <script src="/Rahmenecke/Drawing.js"></script>
+    <script src="/Rahmenecke/drawingFrame.js"></script>
+    <script src="/Rahmenecke/loadcolumndata.js"></script>
     <div class="configuration">
         <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
         <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
@@ -476,6 +479,7 @@
 
                         if (isNaN(hsp) && isNaN(bsp) && isNaN(e) && isNaN(go) && isNaN(gu) && isNaN(u1n)) {
                             getdraw()
+
                         } else {
                             draw_faceplate_width()
                         }
@@ -568,30 +572,15 @@
                 <input type="number" id="distancee1" name="inputboxe1" placeholder="[mm]" class="inpute1"><br>
             </div>
         </div>
+        <canvas class="drawingFrame" id="canvasframe"></canvas>
+        <script>
+            framedraw()
+        </script>
 
     </div>
-    <div class="container1">
-        <canvas id="drawing_area2" class="drawingFrame"></canvas>
-        <script>
-            getdraw()
-            document.getElementById('ScrewRows').addEventListener('change', function showImage() {
-                var selectedScrewRows = document.getElementById("ScrewRows").value;
 
-                window.selectedScrewRows = selectedScrewRows;
-                if (selectedScrewRows === "2") {
-                    getdraw()
-                    var inputboxex = document.getElementById("inputboxex");
-                    inputboxex.style.display = "none"
-                }
-                if (selectedScrewRows == "3") {
-                    var inputboxex = document.getElementById("inputboxex");
-                    inputboxex.style.display = "block"
-                    getdraw()
-                }
-            })
-        </script>
-        <br>
-        <br>
+    <br>
+    <br>
 
     </div>
     <br>

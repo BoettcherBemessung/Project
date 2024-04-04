@@ -51,7 +51,6 @@ function englisch() {
     document.getElementById("companycity").innerText = "Headquarter in Bretten"
     document.getElementById("companyname").innerText = "BöttcherBemessungSoftware Gmbh"
 
-
 }
 
 function spanisch() {

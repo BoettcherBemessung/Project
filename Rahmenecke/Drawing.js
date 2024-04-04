@@ -533,6 +533,7 @@ function draw_screws() {
     profile.font = '9px Arial';
     profile.fillStyle = 'black';
     profile.fillText(selectedScrewshape, 5, 18);
+
 }
 document.getElementById('distanceu1n').addEventListener('input', function() {
     draw_faceplate_width();
