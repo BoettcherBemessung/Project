@@ -1,9 +1,45 @@
 function QSK() {
     dataload()
-    window.Iy = Iy;
-    window.Wely = Wely;
-    window.Wply = Wply;
-    window.Avzb = Avzb;
+    loadColumndata()
+    var Iy = window.Iy
+    var Wely = window.Wely
+    var Wply = window.Wply
+    var Avzb = window.Avzb
+
+    var CwTwQSK1 = window.CwTwQSK1
+    var CwTwQSK2 = window.CwTwQSK2
+    var CwTwQSK3 = window.CwTwQSK3
+    var CfTfQSK1 = window.CfTfQSK1
+    var CfTfQSK2 = window.CfTfQSK2
+    var CfTfQSK3 = window.CfTfQSK3
+
+    var fy_Column = window.fy_Column
+    var fu_Column = window.fu_Column
+    var h_Column = window.h_Column
+    var b_Column = window.b_Column
+    var tw_Column = window.tw_Column
+    var tf_Column = window.tf_Column
+    var r_Column = window.r_Column
+    var cw_Column = window.cw_Column
+    var cf_Column = window.cf_Column
+    var Ab_Column = window.Ab_Column
+    var Iy_Column = window.Iy_Column
+    var Wely_Column = window.Wely_Column
+    var Wply_Column = window.Wply_Column
+    var Avzb_Column = window.Avzb_Column
+    var ew_Column = window.ew_Column
+
+    var dzero_Column = window.dzero_Column
+    var d_Column = window.d_Column
+    var fub_Column = window.fub_Column
+    var As_Column = window.As_Column
+
+    var CwTwQSK1_Column = window.CwTwQSK1_Column
+    var CWTwQSK2_Column = window.CwTwQSK2_Column
+    var CwTwQSK3_Column = window.CwTwQSK3_Column
+    var CfTfQSK1_Column = window.CfTfQSK1_Column
+    var CfTfQSK2_Column = window.CfTfQSK2_Column
+    var CfTfQSK3_Column = window.CfTfQSK3_Column
 
 
     // === 2.2 Classification of I-section===
@@ -13,6 +49,13 @@ function QSK() {
     if (cw / tw < CwTwQSK1 && cf / tf < CfTfQSK1) { qsk = 1 }
 
     window.qsk = qsk;
+
+    var qsk_Column = 4;
+    if (cw_Column / tw_Column < CwTwQSK3_Column && cf_Column / tf_Column < CfTfQSK3_Column) { qsk_Column = 3 }
+    if (cw_Column / tw_Column < CwTwQSK2_Column && cf_Column / tf_Column < CfTfQSK2_Column) { qsk_Column = 2 }
+    if (cw_Column / tw_Column < CwTwQSK1_Column && cf_Column / tf_Column < CfTfQSK1_Column) { qsk_Column = 1 }
+
+    window.qsk_Column = qsk_Column;
 
     // === 2.3 Calculation of max. beammoment===
     var mcr
@@ -31,12 +74,31 @@ function QSK() {
     }
     window.mcr = mcr
 
+
+    var mcr_Column
+    if (qsk_Column == 3) { mcr_Column = Wely_Column * fy_Column }
+    if (qsk_Column == 1 || qsk_Column == 2) { mcr_Column = Wply_Column * fy_Column }
+
+    if (language_english == 1) {
+        document.getElementById("columnresultQsk").innerHML = "class: " + qsk + " maxM: " + mcr;
+    }
+
+    if (language_english == 0) {
+        document.getElementById("columnresultQsk").innerHML = "Querschnittsklasse: " + qsk + " maxM: " + mcr;
+    }
+    if (language_spanish == 1) {
+        document.getElementById("columnresultQsk").innerHML = "clase de sección transversal: " + qsk + " maxM: " + mcr;
+    }
+    window.mcr_Column = mcr_Column
+
     // === 2.4 Calculation of max. Force before failure Flange of Beam ===
     var Fcfbrd = mcr / (h - tf)
 
     window.Fcfbrd = Fcfbrd
 
     // === 3.0 Displaying some results on Webpage ===
+
+    //Output of Beamresults
     var IyOutput = (Iy / 1000000).toFixed(2)
     var McrOutput = (mcr / 1000000).toFixed(2)
     var FcfbRdOutput = (Fcfbrd / 1000).toFixed(2)
@@ -63,6 +125,34 @@ function QSK() {
         document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput) + " kNm";
         document.getElementById("beamresultFcfbrd").innerText = "Fcfbrd: " + (FcfbRdOutput) + " kN";
     }
+    //Output of Columnresults
+
+    var IyOutput_Column = (Iy_Column / 1000000).toFixed(2)
+    var McrOutput_Column = (mcr_Column / 1000000).toFixed(2)
+
+    if (language_english == 1 && language_spanish == 0) {
+        document.getElementById("clickonresults").innerText = "You can click on the results to see detailed calculations methods!"
+        document.getElementById("columnresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
+        document.getElementById("columnresultQsk").innerText = "QSK: " + qsk_Column;
+        document.getElementById("columnresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
+
+    }
+
+    if (language_english == 0 && language_spanish == 0) {
+        document.getElementById("clickonresults").innerText = "Klicke auf die Ergebnisse um die genauen Rechenwege anzuzeigen!!"
+        document.getElementById("columnesultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
+        document.getElementById("columnresultQsk").innerText = "QSK: " + qsk_Column;
+        document.getElementById("columnresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
+
+    }
+    if (language_spanish == 1) {
+        document.getElementById("clickonresults").innerText = "haz click a los resultos para ver la calculacion en detail!!"
+        document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
+        document.getElementById("beamresultQsk").innerText = "QSK: " + qsk_Column;
+        document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
+
+    }
+
 
     // === 3.1 Obtaining values of Userinput for faceplate and Screwconfigure on Webpage ===
     var hsp = parseFloat(document.getElementById("hsp").value);
@@ -99,6 +189,11 @@ function QSK() {
         u1n = window.u1n
     }
 
+    var u2 = parseFloat(document.getElementById("distanceu2").value);
+    if (isNaN(u2)) {
+        u2 = window.u2
+    }
+
     var aw = parseFloat(document.getElementById("BeamWelding").value);
     var af = parseFloat(document.getElementById("FlangeWelding").value);
     var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
@@ -119,6 +214,8 @@ function QSK() {
     window.af = af;
     window.w = w;
     window.u1 = u1;
+    window.u2 = u2;
+
 
     // === 3.3 Warning programms for impossible/forbidden joint-configurations ===
 
@@ -132,6 +229,14 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
         if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+
+        //Warningprogramms of Screws in Column
+
+        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Berechnung nicht möglich Schrauben liegen zu nah am Stützensteg") }
+        if (bsp > b_Column) {
+            if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Berechnung nicht möglich Schrauben zu nah Am Flanschende der Stütze") }
+        }
+
     }
     if (language_english == 0 && language_spanish == 0) {
         if (hsp < h) { alert("Berechnung nicht möglich, Stirnplatte kleiner als Trägerhöhe! Bitte wählen Sie eine höhere Stirnplatte") }
@@ -143,6 +248,11 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Berechnung nicht möglich Die inneren Schrauben liegen zu nah beieinander" }
         if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+
+        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculation not possible Screws to close to web of Column") }
+        if (bsp > b_Column) {
+            if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculation not possible Screws to close to flange of Column ") }
+        }
     }
 
     if (language_spanish == 1) {
@@ -155,6 +265,12 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculacion no possible lost tornillos adentros estan demasido cerca al otro" }
         if (hsp - u1n < h) { "Calculacion no possible,placa de perfil demasiado pequeño o  u1 demasiado pequeño " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculacion no possible , los tornillos adentros etsan demasiado cerca al otro! usa g0/gu mas pequeño") }
+
+        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculacion no posible tornillos demasiado cerca a la alma de la columna") }
+        if (bsp > b_Column) {
+            if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculacion no possible tornillos demasiado cerca a la ala de la columna ") }
+        }
+
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
 
@@ -175,6 +291,8 @@ function QSK() {
     }
 
     // === 4.0 Starting calculations for endplate in bending ===
+
+
 
     var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
     var iterationDoneO = 0;
@@ -204,7 +322,6 @@ function QSK() {
         window.mvO = mvO;
         window.mvU = mvU;
 
-
         // === Additional Warning Programms for forbidden Userinput ===  
 
         if (language_english == 1 && language_spanish == 0) {
@@ -222,8 +339,6 @@ function QSK() {
             if (mvO < 2 * ew) { alert("Calculacion no possible, tronillos demasiado cerca de la alma. elige un  go mas alto !") }
             if (mvU < 2 * ew) { alert("Calculacion no possible, tornillos bajos demasiado cerca de la ala . elige un gu mas alto!") }
         }
-
-
         if (lambda2limO > lambda2O || alphaO > 8 || alphaO < 4.45) {
             var alphaIterationO = 4.45;
             var lambda1OlimIteration = (1.25 / (alphaIterationO - 2.75));
@@ -245,7 +360,6 @@ function QSK() {
             }
             alphaO = alphaIterationO
         }
-
         var leffcpO = 2 * 3.1415926535897932384626433832795 * mh;
         var leffncO = alphaO * mh;
 
@@ -321,18 +435,21 @@ function QSK() {
         window.Ft3rdU = Ft3rdU;
 
         if (language_english == 1 && language_spanish == 0) {
+            document.getElementById("evidenceFaceplate").innerHTML = "Evidence of Faceplate in Bending"
             document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2").innerHTML = ""
             document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
             document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:";
         }
         if (language_english == 0 && language_spanish == 0) {
+            document.getElementById("evidenceFaceplate").innerHTML = "NW Stirnplatte auf Biegung"
             document.getElementById("Screwresult1").innerHTML = "Ergebnisse oberer Schraubenreihe: ";
             document.getElementById("Screwresult2").innerHTML = ""
             document.getElementById("Screwresult3").innerHTML = "Ergebnisse unterer Schraubenreihe: ";
             document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
         }
         if (language_spanish == 1) {
+            document.getElementById("evidenceFaceplate").innerHTML = "evidencia de la placa frontal"
             document.getElementById("Screwresult1").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2").innerHTML = ""
             document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
@@ -511,31 +628,6 @@ function QSK() {
             document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN ";
         }
 
-        //Calculations of Rotationstiffnes
-
-        if (Med < 2 / 3 * Mmax) { var mueh = 1 }
-
-        if (Med > 2 / 3 * Mmax) { var mueh = (1.5 * Med / Mmax) ** 2.7 }
-
-        var k_fourO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mvO ** 3
-        var k_fiveO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mh
-        var k_ten = 1.6 * AScrew / (2 * tsp + 0.5 * kScrew + 0.5 * mmaxScrew)
-
-        var Sj = 210000 * hs1 ** 2 / (mueh * (1 / k_fiveO + 1 / k_ten))
-
-        var k_effO = 1 / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)
-        var zeq = (k_effO * hs1 ** 2) / (k_effO * hs1)
-        var k_eq = (k_effO * hs1) / zeq
-
-        var Sj = ((210000 * zeq ** 2) / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)) / 10 ** 6
-
-        console.log(k_ten)
-        console.log(k_fourO)
-        console.log(k_fiveO)
-        console.log(zeq)
-        console.log(k_eq)
-        console.log(mueh)
-        console.log(Sj)
 
     }
     //==============================================================================================================================================
@@ -702,23 +794,28 @@ function QSK() {
         document.getElementById("m1Uresult").innerText = "m1 " + " mm " + mh.toFixed(2);
         document.getElementById("m2Uresult").innerText = "m2 " + " mm " + mvU.toFixed(2);
 
+
+
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: "
+            document.getElementById("evidenceFaceplate").innerHTML = "Evidence of Faceplate in Bending"
+            document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
-            document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: "
-            document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam"
+            document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
+            document.getElementById("TensionWebBeam").innerHTML = "Results Tension Web Beam:";
         }
         if (language_english == 0 && language_spanish == 0) {
-            document.getElementById("Screwresult1").innerHTML = "Ergebnisse oberer Schraubenreihe: "
-            document.getElementById("Screwresult2").innerHTML = "Ergebnisse mittlerer Schraubenreihe: "
-            document.getElementById("Screwresult3").innerHTML = "Ergebnisse unterer Schraubenreihe: "
-            document.getElementById("TensionWebBeam").innerHTML = "Ergebnisse Trägersteg auf Zugbeanspruchung"
+            document.getElementById("evidenceFaceplate").innerHTML = "NW Stirnplatte auf Biegung"
+            document.getElementById("Screwresult1").innerHTML = "Ergebnisse oberer Schraubenreihe: ";
+            document.getElementById("Screwresult2").innerHTML = "Ergebnisse mittlerer Schraubenreihe"
+            document.getElementById("Screwresult3").innerHTML = "Ergebnisse unterer Schraubenreihe: ";
+            document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
         }
         if (language_spanish == 1) {
-            document.getElementById("Screwresult1").innerHTML = "resultos de los tornillos altos: "
-            document.getElementById("Screwresult2").innerHTML = "resultos de los tornillos en la mitad: "
-            document.getElementById("Screwresult3").innerHTML = "resultros de los tornillos abajos: "
-            document.getElementById("TensionWebBeam").innerHTML = "resultos de la alma bajo Tension"
+            document.getElementById("evidenceFaceplate").innerHTML = "evidencia de la placa frontal"
+            document.getElementById("Screwresult1").innerHTML = "Resultos de los tornillos altos: ";
+            document.getElementById("Screwresult2").innerHTML = "Resultos de los tornillos en la mitad"
+            document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
+            document.getElementById("TensionWebBeam").innerHTML = " Reusulto almba bajo Tension";
         }
 
         document.getElementById("leffcpresult1").innerText = "leffcp " + " mm " + leffcpO.toFixed(2);
@@ -888,5 +985,10 @@ function QSK() {
             document.getElementById("Vmax").innerText = "max V  " + (Vmax / 1000).toFixed(2) + " kN ";
         }
     }
+
+    window.language_english = language_english
+    window.language_spanish = language_spanish
+    window.selectedScrewRows = selectedScrewRows
+    bendingFlange()
 
 }

@@ -1195,6 +1195,17 @@ function dataload() {
     window.Wply = Wply
     window.Avzb = Avzb
     window.ew = ew
+    window.CwTwQSK1 = CwTwQSK1
+    window.CwTwQSK2 = CwTwQSK2
+    window.CwTwQSK3 = CwTwQSK3
+    window.CfTfQSK1 = CfTfQSK1
+    window.CfTfQSK2 = CfTfQSK2
+    window.CfTfQSK3 = CfTfQSK3
+    window.dzero = dzero
+    window.d = d
+    window.fub = fub
+    window.As = As
+
 
 
 }

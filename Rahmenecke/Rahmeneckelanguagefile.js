@@ -30,7 +30,7 @@ function germanpage() {
     window.language_english = language_english
     window.language_spanish = language_spanish
     window.language_german = language_german
-    document.getElementById("Website_Heading").innerText = "Willkommen zum Ersten Online Stirnplattenstoßrechner !"
+    document.getElementById("Website_Heading").innerText = "Willkommen zum Biegesteifen Rahmeneckenrechner !"
     document.getElementById("Attention!").innerText = "Bitte nutzen Sie dieses Tool nicht für Reale Bemessung! es handelt sich um ein Experiment und dient nur Lernzwecken"
     document.getElementById("Beamconfiguration").innerText = "Wählen Sie hier die Kenndaten des Trägers"
     document.getElementById("ProfilConfiguration").innerText = "I-Profil:"
@@ -64,7 +64,7 @@ function englishpage() {
     window.language_english = language_english
     window.language_spanish = language_spanish
     window.language_german = language_german
-    document.getElementById("Website_Heading").innerText = "welcome to the first online faceplate joint calculator"
+    document.getElementById("Website_Heading").innerText = "welcome to the first online rigid frame calculator"
     document.getElementById("Attention!").innerText = "Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!"
     document.getElementById("Beamconfiguration").innerText = "configure the beam:"
     document.getElementById("ProfilConfiguration").innerText = " profile:"

@@ -43,6 +43,7 @@
 
     <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
     <script src="../Rahmenecke/RigidframeStaticFaceplat.js"></script>
+    <script src="../Rahmenecke/EvidenceBendingLange.js"></script>
     <script src="../StirnplatenStoß/loadData.js"></script>
     <script src="../StirnplatenStoß/Beamdata2.js"></script>
     <script src="../StirnplatenStoß/resultOutput.js"></script>
@@ -51,6 +52,7 @@
     <script src="../Rahmenecke/Drawing.js"></script>
     <script src="../Rahmenecke/drawingFrame.js"></script>
     <script src="../Rahmenecke/loadcolumndata.js"></script>
+    <script src="../Rahmenecke/CompressionWeb.js"></script>
     <div class="configuration">
         <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
         <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
@@ -561,8 +563,6 @@
                     <input type="number" id="distancego" name="inputboxgo" placeholder="[mm]" class="inputgo"><br>
                     <label for="inputgu" class="inputbox">gu:</label>
                     <input type="number" id="distancegu" name="inputboxgu" placeholder="[mm]" class="inputgu"><br>
-
-
                 </form>
                 <div id="inputboxex" style="display: none;">
                     <label for="inputex">ex:</label>
@@ -576,12 +576,9 @@
         <script>
             framedraw()
         </script>
-
     </div>
-
     <br>
     <br>
-
     </div>
     <br>
     <div class="StartCalc">
@@ -592,7 +589,6 @@
                 <input type="number" id="ValueMed" name="inputboxMed" placeholder="[kNm]" class="inputkNm">
                 <label for="inputVed" class="inputboxVed">Ved:</label>
                 <input type="number" id="ValueVed" name="inputboxVed" placeholder="[kN]" class="inputkN">
-
             </form>
             <br>
             <script src="Drawing.js"></script>
@@ -600,7 +596,8 @@
         </div>
     </div>
     <div class="containerresults">
-        <h3 id="clickonresults" class="clicking"></h3>
+        <h3 id="clickonresults" class="clicking">
+        </h3>
         <div class="solutionblock">
             <div class="solutionlength">
                 <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
@@ -609,90 +606,200 @@
                 <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
             </div>
         </div>
-        <p id="Screwresult1" class="OutputHeading"> </p>
         <div class="solutionblock">
             <div class="solutionlength">
-                <P id="m1Oresult" class="Output" onclick="m1OCalculation()"></P>
-                <p id="mxresult" class="Output" onclick="mxCalculation()"></p>
-                <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"> </p>
-                <p id="leffncresult1" class="Output leffnc" onclick="leffncOnew()"> </p>
-            </div>
-            <div class="solutionlength">
-                <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"> </p>
-                <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"> </p>
-                <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"> </p>
-                <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"> </p>
-                <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
+                <p id="columnresultIy" class="Output " onclick="ShowCalculationIyC()"> </p>
+                <p id="columnresultQsk" class="Output "> </p>
+                <p id="columnresultMcr" class="Output " onclick="McrCalculationC()"> </p>
             </div>
         </div>
-        <p id="Screwresult2" class="OutputHeading"> </p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="m1Mresult" class="Output" onclick="m1MCalculation()"></p>
-                <p id="m2Mresult" class="Output" onclick="m2MCalculation()"></p>
-                <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
-                <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
+        <div class="evidence">
+            <h2 id="evidenceFaceplate" class="evidenceHeading">
+            </h2>
+            <p id="Screwresult1" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <P id="m1Oresult" class="Output" onclick="m1OCalculation()"></P>
+                    <p id="mxresult" class="Output" onclick="mxCalculation()"></p>
+                    <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"> </p>
+                    <p id="leffncresult1" class="Output leffnc" onclick="leffncOnew()"> </p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"> </p>
+                    <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"> </p>
+                    <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"> </p>
+                    <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"> </p>
+                    <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
+                </div>
             </div>
-            <div class="solutionlength">
-                <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
-                <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
-                <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
-                <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
-                <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
+            <p id="Screwresult2" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1Mresult" class="Output" onclick="m1MCalculation()"></p>
+                    <p id="m2Mresult" class="Output" onclick="m2MCalculation()"></p>
+                    <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
+                    <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
+                    <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
+                    <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
+                    <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
+                    <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
+                </div>
+            </div>
+            <p id="Screwresult3" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1Uresult" class="Output" onclick="m1UCalculation()"></p>
+                    <p id="m2Uresult" class="Output" onclick="m2UCalculation()"></p>
+                    <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
+                    <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
+                    <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
+                    <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
+                    <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
+                    <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
+                </div>
             </div>
         </div>
 
-        <p id="Screwresult3" class="OutputHeading"></p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="m1Uresult" class="Output" onclick="m1UCalculation()"></p>
-                <p id="m2Uresult" class="Output" onclick="m2UCalculation()"></p>
-                <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
-                <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
+        <div class="evidence">
+            <h2 id="evidenceColumnflange" class="evidenceHeading">
+            </h2>
+            <p id="Screwresult1C" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <P id="m1OresultC" class="Output" onclick="m1OCalculationC()"></P>
+                    <p id="mxresultC" class="Output" onclick="mxCalculationC()"></p>
+                    <p id="leffcpresult1C" class="Output" onclick="leffcpOCalculationC()"> </p>
+                    <p id="leffncresult1C" class="Output leffnc" onclick="leffncOnewC()"> </p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult1C" class="Output" onclick="MplrdO1C()"> </p>
+                    <p id="Mpl2rdresult1C" class="Output" onclick="MplrdO2C()"> </p>
+                    <p id="Ft1rd1C" class="Output" onclick="Ft1rdOshowResultC()"> </p>
+                    <p id="Ft2rd1C" class="Output" onclick="Ft2rdOshowcalculationMethodC()"> </p>
+                    <p id="Ft3rd1C" class="Output" onclick="Ft3rdOshowCalculationMethodC()"> </p>
+                </div>
             </div>
-            <div class="solutionlength">
-                <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
-                <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
-                <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
-                <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
-                <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
+            <p id="Screwresult2C" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1MresultC" class="Output" onclick="m1MCalculationC()"></p>
+                    <p id="m2MresultC" class="Output" onclick="m2MCalculationC()"></p>
+                    <p id="leffcpresult2C" class="Output" onclick="leffcpMCalculationC()"></p>
+                    <p id="leffncresult2C" class="Output" onclick="leffncMCalculationC()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult2C" class="Output" onclick="MplrdM1C()"></p>
+                    <p id="Mpl2rdresult2C" class="Output" onclick="MplrdM2C()"></p>
+                    <p id="Ft1rd2C" class="Output" onclick="Ft1rdMShowResultC()"></p>
+                    <p id="Ft2rd2C" class="Output" onclick="Ft2rdMShowResultC()"></p>
+                    <p id="Ft3rd2C" class="Output" onclick="Ft3rdMshowCalculationMethodC()"></p>
+                </div>
+            </div>
+            <p id="Screwresult3C" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1UresultC" class="Output" onclick="m1UCalculationC()"></p>
+                    <p id="m2UresultC" class="Output" onclick="m2UCalculationC()"></p>
+                    <p id="leffcpresult3C" class="Output" onclick="leffcpUCalculationC()"></p>
+                    <p id="leffncresult3C" class="Output" onclick="leffncUCalculationC()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult3C" class="Output" onclick="MplrdU1C()"></p>
+                    <p id="Mpl2rdresult3C" class="Output" onclick="MplrdU2C()"></p>
+                    <p id="Ft1rd3C" class="Output" onclick="Ft1rdUShowResultC()"></p>
+                    <p id="Ft2rd3C" class="Output" onclick="Ft2rdUShowResultC()"></p>
+                    <p id="Ft3rd3C" class="Output" onclick="Ft3rdUshowCalculationMethodC()"></p>
+                </div>
             </div>
         </div>
-        <p id="TensionWebBeam" class="OutputHeading"></p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="befftwb" class="Output"></p>
-                <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
+        <div class="evidence">
+            <p id="TensionWebBeam" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="befftwb" class="Output"></p>
+                    <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
+                </div>
             </div>
         </div>
-        <p id="Mmaxresults" class="OutputHeading"></p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="Ft1eff" class="Output"></p>
-                <p id="Ft2eff" class="Output"></p>
-                <p id="Ft3eff" class="Output"></p>
-                <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
+        <div class="evidence">
+            <p id="Vwprd" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="VwprdResult" class="Output"></p>
+                </div>
             </div>
         </div>
-        <p id="Vmaxresults" class="OutputHeading"></p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="Vloadbearingcapacity" class="Output"></p>
-                <p id="Vinteraction" class="Output"></p>
-                <p id="Vwelding" class="Output"></p>
-            </div>
-            <div class="solutionlength">
-                <p id="VpunchingShear" class="Output"></p>
-                <p id="Vmax" class="Outputsignificant"></p>
+        <div class="evidence">
+            <p id="FcwcrdHeading" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="kwc" class="Output"></p>
+                    <p id="omegacw" class="Output"></p>
+                    <p id="beffcwc" class="Output"></p>
+                    <p id="Fcwcrd" class="Output"></p>
+                </div>
             </div>
         </div>
-        <p id="Endresults" class="OutputHeading"></p>
-        <div class="solutionblock">
-            <div class="solutionlength">
-                <p id="UtilizationV" class="Output"></p>
-                <p id="UtiliziationM" class="Output"></p>
-                <p id="Utilization" class="Outputsignificant"></p>
+        <div class="evidence">
+            <p id="FtwbrdHeading" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="omegatwO" class="Output"></p>
+                    <p id="befftwcO" class="Output"></p>
+                    <p id="FtwcrdO" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="omegatwM" class="Output"></p>
+                    <p id="befftwcM" class="Output"></p>
+                    <p id="FtwcrdM" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="omegatwU" class="Output"></p>
+                    <p id="befftwcU" class="Output"></p>
+                    <p id="FtwcrdU" class="Output"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Mmaxresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="Ft1eff" class="Output"></p>
+                    <p id="Ft2eff" class="Output"></p>
+                    <p id="Ft3eff" class="Output"></p>
+                    <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Vmaxresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="Vloadbearingcapacity" class="Output"></p>
+                    <p id="Vinteraction" class="Output"></p>
+                    <p id="Vwelding" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="VpunchingShear" class="Output"></p>
+                    <p id="Vmax" class="Outputsignificant"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Endresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="UtilizationV" class="Output"></p>
+                    <p id="UtiliziationM" class="Output"></p>
+                    <p id="Utilization" class="Outputsignificant"></p>
 
+                </div>
             </div>
         </div>
 </body>

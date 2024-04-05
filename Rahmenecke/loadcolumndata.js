@@ -1182,4 +1182,31 @@ function loadColumndata() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
+    window.fy_Column = fy
+    window.fu_Column = fu
+    window.h_Column = h;
+    window.b_Column = b;
+    window.tw_Column = tw;
+    window.tf_Column = tf;
+    window.r_Column = r;
+    window.cw_Column = cw
+    window.cf_Column = cf
+    window.Ab_Column = Ab
+    window.Iy_Column = Iy
+    window.Wely_Column = Wely
+    window.Wply_Column = Wply
+    window.Avzb_Column = Avzb
+    window.ew_Column = ew
+    window.CwTwQSK1_Column = CwTwQSK1
+    window.CwTwQSK2_Column = CwTwQSK2
+    window.CwTwQSK3_Column = CwTwQSK3
+    window.dzero_Column = dzero
+    window.d_Column = d
+    window.fub_Column = fub
+    window.As_Column = As
+    window.CfTfQSK1_Column = CfTfQSK1
+    window.CfTfQSK2_Column = CfTfQSK2
+    window.CfTfQSK3_Column = CfTfQSK3
+
+
 }
