@@ -1,6 +1,6 @@
 function ColumnEvidence() {
 
-    var Ab_Column = window.Ab_Column
+    var Avzb_Column = window.Avzb_Column
     var fy_Column = window.fy_Column;
     var tf = window.tf
     var af = window.af
@@ -14,7 +14,7 @@ function ColumnEvidence() {
     var language_english = window.language_english
     var language_spanish = window.language_spanish
 
-    var Vwprd = 0.9 * Ab_Column * fy_Column / 1.7320508075688772935274463415059;
+    var Vwprd = 0.9 * Avzb_Column * fy_Column / 1.7320508075688772935274463415059;
     window.Vwprd = Vwprd;
 
     if (language_english == 1 && language_spanish == 0) {
@@ -38,7 +38,7 @@ function ColumnEvidence() {
     document.getElementById('VwprdResult').innerText = "Vwprd: " + (Vwprd / 1000).toFixed(2) + "kN";
 
     var beffcwc = tf + 2 * 1.4142135623730950488016887242097 * af + 5 * (tf_Column + r_Column) + Math.min(2 * tsp, tsp + u1n)
-    var omega = 1 / (1 + 1.3 * (beffcwc * tw_Column / Ab_Column) ** 2) ** 0.5
+    var omega = 1 / (1 + 1.3 * (beffcwc * tw_Column / Avzb_Column) ** 2) ** 0.5
     var kwc = 1
     var lambdap = 0.932 * (beffcwc * (h_Column - 2 * (tf_Column + r_Column)) * fy_Column / (210000 * tw_Column ** 2)) ** 0.5;
     if (lambdap <= 0, 72) {
@@ -80,8 +80,8 @@ function ColumnEvidence() {
             befftwcU = leff2U
         }
 
-        var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Ab_Column) ** 2) ** 0.5
-        var omegaU = 1 / (1 + 1.3 * (befftwcU * tw_Column / Ab_Column) ** 2) ** 0.5
+        var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Avzb_Column) ** 2) ** 0.5
+        var omegaU = 1 / (1 + 1.3 * (befftwcU * tw_Column / Avzb_Column) ** 2) ** 0.5
 
         var FtwcrdO = omegaO * befftwcO * tw_Column * fy_Column
         var FtwcrdU = omegaU * befftwcU * tw_Column * fy_Column
@@ -134,9 +134,9 @@ function ColumnEvidence() {
         } else {
             befftwcU = leff2U
         }
-        var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Ab_Column) ** 2) ** 0.5
-        var omegaM = 1 / (1 + 1.3 * (befftwcM * tw_Column / Ab_Column) ** 2) ** 0.5
-        var omegaU = 1 / (1 + 1.3 * (befftwcU * tw_Column / Ab_Column) ** 2) ** 0.5
+        var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Avzb_Column) ** 2) ** 0.5
+        var omegaM = 1 / (1 + 1.3 * (befftwcM * tw_Column / Avzb_Column) ** 2) ** 0.5
+        var omegaU = 1 / (1 + 1.3 * (befftwcU * tw_Column / Avzb_Column) ** 2) ** 0.5
 
         var FtwcrdO = omegaO * befftwcO * tw_Column * fy_Column
         var FtwcrdM = omegaM * befftwcM * tw_Column * fy_Column

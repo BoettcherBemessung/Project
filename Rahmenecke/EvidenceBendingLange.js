@@ -17,8 +17,12 @@ function bendingFlange() {
     var fy_Column = window.fy_Column
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var ew = window.ew
+    var u2 = document.getElementById('distanceu2').value
 
     var mh = (bsp / 2) - e - (tw_Column / 2) - 0.8 * r_Column
+    console.log("wie groß ist mh?" + mh)
+    console.log("wie groß ist ew?" + ew)
 
     var GammaTwo = 1.25
     var RScrew = 0.5 * d
@@ -28,23 +32,24 @@ function bendingFlange() {
 
 
     var mvO = u2 + u1 + go
+    var eO = ex + u2
 
     window.mvO = mvO;
 
     // === Additional Warning Programms for forbidden Userinput ===  
 
     if (language_english == 1 && language_spanish == 0) {
-        if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
-        if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
+        if (mh <= 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
+
     }
     if (language_english == 0 && language_spanish == 0) {
-        if (mh < 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg. Bitte wählen sie einen geringeren Abstand e, oder erhöhen Sie die Stirnplattenbreite!") }
-        if (mvO < 2 * ew) { alert("Berechnung nicht möglich, Obere Schrauben zu nah am Trägerflansch. Bitte wählen Sie einen höheren Abstand go !") }
+        if (mh <= 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg. Bitte wählen sie einen geringeren Abstand e, oder erhöhen Sie die Stirnplattenbreite!") }
+
     }
 
     if (language_spanish == 1) {
-        if (mh < 2 * ew) { alert("Calculacion no possible, tornillos demasiado cerca de la alma. elige un e mas bajo o amplia el ancho de la placa frontal !") }
-        if (mvO < 2 * ew) { alert("Calculacion no possible, tronillos demasiado cerca de la alma. elige un  go mas alto !") }
+        if (mh <= 2 * ew) { alert("Calculacion no possible, tornillos demasiado cerca de la alma. elige un e mas bajo o amplia el ancho de la placa frontal !") }
+
     }
 
     if (bsp > b_Column) {
@@ -53,6 +58,7 @@ function bendingFlange() {
     if (bsp < b_Column) {
         var ec = e + (0.5 * (b_Column - bsp))
     }
+    console.log("der wert von ec =" + ec)
     var pO = h - go - gu
 
     if (selectedScrewRows == 2) {
@@ -153,11 +159,11 @@ function bendingFlange() {
     if (selectedScrewRows == 3) {
 
         eO = ex + u2
-        var leffcpO_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 3.1415926535897932384626433832795 * mh + 2 * eO);
+        var leffcpO_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 3.1415926535897932384626433832795 * mh + 2 * eO, 3.1415926535897932384626433832795 * mh + h - go - gu);
         var leffncO_Column = Math.min(4 * mh + 1.25 * ec, 2 * mh + 0.625 * ec + eO);
 
         var leffcpM_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 2 * (h - go - gu));
-        var leffncM_Column = Math.min(4 * mh + 1.25 * ec, h - go - gu);
+        var leffncM_Column = Math.min(4 * mh + 1.25 * ec, 2 * mh + 1.25 * ec + u2 + u1, h - go - gu);
 
         var leffcpU_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 2 * (h - go - gu))
         var leffncU_Column = Math.min(4 * mh + 1.25 * ec, h - go - gu);

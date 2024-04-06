@@ -47,7 +47,42 @@ function Mmax() {
         var Fglobal = Math.min(Vwprd, Fcwcrd, Fcfbrd)
         var sumFtrd = FtO + FtU
 
+        var hs1 = window.hs1
+        var hs2 = window.hs2
+
+        if (Fglobal < sumFtrd) { FtU = FtU - (sumFtrd - Fglobal) }
+
+        if (FtU < 0) {
+            FtO = FtO + FtU;
+            FtU = 0
+        }
+        if (FtU > (FtO / hs1) * hs2) { if (FtO > 0.95 * Ft3rdO) { FtU = FtO * hs2 / hs1 } }
+
+        var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2
+
+        if (language_english == 1 && language_spanish == 0) {
+            document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (FtO / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (FtU / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft3eff").innerText = "";
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
+        }
+        if (language_english == 0 && language_spanish == 0) {
+            document.getElementById("Mmaxresults").innerText = "maßgebende Schraubenkräfte & Max M:";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (FtO / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (FtU / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft3eff").innerText = "";
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
+        }
+        if (language_spanish == 1) {
+            document.getElementById("Mmaxresults").innerText = "fuerzas de tornillos predominantes & Max M:";
+            document.getElementById("Ft1eff").innerText = "Fteff1: " + (FtO / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft2eff").innerText = "Fteff2: " + (FtU / 1000).toFixed(2) + " kN ";
+            document.getElementById("Ft3eff").innerText = "";
+            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
+        }
     }
+
 
     if (selectedScrewRows == 3) {
         var FtO = Math.min(Ft1rdO, Ft2rdO, Ft3rdO, Ft1rdO_Column, Ft2rdO_Column, Ft3rdO_Column, FtwcrdO, Ftwbrd);
@@ -57,8 +92,41 @@ function Mmax() {
         var Fglobal = Math.min(Vwprd, Fcwcrd, Fcfbrd)
         var sumFtrd = FtO + FtM + FtU
 
+        var hs1 = window.hs1
+        var hs2 = window.hs2
+        var hs3 = window.hs3
+
+        var SumFtrd = FtO + FtM + FtU
+
+        if (Fglobal < SumFtrd) { FtU = FtU - (sumFtrd - Fglobal) }
+
+        if (FtU < 0) {
+            FtM = FtM + FtU;
+            FtU = 0
+        }
+        if (FtM < 0) {
+            FtO = Fglobal;
+            FtM = 0
+        }
+        if (FtO > 0.95 * FtU) { if (FtM > (FtO / hs1) * hs2) { FtM = (FtO / hs1) * hs2 }; if (FtU > (FtO / hs1) * hs3) { FtU = (FtO / hs1) * hs3 } }
+        if (FtM > 0.95 * FtU) { if (FtU > (FtM / hs2) * hs3) { FtU = (FtM / hs2) * hs3 } }
+
+        var Mmax = FtO * hs1 + FtM * hs2 + FtU * hs3
+
+        if (language_english == 1) {
+            document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
+        }
+        if (language_english == 0) {
+            document.getElementById("Mmaxresults").innerText = "Berechnung von Mmax:";
+        }
+        if (language_spanish == 1) {
+            document.getElementById("Mmaxresults").innerText = "Calculacion de Mmax:";
+        }
+
+        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtO / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtM / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft3eff").innerText = "Fteff3: " + (FtU / 1000).toFixed(2) + " kN ";
+        document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
+
     }
-
-
-
 }

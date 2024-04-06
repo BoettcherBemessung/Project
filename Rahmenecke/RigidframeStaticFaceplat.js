@@ -147,7 +147,7 @@ function QSK() {
     }
     if (language_spanish == 1) {
         document.getElementById("clickonresults").innerText = "haz click a los resultos para ver la calculacion en detail!!"
-        document.getElementById("beamresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
+        document.getElementById("columnresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
         document.getElementById("beamresultQsk").innerText = "QSK: " + qsk_Column;
         document.getElementById("beamresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
 
@@ -232,7 +232,7 @@ function QSK() {
 
         //Warningprogramms of Screws in Column
 
-        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Berechnung nicht möglich Schrauben liegen zu nah am Stützensteg") }
+        if (2 * ew > 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Berechnung nicht möglich Schrauben liegen zu nah am Stützensteg") }
         if (bsp > b_Column) {
             if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Berechnung nicht möglich Schrauben zu nah Am Flanschende der Stütze") }
         }
@@ -249,7 +249,7 @@ function QSK() {
         if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
 
-        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculation not possible Screws to close to web of Column") }
+        if (2 * ew > 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculation not possible Screws to close to web of Column") }
         if (bsp > b_Column) {
             if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculation not possible Screws to close to flange of Column ") }
         }
@@ -266,7 +266,7 @@ function QSK() {
         if (hsp - u1n < h) { "Calculacion no possible,placa de perfil demasiado pequeño o  u1 demasiado pequeño " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculacion no possible , los tornillos adentros etsan demasiado cerca al otro! usa g0/gu mas pequeño") }
 
-        if (2 * ew < 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculacion no posible tornillos demasiado cerca a la alma de la columna") }
+        if (2 * ew > 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculacion no posible tornillos demasiado cerca a la alma de la columna") }
         if (bsp > b_Column) {
             if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculacion no possible tornillos demasiado cerca a la ala de la columna ") }
         }
@@ -506,27 +506,9 @@ function QSK() {
         var hs1 = h - (tf / 2) - go
         var hs2 = gu - (tf / 2)
 
-        var aFtrd1 = Math.min(Ft1rdO, Ft2rdO, Ft3rdO, Ftwbrd)
-        var aFtrd2 = Math.min(Ft1rdU, Ft2rdU, Ft3rdU, Ftwbrd)
-
-        var SumFtrd = aFtrd1 + aFtrd2
-
-        if (Fcfbrd < SumFtrd) { aFtrd2 = aFtrd2 - (SumFtrd - Fcfbrd) }
-
-        if (aFtrd2 < 0) {
-            aFtrd1 = aFtrd1 + aFtrd2;
-            aFtrd2 = 0
-        }
-        if (aFtrd2 > (aFtrd1 / hs1) * hs2) { if (aFtrd1 > 0.95 * Ft3rdO) { aFtrd2 = aFtrd1 * hs2 / hs1 } }
-
-        var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2
-
         window.hs1 = hs1
         window.hs2 = hs2
         window.Mmax = Mmax
-        window.aFtrd1 = aFtrd1
-        window.aFtrd2 = aFtrd2
-
 
         if (language_english == 1 && language_spanish == 0) {
             document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
@@ -862,49 +844,12 @@ function QSK() {
         var hs2 = h - (tf / 2) - go
         var hs3 = gu - (tf / 2)
 
-        var aFtrd1 = Math.min(Ft1rdO, Ft2rdO, Ft3rdO)
-        var aFtrd2 = Math.min(Ft1rdM, Ft2rdM, Ft3rdM, Ftwbrd)
-        var aFtrd3 = Math.min(Ft1rdM, Ft2rdM, Ft3rdM, Ftwbrd)
-
-        var SumFtrd = aFtrd1 + aFtrd2 + aFtrd3
-
-        if (Fcfbrd < SumFtrd) { aFtrd3 = aFtrd3 - (SumFtrd - Fcfbrd) }
-
-        if (aFtrd3 < 0) {
-            aFtrd2 = aFtrd2 + aFtrd3;
-            aFtrd3 = 0
-        }
-        if (aFtrd2 < 0) {
-            aFtrd1 = Fcfbrd;
-            aFtrd2 = 0
-        }
-        if (aFtrd1 > 0.95 * Ft3rdO) { if (aFtrd2 > (aFtrd1 / hs1) * hs2) { aFtrd2 = (aFtrd1 / hs1) * hs2 }; if (aFtrd3 > (aFtrd1 / hs1) * hs3) { aFtrd3 = (aFtrd1 / hs1) * hs3 } }
-        if (aFtrd2 > 0.95 * Ft3rdO) { if (aFtrd3 > (aFtrd2 / hs2) * hs3) { aFtrd3 = (aFtrd2 / hs2) * hs3 } }
-
-        var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2 + aFtrd3 * hs3
-
         window.hs1 = hs1
         window.hs2 = hs2
         window.hs3 = hs3
-        window.Mmax = Mmax
-        window.aFtrd1 = aFtrd1
-        window.aFtrd2 = aFtrd2
-        window.aFtrd3 = aFtrd3
 
-        if (language_english == 1) {
-            document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
-        }
-        if (language_english == 0) {
-            document.getElementById("Mmaxresults").innerText = "Berechnung von Mmax:";
-        }
-        if (language_spanish == 1) {
-            document.getElementById("Mmaxresults").innerText = "Calculacion de Mmax:";
-        }
 
-        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
-        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
-        document.getElementById("Ft3eff").innerText = "Fteff3: " + (aFtrd3 / 1000).toFixed(2) + " kN ";
-        document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
+
 
         // === 4.13 calculations max. shear force===
 
