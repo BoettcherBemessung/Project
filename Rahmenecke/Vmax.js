@@ -20,6 +20,9 @@ function Vmax() {
     var fu = window.fu;
     var fu_Column = window.fu_Column;
     var e_Column = window.ec
+    var language_english = window.language_english
+    var language_german = window.language_german
+    var language_spanish = window.language_spanish
 
 
     var Ftrd = 0.9 * fub * Ascrew / 1.25

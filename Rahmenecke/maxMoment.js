@@ -12,6 +12,7 @@ function maxMoment() {
     var selectedScrewRows = window.selectedScrewRows
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
     var Vwprd = window.Vwprd
     var Fcwcrd = window.Fcwcrd
     var Fcfbrd = window.Fcfbrd

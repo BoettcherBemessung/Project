@@ -13,6 +13,7 @@ function ColumnEvidence() {
     var selectedScrewRows = window.selectedScrewRows
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var language_german = window.language_german
 
     var Vwprd = 0.9 * Avzb_Column * fy_Column / 1.7320508075688772935274463415059;
     window.Vwprd = Vwprd;
@@ -22,7 +23,7 @@ function ColumnEvidence() {
         document.getElementById('FcwcrdHeading').innerText = "Evidence of Compression Web Column";
         document.getElementById('FtwbrdHeading').innerText = "Evidence of Tension Web Column";
     }
-
+    console.log("ist englisch0? = " + language_english + "  ist spanisch0? " + language_spanish)
     if (language_english == 0 && language_spanish == 0) {
         document.getElementById('Vwprd').innerText = "NW Stützentsteg auf Querschub";
         document.getElementById('FcwcrdHeading').innerText = "NW Stützensteg auf Querdruck";

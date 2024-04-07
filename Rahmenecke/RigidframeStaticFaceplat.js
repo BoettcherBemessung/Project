@@ -40,6 +40,9 @@ function QSK() {
     var CfTfQSK1_Column = window.CfTfQSK1_Column
     var CfTfQSK2_Column = window.CfTfQSK2_Column
     var CfTfQSK3_Column = window.CfTfQSK3_Column
+    var language_english = window.language_english
+    var language_german = window.language_german
+    var language_spanish = window.language_spanish
 
 
     // === 2.2 Classification of I-section===
@@ -137,10 +140,10 @@ function QSK() {
         document.getElementById("columnresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
 
     }
-
+    console.log("Wert von Iy ist?: " + IyOutput_Column)
     if (language_english == 0 && language_spanish == 0) {
         document.getElementById("clickonresults").innerText = "Klicke auf die Ergebnisse um die genauen Rechenwege anzuzeigen!!"
-        document.getElementById("columnesultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
+        document.getElementById("columnresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
         document.getElementById("columnresultQsk").innerText = "QSK: " + qsk_Column;
         document.getElementById("columnresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
 
