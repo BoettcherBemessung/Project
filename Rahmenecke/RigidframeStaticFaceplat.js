@@ -273,6 +273,7 @@ function QSK() {
 
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
+    window.selectedScrewRows = selectedScrewRows
 
     if (selectedScrewRows === 3) {
 
@@ -508,109 +509,7 @@ function QSK() {
 
         window.hs1 = hs1
         window.hs2 = hs2
-        window.Mmax = Mmax
-
-        if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
-        }
-        if (language_english == 0 && language_spanish == 0) {
-            document.getElementById("Mmaxresults").innerText = "maßgebende Schraubenkräfte & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
-        }
-        if (language_spanish == 1) {
-            document.getElementById("Mmaxresults").innerText = "fuerzas de tornillos predominantes & Max M:";
-            document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtrd1 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtrd2 / 1000).toFixed(2) + " kN ";
-            document.getElementById("Ft3eff").innerText = "";
-            document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
-        }
-
-        // === 4.13 calculations max. shear force===
-
-        // max Force due to residual load-bearing capacity
-
-        var Fved1 = (1 - ((aFtrd1 / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
-        var Fved2 = (1 - ((aFtrd2 / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
-        var FvedSum = Fved1 + Fved2
-
-        // max Force due to avoiding Interaction of Vz/My in Beam
-        var Vplzrd = Avzb * fy / 1.732050808
-        var VoInteraction = 0.5 * Vplzrd
-
-        // max Force due to capacity of Web-Weldings
-
-        var lw = h - 2 * tf - 2 * r
-        var Vmaxwelding = 2 * fu * aw * lw / (1.73205808 * betaw * GammaTwo)
-
-        //max force due to punching shear
-
-        //1.Screws "bite" to upper side
-
-        var alphaPunch1Up = Math.min(1.0, (fub / fu))
-        var kPunch1Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd1Up = (kPunch1Up * alphaPunch1Up * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch2Up = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
-        var kPunch2Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd2Up = (kPunch2Up * alphaPunch2Up * fu * d * tsp / GammaTwo) * 2
-
-
-        //1.Screws "bite" downside 
-
-        var alphaPunch1Down = Math.min(1.0, fub / fu, ((h - go - gu) / (3 * dzero)) - 0.25, )
-        var kPunch1Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd1Down = (kPunch1Down * alphaPunch1Down * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch2Down = Math.min(1, fub / fu)
-        var kPunch2Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd2Down = (kPunch2Down * alphaPunch2Down * fu * d * tsp / GammaTwo) * 2
-
-        //Selection of authoritive punching shear per Screw row
-
-        var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down)
-        var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
-
-        console.log(Fbrdauthoritive1)
-        console.log(Fbrdauthoritive2)
-
-
-        var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2
-
-        var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
-
-        if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-            document.getElementById("Vloadbearingcapacity").innerText = "bearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "interaction: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = " Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
-        }
-        if (language_english == 0 && language_spanish == 0) {
-            document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
-            document.getElementById("Vloadbearingcapacity").innerText = "Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN ";
-        }
-        if (language_spanish == 1) {
-            document.getElementById("Vmaxresults").innerText = "Resultos de la fuerta contante";
-            document.getElementById("Vloadbearingcapacity").innerText = "capacidad de carga residual: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "Interaccion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "certificación de soldadura: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "perforacion: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN ";
-        }
-
-
+        bendingFlange()
     }
     //==============================================================================================================================================
     // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================
@@ -847,93 +746,6 @@ function QSK() {
         window.hs1 = hs1
         window.hs2 = hs2
         window.hs3 = hs3
-
-
-
-
-        // === 4.13 calculations max. shear force===
-
-        // max Force due to residual load-bearing capacity
-
-        var Fved1 = (1 - ((aFtrd1 / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
-        var Fved2 = (1 - ((aFtrd2 / 2) / (1.4 * 0.5 * Ft3rdM))) * 2 * Fvrd
-        var Fved3 = (1 - ((aFtrd3 / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
-        var FvedSum = Fved1 + Fved2 + Fved3
-
-        // max Force due to avoiding Interaction of Vz/My in Beam
-        var Vplzrd = Avzb * fy / 1.732050808
-        var VoInteraction = 0.5 * Vplzrd
-
-        // max Force due to capacity of Web-Weldings
-        var lw = h - 2 * tf - 2 * r
-        var Vmaxwelding = 2 * fu * aw * lw / (1.73205808 * betaw * GammaTwo)
-
-        //max force due to punching shear
-        //1.Screws "bite" to upper side
-        var alphaPunch1Up = Math.min(ex / (3 * dzero), fub / fu, 1)
-        var kPunch1Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd1Up = (kPunch1Up * alphaPunch1Up * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch2Up = Math.min(1.0, fub / fu)
-        var kPunch2Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd2Up = (kPunch2Up * alphaPunch2Up * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch3Up = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
-        var kPunch3Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd3Up = (kPunch2Up * alphaPunch2Up * fu * d * tsp / GammaTwo) * 2
-
-        //1.Screws "bite" downside 
-
-        var alphaPunch1Down = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
-        var kPunch1Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd1Down = (kPunch1Up * alphaPunch1Up * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch2Down = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
-        var kPunch2Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd2Down = (kPunch2Down * alphaPunch2Down * fu * d * tsp / GammaTwo) * 2
-
-        var alphaPunch3Down = Math.min(1, fub / fu)
-        var kPunch3Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd3Down = (kPunch3Down * alphaPunch3Down * fu * d * tsp / GammaTwo) * 2
-
-        //Selection of authoritive punching shear per Screw row
-
-        var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down, )
-        var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
-        var Fbrdauthoritive3 = Math.min(Fbrd3Up, Fbrd3Down)
-
-        var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2 + Fbrdauthoritive3
-        var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
-
-        if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("Vmaxresults").innerText = "Results of max Shear Force";
-            document.getElementById("Vloadbearingcapacity").innerText = "bearingcapacity: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "interaction: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = " Welding : " + (Vmaxwelding / 1000).toFixed(2) + " kN";
-            document.getElementById("VpunchingShear").innerText = "PunchingShear: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN";
-        }
-        if (language_english == 0 && language_spanish == 0) {
-            document.getElementById("Vmaxresults").innerText = "Ergebnisse maximaler Querkraft";
-            document.getElementById("Vloadbearingcapacity").innerText = "Resttragfähigkeit: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "Vermeidung Interaktion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "Schweißnahtnachweis: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "Lochleibung: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V  " + (Vmax / 1000).toFixed(2) + " kN ";
-        }
-        if (language_spanish == 1) {
-            document.getElementById("Vmaxresults").innerText = "resultos de fuerza contante";
-            document.getElementById("Vloadbearingcapacity").innerText = "capacidad de carga residual: " + (FvedSum / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vinteraction").innerText = "interaccion: " + (VoInteraction / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vwelding").innerText = "certificacion de soldadura: " + (Vmaxwelding / 1000).toFixed(2) + " kN ";
-            document.getElementById("VpunchingShear").innerText = "perforacion: " + (VmaxPunshShear / 1000).toFixed(2) + " kN ";
-            document.getElementById("Vmax").innerText = "max V  " + (Vmax / 1000).toFixed(2) + " kN ";
-        }
     }
-
-    window.language_english = language_english
-    window.language_spanish = language_spanish
-    window.selectedScrewRows = selectedScrewRows
     bendingFlange()
-
 }

@@ -18,23 +18,23 @@ function bendingFlange() {
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     var ew = window.ew
-    var u2 = document.getElementById('distanceu2').value
-
+    var u2 = parseFloat(document.getElementById("distanceu2").value);
+    if (isNaN(u2)) {
+        u2 = window.u2;
+    }
     var mh = (bsp / 2) - e - (tw_Column / 2) - 0.8 * r_Column
-    console.log("wie groß ist mh?" + mh)
-    console.log("wie groß ist ew?" + ew)
-
     var GammaTwo = 1.25
     var RScrew = 0.5 * d
     var AlphaV = 0.6
     var AScrew = 3.1415926535897932384626433832795 * RScrew ** 2
     var Fvrd = AlphaV * fub * AScrew / GammaTwo
-
-
     var mvO = u2 + u1 + go
+
+    if (isNaN(u2)) { mvO = u1 + go }
     var eO = ex + u2
 
     window.mvO = mvO;
+
 
     // === Additional Warning Programms for forbidden Userinput ===  
 
@@ -58,7 +58,6 @@ function bendingFlange() {
     if (bsp < b_Column) {
         var ec = e + (0.5 * (b_Column - bsp))
     }
-    console.log("der wert von ec =" + ec)
     var pO = h - go - gu
 
     if (selectedScrewRows == 2) {
@@ -101,9 +100,8 @@ function bendingFlange() {
         window.Ft2rdU_Column = Ft2rdU_Column
         window.Ft3rdU_Column = Ft3rdU_Column
 
-
-
         if (language_english == 1 && language_spanish == 0) {
+            console.log('Das if statement startet')
             document.getElementById("evidenceColumnflange").innerHTML = "Evidence Flange in bending"
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = ""
@@ -124,7 +122,7 @@ function bendingFlange() {
             document.getElementById("Screwresult3C").innerHTML = "Resultos de los tornillos bajos: ";
 
         }
-
+        console.log("welchen Wert nimmt mvO an?" + mvO)
         document.getElementById("mxresultC").innerText = "m2: " + " mm " + mvO.toFixed(2);
         document.getElementById("m1OresultC").innerText = "m1: " + " mm " + mh.toFixed(2);
         document.getElementById("m2MresultC").innerText = "";
@@ -265,10 +263,6 @@ function bendingFlange() {
         document.getElementById("Ft1rd3C").innerText = "Ft1rd: " + " kN " + (Ft1rdU_Column / 1000).toFixed(2);
         document.getElementById("Ft2rd3C").innerText = "Ft2rd: " + " kN " + (Ft2rdU_Column / 1000).toFixed(2);
         document.getElementById("Ft3rd3C").innerText = "Ft3rd: " + " kN " + (Ft3rdU_Column / 1000).toFixed(2);
-
-
-
-
     }
     ColumnEvidence()
 }
