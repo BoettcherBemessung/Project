@@ -216,4 +216,27 @@ function Vmax() {
         }
     }
 
+    var etaV = Ved / (Vmax)
+    var etaM = Med / (Mmax)
+    var eta = Math.max(etaV, etaM)
+
+    if (language_english == 1 && language_spanish == 0) {
+        document.getElementById("Endresults").innerText = "Utilization"
+        document.getElementById("UtilizationV").innerText = "Utilization of shearforce:            " + "\u03B7 = " + etaV.toFixed(2);
+        document.getElementById("UtiliziationM").innerText = "Utilization of moment:               " + "\u03B7 = " + etaM.toFixed(2);
+        document.getElementById("Utilization").innerText = "Utilization authoritive:               " + "\u03B7 = " + eta.toFixed(2);
+    }
+    if (language_english == 0 && language_spanish == 0) {
+        document.getElementById("Endresults").innerText = "Ausnutzung"
+        document.getElementById("UtilizationV").innerText = "Ausnutzung Querkraft:            " + "\u03B7 = " + etaV.toFixed(2);
+        document.getElementById("UtiliziationM").innerText = "AUsnutzung durch Moment:               " + "\u03B7 = " + etaM.toFixed(2);
+        document.getElementById("Utilization").innerText = "Maßgebende Ausnutzung:               " + "\u03B7 = " + eta.toFixed(2);
+    }
+
+    if (language_spanish == 1) {
+        document.getElementById("Endresults").innerText = "Utilization"
+        document.getElementById("UtilizationV").innerText = "Utilization of shearforce:            " + "\u03B7 = " + etaV.toFixed(2);
+        document.getElementById("UtiliziationM").innerText = "Utilization of moment:               " + "\u03B7 = " + etaM.toFixed(2);
+        document.getElementById("Utilization").innerText = "Utilization authoritive:               " + "\u03B7 = " + eta.toFixed(2);
+    }
 }

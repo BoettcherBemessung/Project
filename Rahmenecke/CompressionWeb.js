@@ -14,7 +14,16 @@ function ColumnEvidence() {
     var language_english = window.language_english
     var language_spanish = window.language_spanish
     var language_german = window.language_german
+    var Iy_Column = window.Iy_Column
+    var Ab = window.Ab_Column
 
+    var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
+    if (isNaN(Med)) { var Med = 0.1 }
+
+    var Ved = parseFloat(document.getElementById("ValueVed").value) * 10 ** 3;
+    if (isNaN(Ved)) { var Ved = 0.1 }
+
+    var sigmacom = Ved / Ab_Column + Med * (0.5 * h_Column - tf_Column - r_Column) / Iy_Column;
     var Vwprd = 0.9 * Avzb_Column * fy_Column / 1.7320508075688772935274463415059;
     window.Vwprd = Vwprd;
 
@@ -40,14 +49,14 @@ function ColumnEvidence() {
 
     var beffcwc = tf + 2 * 1.4142135623730950488016887242097 * af + 5 * (tf_Column + r_Column) + Math.min(2 * tsp, tsp + u1n)
     var omega = 1 / (1 + 1.3 * (beffcwc * tw_Column / Avzb_Column) ** 2) ** 0.5
-    var kwc = 1
+    var kwc = Math.min(1, 1.7 - sigmacom / fy_Column)
     var lambdap = 0.932 * (beffcwc * (h_Column - 2 * (tf_Column + r_Column)) * fy_Column / (210000 * tw_Column ** 2)) ** 0.5;
+
     if (lambdap <= 0, 72) {
         roh = 1
     }
     if (lambdap > 0.72) {
         roh = (lambdap - 0.2) / lambdap ** 2
-
     }
     var Fcwcrd = Math.min(omega * kwc * beffcwc * tw_Column * fy_Column, omega * kwc * roh * beffcwc * tw_Column * fy_Column / 1.1)
     window.Fcwcrd = Fcwcrd
@@ -158,7 +167,6 @@ function ColumnEvidence() {
         document.getElementById('befftwcU').innerText = "befftwc: " + befftwcU.toFixed(2) + "mm";
         document.getElementById('FtwcrdU').innerText = "Ftwcrd: " + (FtwcrdU / 1000).toFixed(2) + "kN";
     }
-
     window.FtwcrdO = FtwcrdO;
     window.FtwcrdM = FtwcrdM;
     window.FtwcrdU = FtwcrdU;
