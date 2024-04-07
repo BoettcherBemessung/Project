@@ -4,7 +4,7 @@ function Vmax() {
     var FtU = window.FtU;
     var selectedScrewRows = window.selectedScrewRows;
     var fub = window.fub;
-    var Ascrew = window.Ascrew;
+    var Ascrew = window.As;
     var d = window.d
     var Avzb = window.Avzb;
     var fy = window.fy;
@@ -13,13 +13,14 @@ function Vmax() {
     var aw = window.aw;
     var af = window.af;
     var betaw = window.betaw;
-    var GammaTwo = window.GammaTwo;
-    var dzero = window.dezero;
+    var GammaTwo = 1.25;
+    var dzero = window.dzero;
     var tsp = window.tsp;
     var tf_Column = window.tf_Column
     var fu = window.fu;
     var fu_Column = window.fu_Column;
     var e_Column = window.ec
+
     var language_english = window.language_english
     var language_german = window.language_german
     var language_spanish = window.language_spanish
@@ -73,7 +74,7 @@ function Vmax() {
 
         var alphaPunch1Down_Column = Math.min(1.0, fub / fu, ((h - go - gu) / (3 * dzero)) - 0.25, )
         var kPunch1Down_Column = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd1Down = (kPunch1Down * alphaPunch1Down * fu * d * tsp / GammaTwo) * 2
+        var Fbrd1Down_Column = (kPunch1Down * alphaPunch1Down * fu * d * tsp / GammaTwo) * 2
 
         var alphaPunch2Down_Column = Math.min(1, fub / fu_Column)
         var kPunch2Down_Column = Math.min(2.8 * ec / dzero - 1.7, 2.5)
@@ -83,8 +84,6 @@ function Vmax() {
 
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down, Fbrd1Up_Column, Fbrd1Down_Column)
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down, Fbrd2Up_Column, Fbrd2Down_Column)
-
-
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2
 
         var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
@@ -141,7 +140,7 @@ function Vmax() {
 
         var alphaPunch3Up = Math.min(1.0, fub / fu, (h - go - gu) / (3 * dzero) - 0.25, )
         var kPunch3Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
-        var Fbrd3Up = (kPunch2Up * alphaPunch2Up * fu * d * tsp / GammaTwo) * 2
+        var Fbrd3Up = (kPunch3Up * alphaPunch3Up * fu * d * tsp / GammaTwo) * 2
 
         var eO = window.eO;
         var alphaPunch1Up_Column = Math.min(eO / (3 * dzero), fub / fu_Column, 1)
@@ -154,7 +153,7 @@ function Vmax() {
 
         var alphaPunch3Up_Column = Math.min(1.0, fub / fu_Column, (h - go - gu) / (3 * dzero) - 0.25, )
         var kPunch3Up_Column = Math.min(2.8 * ec / dzero - 1.7, 2.5)
-        var Fbrd3Up_Column = (kPunch2Up_Column * alphaPunch2Up_Column * fu_Column * d * tf_Column / GammaTwo) * 2
+        var Fbrd3Up_Column = (kPunch3Up_Column * alphaPunch3Up_Column * fu_Column * d * tf_Column / GammaTwo) * 2
 
         //1.Screws "bite" downside 
 
@@ -170,10 +169,9 @@ function Vmax() {
         var kPunch3Down = Math.min(2.8 * e / dzero - 1.7, 2.5)
         var Fbrd3Down = (kPunch3Down * alphaPunch3Down * fu * d * tsp / GammaTwo) * 2
 
-
         var alphaPunch1Down_Column = Math.min(1.0, fub / fu_Column, (h - go - gu) / (3 * dzero) - 0.25, )
         var kPunch1Down_Column = Math.min(2.8 * ec / dzero - 1.7, 2.5)
-        var Fbrd1Down_Column = (kPunch1Up_Column * alphaPunch1Up_Column * fu_Column * d * tf_Column / GammaTwo) * 2
+        var Fbrd1Down_Column = (kPunch1Down_Column * alphaPunch1Down_Column * fu_Column * d * tf_Column / GammaTwo) * 2
 
         var alphaPunch2Down_Column = Math.min(1.0, fub / fu_Column, (h - go - gu) / (3 * dzero) - 0.25, )
         var kPunch2Down_Column = Math.min(2.8 * ec / dzero - 1.7, 2.5)

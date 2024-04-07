@@ -129,4 +129,8 @@ function maxMoment() {
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (FtU / 1000).toFixed(2) + " kN ";
         document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
     }
+    window.FtO = FtO;
+    window.FtM = FtM;
+    window.FtU = FtU;
+    Vmax()
 }

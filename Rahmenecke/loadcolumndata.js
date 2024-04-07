@@ -1203,10 +1203,11 @@ function loadColumndata() {
     window.dzero_Column = dzero
     window.d_Column = d
     window.fub_Column = fub
-    window.As_Column = As
+    window.As = As
     window.CfTfQSK1_Column = CfTfQSK1
     window.CfTfQSK2_Column = CfTfQSK2
     window.CfTfQSK3_Column = CfTfQSK3
+
 
 
 }

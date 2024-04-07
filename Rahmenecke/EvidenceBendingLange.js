@@ -33,6 +33,7 @@ function bendingFlange() {
     if (isNaN(u2)) { mvO = u1 + go }
     var eO = ex + u2
 
+    window.eO = eO
     window.mvO = mvO;
 
 
@@ -58,6 +59,7 @@ function bendingFlange() {
     if (bsp < b_Column) {
         var ec = e + (0.5 * (b_Column - bsp))
     }
+    window.ec = ec
     var pO = h - go - gu
 
     if (selectedScrewRows == 2) {
