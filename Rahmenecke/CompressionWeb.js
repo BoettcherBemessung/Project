@@ -167,5 +167,5 @@ function ColumnEvidence() {
     window.FtwcrdM = FtwcrdM;
     window.FtwcrdU = FtwcrdU;
 
-    MResult()
+    maxMoment()
 }
