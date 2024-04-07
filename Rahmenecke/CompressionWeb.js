@@ -50,6 +50,7 @@ function ColumnEvidence() {
     var beffcwc = tf + 2 * 1.4142135623730950488016887242097 * af + 5 * (tf_Column + r_Column) + Math.min(2 * tsp, tsp + u1n)
     var omega = 1 / (1 + 1.3 * (beffcwc * tw_Column / Avzb_Column) ** 2) ** 0.5
     var kwc = Math.min(1, 1.7 - sigmacom / fy_Column)
+    if (kwc <= 0) { kwc = 1 }
     var lambdap = 0.932 * (beffcwc * (h_Column - 2 * (tf_Column + r_Column)) * fy_Column / (210000 * tw_Column ** 2)) ** 0.5;
 
     if (lambdap <= 0, 72) {

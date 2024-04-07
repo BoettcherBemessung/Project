@@ -132,5 +132,6 @@ function maxMoment() {
     window.FtO = FtO;
     window.FtM = FtM;
     window.FtU = FtU;
+    window.Mmax = Mmax
     Vmax()
 }

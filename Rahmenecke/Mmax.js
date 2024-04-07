@@ -107,7 +107,6 @@ function MResult() {
         if (FtM > 0.95 * FtU) { if (FtU > (FtM / hs2) * hs3) { FtU = (FtM / hs2) * hs3 } }
 
         var Mmax = FtO * hs1 + FtM * hs2 + FtU * hs3
-        window.Mmax = Mmax
 
         if (language_english == 1) {
             document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";
@@ -123,4 +122,7 @@ function MResult() {
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (FtU / 1000).toFixed(2) + " kN ";
         document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
     }
+    console.log("Welchen Wert nimmt Mmax an ?" + Mmax)
+    window.Mmax = Mmax
+    Vmax()
 }

@@ -36,21 +36,17 @@ function bendingFlange() {
     window.eO = eO
     window.mvO = mvO;
 
-
     // === Additional Warning Programms for forbidden Userinput ===  
 
     if (language_english == 1 && language_spanish == 0) {
         if (mh <= 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
-
     }
     if (language_english == 0 && language_spanish == 0) {
         if (mh <= 2 * ew) { alert("Berechnung nicht möglich, Schrauben zu nah am Trägersteg. Bitte wählen sie einen geringeren Abstand e, oder erhöhen Sie die Stirnplattenbreite!") }
-
     }
 
     if (language_spanish == 1) {
         if (mh <= 2 * ew) { alert("Calculacion no possible, tornillos demasiado cerca de la alma. elige un e mas bajo o amplia el ancho de la placa frontal !") }
-
     }
 
     if (bsp > b_Column) {
@@ -108,21 +104,18 @@ function bendingFlange() {
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Results of lower Screwrow: ";
-
         }
         if (language_english == 0 && language_spanish == 0) {
             document.getElementById("evidenceColumnflange").innerHTML = "NW Stützenflansch auf Biegung"
             document.getElementById("Screwresult1C").innerHTML = "Ergebnisse oberer Schraubenreihe: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Ergebnisse unterer Schraubenreihe: ";
-
         }
         if (language_spanish == 1) {
             document.getElementById("evidenceColumnflange").innerHTML = "evidencia ala bajo ..."
             document.getElementById("Screwresult1C").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Resultos de los tornillos bajos: ";
-
         }
         console.log("welchen Wert nimmt mvO an?" + mvO)
         document.getElementById("mxresultC").innerText = "m2: " + " mm " + mvO.toFixed(2);

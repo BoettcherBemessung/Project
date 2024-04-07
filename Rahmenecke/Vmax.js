@@ -216,9 +216,16 @@ function Vmax() {
         }
     }
 
+
+
+    var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
+    var Ved = parseFloat(document.getElementById("ValueVed").value) * 10 ** 3;
+    var Mmax = window.Mmax
     var etaV = Ved / (Vmax)
     var etaM = Med / (Mmax)
     var eta = Math.max(etaV, etaM)
+
+    console.log('wird die ausnutzung berechnet?' + Mmax)
 
     if (language_english == 1 && language_spanish == 0) {
         document.getElementById("Endresults").innerText = "Utilization"

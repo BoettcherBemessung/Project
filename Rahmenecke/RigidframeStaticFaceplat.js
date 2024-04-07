@@ -293,10 +293,7 @@ function QSK() {
             if (u1 - ex < 2 * ew) { alert("Calculacion no possible, tornillos demasidao cerca de la ala! elige und ex mas pequeño !") }
         }
     }
-
     // === 4.0 Starting calculations for endplate in bending ===
-
-
 
     var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
     var iterationDoneO = 0;
@@ -311,7 +308,6 @@ function QSK() {
     window.mh = mh;
     window.AScrew = AScrew;
     window.Fvrd = Fvrd;
-
     //=============================================================================================================================================
     // ================================= 4.1 calculations  endplate in bending 2 screwRows ========================================================
     //=============================================================================================================================================
@@ -327,7 +323,6 @@ function QSK() {
         window.mvU = mvU;
 
         // === Additional Warning Programms for forbidden Userinput ===  
-
         if (language_english == 1 && language_spanish == 0) {
             if (mh < 2 * ew) { alert("Calculation not possible, Screws too close to web of beam. Please select lower e, or rise width of faceplate!") }
             if (mvO < 2 * ew) { alert("Calculation not possible, Upper Screws too close to flange of beam. Please select higher go !") }
@@ -459,7 +454,6 @@ function QSK() {
             document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
             document.getElementById("TensionWebBeam").innerHTML = " Reusulto almba bajo Tension";
         }
-
         document.getElementById("mxresult").innerText = "m2: " + " mm " + mvO.toFixed(2);
         document.getElementById("m1Oresult").innerText = "m1: " + " mm " + mh.toFixed(2);
         document.getElementById("m2Mresult").innerText = "";
@@ -492,7 +486,6 @@ function QSK() {
         document.getElementById("Ft3rd2").innerText = "";
 
         // === 4.11 calculations evidence of tension beam screwRows ===
-
         var befftwb = leff1O
 
         if (Ft2rdO < Ft1rdO || Ft3rdO < Ft1rdO) { befftwb = leff2O }
@@ -512,7 +505,6 @@ function QSK() {
 
         window.hs1 = hs1
         window.hs2 = hs2
-        bendingFlange()
     }
     //==============================================================================================================================================
     // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================
