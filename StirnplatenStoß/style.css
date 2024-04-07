@@ -29,7 +29,7 @@
                     .websiteHead {
                         background-color: white;
                         margin: 25px;
-                        margin-top: 40px;
+                        margin-top: 10px;
                         padding-left: 20px;
                         border-left: solid 1px;
                     }
@@ -344,6 +344,9 @@
                     @media (max-width: 1000px) {
                         body {
                             padding: 0px;
+                        }
+                        .websitecontainer {
+                            display: block
                         }
                         .websiteheadings {
                             margin: 0px;

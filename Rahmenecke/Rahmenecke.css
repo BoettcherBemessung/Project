@@ -19,3 +19,31 @@
     margin-left: 15px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 1000px) {
+    .drawingFrame {
+        margin-left: 10px;
+        height: 175px;
+        width: 175px;
+        margin-bottom: 0px;
+        background-color: rgb(230, 239, 247);
+        position: absolute;
+        top: 770px;
+        left: 185px;
+    }
+    .drawingfaceplate {
+        margin-left: 5px;
+        height: 175px;
+        width: 175px;
+        margin-bottom: 0px;
+        background-color: rgb(230, 239, 247);
+    }
+    .inputs {
+        width: 330px;
+        height: 200px;
+        border-radius: 50px;
+        margin-top: 0px;
+        padding: 3px;
+        display: flex;
+    }
+}
