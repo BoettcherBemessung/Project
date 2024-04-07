@@ -17,15 +17,19 @@ function maxMoment() {
     var Fcwcrd = window.Fcwcrd
     var Fcfbrd = window.Fcfbrd
     var Ftwbrd = window.Ftwbrd
+
     var Ft1rdO = window.Ft1rdO
     var Ft2rdO = window.Ft2rdO
     var Ft3rdO = window.Ft3rdO
+
     var Ft1rdM = window.Ft1rdM
     var Ft2rdM = window.Ft2rdM
     var Ft3rdM = window.Ft3rdM
+
     var Ft1rdU = window.Ft1rdU
     var Ft2rdU = window.Ft2rdU
     var Ft3rdU = window.Ft3rdU
+    console.log("welchen Wert hat Ft2rdM= " + Ft2rdM)
 
     var Ft1rdO_Column = window.Ft1rdO_Column
     var Ft2rdO_Column = window.Ft1rdO_Column
@@ -92,6 +96,8 @@ function maxMoment() {
         var hs2 = window.hs2
         var hs3 = window.hs3
 
+        console.log("Ft2rdM= " + Ft2rdM)
+
         var SumFtrd = FtO + FtM + FtU
 
         if (Fglobal < SumFtrd) { FtU = FtU - (sumFtrd - Fglobal) }
@@ -118,8 +124,8 @@ function maxMoment() {
         if (language_spanish == 1) {
             document.getElementById("Mmaxresults").innerText = "Calculacion de Mmax:";
         }
-        document.getElementById("Ft1eff").innerText = "Fteff1: " + (aFtO / 1000).toFixed(2) + " kN ";
-        document.getElementById("Ft2eff").innerText = "Fteff2: " + (aFtM / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft1eff").innerText = "Fteff1: " + (FtO / 1000).toFixed(2) + " kN ";
+        document.getElementById("Ft2eff").innerText = "Fteff2: " + (FtM / 1000).toFixed(2) + " kN ";
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (FtU / 1000).toFixed(2) + " kN ";
         document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
     }

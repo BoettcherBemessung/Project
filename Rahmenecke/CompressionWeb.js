@@ -23,7 +23,7 @@ function ColumnEvidence() {
         document.getElementById('FcwcrdHeading').innerText = "Evidence of Compression Web Column";
         document.getElementById('FtwbrdHeading').innerText = "Evidence of Tension Web Column";
     }
-    console.log("ist englisch0? = " + language_english + "  ist spanisch0? " + language_spanish)
+
     if (language_english == 0 && language_spanish == 0) {
         document.getElementById('Vwprd').innerText = "NW Stützentsteg auf Querschub";
         document.getElementById('FcwcrdHeading').innerText = "NW Stützensteg auf Querdruck";
@@ -58,27 +58,27 @@ function ColumnEvidence() {
     document.getElementById('Fcwcrd').innerText = "Fcwcrd: " + (Fcwcrd / 1000).toFixed(2) + "kN";
 
     if (selectedScrewRows == 2) {
-        var Ft1rdO = window.Ft1rdO_Column
-        var Ft2rdO = window.Ft2rdO_Column
-        var Ft3rdO = window.Ft3rdO_Column
-        var Ft1rdU = window.Ft1rdU_Column
-        var Ft2rdU = window.Ft2rdU_Column
-        var Ft3rdU = window.Ft3rdU_Column
-        var leff1O = window.leff1O_Column
-        var leff2O = window.leff2O_Column
-        var leff1U = window.leff1U_Column
-        var leff2U = window.leff2U_Column
+        var Ft1rdO_Column = window.Ft1rdO_Column
+        var Ft2rdO_Column = window.Ft2rdO_Column
+        var Ft3rdO_Column = window.Ft3rdO_Column
+        var Ft1rdU_Column = window.Ft1rdU_Column
+        var Ft2rdU_Column = window.Ft2rdU_Column
+        var Ft3rdU_Column = window.Ft3rdU_Column
+        var leff1O_Column = window.leff1O_Column
+        var leff2O_Column = window.leff2O_Column
+        var leff1U_Column = window.leff1U_Column
+        var leff2U_Column = window.leff2U_Column
 
 
-        if (Ft1rdO > Ft2rdO && Ft1rdO > Ft3rdO) {
-            befftwcO = leff1O
+        if (Ft1rdO_Column > Ft2rdO_Column && Ft1rdO_Column > Ft3rdO_Column) {
+            var befftwcO = leff1O_Column
         } else {
-            befftwcO = leff2O
+            befftwcO = leff2O_Column
         }
-        if (Ft1rdU > Ft2rdU && Ft1rdO > Ft3rdU) {
-            befftwcU = leff1O
+        if (Ft1rdU_Column > Ft2rdU_Column && Ft1rdO_Column > Ft3rdU_Column) {
+            var befftwcU = leff1O
         } else {
-            befftwcU = leff2U
+            var befftwcU = leff2U_Column
         }
 
         var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Avzb_Column) ** 2) ** 0.5
@@ -102,38 +102,41 @@ function ColumnEvidence() {
     }
     if (selectedScrewRows == 3) {
 
-        var Ft1rdO = window.Ft1rdO_Column
-        var Ft2rdO = window.Ft2rdO_Column
-        var Ft3rdO = window.Ft3rdO_Column
-        var Ft1rdM = window.Ft1rdM_Column
-        var Ft2rdM = window.Ft2rdM_Column
-        var Ft3rdM = window.Ft3rdM_Column
-        var Ft1rdU = window.Ft1rdU_Column
-        var Ft2rdU = window.Ft2rdU_Column
-        var Ft3rdU = window.Ft3rdU_Column
-        var leff1O = window.leff1O_Column
-        var leff2O = window.leff2O_Column
-        var leff1M = window.leff1M_Column
-        var leff2M = window.leff2M_Column
-        var leff1U = window.leff1U_Column
-        var leff2U = window.leff2U_Column
+        var Ft1rdO_Column = window.Ft1rdO_Column
+        var Ft2rdO_Column = window.Ft2rdO_Column
+        var Ft3rdO_Column = window.Ft3rdO_Column
 
-        if (Ft1rdO > Ft2rdO && Ft1rdO > Ft3rdO) {
-            befftwcU = leff1O
+        var Ft1rdM_Column = window.Ft1rdM_Column
+        var Ft2rdM_Column = window.Ft2rdM_Column
+        var Ft3rdM_Column = window.Ft3rdM_Column
+
+        var Ft1rdU_Column = window.Ft1rdU_Column
+        var Ft2rdU_Column = window.Ft2rdU_Column
+        var Ft3rdU_Column = window.Ft3rdU_Column
+
+        var leff1O_Column = window.leff1O_Column
+        var leff2O_Column = window.leff2O_Column
+        var leff1M_Column = window.leff1M_Column
+        var leff2M_Column = window.leff2M_Column
+        var leff1U_Column = window.leff1U_Column
+        var leff2U_Column = window.leff2U_Column
+
+        if (Ft1rdO_Column > Ft2rdO_Column && Ft1rdO_Column > Ft3rdO_Column) {
+            var befftwcO = leff1O_Column
         } else {
-            befftwcO = leff2O
+            var befftwcO = leff2O_Column
         }
 
-        if (Ft1rdM > Ft2rdM && Ft1rdM > Ft3rdM) {
-            befftwcM = leff1M
+        if (Ft1rdM_Column > Ft2rdM_Column && Ft1rdM_Column > Ft3rdM_Column) {
+            var befftwcM = leff1M_Column
         } else {
-            befftwcM = leff2M
+            var befftwcM = leff2M_Column
         }
 
-        if (Ft1rdU > Ft2rdU && Ft1rdO > Ft3rdU) {
-            befftwcU = leff1O
+        if (Ft1rdU_Column > Ft2rdU_Column && Ft1rdO_Column > Ft3rdU_Column) {
+            var befftwcU = leff1U_Column
         } else {
-            befftwcU = leff2U
+            var befftwcU = leff2U_Column
         }
         var omegaO = 1 / (1 + 1.3 * (befftwcO * tw_Column / Avzb_Column) ** 2) ** 0.5
         var omegaM = 1 / (1 + 1.3 * (befftwcM * tw_Column / Avzb_Column) ** 2) ** 0.5
@@ -155,15 +158,7 @@ function ColumnEvidence() {
         document.getElementById('befftwcU').innerText = "befftwc: " + befftwcU.toFixed(2) + "mm";
         document.getElementById('FtwcrdU').innerText = "Ftwcrd: " + (FtwcrdU / 1000).toFixed(2) + "kN";
     }
-    window.Ft1rdO = Ft1rdO
-    window.Ft2rdO = Ft2rdO
-    window.Ft3rdO = Ft3rdO
-    window.Ft1rdM = Ft1rdM
-    window.Ft2rdM = Ft2rdM
-    window.Ft3rdM = Ft3rdM
-    window.Ft1rdU = Ft1rdU
-    window.Ft2rdU = Ft2rdU
-    window.Ft3rdU = Ft3rdU
+
     window.FtwcrdO = FtwcrdO;
     window.FtwcrdM = FtwcrdM;
     window.FtwcrdU = FtwcrdU;

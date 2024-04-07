@@ -203,11 +203,11 @@ function bendingFlange() {
         var Ft2rdU_Column = (2 * Mpl2rdU_Column + nRest * Ft3rdU_Column) / (mh + nRest)
 
         window.Ft1rdO_Column = Ft1rdO_Column
-        window.Ft1rdO_Column = Ft2rdO_Column
+        window.Ft2rdO_Column = Ft2rdO_Column
         window.Ft3rdO_Column = Ft3rdO_Column
 
         window.Ft1rdM_Column = Ft1rdM_Column
-        window.Ft1rdM_Column = Ft2rdM_Column
+        window.Ft2rdM_Column = Ft2rdM_Column
         window.Ft3rdM_Column = Ft3rdM_Column
 
         window.Ft1rdU_Column = Ft1rdU_Column
