@@ -18,8 +18,8 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    margin-left: 50px;
-    margin-right: 250px;
+    margin-left: 80px;
+    margin-right: 100px;
     margin-top: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -34,14 +34,14 @@
 .producttext {
     background-color: white;
     opacity: 0.8;
-    width: 250px;
+    width: 500px;
     padding: 0px;
 }
 
 .productlink {
     text-align: center;
     background-color: white;
-    margin-left: 50px;
-    margin-right: 250px;
+    margin-left: 80px;
+    margin-right: 100px;
     font-weight: bold;
 }
