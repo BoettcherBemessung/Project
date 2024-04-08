@@ -127,13 +127,13 @@ function getdraw() {
         var u1n_number = canvas.getContext('2d');
         u1n_number.font = '9px Arial';
         u1n_number.fillStyle = 'black';
-        u1n_number.fillText("u1n =" + u1n, 100 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
+        u1n_number.fillText("u1n =" + u1n.toFixed(2), 100 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
     }
 
     var gu_number = canvas.getContext('2d');
     gu_number.font = '9px Arial';
     gu_number.fillStyle = 'black';
-    gu_number.fillText("gu = " + gu, 100 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
+    gu_number.fillText("gu = " + gu.toFixed(2), 100 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
 
     var wh_number = canvas.getContext('2d');
     wh_number.font = '9px Arial';
@@ -143,7 +143,7 @@ function getdraw() {
     var go_number = canvas.getContext('2d');
     go_number.font = '9px Arial';
     go_number.fillStyle = 'black';
-    go_number.fillText("go = " + go, 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
+    go_number.fillText("go = " + go.toFixed(2), 100 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '9px Arial';
@@ -153,7 +153,7 @@ function getdraw() {
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '9px Arial';
     hsp_number.fillStyle = 'black';
-    hsp_number.fillText(hsp, 40, 149 - 0.5 * hsp * y_factor)
+    hsp_number.fillText(hsp.toFixed(2), 40, 149 - 0.5 * hsp * y_factor)
 
     if (u1n !== 0) {
         var u1nleft_number = canvas.getContext('2d');
@@ -181,7 +181,7 @@ function getdraw() {
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText(u1, 8, 159 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText(u1.toFixed(2), 8, 159 - (u1n + h + 0.5 * u1) * y_factor);
 
     var profile = canvas.getContext('2d');
     profile.font = '9px Arial';
@@ -467,7 +467,6 @@ function getdraw() {
     Left_Up_sec_context.closePath();
     Left_Up_sec_context.setTransform(1, 0, 0, 1, 0, 0);
 
-
     //Drawing of upper screws (outside) -> only if 3 screw rows chosen by user!
 
     if (selectedScrewRows == 3) {
@@ -519,12 +518,12 @@ function getdraw() {
         var eO_number = canvas.getContext('2d');
         eO_number.font = '9px Arial';
         eO_number.fillStyle = 'black';
-        eO_number.fillText("ex = " + ex, 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
+        eO_number.fillText("ex = " + ex.toFixed(2), 100 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
 
         var mvE_number = canvas.getContext('2d');
         mvE_number.font = '9px Arial';
         mvE_number.fillStyle = 'black';
-        mvE_number.fillText("mx = " + ex, 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
+        mvE_number.fillText("mx = " + ex.toFixed(2), 100 + 250 * bsp / hsp, 24 + ex * y_factor + 0.5 * (u1 - ex) * y_factor)
     }
 
 

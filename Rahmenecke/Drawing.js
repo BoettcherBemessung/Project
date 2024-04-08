@@ -168,36 +168,36 @@ function draw_screws() {
         var u1n_number = canvasfaceplate.getContext('2d');
         u1n_number.font = '7px Arial';
         u1n_number.fillStyle = 'black';
-        u1n_number.fillText(u1n, 75 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
+        u1n_number.fillText(u1n.toFixed(2), 75 + 250 * bsp / hsp, 149 - 0.5 * u1n * y_factor);
     }
 
     var gu_number = canvasfaceplate.getContext('2d');
     gu_number.font = '7px Arial';
     gu_number.fillStyle = 'black';
-    gu_number.fillText(gu, 75 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
+    gu_number.fillText(gu.toFixed(2), 75 + 250 * bsp / hsp, 149 - (0.5 * gu + u1n) * y_factor);
 
     var wh_number = canvasfaceplate.getContext('2d');
     wh_number.font = '7px Arial';
     wh_number.fillStyle = 'black';
-    wh_number.fillText(h - go - gu, 75 + 250 * bsp / hsp, 149 - (gu + u1n + 0.5 * (h - go - gu)) * y_factor);
+    wh_number.fillText((h - go - gu).toFixed(2), 75 + 250 * bsp / hsp, 149 - (gu + u1n + 0.5 * (h - go - gu)) * y_factor);
 
     var go_number = canvasfaceplate.getContext('2d');
     go_number.font = '7px Arial';
     go_number.fillStyle = 'black';
-    go_number.fillText(go, 75 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
+    go_number.fillText(go.toFixed(2), 75 + 250 * bsp / hsp, 149 - (u1n + h - 0.5 * go) * y_factor);
 
     if (selectedScrewRows == 2) {
         var u1_number = canvasfaceplate.getContext('2d');
         u1_number.font = '7px Arial';
         u1_number.fillStyle = 'black';
-        u1_number.fillText(u1, 75 + 250 * bsp / hsp, 24 + 0.5 * u1 * y_factor)
+        u1_number.fillText(u1.toFixed(2), 75 + 250 * bsp / hsp, 24 + 0.5 * u1 * y_factor)
     }
 
     if (selectedScrewRows == 3) {
         var eO_number = canvasfaceplate.getContext('2d');
         eO_number.font = '7px Arial';
         eO_number.fillStyle = 'black';
-        eO_number.fillText(ex, 75 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
+        eO_number.fillText(ex.toFixed(2), 75 + 250 * bsp / hsp, 24 + 0.5 * ex * y_factor)
 
         var mvE_number = canvasfaceplate.getContext('2d');
         mvE_number.font = '7px Arial';
@@ -225,7 +225,7 @@ function draw_screws() {
     var u1_number_left = canvasfaceplate.getContext('2d');
     u1_number_left.font = '7px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText(u1, 1, 149 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText(u1.toFixed(2), 1, 149 - (u1n + h + 0.5 * u1) * y_factor);
 
     var e_measures = canvasfaceplate.getContext('2d');
     e_measures.beginPath();
@@ -263,17 +263,17 @@ function draw_screws() {
     var e_number1 = canvasfaceplate.getContext('2d');
     e_number1.font = '7px Arial';
     e_number1.fillStyle = 'black';
-    e_number1.fillText(e, 55 + 0.5 * e * x_factor, 17);
+    e_number1.fillText(e.toFixed(2), 55 + 0.5 * e * x_factor, 17);
 
     var e_number2 = canvasfaceplate.getContext('2d');
     e_number2.font = '7px Arial';
     e_number2.fillStyle = 'black';
-    e_number2.fillText(e, 55 + (bsp - 0.5 * e) * x_factor, 17);
+    e_number2.fillText(e.toFixed(2), 55 + (bsp - 0.5 * e) * x_factor, 17);
 
     var w_number = canvasfaceplate.getContext('2d');
     w_number.font = '7px Arial';
     w_number.fillStyle = 'black';
-    w_number.fillText(bsp - 2 * e, 55 + (0.5 * bsp) * x_factor, 17);
+    w_number.fillText((bsp - 2 * e).toFixed(2), 55 + (0.5 * bsp) * x_factor, 17);
 
     var bsp_measures = canvasfaceplate.getContext('2d');
     bsp_measures.beginPath();
