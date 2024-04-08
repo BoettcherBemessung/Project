@@ -181,7 +181,7 @@ function getdraw() {
     var u1_number_left = canvas.getContext('2d');
     u1_number_left.font = '9px Arial';
     u1_number_left.fillStyle = 'black';
-    u1_number_left.fillText(u1.toFixed(2), 8, 159 - (u1n + h + 0.5 * u1) * y_factor);
+    u1_number_left.fillText(u1, 8, 159 - (u1n + h + 0.5 * u1) * y_factor);
 
     var profile = canvas.getContext('2d');
     profile.font = '9px Arial';

@@ -99,7 +99,7 @@ function draw_screws() {
         u1n = window.u1n
     }
     var selectedScrewRows = document.getElementById("ScrewRows").value
-    var u1 = (hsp - u1n - h).toFixed(2);
+    var u1 = (hsp - u1n - h);
 
     //Umrechnungsfaktor für x-Wert von Höhen zu Pixel in Grafik
 
