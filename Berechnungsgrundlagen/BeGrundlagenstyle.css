@@ -1,9 +1,8 @@
 .page {
-    height: 2000px;
     background-image: url(../images/backgroungSteel.jpg);
+    background-repeat: repeat;
     background-color: (255, 255, 255, 0.1);
     background-position: center;
-    overflow: visible;
     width: 1000px;
 }
 
@@ -15,6 +14,10 @@
 .introductionHeading {
     padding: 5px;
     margin-top: 5px;
+}
+
+.introductiontext {
+    padding-left: 25px;
 }
 
 .evidenceHeading {
