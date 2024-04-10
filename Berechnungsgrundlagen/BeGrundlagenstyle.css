@@ -20,6 +20,14 @@
     padding-left: 25px;
 }
 
+.Updateinformation {
+    background-color: white;
+    opacity: 0.95;
+    color: red;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
 .evidenceHeading {
     opacity: 0.8;
     background-color: white;
