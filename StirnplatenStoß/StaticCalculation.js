@@ -40,7 +40,6 @@ function QSK() {
     var mmaxScrew = 0;
     var tscrew = 0;
 
-
     // === 1.1 Data of Screws and obtaining of fitting values of variables===
     if (selectedScrewshape == "M12") {
         d = 12;

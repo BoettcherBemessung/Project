@@ -14,10 +14,40 @@
     text-align: center;
 }
 
-.starttext {
+.startcontainer {
     background-color: white;
     opacity: 0.9;
     margin-left: 50px;
     margin-right: 50px;
     padding-left: 40px;
+}
+
+.language {
+    margin-top: 10px;
+    height: 150px;
+}
+
+.languagecontainer {
+    display: flex;
+}
+
+.profilepicture {
+    display: flex;
+}
+
+.selectBeam1 {
+    width: 600px;
+    height: 200px;
+    opacity: 1.0;
+}
+
+.selectBeam2 {
+    width: 200px;
+    opacity: 1.0;
+}
+
+.secondselection {
+    width: 550px;
+    background-color: white;
+    opacity: 0.95;
 }
