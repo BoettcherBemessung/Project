@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BöttcherBemessungSoftware</title>
+    <link rel="stylesheet" href="../Products/Anleitung.css" />
+    <link rel="stylesheet" href="../StirnplatenStoß/style.css" />
+</head>
+
+<body>
+    <script src="../Products/Producttranslation.js"></script>
+    <p>choose language / Sprache wählen</p>
+
+    <img id="linklogo" class="linklogo" src="../images/BBS.jpg">
+    <script>
+        var linklogo = document.getElementById("linklogo");
+        linklogo.style.display = "none"
+    </script>
+    <img id="Image_germanflag" class="pictureflag" src="../images/germanflag.jpg" alt="Bild german" onclick="deutsch()">
+    <img id="Image_englishflag" class="pictureflag" src="../images/englishflag.jpg" alt="Bild english" onclick="englisch()">
+    <img id="Image_spanishflag" class="pictureflag" src="../images/spanishflag.jpg" alt="Bild spanish" onclick="spanisch()">
+    <div class="websitecontainer">
+        <img id="BBS" class="BBS" src="..//images/BBS.jpg" alt="Bild BBS">
+        <a href="../Homepage/index.html">
+            <p id="startpage" class="websiteHead">Startseite</p>
+        </a>
+        <a href="../Products/products.html">
+            <p id="products" class="websiteHead">Produkte</p>
+        </a>
+        <a href="../Berechnungsgrundlagen/Berechnungsgrundlagen.html">
+            <p id="Berechnungsgrundlagen" class="websiteHead">Berechnungsgrundlagen</p>
+        </a>
+        <a href="../Service/Service.html">
+            <p id="service" class="websiteHead">Service</p>
+        </a>
+    </div>
+    <div class="content">
+        <h1 class="Manuals">Benutzerhandbuch Rahmenecke</h1>
+        <div class="startcontainer">
+            <p class="starttext">
+                <br> Zunächst sollte der Anwender seine gewünschte Sprache einstellen<br> Dies geschieht einfach durch anklicken der jeweiligen Länderflagge ganz oben links <br>
+                <br> Dann muss der Nutzer ein Iprofil seiner Wahl aussuchen,<br> dazu kann man einfach auf das Feld neben "Iprofil" klicken.<br> es öffnet sich ein Dropdownmenü mit 150 verschiedenen Stahlprofilen,<br> hier kann man durch klicken auswählen
+                welches Profil man zu verwendet werden soll,<br> der Aufmerksame Nutzer wird merken dass sich dabei direkt in der Zeichenebene (Canvas) das Bild anpasst<br><br> Ist man sich unsicher bezüglich der Daten des Profils,<br> lässt sich nach
+                Auswahl eines Profils der Knopf(Button) show Beamdata anklicken<br> nun bekommt man die verschiedene Werte seines gewählten Profils angezeigt:<br><br> die Höhe des profils ist bei der Ausgabe h: 150 (zum beispiel bei einem Profil mit 150mm
+                Höhe)
+                <br> sämtliche Angaben sind also in mm hier ein Index welcher Buchstabe welchem Wert entspricht:<br><br>h = Gesamthöhe des Profils<br> b = Gesamtbreite des Profils,<br> tw = Dicke des Trägerstegs;<br> tf = Dicke des Trägerflansch<br> r
+                = Radius der Kreiszwickel;<br> Iy = Flächenträgheitsmoment;<br>Wely = elastisches Widerstandsmoment des Profils; <br>Wply = plastisches Widerstandsmoment des Profils;<br> Sy = Statisches Moment des Profils; <br> Avz = Fläche welche für
+                Schubbeanspruchng durch Vz rechnerisch angesetzt wird.<br>
+                <br> Nach selbem Verfahren wie oben lässt sich auch die Stahlgüte wählen.<br> Auch die Schweißnähte lassen sich über ein ebensolches Dropdownmenü asuwählen<br> wobei af der Schweißnahtdicke am Flansch entspricht <br> aw der Schweißnahtdicke
+                am Steg. <br><br> Selbes Verfahren lässt sich auch für das profil als wie die Stahlsorte der Stütze anwenden <br><br> Ebenfalls wieder durch klicken der Felder und Auswählen im sich dabei öffnenden Menü lassen sich die Schrauben konfigurieren.
+                <br><br> Bei Auswahl des Schraubentyps wählt man aus genormten Schraubenmaßen.<br> Dabei lässt sich auch direkt eine Veränderung im Canvas (Zeichenausgabe) beobachten. <br> Die dort dargestellten Kreise Spiegeln die Unterlegscheiben wieder,.<br>                Man sollte darauf achten , dass diese Kreise keine Anderen Linien schneiden
+                <br> um das zu vermeiden könnte der Nutzer entweder die Maße wie zb Abstände profile etc.ändern oder kleinere Schrauben wählen. <br><br> Zwar wurden entsprechende Sicherheitsprogramme geschreiben welche Die vom Nutzer eingegebenen Parameter
+                überprüfen sodass eine Warnung kommt: Berechnung nicht möglich weil....
+                <br> Für einen komfortableres Erlebnis mit BöttcherBemessungSoftware empfehlen wir jedoch selbst direkt im Canvas (Zeichenfenster ) seinen Anschluss zu überprüfen.<br><br> Zuletzt lässt sich noch die Festigkeitsklasse der Schrauben wählen
+                <br> Unter dem Reiter ScrewRows oder Schraubenreihen auf deutsch lassen sich die Anzahl schraubenreihen auswählen , hierbei ist eine unmittelbare Veränderung im Canvas sichtbar <br>
+                <br>
+                <br> Wie unschwer zu erkennen ist wurde das Programm so geschrieben,<br> dass es bereits nur anhand der Auswahl von Profilen und Schrauben einen Konstruktionsvorschlag macht <br> also automatisch eine Stirnplatte berechnet sowie Schraubenabstände
+                die für das Profil passend wären mit denen man Rechnen könnte. <br><br> Natürlich kann man aber auch die Maße der Stirnplatte, sowie die verschiedenen Schraubenabstände selbst wählen <br> hierzu dienen die Eingabefelder:<br> hsp; bsp;
+                tsp; u1n; e; go; gu; u2 <br>und bei Auswahl von 3 Schraubenreihen das sich dabei neu öffnende Eingabefenster ex. <br> In die Eingabefenster dürfen nur Zahlen eingegeben werden.<br> Dabei ist die Einheit immer in mm <br> Wichtig für Nicht-statiker:<br><br>hsp
+                = Höhe der Stirnplatte -> Diese Höhe muss stehts höher bzw. mindestens so Hoch wie das gewählte Profil sein im Zweifelsfall also nochmal auf den Button showbeamdata klicken und schauen was dort h anzeigt <br><br> bsp = Breite der Stirnplatte
+                -> Diese Breite muss stehts breiter als die Breite des gewählten Profil sein im Zweifelsfall also nochmal Show Beamdata anklicken und schauen welchen Wert b hat. <br><br> tsp = Breite der Stirnplatte -> übliche Werte wären hier zwischen
+                10-45 mm <br><br> u1n = Der abstand des Unteren FLanschendes zum Unteren Rand der Stirnplatte <br><br> e = horizonzaler Abstand des Mittelpunktes Der Schraubenbohrung zur Stirnplatte <br><br> go = vertikaler Abstand des Mittelpunktes der
+                Schraubenbohrung(innere Schrauben oben) zur oberen Flanschaußenkante des Profils <br><br> gu = vertikaler Abstand des Mittelpunktes der Schraubenbohrung (innere Schrauben unten) zur unteren Flanschaußenkante des Profil <br><br> u2 = Abstand
+                des Oberen Stirnplattenrands zum Ende der Stütze
+                <br><br> Für nicht Statiker die sich an diesem Programm versuchen wollen und eine Orientierung brauchen in welchen Größenordnungen die Zahlen sein müssten welche sie Eingeben sollen bei den jeweiligen Eingabefeldern der Maße empfiehlt
+                sich ein Blick auf das Canvas bei Neuladen der Seite<br><br> Lädt man die Seite neu und tätigt keine Eingaben lassen sich in dem Bild sämtliche Abstände sehen mitsamt deren Abkürzung und des entsprechenden Wertes <br>
+                <br> Nun lassen sich noch die Ermittelten Schnittgrößen eingeben welche An der Stelle des Anschlusses wirken , dabei steht Med für das Bemessungsmoment und Ved für die Bemessungsquerkraft <br>
+                <br>
+                <br> Hat man nun alle Eingaben getätigt kann man auf den Button(Knopf) start calculation bzw. "hier klicken für Ergebnisse" klicken
+
+            </p>
+        </div>
+</body>
+
+</html>
