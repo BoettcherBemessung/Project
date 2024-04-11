@@ -66,3 +66,16 @@
 .canvastext {
     padding-top: 25px;
 }
+
+.Abstandscontainer {
+    display: flex;
+}
+
+.abstands1 {
+    height: 310px;
+    padding-left: 20px;
+}
+
+.eingabemaße2 {
+    width: 700px;
+}
