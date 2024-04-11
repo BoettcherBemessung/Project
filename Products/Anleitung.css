@@ -1,0 +1,22 @@
+.content {
+    background-image: url(../images/backgroungSteel.jpg);
+    background-repeat: repeat;
+    background-color: (255, 255, 255, 0.1);
+    background-position: center;
+    width: 1000px;
+}
+
+.Manuals {
+    background-color: white;
+    opacity: 0.8;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.starttext {
+    background-color: white;
+    opacity: 0.9;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 40px;
+}

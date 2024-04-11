@@ -1991,7 +1991,6 @@ function QSK() {
         var aFtrd1 = Math.min(Ft1rdO, Ft2rdO, Ft3rdO)
         var aFtrd2 = Math.min(Ft1rdM, Ft2rdM, Ft3rdM, Ftwbrd)
         var aFtrd3 = Math.min(Ft1rdM, Ft2rdM, Ft3rdM, Ftwbrd)
-
         var SumFtrd = aFtrd1 + aFtrd2 + aFtrd3
 
         if (Fcfbrd < SumFtrd) { aFtrd3 = aFtrd3 - (SumFtrd - Fcfbrd) }
@@ -2082,6 +2081,7 @@ function QSK() {
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down, )
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
         var Fbrdauthoritive3 = Math.min(Fbrd3Up, Fbrd3Down)
+
 
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2 + Fbrdauthoritive3
         var Vmax = Math.min(FvedSum, VoInteraction, Vmaxwelding, VmaxPunshShear)
