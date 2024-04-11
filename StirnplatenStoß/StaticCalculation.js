@@ -1627,6 +1627,8 @@ function QSK() {
 
         var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2
 
+
+
         window.hs1 = hs1
         window.hs2 = hs2
         window.Mmax = Mmax
@@ -1655,13 +1657,29 @@ function QSK() {
             document.getElementById("Ft3eff").innerText = "";
             document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
         }
+        //Calculation of actual acting forces per Screwrow
 
+        var deltaM = Mmax - Med
+
+        if (deltaM >= 0) {
+            aFtrd1_new = aFtrd1
+            aFtrd2_new = aFtrd2 - deltaM / hs2
+            if (aFtrd2_new < 0) {
+                aFtrd2_new = 0
+                aFtrd1_new = aFtrd1 - (deltaM - aFtrd2 * hs2) / hs1
+            }
+        }
+
+        if (deltaM < 0) {
+            aFtrd2_new = aFtrd2;
+            aFtrd1_new = aFtrd1;
+        }
         // === 4.13 calculations max. shear force===
 
         // max Force due to residual load-bearing capacity
 
-        var Fved1 = (1 - ((aFtrd1 / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
-        var Fved2 = (1 - ((aFtrd2 / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
+        var Fved1 = (1 - ((aFtrd1_new / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
+        var Fved2 = (1 - ((aFtrd2_new / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2
 
         // max Force due to avoiding Interaction of Vz/My in Beam
@@ -2031,13 +2049,41 @@ function QSK() {
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (aFtrd3 / 1000).toFixed(2) + " kN ";
         document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
 
+
+        //Calculation of actual acting forces per Screwrow
+
+        var deltaM = Mmax - Med
+
+        if (deltaM >= 0) {
+            aFtrd3_new = aFtrd3 - deltaM / hs3
+            aFtrd2_new = aFtrd2
+            aFtrd1_new = aFtrd1
+
+            if (aFtrd3_new < 0) {
+                aFtrd1_new = aFtrd1
+                aFtrd3_new = 0
+                aFtrd2_new = aFtrd2 - (deltaM - aFtrd3 * hs3) / hs2
+                if (aFtrd2_new < 0) {
+                    aFtrd2_new = 0
+                    aFtrd1_new = aFtrd1 - (deltaM - aFtrd3 * hs3 - aFtrd2 * hs2) / hs1
+
+                }
+            }
+        }
+
+        if (deltaM < 0) {
+            aFtrd3_new = aFtrd3
+            aFtrd2_new = aFtrd2;
+            aFtrd1_new = aFtrd1;
+        }
+
         // === 4.13 calculations max. shear force===
 
         // max Force due to residual load-bearing capacity
 
-        var Fved1 = (1 - ((aFtrd1 / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
-        var Fved2 = (1 - ((aFtrd2 / 2) / (1.4 * 0.5 * Ft3rdM))) * 2 * Fvrd
-        var Fved3 = (1 - ((aFtrd3 / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
+        var Fved1 = (1 - ((aFtrd1_new / 2) / (1.4 * 0.5 * Ft3rdO))) * 2 * Fvrd
+        var Fved2 = (1 - ((aFtrd2_new / 2) / (1.4 * 0.5 * Ft3rdM))) * 2 * Fvrd
+        var Fved3 = (1 - ((aFtrd3_new / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2 + Fved3
 
         // max Force due to avoiding Interaction of Vz/My in Beam

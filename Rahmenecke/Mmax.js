@@ -58,6 +58,10 @@ function MResult() {
 
         var Mmax = FtO * hs1 + FtU * hs2
 
+        window.hs1 = hs1
+        window.hs2 = hs2
+
+
         if (language_english == 1 && language_spanish == 0) {
             document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";
             document.getElementById("Ft1eff").innerText = "Fteff1: " + (FtO / 1000).toFixed(2) + " kN ";
@@ -107,6 +111,10 @@ function MResult() {
         if (FtM > 0.95 * FtU) { if (FtU > (FtM / hs2) * hs3) { FtU = (FtM / hs2) * hs3 } }
 
         var Mmax = FtO * hs1 + FtM * hs2 + FtU * hs3
+
+        window.hs1 = hs1
+        window.hs2 = hs2
+        window.hs3 = hs3
 
         if (language_english == 1) {
             document.getElementById("Mmaxresults").innerText = "Calculation of Mmax:";

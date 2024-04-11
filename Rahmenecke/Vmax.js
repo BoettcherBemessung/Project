@@ -20,6 +20,8 @@ function Vmax() {
     var fu = window.fu;
     var fu_Column = window.fu_Column;
     var e_Column = window.ec
+    var Mmax = window.Mmax
+    var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
 
     var language_english = window.language_english
     var language_german = window.language_german
@@ -31,8 +33,29 @@ function Vmax() {
 
     if (selectedScrewRows == 2) {
 
-        var Fved1 = (1 - ((FtO / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
-        var Fved2 = (1 - ((FtU / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
+        //Calculation of actual acting forces per Screwrow
+
+        var hs1 = window.hs1
+        var hs2 = window.hs2
+
+        var deltaM = Mmax - Med
+
+        if (deltaM >= 0) {
+            var aFtrd1_new = FtO
+            var aFtrd2_new = FtU - deltaM / hs2
+            if (aFtrd2_new < 0) {
+                var aFtrd2_new = 0
+                var aFtrd1_new = FtO - (deltaM - FtU * hs2) / hs1
+            }
+        }
+
+        if (deltaM < 0) {
+            var aFtrd2_new = FtU;
+            var aFtrd1_new = FtO;
+        }
+
+        var Fved1 = (1 - ((aFtrd1_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
+        var Fved2 = (1 - ((aFtrd2_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2
 
         // max Force due to avoiding Interaction of Vz/My in Beam
@@ -115,9 +138,38 @@ function Vmax() {
     }
 
     if (selectedScrewRows == 3) {
-        var Fved1 = (1 - ((FtO / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
-        var Fved2 = (1 - ((FtM / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
-        var Fved3 = (1 - ((FtU / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
+
+        var deltaM = Mmax - Med
+        var hs1 = window.hs1
+        var hs2 = window.hs2
+        var hs3 = window.hs3
+
+
+        if (deltaM >= 0) {
+            var aFtrd3_new = FtU - deltaM / hs3
+            var aFtrd2_new = FtM
+            var aFtrd1_new = FtO
+
+            if (aFtrd3_new < 0) {
+                var aFtrd1_new = FtO
+                var aFtrd3_new = 0
+                var aFtrd2_new = FtM - (deltaM - FtU * hs3) / hs2
+                if (aFtrd2_new < 0) {
+                    var aFtrd2_new = 0
+                    var aFtrd1_new = FtO - (deltaM - FtU * hs3 - FtM * hs2) / hs1
+
+                }
+            }
+        }
+
+        if (deltaM < 0) {
+            aFtrd3_new = FtU
+            aFtrd2_new = FtM;
+            aFtrd1_new = FtO;
+        }
+        var Fved1 = (1 - ((aFtrd1_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
+        var Fved2 = (1 - ((aFtrd2_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
+        var Fved3 = (1 - ((aFtrd3_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2 + Fved3
 
         // max Force due to avoiding Interaction of Vz/My in Beam
