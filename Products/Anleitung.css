@@ -51,3 +51,18 @@
     background-color: white;
     opacity: 0.95;
 }
+
+.canvasanleitung {
+    opacity: 0.95;
+    width: 300px;
+}
+
+.canvasanleitungcontainer {
+    display: flex;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+
+.canvastext {
+    padding-top: 25px;
+}
