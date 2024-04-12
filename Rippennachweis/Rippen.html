@@ -11,9 +11,10 @@
 </head>
 
 <body>
-    <script src="../Rahmenecke/Rahmeneckelanguagefile.js"></script>
+    <script src="../Rippennachweis/Rippenlanguagefile.js"></script>
     <script src="../Rippennachweis/Rippen.js"></script>
     <script src="../Rippennachweis/DataRib.js"></script>
+    <script src="../Rippennachweis/showdata.js"></script>
     <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
@@ -199,7 +200,9 @@
         <select id="YieldStrength" class="dropdownmenu">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
+        
 </select>
+        <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
         <br>
         <br>
         <p id="Forcelocation" class="websiteheadings"><strong> Location of acting force:</strong> </p>
