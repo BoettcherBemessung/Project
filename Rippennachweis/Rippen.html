@@ -201,15 +201,38 @@
     <br>
     <br>
     <p id="Forcelocation" class="websiteheadings"><strong> Location of acting force:</strong> </p>
-    <label id="LocationForce" for="Forcelocation"> Location:</label>
+    <label id="locatinForce" for="Forcelocation"> Location:</label>
     <select id="LocationForce" class="dropdownmenu">
         <option value="typeA">type (a) mid of beam one sided</option>
         <option value="typeB">type (b) mid of beam force from to sides</option>
         <option value="typeC">type (c) end of beam</option>
     </select>
-
     <label for="RigidLoadTransferLength">ss:</label>
     <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n"><br>
+
+    <div id="Cbox" class="Cbox" style="display: none;">
+        <label for="CLength">c:</label>
+        <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n">
+    </div>
+    <script>
+        document.getElementById('LocationForce').addEventListener('change', function showBox() {
+            var selectedLocation = document.getElementById("LocationForce").value;
+            console.log("wo ist die Kraft?" + selectedLocation)
+
+            if (selectedLocation === "typeA") {
+                var Cbox = document.getElementById("Cbox");
+                Cbox.style.display = "none"
+            }
+            if (selectedLocation == "typeB") {
+                var Cbox = document.getElementById("Cbox");
+                Cbox.style.display = "none"
+            }
+            if (selectedLocation === "typeC") {
+                var Cbox = document.getElementById("Cbox");
+                Cbox.style.display = "block"
+            }
+        })
+    </script>
     <br>
     <img class="ribpicture" src="../images/Rippen/Bildneu.jpg">
 
@@ -221,7 +244,6 @@
                 <input type="number" id="ValueVed" name="inputboxVed" placeholder="[kN]" class="inputkN">
             </form>
             <br>
-            <script src="Drawing.js"></script>
             <button id="CalculationsComplete" class="buttons" onclick="starCalc()"> Start Calculations </button>
         </div>
     </div>
