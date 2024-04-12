@@ -3,5 +3,11 @@
 }
 
 .Cbox {
-    margin-left: 340px;
+    margin-left: 5px;
+}
+
+@media (max-width: 1000px) {
+    .ribpicture {
+        width: 370px;
+    }
 }
