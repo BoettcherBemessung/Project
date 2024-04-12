@@ -1366,7 +1366,6 @@ function QSK() {
         if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
     }
-
     if (language_spanish == 1) {
         if (hsp < h) { alert("Calculacion no possible, placa frontal menor que  altura de la viga! elige placa frontal mas alta por favor") }
         if (bsp < b) { alert("Calculacion no possible, placa frontal menor que ancho de la viga! elige placa frontal mas ancho por favor") }
@@ -1379,9 +1378,7 @@ function QSK() {
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculacion no possible , los tornillos adentros etsan demasiado cerca al otro! usa g0/gu mas pequeño") }
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
-
     if (selectedScrewRows === 3) {
-
         if (language_english == 1 && language_spanish == 0) {
             if (ex < 1.2 * dzero) { alert("Calculation not possible screw spacing to upper margin too small ") }
             if (u1 - ex < 2 * ew) { alert("Calculation not possible screws touch flange! Please select smaller ex!") }
@@ -1395,23 +1392,18 @@ function QSK() {
             if (u1 - ex < 2 * ew) { alert("Calculacion no possible, tornillos demasidao cerca de la ala! elige und ex mas pequeño !") }
         }
     }
-
     // === 4.0 Starting calculations for endplate in bending ===
-
     var mh = (bsp / 2) - e - (tw / 2) - 0.8 * aw * 1.414213562;
     var iterationDoneO = 0;
     var iterationDoneU = 0;
-
     var GammaTwo = 1.25
     var RScrew = 0.5 * d
     var AlphaV = 0.6
     var AScrew = 3.1415926535897932384626433832795 * RScrew ** 2
     var Fvrd = AlphaV * fub * AScrew / GammaTwo
-
     window.mh = mh;
     window.AScrew = AScrew;
     window.Fvrd = Fvrd;
-
     //=============================================================================================================================================
     // ================================= 4.1 calculations  endplate in bending 2 screwRows ========================================================
     //=============================================================================================================================================
@@ -1560,7 +1552,6 @@ function QSK() {
             document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
             document.getElementById("TensionWebBeam").innerHTML = " Reusulto almba bajo Tension";
         }
-
         document.getElementById("mxresult").innerText = "m2: " + " mm " + mvO.toFixed(2);
         document.getElementById("m1Oresult").innerText = "m1: " + " mm " + mh.toFixed(2);
         document.getElementById("m2Mresult").innerText = "";
@@ -1626,14 +1617,11 @@ function QSK() {
 
         var Mmax = aFtrd1 * hs1 + aFtrd2 * hs2
 
-
-
         window.hs1 = hs1
         window.hs2 = hs2
         window.Mmax = Mmax
         window.aFtrd1 = aFtrd1
         window.aFtrd2 = aFtrd2
-
 
         if (language_english == 1 && language_spanish == 0) {
             document.getElementById("Mmaxresults").innerText = "authoritive Screwforces & Max M:";

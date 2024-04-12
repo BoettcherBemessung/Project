@@ -13,6 +13,7 @@
 <body>
     <script src="../Rahmenecke/Rahmeneckelanguagefile.js"></script>
     <script src="../Rippennachweis/Rippen.js"></script>
+    <script src="../Rippennachweis/DataRib.js"></script>
     <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
@@ -244,9 +245,33 @@
                 <input type="number" id="ValueVed" name="inputboxVed" placeholder="[kN]" class="inputkN">
             </form>
             <br>
-            <button id="CalculationsComplete" class="buttons" onclick="starCalc()"> Start Calculations </button>
+            <button id="CalculationsComplete" class="buttons" onclick="startCalc()"> Start Calculations </button>
         </div>
     </div>
+    <div class="containerresults">
+        <div class="solutionblock">
+            <div class="solutionlength">
+                <p id="m1Result" class="Output "> </p>
+                <p id="m2Result" class="Output "> </p>
+                <p id="kfResult" class="Output "> </p>
+                <P id="lyResult" class="Output"></P>
+                <p id="leResult" class="Output"></p>
+                <p id="FcrResult" class="Output"> </p>
+            </div>
+        </div>
+        <div class="solutionblock">
+            <div class="solutionlength">
+                <p id="lambdaFResult" class="Output leffnc"></p>
+                <p id="SchiFResult" class="Output"> </p>
+                <p id="LeffResult" class="Output"> </p>
+                <p id="FrdResult" class="Output"> </p>
+                <p id="EtaResult" class="Output"> </p>
+                <p id="MessageResult" class="Output"> </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
 </body>
 
 </html>
