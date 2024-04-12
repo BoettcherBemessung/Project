@@ -31,6 +31,7 @@ function deutsch() {
     document.getElementById("Welcome").innerText = "Willkommen bei BöttcherBemessungSoftware!"
     document.getElementById("Stirnstoß").innerText = "Teste unseren online Stirnplattenstoßrechner!"
     document.getElementById("RigidFrame").innerText = "Teste unser Programm zur Biegesteifen Rahmenecke!"
+    document.getElementById("Rib").innerText = "Teste unser Programm zum Rippennachweis"
 
 
 }
@@ -47,7 +48,7 @@ function englisch() {
     document.getElementById("Welcome").innerText = "welcome to BöttcherBemessungSoftware"
     document.getElementById("Stirnstoß").innerText = "Test the faceplate joint calculator!"
     document.getElementById("RigidFrame").innerText = "Test our Program for the Rigid Frame structure analysis!"
-
+    document.getElementById("Rib").innerText = "Test the rib anaylsis program"
 }
 
 function spanisch() {
@@ -62,5 +63,5 @@ function spanisch() {
     document.getElementById("Welcome").innerText = "bienvenido a BöttcherBemessungSoftware"
     document.getElementById("Stirnstoß").innerText = "Prueba el calculador en linea de empalmes de placas frontales"
     document.getElementById("RigidFrame").innerText = "Prueba la programa por  analisis de esquinas rigidas a flexiones"
-
+    document.getElementById("Rib").innerText = "Prueba la programa de rib analisis"
 }

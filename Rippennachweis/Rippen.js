@@ -43,6 +43,7 @@ function startCalc() {
     }
     if (selectedlocation == "typeC") {
 
+        var c = parseFloat(document.getElementById("distanceu1n").value);
         var kf = 2 + 6 * ((ss + c) / hw)
         if (kf > 6) {
             kf = 6
