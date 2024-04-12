@@ -1649,8 +1649,8 @@ function QSK() {
         var deltaM = Mmax - Med
 
         if (deltaM >= 0) {
-            aFtrd1_new = aFtrd1
-            aFtrd2_new = aFtrd2 - deltaM / hs2
+            var aFtrd1_new = aFtrd1
+            var aFtrd2_new = aFtrd2 - deltaM / hs2
             if (aFtrd2_new < 0) {
                 aFtrd2_new = 0
                 aFtrd1_new = aFtrd1 - (deltaM - aFtrd2 * hs2) / hs1
@@ -1658,8 +1658,8 @@ function QSK() {
         }
 
         if (deltaM < 0) {
-            aFtrd2_new = aFtrd2;
-            aFtrd1_new = aFtrd1;
+            var aFtrd2_new = aFtrd2;
+            var aFtrd1_new = aFtrd1;
         }
         // === 4.13 calculations max. shear force===
 
@@ -2041,9 +2041,9 @@ function QSK() {
         var deltaM = Mmax - Med
 
         if (deltaM >= 0) {
-            aFtrd3_new = aFtrd3 - deltaM / hs3
-            aFtrd2_new = aFtrd2
-            aFtrd1_new = aFtrd1
+            var aFtrd3_new = aFtrd3 - deltaM / hs3
+            var aFtrd2_new = aFtrd2
+            var aFtrd1_new = aFtrd1
 
             if (aFtrd3_new < 0) {
                 aFtrd1_new = aFtrd1
@@ -2058,9 +2058,9 @@ function QSK() {
         }
 
         if (deltaM < 0) {
-            aFtrd3_new = aFtrd3
-            aFtrd2_new = aFtrd2;
-            aFtrd1_new = aFtrd1;
+            var aFtrd3_new = aFtrd3
+            var aFtrd2_new = aFtrd2;
+            var aFtrd1_new = aFtrd1;
         }
 
         // === 4.13 calculations max. shear force===
