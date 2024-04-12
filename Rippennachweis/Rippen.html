@@ -42,9 +42,10 @@
     <h1 id="Website_Heading" class="Attention"> welcome to the first online rib design verification</h1>
     <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
     <br>
-    <p id="Beamconfiguration" class="websiteheadings"><strong> choose beam:</strong> </p>
-    <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
-    <select id="BeamSelection" class="dropdownmenu">
+    <div class="configuration">
+        <p id="Beamconfiguration" class="websiteheadings"><strong> choose beam:</strong> </p>
+        <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
+        <select id="BeamSelection" class="dropdownmenu">
         <option value="IPEa120">IPEa 120</option>
         <option value="IPEa140">IPEa 140</option>
         <option value="IPEa160">IPEa 160</option>
@@ -194,26 +195,27 @@
         <option value="HEM900">HEM 900</option>
         <option value="HEM1000">HEM 1000</option>
         </select>
-    <label id="Steeltype" for="SteelType">steel type:</label>
-    <select id="YieldStrength" class="dropdownmenu">
+        <label id="Steeltype" for="SteelType">steel type:</label>
+        <select id="YieldStrength" class="dropdownmenu">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
 </select>
-    <br>
-    <br>
-    <p id="Forcelocation" class="websiteheadings"><strong> Location of acting force:</strong> </p>
-    <label id="locatinForce" for="Forcelocation"> Location:</label>
-    <select id="LocationForce" class="dropdownmenu">
+        <br>
+        <br>
+        <p id="Forcelocation" class="websiteheadings"><strong> Location of acting force:</strong> </p>
+        <label id="locatinForce" for="Forcelocation"> Location:</label>
+        <select id="LocationForce" class="dropdownmenu">
         <option value="typeA">type (a) mid of beam one sided</option>
         <option value="typeB">type (b) mid of beam force from to sides</option>
         <option value="typeC">type (c) end of beam</option>
     </select>
-    <label for="RigidLoadTransferLength">ss:</label>
-    <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n"><br>
+        <label for="RigidLoadTransferLength">ss:</label>
+        <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n"><br>
 
-    <div id="Cbox" class="Cbox" style="display: none;">
-        <label for="CLength">c:</label>
-        <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n">
+        <div id="Cbox" class="Cbox" style="display: none;">
+            <label for="CLength">c:</label>
+            <input type="number" id="distanceu1n" name="inputbox" placeholder="[mm]" class="inputu1n">
+        </div>
     </div>
     <script>
         document.getElementById('LocationForce').addEventListener('change', function showBox() {
