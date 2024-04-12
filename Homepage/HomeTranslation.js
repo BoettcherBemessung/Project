@@ -32,8 +32,6 @@ function deutsch() {
     document.getElementById("Stirnstoß").innerText = "Teste unseren online Stirnplattenstoßrechner!"
     document.getElementById("RigidFrame").innerText = "Teste unser Programm zur Biegesteifen Rahmenecke!"
     document.getElementById("Rib").innerText = "Teste unser Programm zum Rippennachweis"
-
-
 }
 
 function englisch() {

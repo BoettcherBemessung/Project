@@ -200,7 +200,6 @@
         <select id="YieldStrength" class="dropdownmenu">
         <option value="S235">S 235</option>
         <option value="S355">S 355</option>
-        
 </select>
         <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
         <br>
@@ -224,8 +223,6 @@
     <script>
         document.getElementById('LocationForce').addEventListener('change', function showBox() {
             var selectedLocation = document.getElementById("LocationForce").value;
-            console.log("wo ist die Kraft?" + selectedLocation)
-
             if (selectedLocation === "typeA") {
                 var Cbox = document.getElementById("Cbox");
                 Cbox.style.display = "none"
