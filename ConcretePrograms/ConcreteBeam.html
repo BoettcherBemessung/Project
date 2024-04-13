@@ -157,12 +157,12 @@
                     <input type="number" id="b_concrete" name="inputboxbsp" placeholder="[cm]" class="inputbsp"><br>
             </div>
             <div id="PlatteOben" class="inputPlatteoben" style="display: none;">
-                <label for="Plattenbreite">Plattenbreite:</label>
+                <label for="Plattenbreite">Plattendicke:</label>
                 <br>
-                <input type="number" id="t_Platte_O" name="inputboxtsp" placeholder="[cm]" class="inputtsp"><br>
-                <label for="Plattendicke">Plattendicke:</label>
+                <input type="number" id="t_Platte" name="inputboxtsp" placeholder="[cm]" class="inputtsp"><br>
+                <label for="Plattendicke">Stegdicke:</label>
                 <br>
-                <input type="number" id="Plattendicke" name="inputboxe1" placeholder="[cm]" class="inputbsp"><br>
+                <input type="number" id="Stegdicke" name="inputboxe1" placeholder="[cm]" class="inputbsp"><br>
             </div>
             <div id="PlatteDoppel" class="inputPlatteDoppel" style="display: none;">
                 <label for="Plattenbreite2">Plattenbreite unten:</label>
@@ -205,14 +205,17 @@
                 ObenBox.style.display = "none"
                 Doppelbox.style.display = "none"
                 HorizBox.style.display = "none"
+                draw_rect()
             }
             if (selectedQuerschnitt == "slabtop") {
+                drawPlattenBalken_oben()
                 var ObenBox = document.getElementById("PlatteOben");
                 var Doppelbox = document.getElementById("PlatteDoppel");
                 var HorizBox = document.getElementById("PlatteHorizontal")
                 ObenBox.style.display = "block"
                 Doppelbox.style.display = "none"
                 HorizBox.style.display = "none"
+
             }
             if (selectedQuerschnitt === "slabbottom") {
                 var ObenBox = document.getElementById("PlatteOben");

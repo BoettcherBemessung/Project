@@ -55,3 +55,43 @@ function draw_rect() {
     hsp_number.fillStyle = 'black';
     hsp_number.fillText("h = " + (hsp / 10).toFixed(2) + "cm", 45 + 250 * bsp / hsp, 82);
 }
+
+function drawPlattenBalken_oben() {
+
+    var canvas = document.getElementById('draw_Querschnitt');
+    var bsp_context = canvas.getContext('2d')
+    var hsp = parseFloat(document.getElementById('h_concrete').value) * 10;
+    if (isNaN(hsp)) {
+        hsp = 800
+    }
+    var bsp = parseFloat(document.getElementById('b_concrete').value) * 10;
+    if (isNaN(bsp)) {
+        bsp = 1000
+    }
+    var t_pb_O = parseFloat(document.getElementById('t_Platte').value) * 10;
+    if (isNaN(t_pb_O)) {
+        t_pb_O = 100
+    }
+    var t_steg = parseFloat(document.getElementById('Stegdicke').value) * 10;
+    if (isNaN(t_steg)) {
+        t_steg = 200
+    }
+    var x_factor = 220 / hsp
+    var y_factor = 110 / hsp;
+
+    //Zeichnung Rechteckquerschnitt
+    bsp_context.clearRect(0, 0, canvas.width, canvas.height);
+    bsp_context.beginPath();
+    bsp_context.moveTo(30, 25);
+    bsp_context.lineTo(250, 25);
+    bsp_context.lineTo(250, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 25 + hsp * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 25 + hsp * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(30, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(30, 25);
+
+    bsp_context.stroke();
+
+}
