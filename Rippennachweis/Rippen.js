@@ -7,6 +7,9 @@ function startCalc() {
     var hw = h - 2 * tf
     var m1 = b / tw
     var m2 = 0
+    var language_english = window.language_english
+    var language_german = window.language_german
+    var language_spanish = window.language_spanish
 
     if (selectedlocation == "typeA") {
         var kf = 6
@@ -97,11 +100,34 @@ function startCalc() {
 
     document.getElementById('EtaResult').innerText = "eta : " + eta.toFixed(4)
 
-    if (eta < 1) {
-        document.getElementById('MessageResult').innerText = "No Ribs necessary"
-    }
+    if (language_english == 1) {
 
-    if (eta > 1) {
-        document.getElementById('MessageResult').innerText = "Ribs necessary"
+        if (eta < 1) {
+            document.getElementById('MessageResult').innerText = "No Ribs necessary"
+        }
+
+        if (eta > 1) {
+            document.getElementById('MessageResult').innerText = "Ribs necessary"
+        }
+    }
+    if (language_german == 1) {
+
+        if (eta < 1) {
+            document.getElementById('MessageResult').innerText = "keine Rippen notwendig"
+        }
+
+        if (eta > 1) {
+            document.getElementById('MessageResult').innerText = "Rippen notwendig"
+        }
+    }
+    if (language_spanish == 1) {
+
+        if (eta < 1) {
+            document.getElementById('MessageResult').innerText = "no costillas necesarias "
+        }
+
+        if (eta > 1) {
+            document.getElementById('MessageResult').innerText = "costillas necesarias"
+        }
     }
 }

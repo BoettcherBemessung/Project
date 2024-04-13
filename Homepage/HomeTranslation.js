@@ -21,7 +21,6 @@ function spanishnmenu() {
 
 function deutsch() {
     germannmenu()
-
     var language_english = 0;
     var language_spanish = 0;
     var language_german = 1;
@@ -36,7 +35,6 @@ function deutsch() {
 
 function englisch() {
     englishnmenu()
-
     var language_spanish = 0;
     var language_english = 1;
     var language_german = 0;
@@ -51,7 +49,6 @@ function englisch() {
 
 function spanisch() {
     spanishnmenu()
-
     var language_spanish = 1;
     var language_german = 0;
     var language_english = 0;
