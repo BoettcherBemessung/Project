@@ -1,0 +1,65 @@
+.dropdownmenu {
+    width: 300px;
+    margin-bottom: 8px;
+}
+
+.Exposition {
+    display: flex;
+}
+
+.Bewehrung {
+    margin-right: 20px;
+}
+
+#Plattendicke {
+    text-align: center;
+}
+
+#tSteg {
+    text-align: center;
+}
+
+#Plat_Li {
+    text-align: center;
+}
+
+#Plat_Re {
+    text-align: center;
+}
+
+#go {
+    text-align: center;
+}
+
+#gu {
+    text-align: center;
+}
+
+#h_concrete {
+    text-align: center;
+}
+
+#b_concrete {
+    text-align: center;
+}
+
+#t_Platte_O {
+    text-align: center;
+}
+
+.inputs {
+    margin-right: 400px;
+    height: 350px;
+    display: flex
+}
+
+.measures {
+    display: block
+}
+
+.Querschnittdraw {
+    margin-left: 80px;
+    height: 350px;
+    width: 350px;
+    background-color: white;
+}

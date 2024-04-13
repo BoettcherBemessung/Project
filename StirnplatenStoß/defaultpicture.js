@@ -93,7 +93,6 @@ function getdraw() {
     hsp_measure.lineTo(68, 24);
     hsp_measure.stroke();
 
-
     var h2_measure = canvas.getContext('2d');
     h2_measure.beginPath();
     h2_measure.moveTo(40, 149);
@@ -111,7 +110,6 @@ function getdraw() {
     h2_measure.lineTo(40, 24);
     h2_measure.lineTo(32, 24);
     h2_measure.stroke()
-
 
     //Ziffer Maßkette gesamte Breite
     var bsp_number = canvas.getContext('2d');

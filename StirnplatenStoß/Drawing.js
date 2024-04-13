@@ -20,7 +20,6 @@ var selectedScrewshape = document.getElementById("ScrewShape").value;
 
 document.getElementById('hsp').addEventListener('input', function() {
     document.getElementById("drawing_area").style.display = "block";
-
 });
 
 function draw_faceplate_width() {
@@ -28,7 +27,6 @@ function draw_faceplate_width() {
     if (isNaN(bsp)) {
         bsp = window.bsp
     }
-
     var hsp = parseFloat(document.getElementById("hsp").value);
     if (isNaN(hsp)) {
         hsp = window.hsp;
@@ -36,27 +34,22 @@ function draw_faceplate_width() {
     bsp_context.clearRect(0, 0, canvasfaceplate.width, canvasfaceplate.height);
     bsp_context.beginPath();
     bsp_context.moveTo(55, 149);
-    bsp_context.lineTo(55 + 250 * bsp / hsp, 149);
-    bsp_context.lineTo(55 + 250 * bsp / hsp, 24);
-    bsp_context.lineTo(55, 24);
-    bsp_context.lineTo(55, 149);
+    bsp_context.lineTo(55 + 250 * bsp / hsp, 150);
+    bsp_context.lineTo(55 + 250 * bsp / hsp, 25);
+    bsp_context.lineTo(55, 25);
+    bsp_context.lineTo(55, 150);
     bsp_context.stroke();
-
     draw_screws()
 }
-
 document.getElementById('hsp').addEventListener('input', function() {
     draw_faceplate_width();
 });
-
 document.getElementById('bsp').addEventListener('input', function() {
     var tsp = this.value;
     draw_faceplate_width();
 });
 
-
 function draw_screws() {
-
     dataload()
     var selectedProfile = window.selectedProfile
     var b = window.b
