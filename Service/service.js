@@ -4,15 +4,19 @@ function addText() {
     paragraph.textContent = text;
     document.getElementById("output").appendChild(paragraph);
 
-    localStorage.setItem("savedText", text);
+    var savedTexts = JSON.parse(localStorage.getItem("savedTexte")) || [];
 
-}
+    savedTexts.push(text);
+
+    localStorage.setItem("savedTexts", JSON.stringify(savedTexts));
+
+};
 
 window.onload = function() {
-    var savedText = localStorage.getItem("savedText");
-    if (savedText) {
+    var savedTexts = JSON.parse(localStorage.getItem("savedTexts")) || [];
+    savedTexts.forEach(function(text) {
         var paragraph = document.createElement("p");
-        paragraph.textContent = savedText;
+        paragraph.textContent = text;
         document.getElementById("output").appendChild(paragraph);
-    }
+    });
 };
