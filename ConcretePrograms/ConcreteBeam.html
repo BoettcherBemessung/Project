@@ -195,6 +195,9 @@
                 if (selectedQuerschnitt == "slabtop") {
                     drawPlattenBalken_oben()
                 }
+                if (selectedQuerschnitt == "slabbottom") {
+                    drawPlattenBalken_unten()
+                }
             });
             document.getElementById('b_concrete').addEventListener('input', function() {
                 var selectedQuerschnitt = document.getElementById("Querschnitt").value;
@@ -206,6 +209,10 @@
                 if (selectedQuerschnitt == "slabtop") {
                     drawPlattenBalken_oben()
                 }
+
+                if (selectedQuerschnitt == "slabbottom") {
+                    drawPlattenBalken_unten()
+                }
             })
 
             document.getElementById('t_Platte').addEventListener('input', function() {
@@ -214,6 +221,9 @@
                 if (selectedQuerschnitt == "slabtop") {
                     drawPlattenBalken_oben()
                 }
+                if (selectedQuerschnitt == "slabbottom") {
+                    drawPlattenBalken_unten()
+                }
             })
 
             document.getElementById('Stegdicke').addEventListener('input', function() {
@@ -221,6 +231,9 @@
 
                 if (selectedQuerschnitt == "slabtop") {
                     drawPlattenBalken_oben()
+                }
+                if (selectedQuerschnitt == "slabbottom") {
+                    drawPlattenBalken_unten()
                 }
             })
         </script>
@@ -251,6 +264,7 @@
                 var ObenBox = document.getElementById("PlatteOben");
                 var Doppelbox = document.getElementById("PlatteDoppel");
                 var HorizBox = document.getElementById("PlatteHorizontal")
+                drawPlattenBalken_unten
                 ObenBox.style.display = "block"
                 Doppelbox.style.display = "none"
                 HorizBox.style.display = "none"
