@@ -55,10 +55,30 @@
     text-align: center;
 }
 
+#b_down {
+    text-align: center;
+}
+
+#t_down {
+    text-align: center;
+}
+
+.configuration {
+    margin: 0px;
+}
+
 .inputs {
-    margin-right: 400px;
-    height: 350px;
+    margin-right: 20px;
+    height: 400px;
     display: flex
+}
+
+#Querschnitt {
+    width: 180px;
+}
+
+.Input_plus_configuration {
+    display: flex;
 }
 
 .measures {
@@ -66,7 +86,7 @@
 }
 
 .Querschnittdraw {
-    margin-left: 80px;
+    margin-left: 10px;
     height: 350px;
     width: 350px;
     background-color: white;

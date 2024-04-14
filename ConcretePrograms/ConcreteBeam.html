@@ -41,11 +41,12 @@
     <h1 id="Website_Heading" class="Attention"> welcome to the first online concretebeam dimension Program</h1>
     <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
     <br>
-    <div class="configuration">
-        <p id="ConcreteSelection" class="websiteheadings"><strong> Beton:</strong> </p>
-        <label id="Concreteconfiguration" for="Concretetype"> Betonsorte:</label>
-        <br>
-        <select id="ConcreteType" class="dropdownmenu">
+    <div class="Input_plus_configuration">
+        <div class="configuration">
+            <p id="ConcreteSelection" class="websiteheadings"><strong> Beton:</strong> </p>
+            <label id="Concreteconfiguration" for="Concretetype"> Betonsorte:</label>
+            <br>
+            <select id="ConcreteType" class="dropdownmenu">
         <option value="C12/15">C12/15</option>
         <option value="C16/20">C16/20</option>    
         <option value="C20/25">C20/25</option>
@@ -56,187 +57,217 @@
         <option value="C45/55">C45/55</option>
         <option value="C50/60">C50/60</option>
             </select>
-        <br>
-        <p id="ExpositionSelectionXC" class="websiteheadings"><strong>Expositionsklasse:</strong></p>
+            <br>
+            <p id="ExpositionSelectionXC" class="websiteheadings"><strong>Expositionsklasse:</strong></p>
 
-        <div class="Exposition">
-            <div class="Bewehrung">
-                <h4>Bewehrungskorrosion</h4>
-                <br>
-                <label id="Karbonatisierung" for="Carbonation"> XC Karbonatisierung:</label>
-                <br>
-                <select id="XCType" class="dropdownmenu">
+            <div class="Exposition">
+                <div class="Bewehrung">
+                    <h4>Bewehrungskorrosion</h4>
+                    <br>
+                    <label id="Karbonatisierung" for="Carbonation"> XC Karbonatisierung:</label>
+                    <br>
+                    <select id="XCType" class="dropdownmenu">
             <option value="XC0">X0 kein Risiko</option>
             <option value="XC1">XC1 trocken o. ständ. nass</option>
             <option value="XC2">XC2 nass, selten trocken</option>
             <option value="XC3">XC3 mäßige Luftfeuchte</option>
             <option value="XC4">XC4 wechs. naß und trocken</option>
             </select>
-                <br>
-                <label id="Chloride" for="Carbonation"> XD Chloride ausgenommen Meerwasser:</label>
-                <br>
-                <select id="XDType" class="dropdownmenu">
+                    <br>
+                    <label id="Chloride" for="Carbonation"> XD Chloride ausgenommen Meerwasser:</label>
+                    <br>
+                    <select id="XDType" class="dropdownmenu">
             <option value="XD0">X0 kein Risiko</option>
             <option value="XD1">XD1 mäßige Feuchte</option>
             <option value="XD2">XD2 nass, selten trocken</option>
             <option value="XC3">XD3 wechs. nass u. trocken</option>
             </select>
-                <br>
-                <label id="ChlorideInSeewater" for="ChloridSeawater"> XS Chloride im Meerwasser:</label>
-                <br>
-                <select id="XSType" class="dropdownmenu">
+                    <br>
+                    <label id="ChlorideInSeewater" for="ChloridSeawater"> XS Chloride im Meerwasser:</label>
+                    <br>
+                    <select id="XSType" class="dropdownmenu">
             <option value="XS0">X0 kein Risiko</option>
             <option value="XS1">XS1 Salzhaltige Luft</option>
             <option value="XS2">XS2 Unter Wasser</option>
             <option value="XS3">XS3 Gezeitenzone, Spritz und Sprühwasserzonen</option>            
             </select>
-            </div>
-            <div class="Beton">
-                <h4>Betonangriff</h4>
-                <br>
-                <label id="Frost" for="Freeze"> XF Frost mit oder ohne Taumittel:</label>
-                <br>
-                <select id="XFType" class="dropdownmenu">
+                </div>
+                <div class="Beton">
+                    <h4>Betonangriff</h4>
+                    <br>
+                    <label id="Frost" for="Freeze"> XF Frost mit oder ohne Taumittel:</label>
+                    <br>
+                    <select id="XFType" class="dropdownmenu">
             <option value="XF0">X0 kein Risiko</option>
             <option value="XF1">XF1 mäß. Wassersätt. ohne Taumittel</option>
             <option value="XF2">XF2 mäß. Wassersätt. Taumittel o. Meerwasser</option>
             <option value="XF3">XF3 hohe Wassersätt. ohne Taumittel</option>
             <option value="XF4">XF4 hohe Wassersätt. Taumittel o. Meerwasser</option>
             </select>
-                <br>
-                <label id="Chemical" for="Chem."> XA chemischer:</label>
-                <br>
-                <select id="XAType" class="dropdownmenu">
+                    <br>
+                    <label id="Chemical" for="Chem."> XA chemischer:</label>
+                    <br>
+                    <select id="XAType" class="dropdownmenu">
             <option value="XA0">X0 kein Risiko</option>
             <option value="XA1">XA1 chem. schwach angreifen</option>
             <option value="XA2">XA2 chem. mäßig angreifend</option>
             <option value="XA3">XA3 chem. stark angreifend</option>
             </select>
-                <br>
-                <label id="Verschleiß" for="verschl."> XM Verschleißbeanspruchung:</label>
-                <br>
-                <select id="XMType" class="dropdownmenu">
+                    <br>
+                    <label id="Verschleiß" for="verschl."> XM Verschleißbeanspruchung:</label>
+                    <br>
+                    <select id="XMType" class="dropdownmenu">
             <option value="XM0">X0 kein Risiko</option>
             <option value="XM1">XM1 mäßiger Verschleiß</option>
             <option value="XM2">XM2 schwerer Verschleiß</option>
             <option value="XM3">XM3 extremer Verschleiß</option>
             </select>
-                <br>
-                <label id="AlkaliKieselsäure" for="Alkalis."> XW Alkali-Kieselsäurereaktion:</label>
-                <br>
-                <select id="XWType" class="dropdownmenu">
+                    <br>
+                    <label id="AlkaliKieselsäure" for="Alkalis."> XW Alkali-Kieselsäurereaktion:</label>
+                    <br>
+                    <select id="XWType" class="dropdownmenu">
             <option value="WO">WO kein Risiko</option>
             <option value="WF">WF weitgehend trocken</option>
             <option value="WA">WA häufig oder längere Zeit feuch</option>
             <option value="WS">WS Beton mit hoher dyn. Beanspruchung und direkten Alkalieintrag</option>
             </select>
+                </div>
             </div>
+
         </div>
-        <p id="Querschnitttext" class="websiteheadings"><strong>Querschnitt:</strong></p>
-        <label id="Querschnitstyp" for="Querschnitttyp">Querschnittstyp: </label>
-        <br>
-        <select id="Querschnitt" class="dropdownmenu">
+        <div class="inputs">
+            <div class="measures">
+                <div class="inputfirst">
+                    <p id="Querschnitttext" class="websiteheadings"><strong>Querschnitt:</strong></p>
+                    <label id="Querschnitstyp" for="Querschnitttyp">Querschnittstyp: </label>
+                    <br>
+                    <select id="Querschnitt" class="dropdownmenu">
             <option value="rectangle">Rechteck</option>
             <option value="slabtop">Platte oben</option>
             <option value="slabbottom">Platte unten</option>
             <option value="slabdouble">Platte beidseitig</option>
             <option value="slabhorizontal">Plattebeidseitig horizontal</option>
         </select>
-    </div>
-    <div class="inputs">
-        <div class="measures">
-            <div class="inputfirst">
-                <p id="crosssection" class="websiteheadings faceplate"><strong>Maße eingeben: </strong></p>
-                <form class="inputboxesFaceplatemeasures">
-                    <label for="faceplateheight">Höhe:</label>
+                    <p id="crosssection" class="websiteheadings faceplate"><strong>Maße eingeben: </strong></p>
+                    <form class="inputboxesFaceplatemeasures">
+                        <label for="faceplateheight">Höhe:</label>
+                        <br>
+                        <input type="number" id="h_concrete" name="inputboxhsp" placeholder="[cm]" class="inputhsp">
+                        <br>
+                        <label for="faceplatewidth">Breite:</label>
+                        <br>
+                        <input type="number" id="b_concrete" name="inputboxbsp" placeholder="[cm]" class="inputbsp"><br>
+                </div>
+                <div id="PlatteOben" class="inputPlatteoben" style="display: none;">
+                    <label for="Plattenbreite">Plattendicke:</label>
                     <br>
-                    <input type="number" id="h_concrete" name="inputboxhsp" placeholder="[cm]" class="inputhsp">
+                    <input type="number" id="t_Platte" name="inputboxtsp" placeholder="[cm]" class="inputtsp"><br>
+                    <label for="Plattendicke">Stegdicke:</label>
                     <br>
-                    <label for="faceplatewidth">Breite:</label>
+                    <input type="number" id="Stegdicke" name="inputboxe1" placeholder="[cm]" class="inputbsp"><br>
+                </div>
+                <div id="PlatteDoppel" class="inputPlatteDoppel" style="display: none;">
+                    <label for="Plattenbreite2">Plattenbreite unten:</label>
                     <br>
-                    <input type="number" id="b_concrete" name="inputboxbsp" placeholder="[cm]" class="inputbsp"><br>
+                    <input type="number" id="b_down" name="inputboxgo" placeholder="[cm]" class="inputhsp"><br>
+                    <label for="Plattendicke2">Plattendicke unten:</label>
+                    <br>
+                    <input type="number" id="t_down" name="inputboxgu" placeholder="[cm]" class="inputhsp"><br>
+                </div>
+                <div id="PlatteHorizontal" class="inputDoppelplattegedreht" style="display: none;">
+                    <label for="Stegdicke">Stegdicke:</label>
+                    <br>
+                    <input type="number" id="tSteg" name="inputboxu1n" placeholder="[cm]" class="inputbsp"><br>
+                    <label for="Plattendickelink">Plattendicke links</label>
+                    <br>
+                    <input type="number" id="Plat_Li" name="inputboxPlat_Li" placeholder="[cm]" class="inputbsp"><br>
+                    <label for="Plattendickerechts">Plattendicke rechts</label>
+                    <br>
+                    <input type="number" id="Plat_Re" name="inputboxPlat_Re" placeholder="[cm]" class="inputbsp"><br>
+                </div>
             </div>
-            <div id="PlatteOben" class="inputPlatteoben" style="display: none;">
-                <label for="Plattenbreite">Plattendicke:</label>
-                <br>
-                <input type="number" id="t_Platte" name="inputboxtsp" placeholder="[cm]" class="inputtsp"><br>
-                <label for="Plattendicke">Stegdicke:</label>
-                <br>
-                <input type="number" id="Stegdicke" name="inputboxe1" placeholder="[cm]" class="inputbsp"><br>
-            </div>
-            <div id="PlatteDoppel" class="inputPlatteDoppel" style="display: none;">
-                <label for="Plattenbreite2">Plattenbreite unten:</label>
-                <br>
-                <input type="number" id="go" name="inputboxgo" placeholder="[cm]" class="inputhsp"><br>
-                <label for="Plattendicke2">Plattendicke unten:</label>
-                <br>
-                <input type="number" id="gu" name="inputboxgu" placeholder="[cm]" class="inputhsp"><br>
-            </div>
-            <div id="PlatteHorizontal" class="inputDoppelplattegedreht" style="display: none;">
-                <label for="Stegdicke">Stegdicke:</label>
-                <br>
-                <input type="number" id="tSteg" name="inputboxu1n" placeholder="[cm]" class="inputbsp"><br>
-                <label for="Plattendickelink">Plattendicke links</label>
-                <br>
-                <input type="number" id="Plat_Li" name="inputboxPlat_Li" placeholder="[cm]" class="inputbsp"><br>
-                <label for="Plattendickerechts">Plattendicke rechts</label>
-                <br>
-                <input type="number" id="Plat_Re" name="inputboxPlat_Re" placeholder="[cm]" class="inputbsp"><br>
-            </div>
+            <canvas id="draw_Querschnitt" class="Querschnittdraw"></canvas>
+            <script>
+                draw_rect()
+                document.getElementById('h_concrete').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+                    if (selectedQuerschnitt == "rectangle") {
+                        draw_rect()
+                    }
+                    if (selectedQuerschnitt == "slabtop") {
+                        drawPlattenBalken_oben()
+                    }
+                    if (selectedQuerschnitt == "slabbottom") {
+                        drawPlattenBalken_unten()
+                    }
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+
+                });
+                document.getElementById('b_concrete').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "rectangle") {
+                        draw_rect()
+                    }
+
+                    if (selectedQuerschnitt == "slabtop") {
+                        drawPlattenBalken_oben()
+                    }
+
+                    if (selectedQuerschnitt == "slabbottom") {
+                        drawPlattenBalken_unten()
+                    }
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+                })
+
+                document.getElementById('t_Platte').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabtop") {
+                        drawPlattenBalken_oben()
+                    }
+                    if (selectedQuerschnitt == "slabbottom") {
+                        drawPlattenBalken_unten()
+                    }
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+                })
+
+                document.getElementById('Stegdicke').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabtop") {
+                        drawPlattenBalken_oben()
+                    }
+                    if (selectedQuerschnitt == "slabbottom") {
+                        drawPlattenBalken_unten()
+                    }
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+                })
+
+                document.getElementById('b_down').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+                })
+                document.getElementById('t_down').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabdouble") {
+                        drawPlattenBalken_Double()
+                    }
+                })
+            </script>
         </div>
-        <canvas id="draw_Querschnitt" class="Querschnittdraw"></canvas>
-        <script>
-            draw_rect()
-            document.getElementById('h_concrete').addEventListener('input', function() {
-                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
-                if (selectedQuerschnitt == "rectangle") {
-                    draw_rect()
-                }
-                if (selectedQuerschnitt == "slabtop") {
-                    drawPlattenBalken_oben()
-                }
-                if (selectedQuerschnitt == "slabbottom") {
-                    drawPlattenBalken_unten()
-                }
-            });
-            document.getElementById('b_concrete').addEventListener('input', function() {
-                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
-
-                if (selectedQuerschnitt == "rectangle") {
-                    draw_rect()
-                }
-
-                if (selectedQuerschnitt == "slabtop") {
-                    drawPlattenBalken_oben()
-                }
-
-                if (selectedQuerschnitt == "slabbottom") {
-                    drawPlattenBalken_unten()
-                }
-            })
-
-            document.getElementById('t_Platte').addEventListener('input', function() {
-                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
-
-                if (selectedQuerschnitt == "slabtop") {
-                    drawPlattenBalken_oben()
-                }
-                if (selectedQuerschnitt == "slabbottom") {
-                    drawPlattenBalken_unten()
-                }
-            })
-
-            document.getElementById('Stegdicke').addEventListener('input', function() {
-                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
-
-                if (selectedQuerschnitt == "slabtop") {
-                    drawPlattenBalken_oben()
-                }
-                if (selectedQuerschnitt == "slabbottom") {
-                    drawPlattenBalken_unten()
-                }
-            })
-        </script>
     </div>
     <script>
         document.getElementById('Querschnitt').addEventListener('change', function showBox() {
@@ -273,6 +304,7 @@
                 var ObenBox = document.getElementById("PlatteOben");
                 var Doppelbox = document.getElementById("PlatteDoppel");
                 var HorizBox = document.getElementById("PlatteHorizontal")
+                drawPlattenBalken_Double()
                 ObenBox.style.display = "block"
                 Doppelbox.style.display = "block"
                 HorizBox.style.display = "none"
