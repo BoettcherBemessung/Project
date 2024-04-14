@@ -407,3 +407,116 @@ function drawPlattenBalken_Double() {
     t_steg_number.fillText("bu = " + (b_unten / 10).toFixed(2) + "cm", 120, 40 + hsp * y_factor)
 
 }
+
+function drawPlattenbalkenhorizontal() {
+    var canvas = document.getElementById('draw_Querschnitt');
+    var bsp_context = canvas.getContext('2d')
+    var hsp = parseFloat(document.getElementById('h_concrete').value) * 10;
+    if (isNaN(hsp)) {
+        hsp = 1000
+    }
+    var bsp = parseFloat(document.getElementById('b_concrete').value) * 10;
+    if (isNaN(bsp)) {
+        bsp = 900
+    }
+    var t_steg = parseFloat(document.getElementById('tSteg').value) * 10;
+    if (isNaN(t_steg)) {
+        t_steg = 200
+    }
+    var t_re = parseFloat(document.getElementById('Plat_Li').value) * 10;
+    if (isNaN(t_re)) {
+        t_re = 200
+    }
+    var t_li = parseFloat(document.getElementById('Plat_Re').value) * 10;
+    if (isNaN(t_li)) {
+        t_li = 200
+    }
+
+    var x_factor = 230 / hsp
+    var y_factor = 115 / hsp;
+
+    //Zeichnung Rechteckquerschnitt
+    bsp_context.clearRect(0, 0, canvas.width, canvas.height);
+    bsp_context.beginPath();
+    bsp_context.moveTo(15, 140);
+    bsp_context.lineTo(15, 25);
+    bsp_context.lineTo(15 + t_li * x_factor, 25);
+    bsp_context.lineTo(15 + t_li * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 25);
+    bsp_context.lineTo(15 + bsp * x_factor, 25);
+    bsp_context.lineTo(15 + bsp * x_factor, 140);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 140);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(15 + t_li * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(15 + t_li * x_factor, 140);
+    bsp_context.lineTo(15, 140);
+    bsp_context.stroke()
+
+    bsp_context.beginPath();
+    bsp_context.moveTo(25 + bsp * x_factor, 25);
+    bsp_context.lineTo(20 + bsp * x_factor, 25);
+    bsp_context.lineTo(30 + bsp * x_factor, 25);
+    bsp_context.lineTo(25 + bsp * x_factor, 25);
+    bsp_context.lineTo(25 + bsp * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(30 + bsp * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(20 + bsp * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(25 + bsp * x_factor, 82.5 - 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(25 + bsp * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(20 + bsp * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(30 + bsp * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(25 + bsp * x_factor, 82.5 + 0.5 * t_steg * y_factor);
+    bsp_context.lineTo(25 + bsp * x_factor, 140);
+    bsp_context.lineTo(20 + bsp * x_factor, 140);
+    bsp_context.lineTo(30 + bsp * x_factor, 140);
+    bsp_context.stroke()
+
+    bsp_context.beginPath();
+    bsp_context.moveTo(15, 20);
+    bsp_context.lineTo(15, 22);
+    bsp_context.lineTo(15, 18);
+    bsp_context.lineTo(15, 20);
+    bsp_context.lineTo(15 + t_li * x_factor, 20);
+    bsp_context.lineTo(15 + t_li * x_factor, 22);
+    bsp_context.lineTo(15 + t_li * x_factor, 18);
+    bsp_context.lineTo(15 + t_li * x_factor, 20);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 20);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 18);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 22);
+    bsp_context.lineTo(15 + (bsp - t_re) * x_factor, 20);
+    bsp_context.lineTo(15 + bsp * x_factor, 20);
+    bsp_context.lineTo(15 + bsp * x_factor, 18);
+    bsp_context.lineTo(15 + bsp * x_factor, 22);
+    bsp_context.stroke()
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText("tl = " + (t_li / 10).toFixed(2) + "cm", 6 + 0.5 * t_li * x_factor, 18);
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText("btw = " + ((bsp - t_li - t_re) / 10).toFixed(2) + "cm", 8 + 0.5 * bsp * x_factor, 18);
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText("tr = " + (t_re / 10).toFixed(2) + "cm", 6 + (bsp - 0.5 * t_re) * x_factor, 18);
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText(((0.5 * hsp - t_steg) / 10).toFixed(2) + "cm", 33 + bsp * x_factor, 25 + 0.5 * (0.5 * hsp - 0.5 * t_steg) * y_factor);
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText(((t_steg / 10)).toFixed(2) + "cm", 33 + bsp * x_factor, 25 + 0.5 * hsp * y_factor);
+
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText(((0.5 * hsp - t_steg) / 10).toFixed(2) + "cm", 33 + bsp * x_factor, 140 - 0.25 * (hsp - t_steg) * y_factor);
+
+}

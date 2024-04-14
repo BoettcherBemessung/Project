@@ -178,10 +178,10 @@
                     <label for="Stegdicke">Stegdicke:</label>
                     <br>
                     <input type="number" id="tSteg" name="inputboxu1n" placeholder="[cm]" class="inputbsp"><br>
-                    <label for="Plattendickelink">Plattendicke links</label>
+                    <label for="Plattendickelink">Plattendicke rechts</label>
                     <br>
                     <input type="number" id="Plat_Li" name="inputboxPlat_Li" placeholder="[cm]" class="inputbsp"><br>
-                    <label for="Plattendickerechts">Plattendicke rechts</label>
+                    <label for="Plattendickerechts">Plattendicke links</label>
                     <br>
                     <input type="number" id="Plat_Re" name="inputboxPlat_Re" placeholder="[cm]" class="inputbsp"><br>
                 </div>
@@ -203,6 +203,9 @@
                     if (selectedQuerschnitt == "slabdouble") {
                         drawPlattenBalken_Double()
                     }
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
+                    }
 
                 });
                 document.getElementById('b_concrete').addEventListener('input', function() {
@@ -222,6 +225,9 @@
                     if (selectedQuerschnitt == "slabdouble") {
                         drawPlattenBalken_Double()
                     }
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
+                    }
                 })
 
                 document.getElementById('t_Platte').addEventListener('input', function() {
@@ -235,6 +241,9 @@
                     }
                     if (selectedQuerschnitt == "slabdouble") {
                         drawPlattenBalken_Double()
+                    }
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
                     }
                 })
 
@@ -250,6 +259,9 @@
                     if (selectedQuerschnitt == "slabdouble") {
                         drawPlattenBalken_Double()
                     }
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
+                    }
                 })
 
                 document.getElementById('b_down').addEventListener('input', function() {
@@ -264,6 +276,28 @@
 
                     if (selectedQuerschnitt == "slabdouble") {
                         drawPlattenBalken_Double()
+                    }
+                })
+
+                document.getElementById('tSteg').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
+                    }
+                })
+                document.getElementById('Plat_Li').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
+                    }
+                })
+                document.getElementById('Plat_Re').addEventListener('input', function() {
+                    var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                    if (selectedQuerschnitt == "slabhorizontal") {
+                        drawPlattenbalkenhorizontal()
                     }
                 })
             </script>
@@ -316,6 +350,7 @@
                 ObenBox.style.display = "none"
                 Doppelbox.style.display = "none"
                 HorizBox.style.display = "block"
+                drawPlattenbalkenhorizontal()
             }
         })
     </script>
