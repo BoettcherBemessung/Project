@@ -188,10 +188,40 @@
         <script>
             draw_rect()
             document.getElementById('h_concrete').addEventListener('input', function() {
-                draw_rect()
+                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+                if (selectedQuerschnitt == "rectangle") {
+                    draw_rect()
+                }
+                if (selectedQuerschnitt == "slabtop") {
+                    drawPlattenBalken_oben()
+                }
             });
             document.getElementById('b_concrete').addEventListener('input', function() {
-                draw_rect()
+                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                if (selectedQuerschnitt == "rectangle") {
+                    draw_rect()
+                }
+
+                if (selectedQuerschnitt == "slabtop") {
+                    drawPlattenBalken_oben()
+                }
+            })
+
+            document.getElementById('t_Platte').addEventListener('input', function() {
+                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                if (selectedQuerschnitt == "slabtop") {
+                    drawPlattenBalken_oben()
+                }
+            })
+
+            document.getElementById('Stegdicke').addEventListener('input', function() {
+                var selectedQuerschnitt = document.getElementById("Querschnitt").value;
+
+                if (selectedQuerschnitt == "slabtop") {
+                    drawPlattenBalken_oben()
+                }
             })
         </script>
     </div>

@@ -76,8 +76,9 @@ function drawPlattenBalken_oben() {
     if (isNaN(t_steg)) {
         t_steg = 200
     }
-    var x_factor = 220 / hsp
-    var y_factor = 110 / hsp;
+    console.log("dicke der Platte = " + t_pb_O)
+    var x_factor = 220 / bsp
+    var y_factor = 110 / bsp;
 
     //Zeichnung Rechteckquerschnitt
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
@@ -91,7 +92,8 @@ function drawPlattenBalken_oben() {
     bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 25 + t_pb_O * y_factor);
     bsp_context.lineTo(30, 25 + t_pb_O * y_factor);
     bsp_context.lineTo(30, 25);
-
     bsp_context.stroke();
+
+
 
 }
