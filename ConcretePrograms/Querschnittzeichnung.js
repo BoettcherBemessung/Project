@@ -94,6 +94,75 @@ function drawPlattenBalken_oben() {
     bsp_context.lineTo(30, 25);
     bsp_context.stroke();
 
+    bsp_context.beginPath();
+    bsp_context.moveTo(30, 20);
+    bsp_context.lineTo(30, 23);
+    bsp_context.lineTo(30, 17);
+    bsp_context.lineTo(30, 20);
+    bsp_context.lineTo(250, 20);
+    bsp_context.lineTo(250, 17);
+    bsp_context.lineTo(250, 23);
+    bsp_context.stroke()
+
+    bsp_context.beginPath();
+    bsp_context.moveTo(140 - 0.5 * t_steg * x_factor, 30 + hsp * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 33 + hsp * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 27 + hsp * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 30 + hsp * y_factor);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 30 + hsp * y_factor);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 33 + hsp * y_factor);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 27 + hsp * y_factor);
+    bsp_context.stroke()
+
+    bsp_context.beginPath();
+    bsp_context.moveTo(260, 25);
+    bsp_context.lineTo(255, 25);
+    bsp_context.lineTo(265, 25);
+    bsp_context.lineTo(260, 25);
+    bsp_context.lineTo(260, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(265, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(255, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(260, 25 + t_pb_O * y_factor);
+    bsp_context.lineTo(260, 25 + hsp * y_factor);
+    bsp_context.lineTo(255, 25 + hsp * y_factor);
+    bsp_context.lineTo(265, 25 + hsp * y_factor);
+    bsp_context.stroke()
+
+    bsp_context.beginPath();
+    bsp_context.moveTo(20, 25);
+    bsp_context.lineTo(25, 25);
+    bsp_context.lineTo(15, 25);
+    bsp_context.lineTo(20, 25);
+    bsp_context.lineTo(20, 25 + hsp * y_factor);
+    bsp_context.lineTo(15, 25 + hsp * y_factor);
+    bsp_context.lineTo(25, 25 + hsp * y_factor);
+    bsp_context.stroke()
+
+    //Ziffer Maßkette Rechteck
+    var bsp_number = canvas.getContext('2d');
+    bsp_number.font = '7px Arial';
+    bsp_number.fillStyle = 'black';
+    bsp_number.fillText("b = " + (bsp / 10).toFixed(2) + "cm", 120, 19);
+
+    var hsp_number = canvas.getContext('2d');
+    hsp_number.font = '7px Arial';
+    hsp_number.fillStyle = 'black';
+    hsp_number.fillText("h = " + (hsp / 10).toFixed(2) + "cm", 25, 25 + 0.5 * hsp * y_factor);
+
+    var tsp_number = canvas.getContext('2d');
+    tsp_number.font = '7px Arial';
+    tsp_number.fillStyle = 'black';
+    tsp_number.fillText("t = " + (t_pb_O / 10).toFixed(2) + "cm", 265, 25 + 0.5 * t_pb_O * y_factor);
+
+    var hrest_number = canvas.getContext('2d');
+    hrest_number.font = '7px Arial';
+    hrest_number.fillStyle = 'black';
+    hrest_number.fillText("hu= " + ((hsp - t_pb_O) / 10).toFixed(2) + "cm", 265, 25 + (t_pb_O + 0.5 * (hsp - t_pb_O)) * y_factor)
+
+    var t_steg_number = canvas.getContext('2d');
+    t_steg_number.font = '8px Arial';
+    t_steg_number.fillStyle = 'black';
+    t_steg_number.fillText("tw = " + (t_steg / 10).toFixed(2) + "cm", 120, 40 + hsp * y_factor)
 
 
 }
