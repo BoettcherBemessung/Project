@@ -1,4 +1,7 @@
 function loadOmega() {
+
+    let omega, zeta, Ceta, epsilon_2, epsilon_1;
+
     if (mueh == 0.01) {
         omega = 0.0101
         zeta = 0.03
@@ -303,4 +306,8 @@ function loadOmega() {
         epsilon_1 = 2.2
 
     }
+
+    return { omega, zeta, Ceta, epsilon_2, epsilon_1 };
+
 }
+export { loadOmega };

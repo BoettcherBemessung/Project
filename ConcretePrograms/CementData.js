@@ -107,4 +107,15 @@ function loadCement() {
         ec2 = 2;
         ecu2 = 3.5;
     }
+
+    window.fck = fck;
+    window.fckCube = fckCube;
+    window.fcm = fcm;
+    window.fcd = fcd;
+    window.fctm = fctm;
+    window.fctk_zeroOfive = fctk_zeroOfive;
+    window.fctk_zero9five = fctk_zero9five;
+    window.Ecm = Ecm;
+    window.ec2 = ec2;
+    window.ecu2 = ecu2;
 }

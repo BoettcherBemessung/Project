@@ -133,6 +133,13 @@
             </select>
                 </div>
             </div>
+            <label id="Betonstahl" for="Bewehrungsstahl."> Bewehrungsstahl:</label>
+            <br>
+            <select id="ConcreteSteel" class="dropdownmenu">
+            <option value="B500A">B500A</option>
+            <option value="B500B">B500B</option>
+            <option value="Bst420S(A)"> Bst420(A)</option>
+            </select>
 
         </div>
         <div class="inputs">
@@ -354,6 +361,18 @@
             }
         })
     </script>
+    <div class="configuration">
+        <form class="inputboxesForces">
+            <label for="inputMed" class="inputboxMed">Med:</label>
+            <input type="number" id="ValueMed" name="inputboxMed" placeholder="[kNm]" class="inputkNm">
+            <br>
+            <label for="inputNed" class="inputboxVed">Ned:</label>
+            <input type="number" id="ValueNed" name="inputboxNed" placeholder="[kN]" class="inputkN">
+        </form>
+        <br>
+        <script src="StirnplatenStoß/Drawing.js"></script>
+        <button id="CalculationsComplete" class="buttons" onclick="Biegung()"> Start Calculations </button>
+    </div>
 </body>
 
 </html>
