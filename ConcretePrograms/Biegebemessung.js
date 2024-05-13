@@ -21,7 +21,13 @@ function Biegung() {
     var Xw_class = document.getElementById('XAType').value;
 
     var h = parseFloat(document.getElementById('h_concrete').value);
+    if (isNaN(h)) {
+        h = 80
+    }
     var b = parseFloat(document.getElementById('b_concrete').value);
+    if (isNaN(b)) {
+        b = 40
+    }
 
     var Med = parseFloat(document.getElementById('ValueMed').value);
     var Ned = parseFloat(document.getElementById('ValueNed').value);
@@ -70,27 +76,36 @@ function Biegung() {
     var cnom = c_min + delta_c_dev;
     cnom = Math.ceil(cnom * 2) / 2;
 
-    var d1 = cnom + 10 + 10;
+    var d1 = (cnom + 10 + 10) / 10;
     var d_length = h - d1;
-    var z_length = 0.5 * j - d1;
+    var z_length = 0.5 * h - d1;
 
-    var Meds = Med - Ned * z_length
+    var Meds = Med - Ned * z_length / 1000
 
-    import { loadOmega } from './omegaData';
-
-    var mueh_exact = (Meds / 1000) / ((b / 100) * (d / 100) ** 2 * fcd);
+    var mueh_exact = (Meds / 1000) / ((b / 100) * (d_length / 100) ** 2 * fcd);
 
     var muehds_higher_interpolation = Math.ceil(mueh_exact * 100) / 100;
-    var mueh = muehds_higher_interpolation
-    loadOmega(mueh);
+    window.muehds_higher_interpolation = muehds_higher_interpolation
+    loadOmega_high()
 
     var muehds_lower_interpolation = muehds_higher_interpolation - 0.01;
+    window.muehds_lower_interpolation = muehds_lower_interpolation
+    loadOmega_low()
 
-    let {}
-}
+    omega_high = window.omega_high;
+    omega_low = window.omega_low;
 
+    omega_exact = omega_low + ((omega_high - omega_low) / (muehds_higher_interpolation - muehds_lower_interpolation)) * (mueh_exact - muehds_lower_interpolation);
 
+    As1 = (10 ** 4 / 435) * (omega_exact * b * d_length * fcd + Ned / 1000);
 
+    console.log(fcd)
+    console.log(mueh_exact)
+    console.log(muehds_higher_interpolation)
+    console.log(muehds_lower_interpolation)
 
-
+    console.log(omega_low)
+    console.log(omega_high)
+    console.log(omega_exact)
+    console.log(As1)
 }

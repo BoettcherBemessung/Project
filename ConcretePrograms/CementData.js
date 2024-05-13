@@ -1,4 +1,16 @@
 function loadCement() {
+    var selectedConcrete = document.getElementById("ConcreteType").value;
+    var fck = 0;
+    var fcm = 0;
+    var fcd = 0;
+    var fctm = 0;
+    var fctk_zero9five = 0;
+    var fctk_zeroOfive = 0;
+    var Ecm = 0;
+    var ec2 = 0;
+    var ecu2 = 0;
+    var fckCube = 0;
+
     if (selectedConcrete == "C12/15") {
         fck = 12;
         fckCube = 15;
