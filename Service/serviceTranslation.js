@@ -30,7 +30,7 @@ function deutsch() {
     window.language_german = 1;
     document.getElementById("criticheading").innerText = "Hinterlassen Sie hier Kritik oder Stellen Fragen und geben Anregung auf Verbesserung unserer Programme/Website"
     document.getElementById("addingbutton").innerText = "Hinzufügen"
-    document.getElementById("companycity").innerText = "Hauptsitz Bretten"
+    document.getElementById("companycity").innerText = "Hauptsitz München"
     document.getElementById("companyname").innerText = "BöttcherBemessungSoftware Gmbh"
 
 
@@ -48,7 +48,7 @@ function englisch() {
     window.language_german = 0;
     document.getElementById("criticheading").innerText = "Leave your feedback, ask questions, and provide suggestions for improving our programs/website here."
     document.getElementById("addingbutton").innerText = "Add"
-    document.getElementById("companycity").innerText = "Headquarter in Bretten"
+    document.getElementById("companycity").innerText = "Headquarter in Munich"
     document.getElementById("companyname").innerText = "BöttcherBemessungSoftware Gmbh"
 
 }
@@ -64,6 +64,6 @@ function spanisch() {
     window.language_german = 0;
     document.getElementById("criticheading").innerText = "Deja tus comentarios, haz preguntas y proporciona sugerencias para mejorar nuestros programas/sitio web aquí."
     document.getElementById("addingbutton").innerText = "A" + '\u00F1' + "adir"
-    document.getElementById("companycity").innerText = "Oficina central en Bretten"
+    document.getElementById("companycity").innerText = "Oficina central en munich"
     document.getElementById("companyname").innerText = "BöttcherBemessungSoftware Gmbh"
 }
