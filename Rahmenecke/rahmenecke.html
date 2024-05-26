@@ -495,18 +495,48 @@
                 </script>
                 <label for="StrengthClass" id="ScrewStrength">strength class:</label>
                 <select id="StrengthClass" class="dropdownmenu">
-                <option value="4.6">4.6</option>
-                <option value="5.6">5.5</option>
-                <option value="8.8">8.8</option>
-                <option value="10.9">10.9</option>  
+                    <option value="4.6">4.6</option>
+                    <option value="5.6">5.5</option>
+                    <option value="8.8">8.8</option>
+                    <option value="10.9">10.9</option>  
                 </select>
                 <label for="ScrewRows" id="Screwrowstext">screwrows:</label>
                 <select id="ScrewRows" class="dropdownmenu"> 
-        <option value="2">2</option>
-        <option value="3">3</option>   
-    </select>
+                    <option value="2">2</option>
+                    <option value="3">3</option>   
+                </select>
             </div>
         </div>
+
+
+        <p id="Stegsteifen" class="websiteheadings"><strong>  Ribs:</strong> </p>
+        <label id="RibText" for="Ribconfiguration">Ribs:</label>
+        <select id="Rib_Selection" class="dropdownmenu">
+                <option value="no">no</option>
+                <option value="yes">yes</option>
+        </select>
+        <div id="Rib_ts_box">
+            <label for="Rib_ts">ts:</label>
+            <input type="number" id="ts_Rib" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
+        </div>
+        <script>
+            var inputboxts_Rib = document.getElementById("Rib_ts_box");
+            inputboxts_Rib.style.display = "none"
+            document.getElementById('Rib_Selection').addEventListener('change', function StegsteifenErkennen() {
+                var Ribselection = this.value;
+                if (Ribselection === "yes") {
+                    inputboxts_Rib.style.display = "block"
+                    framedraw()
+                }
+                if (Ribselection === "no") {
+                    inputboxts_Rib.style.display = "none"
+                }
+            })
+
+            document.getElementById('ts_Rib').addEventListener('input', function() {
+                framedraw();
+            });
+        </script>
     </div>
     </div>
     <script>
@@ -537,7 +567,6 @@
                     var inputboxex = document.getElementById("inputboxex");
                     inputboxex.style.display = "block"
                     getdraw()
-
                 }
             })
             getdraw()

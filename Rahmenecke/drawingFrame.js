@@ -13,11 +13,16 @@ function framedraw() {
     var tfc = window.tfc;
     var u2 = window.u2;
 
-
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var selectedScrewshape = document.getElementById("ScrewShape").value;
     var canvasColumn = document.getElementById("canvasframe");
     var columnheight_context = canvasColumn.getContext('2d');
+
+    var RibSelection = document.getElementById("Rib_Selection").value;
+    var ts_Rib = document.getElementById("ts_Rib").value;
+    if (isNaN(ts_Rib)) {
+        ts_Rib = tfc
+    }
 
     var yC_factor = 100 / hsp;
     var xC_factor = 200 / hsp;
@@ -108,6 +113,27 @@ function framedraw() {
         upperScrew_context.lineTo(10 + hc * xC_factor + tsp * xC_factor + 10, 20 + ex * yC_factor)
         upperScrew_context.lineTo(10 + hc * xC_factor - tfc * xC_factor - 10, 20 + ex * yC_factor)
         upperScrew_context.stroke();
+    }
+
+    //Drawing of Ribs
+    console.log(RibSelection)
+    if (RibSelection == "yes") {
+        var upperRib_context = canvasColumn.getContext('2d');
+        upperRib_context.beginPath();
+        upperRib_context.moveTo(10 + hc * xC_factor - tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor * 0.5 + 0.5 * ts_Rib * yC_factor)
+        upperRib_context.lineTo(10 + tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - 0.5 * tf * yC_factor + 0.5 * ts_Rib * yC_factor)
+
+        upperRib_context.moveTo(10 + hc * xC_factor - tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor - 0.5 * ts_Rib * yC_factor)
+        upperRib_context.lineTo(10 + tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - tf * yC_factor - 0.5 * ts_Rib * yC_factor)
+
+        upperRib_context.lineTo(10 + tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + 0.5 * tf * yC_factor - 0.5 * ts_Rib * yC_factor)
+        upperRib_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + 0.5 * tf * yC_factor - 0.5 * ts_Rib * yC_factor)
+
+        upperRib_context.lineTo(10 + hc * xC_factor - tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + tf * yC_factor + 0.5 * ts_Rib * yC_factor)
+        upperRib_context.lineTo(10 + tfc * xC_factor, 20 + hsp * yC_factor - u1n * yC_factor - h * yC_factor + tf * yC_factor + 0.5 * ts_Rib * yC_factor)
+
+
+        upperRib_context.stroke();
     }
 
     //Drawing of dimensionchains Column

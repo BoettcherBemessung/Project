@@ -3,6 +3,7 @@ function getdraw() {
     var ew = window.ew
     var selectedScrewRows = document.getElementById("ScrewRows").value
     var selectedScrewshape = document.getElementById("ScrewShape").value;
+
     var bsp = b
     var hsp = h + 60
     var tsp = 15
