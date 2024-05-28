@@ -17,6 +17,13 @@ function ColumnEvidence() {
     var Iy_Column = window.Iy_Column
     var Ab = window.Ab_Column
 
+    var RibSelection = window.RibSelection
+    var ts_Rib = document.getElementById("ts_Rib").value;
+    if (isNaN(ts_Rib)) {
+        ts_Rib = window.tf
+    }
+    var a_Rib = document.getElementById("Rib_Welding").value;
+
     var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
     if (isNaN(Med)) { var Med = 0.1 }
 
@@ -25,6 +32,11 @@ function ColumnEvidence() {
 
     var sigmacom = Ved / Ab_Column + Med * (0.5 * h_Column - tf_Column - r_Column) / Iy_Column;
     var Vwprd = 0.9 * Avzb_Column * fy_Column / 1.7320508075688772935274463415059;
+    if (RibSelection == "yes") {
+        var ds = h_Column - 2 * tf_Column
+        var Vwp_add = Math.min(4 * (0.25 * (bc - 2) * tfc ** 2 * fy_Column) / ds, (2 * 0.25 * (bc - 2) * tf_Column ** 2 * fy + 2 * 0.25 * (bc - 2) * ts_Rib ** 2 * fy_Column) / ds)
+        Vwprd = Vwprd + Vwp_add
+    }
     window.Vwprd = Vwprd;
 
     if (language_english == 1 && language_spanish == 0) {
@@ -62,10 +74,17 @@ function ColumnEvidence() {
     var Fcwcrd = Math.min(omega * kwc * beffcwc * tw_Column * fy_Column, omega * kwc * roh * beffcwc * tw_Column * fy_Column / 1.1)
     window.Fcwcrd = Fcwcrd
 
+
+
     document.getElementById('kwc').innerText = "kwc: " + kwc.toFixed(4);
     document.getElementById('omegacw').innerText = "omega: " + omega.toFixed(2);
     document.getElementById('beffcwc').innerText = "beffcwc: " + beffcwc.toFixed(2) + "mm";
     document.getElementById('Fcwcrd').innerText = "Fcwcrd: " + (Fcwcrd / 1000).toFixed(2) + "kN";
+    if (RibSelection == "yes") {
+        Fcwcrd = "not necessary!"
+        document.getElementById('Fcwcrd').innerText = "unnecessary";
+
+    }
 
     if (selectedScrewRows == 2) {
         var Ft1rdO_Column = window.Ft1rdO_Column

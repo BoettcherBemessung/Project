@@ -27,9 +27,6 @@ function framedraw() {
     var yC_factor = 100 / hsp;
     var xC_factor = 200 / hsp;
 
-    console.log("hc=" + hc)
-    console.log("h=" + h)
-    console.log("hsp=" + hsp)
 
     columnheight_context.clearRect(0, 0, canvasColumn.width, canvasColumn.height);
 
@@ -116,7 +113,7 @@ function framedraw() {
     }
 
     //Drawing of Ribs
-    console.log(RibSelection)
+
     if (RibSelection == "yes") {
         var upperRib_context = canvasColumn.getContext('2d');
         upperRib_context.beginPath();

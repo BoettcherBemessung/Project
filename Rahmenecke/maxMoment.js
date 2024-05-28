@@ -29,7 +29,7 @@ function maxMoment() {
     var Ft1rdU = window.Ft1rdU
     var Ft2rdU = window.Ft2rdU
     var Ft3rdU = window.Ft3rdU
-    console.log("welchen Wert hat Ft2rdM= " + Ft2rdM)
+
 
     var Ft1rdO_Column = window.Ft1rdO_Column
     var Ft2rdO_Column = window.Ft1rdO_Column
@@ -95,9 +95,6 @@ function maxMoment() {
         var hs1 = window.hs1
         var hs2 = window.hs2
         var hs3 = window.hs3
-
-        console.log("Ft2rdM= " + Ft2rdM)
-
         var SumFtrd = FtO + FtM + FtU
 
         if (Fglobal < SumFtrd) { FtU = FtU - (sumFtrd - Fglobal) }

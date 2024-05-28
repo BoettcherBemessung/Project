@@ -140,7 +140,7 @@ function QSK() {
         document.getElementById("columnresultMcr").innerText = "Mcr: " + (McrOutput_Column) + " kNm";
 
     }
-    console.log("Wert von Iy ist?: " + IyOutput_Column)
+
     if (language_english == 0 && language_spanish == 0) {
         document.getElementById("clickonresults").innerText = "Klicke auf die Ergebnisse um die genauen Rechenwege anzuzeigen!!"
         document.getElementById("columnresultIy").innerText = "Iy: " + IyOutput_Column + " E+06 mm^4";
@@ -196,7 +196,8 @@ function QSK() {
     if (isNaN(u2)) {
         u2 = window.u2
     }
-
+    var RibSelection = window.RibSelection;
+    var ts_Rib = parseFloat(document.getElementById("ts_Rib").value);
     var aw = parseFloat(document.getElementById("BeamWelding").value);
     var af = parseFloat(document.getElementById("FlangeWelding").value);
     var Med = parseFloat(document.getElementById("ValueMed").value) * 10 ** 6;
@@ -232,6 +233,15 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
         if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+        if (Ribselection = "yes") {
+            if (2 * ew > go - 0.5 * tf - 0.5 * ts_Rib) { alert("Calculation not possible Screws too close to upper Ribs. Please select smaller Ribs or smaller screws, or increase go (Distance of upper Screws to upper Flange)") }
+            if (2 * ew > gu - 0.5 * tf - 0.5 * ts_Rib) { alert("Calculation not possible lower Screws too close to lower Ribs. Please select smaller Ribs; smaller Screws or increase gu (distance of Screws to lower Flange)") }
+            if (selectedScrewRows == 3) {
+                if (2 * ew > u1 - ex - 0.5 * ts_Rib) {
+                    alert("Calculation not possible upper outside Screws too close to Upper Ribs. Please select smaller ex; use smaller Screws or increase height of faceplate(hsp)")
+                }
+            }
+        }
 
         //Warningprogramms of Screws in Column
 
@@ -562,7 +572,7 @@ function QSK() {
                 alphaM = alphaIterationM;
                 iterationDoneM = 1
             }
-            console.log(iterationDoneM)
+
 
             while (errorIterationM > 0.00001) {
                 lambda1MlimIteration = (1.25 / (alphaIterationM - 2.75));

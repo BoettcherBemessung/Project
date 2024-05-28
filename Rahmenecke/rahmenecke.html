@@ -517,18 +517,32 @@
         </select>
         <div id="Rib_ts_box">
             <label for="Rib_ts">ts:</label>
-            <input type="number" id="ts_Rib" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
+            <input type="number" id="ts_Rib" name="inputboxhsp" placeholder="[mm]" class="inputhsp">
+
+            <label id="RibWelding" for="Ribwelding">Welding of Rib:</label>
+            <select id="Rib_Welding" class="dropdownmenu">
+                <option value="2">2 mm</option>
+                <option value="3">3 mm</option>
+                <option value="4">4 mm</option>
+                <option value="5">5 mm</option>
+                <option value="6">6 mm</option>
+                <option value="7">7 mm</option>
+                <option value="8">8 mm</option>
+                <option value="9">9 mm</option>
+                </select>
+
         </div>
         <script>
             var inputboxts_Rib = document.getElementById("Rib_ts_box");
             inputboxts_Rib.style.display = "none"
             document.getElementById('Rib_Selection').addEventListener('change', function StegsteifenErkennen() {
-                var Ribselection = this.value;
-                if (Ribselection === "yes") {
+                var RibSelection = this.value;
+                window.RibSelection = RibSelection;
+                if (RibSelection === "yes") {
                     inputboxts_Rib.style.display = "block"
                     framedraw()
                 }
-                if (Ribselection === "no") {
+                if (RibSelection === "no") {
                     inputboxts_Rib.style.display = "none"
                 }
             })

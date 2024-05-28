@@ -12,6 +12,7 @@ function MResult() {
     var selectedScrewRows = window.selectedScrewRows
     var language_english = window.language_english
     var language_spanish = window.language_spanish
+    var RibSelection = window.RibSelection
     var Vwprd = window.Vwprd
     var Fcwcrd = window.Fcwcrd
     var Fcfbrd = window.Fcfbrd
@@ -43,6 +44,9 @@ function MResult() {
         var FtU = Math.min(Ft1rdU, Ft2rdU, Ft3rdU, Ft1rdU_Column, Ft2rdU_Column, Ft3rdU_Column, FtwcrdU, Ftwbrd);
 
         var Fglobal = Math.min(Vwprd, Fcwcrd, Fcfbrd)
+        if (RibSelection == "yes") {
+            Fglobal = Math.min(Vwprd, Fcfbrd)
+        }
         var sumFtrd = FtO + FtU
 
         var hs1 = window.hs1
@@ -90,6 +94,9 @@ function MResult() {
         var FtM = Math.min(Ft1rdM, Ft2rdM, Ft3rdM, Ft1rdM_Column, Ft2rdM_Column, Ft3rdM_Column, FtwcrdM, Ftwbrd);
         var FtU = Math.min(Ft1rdU, Ft2rdU, Ft3rdU, Ft1rdU_Column, Ft2rdU_Column, Ft3rdU_Column, FtwcrdU, Ftwbrd);
         var Fglobal = Math.min(Vwprd, Fcwcrd, Fcfbrd)
+        if (RibSelection == "yes") {
+            Fglobal = Math.min(Vwprd, Fcfbrd)
+        }
         var sumFtrd = FtO + FtM + FtU
         var hs1 = window.hs1
         var hs2 = window.hs2
@@ -130,7 +137,7 @@ function MResult() {
         document.getElementById("Ft3eff").innerText = "Fteff3: " + (FtU / 1000).toFixed(2) + " kN ";
         document.getElementById("Mmax").innerText = "Mmax: " + (Mmax / 1000000).toFixed(2) + " kNm ";
     }
-    console.log("Welchen Wert nimmt Mmax an ?" + Mmax)
+
     window.Mmax = Mmax
     Vmax()
 }

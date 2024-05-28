@@ -277,7 +277,7 @@ function Vmax() {
     var etaM = Med / (Mmax)
     var eta = Math.max(etaV, etaM)
 
-    console.log('wird die ausnutzung berechnet?' + Mmax)
+
 
     if (language_english == 1 && language_spanish == 0) {
         document.getElementById("Endresults").innerText = "Utilization"

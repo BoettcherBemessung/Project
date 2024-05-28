@@ -1,6 +1,11 @@
 function bendingFlange() {
 
     var selectedScrewRows = window.selectedScrewRows
+    var RibSelection = window.RibSelection
+    var ts_Rib = document.getElementById("ts_Rib").value;
+    if (isNaN(ts_Rib)) {
+        ts_Rib = window.tf
+    }
     var b_Column = window.b_Column
     var e = window.e
     var tw_Column = window.tw_Column
@@ -22,6 +27,7 @@ function bendingFlange() {
     if (isNaN(u2)) {
         u2 = window.u2;
     }
+    var a_Rib = document.getElementById("Rib_Welding").value;
     var mh = (bsp / 2) - e - (tw_Column / 2) - 0.8 * r_Column
     var GammaTwo = 1.25
     var RScrew = 0.5 * d
@@ -65,6 +71,72 @@ function bendingFlange() {
         var leffcpU_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 2 * pO)
         var leffncU_Column = Math.min(4 * mh + 1.25 * ec, pO);
 
+
+        if (RibSelection == "yes") {
+            var mvO_Rib = go - 0.5 * tf - 0.5 * ts_Rib - 0.8 * 2 ** 0.5 * a_Rib
+            var mvU_Rib = gu - 0.5 * tf - 0.5 * ts_Rib - 0.8 * 2 ** 0.5 * a_Rib
+
+            leffcpO_Column = 2 * Math.PI * mh
+            leffcpU_Column = leffcpO_Column
+
+            var iterationDoneO_Rib = 0;
+            var iterationDoneU_Rib = 0;
+
+            var lambda1O_Rib = mh / (mh + ec);
+            var lambda2O_Rib = mvO_Rib / (mh + ec);
+            var alphaO_Rib = 1.25 / lambda1O_Rib + 2.75;
+            var lambda2limO_Rib = 0.5 * lambda1O_Rib * alphaO_Rib;
+
+            if (lambda2limO_Rib > lambda2O_Rib || alphaO_Rib > 8 || alphaO_Rib < 4.45) {
+                var alphaIterationO_Rib = 4.45;
+                var lambda1OlimIteration_Rib = (1.25 / (alphaIterationO_Rib - 2.75));
+                var lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                var lambda1OIteration_Rib = lambda1OlimIteration_Rib + (1 - lambda1OlimIteration_Rib) * ((lambda2OlimIteration_Rib - lambda2O_Rib) / lambda2OlimIteration_Rib) ** (0.185 * alphaIterationO_Rib ** 1.785);
+                var errorIterationO_Rib = lambda1OIteration_Rib - lambda1O_Rib;
+
+                if (errorIterationO_Rib < 0.0001) {
+                    alphaO_Rib = alphaIterationO_Rib;
+                    iterationDoneO_Rib = 1
+                }
+                while (errorIterationO_Rib > 0.00001) {
+                    lambda1OlimIteration_Rib = (1.25 / (alphaIterationO_Rib - 2.75));
+                    lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                    lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                    lambda1OIteration_Rib = lambda1OlimIteration_Rib + (1 - lambda1OlimIteration_Rib) * ((lambda2OlimIteration_Rib - lambda2O_Rib) / lambda2OlimIteration_Rib) ** (0.185 * alphaIterationO_Rib ** 1.785);
+                    errorIterationO_Rib = lambda1OIteration_Rib - lambda1O_Rib;
+                    alphaIterationO_Rib = alphaIterationO_Rib + 0.00001
+                }
+                alphaO_Rib = alphaIterationO_Rib
+            }
+            var leffncO_Column = alphaO_Rib * mh;
+            var lambda1U_Rib = mh / (mh + ec);
+            var lambda2U_Rib = mvU_Rib / (mh + ec);
+            var alphaU_Rib = 1.25 / lambda1U_Rib + 2.75;
+            var lambda2limU_Rib = 0.5 * lambda1U_Rib * alphaU_Rib;
+
+            if (lambda2limU_Rib > lambda2U_Rib || alphaU_Rib > 8 || alphaU_Rib < 4.45) {
+                var alphaIterationU_Rib = 4.45;
+                var lambda1UlimIteration_Rib = (1.25 / (alphaIterationU_Rib - 2.75));
+                var lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                var lambda1UIteration_Rib = lambda1UlimIteration_Rib + (1 - lambda1UlimIteration_Rib) * ((lambda2UlimIteration_Rib - lambda2U_Rib) / lambda2UlimIteration_Rib) ** (0.185 * alphaIterationU_Rib ** 1.785);
+                var errorIterationU_Rib = lambda1UIteration_Rib - lambda1U_Rib;
+
+                if (errorIterationU_Rib < 0.0001) {
+                    alphaU_Rib = alphaIterationU_Rib;
+                    iterationDoneU_Rib = 1
+                }
+                while (errorIterationU_Rib > 0.00001) {
+                    lambda1UlimIteration_Rib = (1.25 / (alphaIterationU_Rib - 2.75));
+                    lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                    lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                    lambda1UIteration_Rib = lambda1UlimIteration_Rib + (1 - lambda1UlimIteration_Rib) * ((lambda2UlimIteration_Rib - lambda2U_Rib) / lambda2UlimIteration_Rib) ** (0.185 * alphaIterationU_Rib ** 1.785);
+                    errorIterationU_Rib = lambda1UIteration_Rib - lambda1U_Rib;
+                    alphaIterationU_Rib = alphaIterationU_Rib + 0.00001
+                }
+                alphaU_Rib = alphaIterationU_Rib
+            }
+            var leffncU_Column = alphaU_Rib * mh
+        }
         var leff1O_Column = Math.min(leffncO_Column, leffcpO_Column);
         var leff2O_Column = leffncO;
         var leff1U_Column = Math.min(leffncU_Column, leffcpU_Column);
@@ -79,7 +151,6 @@ function bendingFlange() {
         var Mpl2rdO_Column = 0.25 * leff2O_Column * tf_Column ** 2 * fy_Column;
         var Mpl1rdU_Column = 0.25 * leff1U_Column * tf_Column ** 2 * fy_Column;
         var Mpl2rdU_Column = 0.25 * leff2U_Column * tf_Column ** 2 * fy_Column;
-
         var nRest = Math.min(ec, 1.25 * mh)
         var nO = nRest
 
@@ -99,7 +170,6 @@ function bendingFlange() {
         window.Ft3rdU_Column = Ft3rdU_Column
 
         if (language_english == 1 && language_spanish == 0) {
-            console.log('Das if statement startet')
             document.getElementById("evidenceColumnflange").innerHTML = "Evidence Flange in bending"
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = ""
@@ -117,7 +187,7 @@ function bendingFlange() {
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Resultos de los tornillos bajos: ";
         }
-        console.log("welchen Wert nimmt mvO an?" + mvO)
+
         document.getElementById("mxresultC").innerText = "m2: " + " mm " + mvO.toFixed(2);
         document.getElementById("m1OresultC").innerText = "m1: " + " mm " + mh.toFixed(2);
         document.getElementById("m2MresultC").innerText = "";
@@ -160,6 +230,108 @@ function bendingFlange() {
 
         var leffcpU_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 2 * (h - go - gu))
         var leffncU_Column = Math.min(4 * mh + 1.25 * ec, h - go - gu);
+
+        if (RibSelection == "yes") {
+            var mvO_Rib = u1 - ex + 0.5 * tf - 0.5 * ts_Rib - 0.8 * 2 ** 0.5 * a_Rib
+
+            leffcpO_Column = Math.min(2 * Math.PI * mh, Math.PI * mh + 2 * eO)
+
+            var iterationDoneO_Rib = 0;
+            var iterationDoneM_Rib = 0;
+            var iterationDoneU_Rib = 0;
+
+            var lambda1O_Rib = mh / (mh + ec);
+            var lambda2O_Rib = mvO_Rib / (mh + ec);
+            var alphaO_Rib = 1.25 / lambda1O_Rib + 2.75;
+            var lambda2limO_Rib = 0.5 * lambda1O_Rib * alphaO_Rib;
+
+            if (lambda2limO_Rib > lambda2O_Rib || alphaO_Rib > 8 || alphaO_Rib < 4.45) {
+                var alphaIterationO_Rib = 4.45;
+                var lambda1OlimIteration_Rib = (1.25 / (alphaIterationO_Rib - 2.75));
+                var lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                var lambda1OIteration_Rib = lambda1OlimIteration_Rib + (1 - lambda1OlimIteration_Rib) * ((lambda2OlimIteration_Rib - lambda2O_Rib) / lambda2OlimIteration_Rib) ** (0.185 * alphaIterationO_Rib ** 1.785);
+                var errorIterationO_Rib = lambda1OIteration_Rib - lambda1O_Rib;
+
+                if (errorIterationO_Rib < 0.0001) {
+                    alphaO_Rib = alphaIterationO_Rib;
+                    iterationDoneO_Rib = 1
+                }
+                while (errorIterationO_Rib > 0.00001) {
+                    lambda1OlimIteration_Rib = (1.25 / (alphaIterationO_Rib - 2.75));
+                    lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                    lambda2OlimIteration_Rib = 0.5 * alphaIterationO_Rib * lambda1OlimIteration_Rib;
+                    lambda1OIteration_Rib = lambda1OlimIteration_Rib + (1 - lambda1OlimIteration_Rib) * ((lambda2OlimIteration_Rib - lambda2O_Rib) / lambda2OlimIteration_Rib) ** (0.185 * alphaIterationO_Rib ** 1.785);
+                    errorIterationO_Rib = lambda1OIteration_Rib - lambda1O_Rib;
+                    alphaIterationO_Rib = alphaIterationO_Rib + 0.00001
+                }
+                alphaO_Rib = alphaIterationO_Rib
+            }
+            leffncO_Column = Math.min(eO + alphaO_Rib * mh - (2 * mh + 0.625 * ec))
+            leffcpM_Column = 2 * Math.PI * mh
+
+            var mvM_Rib = go - 0.5 * tf - 0.5 * ts_Rib - 0.8 * 2 ** 0.5 * a_Rib
+
+            var lambda1M_Rib = mh / (mh + ec);
+            var lambda2M_Rib = mvM_Rib / (mh + ec);
+            var alphaM_Rib = 1.25 / lambda1M_Rib + 2.75;
+            var lambda2limM_Rib = 0.5 * lambda1M_Rib * alphaM_Rib;
+
+            if (lambda2limM_Rib > lambda2M_Rib || alphaM_Rib > 8 || alphaM_Rib < 4.45) {
+                var alphaIterationM_Rib = 4.45;
+                var lambda1MlimIteration_Rib = (1.25 / (alphaIterationM_Rib - 2.75));
+                var lambda2MlimIteration_Rib = 0.5 * alphaIterationM_Rib * lambda1MlimIteration_Rib;
+                var lambda1MIteration_Rib = lambda1MlimIteration_Rib + (1 - lambda1MlimIteration_Rib) * ((lambda2MlimIteration_Rib - lambda2M_Rib) / lambda2MlimIteration_Rib) ** (0.185 * alphaIterationM_Rib ** 1.785);
+                var errorIterationM_Rib = lambda1MIteration_Rib - lambda1M_Rib;
+
+                if (errorIterationM_Rib < 0.0001) {
+                    alphaM_Rib = alphaIterationM_Rib;
+                    iterationDoneM_Rib = 1
+                }
+                while (errorIterationM_Rib > 0.00001) {
+                    lambda1MlimIteration_Rib = (1.25 / (alphaIterationM_Rib - 2.75));
+                    lambda2MlimIteration_Rib = 0.5 * alphaIterationM_Rib * lambda1MlimIteration_Rib;
+                    lambda2MlimIteration_Rib = 0.5 * alphaIterationM_Rib * lambda1MlimIteration_Rib;
+                    lambda1MIteration_Rib = lambda1MlimIteration_Rib + (1 - lambda1MlimIteration_Rib) * ((lambda2MlimIteration_Rib - lambda2M_Rib) / lambda2MlimIteration_Rib) ** (0.185 * alphaIterationM_Rib ** 1.785);
+                    errorIterationM_Rib = lambda1MIteration_Rib - lambda1M_Rib;
+                    alphaIterationM_Rib = alphaIterationM_Rib + 0.00001
+                }
+                alphaM_Rib = alphaIterationM_Rib
+            }
+            leffncM_Column = alphaM_Rib * mh;
+
+            leffcpU_Column = leffcpM_Column;
+            var mvU_Rib = gu - 0.5 * tf - 0.5 * ts_Rib - 0.8 * 2 ** 0.5 * a_Rib
+
+            var lambda1U_Rib = mh / (mh + ec);
+            var lambda2U_Rib = mvU_Rib / (mh + ec);
+            var alphaU_Rib = 1.25 / lambda1U_Rib + 2.75;
+            var lambda2limU_Rib = 0.5 * lambda1U_Rib * alphaU_Rib;
+
+            if (lambda2limU_Rib > lambda2U_Rib || alphaU_Rib > 8 || alphaU_Rib < 4.45) {
+                var alphaIterationU_Rib = 4.45;
+                var lambda1UlimIteration_Rib = (1.25 / (alphaIterationU_Rib - 2.75));
+                var lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                var lambda1UIteration_Rib = lambda1UlimIteration_Rib + (1 - lambda1UlimIteration_Rib) * ((lambda2UlimIteration_Rib - lambda2U_Rib) / lambda2UlimIteration_Rib) ** (0.185 * alphaIterationU_Rib ** 1.785);
+                var errorIterationU_Rib = lambda1UIteration_Rib - lambda1U_Rib;
+
+                if (errorIterationU_Rib < 0.0001) {
+                    alphaU_Rib = alphaIterationU_Rib;
+                    iterationDoneU_Rib = 1
+                }
+                while (errorIterationU_Rib > 0.00001) {
+                    lambda1UlimIteration_Rib = (1.25 / (alphaIterationU_Rib - 2.75));
+                    lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                    lambda2UlimIteration_Rib = 0.5 * alphaIterationU_Rib * lambda1UlimIteration_Rib;
+                    lambda1UIteration_Rib = lambda1UlimIteration_Rib + (1 - lambda1UlimIteration_Rib) * ((lambda2UlimIteration_Rib - lambda2U_Rib) / lambda2UlimIteration_Rib) ** (0.185 * alphaIterationU_Rib ** 1.785);
+                    errorIterationU_Rib = lambda1UIteration_Rib - lambda1U_Rib;
+                    alphaIterationU_Rib = alphaIterationU_Rib + 0.00001
+                }
+                alphaU_Rib = alphaIterationU_Rib
+            }
+            var leffncU_Column = alphaU_Rib * mh
+
+
+        }
 
         var leff1O_Column = Math.min(leffncO_Column, leffcpO_Column)
         var leff2O_Column = leffncO_Column;
