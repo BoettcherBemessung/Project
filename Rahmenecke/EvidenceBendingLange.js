@@ -170,7 +170,7 @@ function bendingFlange() {
         window.Ft3rdU_Column = Ft3rdU_Column
 
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("evidenceColumnflange").innerHTML = "Evidence Flange in bending"
+            document.getElementById("evidenceColumnflange").innerHTML = "Vreification Flange in bending"
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Results of lower Screwrow: ";
@@ -182,7 +182,7 @@ function bendingFlange() {
             document.getElementById("Screwresult3C").innerHTML = "Ergebnisse unterer Schraubenreihe: ";
         }
         if (language_spanish == 1) {
-            document.getElementById("evidenceColumnflange").innerHTML = "evidencia ala bajo ..."
+            document.getElementById("evidenceColumnflange").innerHTML = "verificacion ala bajo ..."
             document.getElementById("Screwresult1C").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Resultos de los tornillos bajos: ";
@@ -387,7 +387,7 @@ function bendingFlange() {
         document.getElementById("m1Uresult").innerText = "m1 " + " mm " + mh.toFixed(2);
 
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("evidenceColumnflange").innerHTML = "evidence Flange in bending"
+            document.getElementById("evidenceColumnflange").innerHTML = "verifcation Flange in bending"
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = "Results of middle Screwrow ";
             document.getElementById("Screwresult3C").innerHTML = "Results of lower Screwrow: ";
@@ -401,7 +401,7 @@ function bendingFlange() {
 
         }
         if (language_spanish == 1) {
-            document.getElementById("evidenceColumnflange").innerHTML = "evidencia ala bajo ..."
+            document.getElementById("evidenceColumnflange").innerHTML = "verficacion ala bajo ..."
             document.getElementById("Screwresult1C").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2C").innerHTML = "Resultos de los tornillos en la mitad: ";
             document.getElementById("Screwresult3C").innerHTML = "Resultos de los tornillos bajos: ";
