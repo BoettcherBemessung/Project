@@ -40,9 +40,9 @@ function ColumnEvidence() {
     window.Vwprd = Vwprd;
 
     if (language_english == 1 && language_spanish == 0) {
-        document.getElementById('Vwprd').innerText = "Evidence of Shear force Web panel";
-        document.getElementById('FcwcrdHeading').innerText = "Evidence of Compression Web Column";
-        document.getElementById('FtwbrdHeading').innerText = "Evidence of Tension Web Column";
+        document.getElementById('Vwprd').innerText = "Verification of Shear force Web panel";
+        document.getElementById('FcwcrdHeading').innerText = "Verification of Compression Web Column";
+        document.getElementById('FtwbrdHeading').innerText = "Verification of Tension Web Column";
     }
 
     if (language_english == 0 && language_spanish == 0) {
@@ -52,9 +52,9 @@ function ColumnEvidence() {
     }
 
     if (language_spanish == 1) {
-        document.getElementById('Vwprd').innerText = "Evidencia alma de la columna baj fuerza contante";
-        document.getElementById('FcwcrdHeading').innerText = "Evidencia de alma de la columna bajo compresion";
-        document.getElementById('FtwbrdHeading').innerText = "Evidencia de alma de la columna bajo tension";
+        document.getElementById('Vwprd').innerText = "Verificacion alma de la columna baj fuerza contante";
+        document.getElementById('FcwcrdHeading').innerText = "Verifiacion de alma de la columna bajo compresion";
+        document.getElementById('FtwbrdHeading').innerText = "Verifiacion de alma de la columna bajo tension";
     }
 
     document.getElementById('VwprdResult').innerText = "Vwprd: " + (Vwprd / 1000).toFixed(2) + "kN";
