@@ -170,7 +170,7 @@ function bendingFlange() {
         window.Ft3rdU_Column = Ft3rdU_Column
 
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("evidenceColumnflange").innerHTML = "Vreification Flange in bending"
+            document.getElementById("evidenceColumnflange").innerHTML = "Verification Flange in bending"
             document.getElementById("Screwresult1C").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2C").innerHTML = ""
             document.getElementById("Screwresult3C").innerHTML = "Results of lower Screwrow: ";
