@@ -187,72 +187,72 @@ function drawPlattenBalken_unten() {
         t_steg = 200
     }
     console.log("dicke der Platte = " + t_pb_O)
-    var x_factor = 220 / bsp
-    var y_factor = 110 / bsp;
+    var x_factor = 230 / bsp
+    var y_factor = 115 / hsp;
 
     //Zeichnung Rechteckquerschnitt
     bsp_context.clearRect(0, 0, canvas.width, canvas.height);
     bsp_context.beginPath();
-    bsp_context.moveTo(140 - 0.5 * t_steg * x_factor, 25);
-    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 25);
-    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(250, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(250, 25 + hsp * y_factor);
-    bsp_context.lineTo(30, 25 + hsp * y_factor);
-    bsp_context.lineTo(30, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 25);
+    bsp_context.moveTo(140 - 0.5 * t_steg * x_factor, 15);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 15);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(250, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(250, 15 + hsp * y_factor);
+    bsp_context.lineTo(30, 15 + hsp * y_factor);
+    bsp_context.lineTo(30, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 15);
     bsp_context.stroke();
 
     bsp_context.beginPath();
-    bsp_context.moveTo(30, 30 + hsp * y_factor);
-    bsp_context.lineTo(30, 27 + hsp * y_factor);
-    bsp_context.lineTo(30, 33 + hsp * y_factor);
-    bsp_context.lineTo(30, 30 + hsp * y_factor);
-    bsp_context.lineTo(250, 30 + hsp * y_factor);
-    bsp_context.lineTo(250, 27 + hsp * y_factor);
-    bsp_context.lineTo(250, 33 + hsp * y_factor);
+    bsp_context.moveTo(30, 20 + hsp * y_factor);
+    bsp_context.lineTo(30, 17 + hsp * y_factor);
+    bsp_context.lineTo(30, 23 + hsp * y_factor);
+    bsp_context.lineTo(30, 20 + hsp * y_factor);
+    bsp_context.lineTo(250, 20 + hsp * y_factor);
+    bsp_context.lineTo(250, 17 + hsp * y_factor);
+    bsp_context.lineTo(250, 23 + hsp * y_factor);
     bsp_context.stroke()
 
     bsp_context.beginPath();
-    bsp_context.moveTo(140 - 0.5 * t_steg * x_factor, 20);
-    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 23);
-    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 17);
-    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 20);
-    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 20);
-    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 23);
-    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 17);
+    bsp_context.moveTo(140 - 0.5 * t_steg * x_factor, 10);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 13);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 7);
+    bsp_context.lineTo(140 - 0.5 * t_steg * x_factor, 10);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 10);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 13);
+    bsp_context.lineTo(140 + 0.5 * t_steg * x_factor, 7);
     bsp_context.stroke()
 
     bsp_context.beginPath();
-    bsp_context.moveTo(260, 25);
-    bsp_context.lineTo(255, 25);
-    bsp_context.lineTo(265, 25);
-    bsp_context.lineTo(260, 25);
-    bsp_context.lineTo(260, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(265, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(255, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(260, 25 + (hsp - t_pb_O) * y_factor);
-    bsp_context.lineTo(260, 25 + hsp * y_factor);
-    bsp_context.lineTo(255, 25 + hsp * y_factor);
-    bsp_context.lineTo(265, 25 + hsp * y_factor);
+    bsp_context.moveTo(260, 15);
+    bsp_context.lineTo(255, 15);
+    bsp_context.lineTo(265, 15);
+    bsp_context.lineTo(260, 15);
+    bsp_context.lineTo(260, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(265, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(255, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(260, 15 + (hsp - t_pb_O) * y_factor);
+    bsp_context.lineTo(260, 15 + hsp * y_factor);
+    bsp_context.lineTo(255, 15 + hsp * y_factor);
+    bsp_context.lineTo(265, 15 + hsp * y_factor);
     bsp_context.stroke()
 
     bsp_context.beginPath();
-    bsp_context.moveTo(20, 25);
-    bsp_context.lineTo(25, 25);
-    bsp_context.lineTo(15, 25);
-    bsp_context.lineTo(20, 25);
-    bsp_context.lineTo(20, 25 + hsp * y_factor);
-    bsp_context.lineTo(15, 25 + hsp * y_factor);
-    bsp_context.lineTo(25, 25 + hsp * y_factor);
+    bsp_context.moveTo(20, 15);
+    bsp_context.lineTo(25, 15);
+    bsp_context.lineTo(15, 15);
+    bsp_context.lineTo(20, 15);
+    bsp_context.lineTo(20, 15 + hsp * y_factor);
+    bsp_context.lineTo(15, 15 + hsp * y_factor);
+    bsp_context.lineTo(25, 15 + hsp * y_factor);
     bsp_context.stroke()
 
     //Ziffer Maßkette Rechteck
     var bsp_number = canvas.getContext('2d');
     bsp_number.font = '7px Arial';
     bsp_number.fillStyle = 'black';
-    bsp_number.fillText("b = " + (bsp / 10).toFixed(2) + "cm", 120, 40 + hsp * y_factor);
+    bsp_number.fillText("b = " + (bsp / 10).toFixed(2) + "cm", 120, 30 + hsp * y_factor);
 
     var hsp_number = canvas.getContext('2d');
     hsp_number.font = '7px Arial';
@@ -262,7 +262,7 @@ function drawPlattenBalken_unten() {
     var tsp_number = canvas.getContext('2d');
     tsp_number.font = '7px Arial';
     tsp_number.fillStyle = 'black';
-    tsp_number.fillText("t = " + (t_pb_O / 10).toFixed(2) + "cm", 265, 25 + (hsp - t_pb_O + 0.5 * t_pb_O) * y_factor);
+    tsp_number.fillText("t = " + (t_pb_O / 10).toFixed(2) + "cm", 265, 15 + (hsp - t_pb_O + 0.5 * t_pb_O) * y_factor);
 
     var hrest_number = canvas.getContext('2d');
     hrest_number.font = '7px Arial';
@@ -272,7 +272,7 @@ function drawPlattenBalken_unten() {
     var t_steg_number = canvas.getContext('2d');
     t_steg_number.font = '8px Arial';
     t_steg_number.fillStyle = 'black';
-    t_steg_number.fillText("tw = " + (t_steg / 10).toFixed(2) + "cm", 120, 17)
+    t_steg_number.fillText("tw = " + (t_steg / 10).toFixed(2) + "cm", 120, 7)
 
 }
 

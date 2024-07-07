@@ -99,13 +99,13 @@ function Biegung() {
 
     As1 = (10 ** 4 / 435) * (omega_exact * b * d_length * fcd + Ned / 1000);
 
-    console.log(fcd)
-    console.log(mueh_exact)
-    console.log(muehds_higher_interpolation)
-    console.log(muehds_lower_interpolation)
+    console.log("fcd ist:" + fcd)
+    console.log("mueh interpoliertist:" + mueh_exact)
+    console.log("mueh oberer Wert interpolation ist:" + muehds_higher_interpolation)
+    console.log("mueh unterer Wert interpolation ist:" + muehds_lower_interpolation)
 
-    console.log(omega_low)
-    console.log(omega_high)
-    console.log(omega_exact)
-    console.log(As1)
+    console.log("omega unterer WErt ist:" + omega_low)
+    console.log("omega utnerer Wert ist:" + omega_high)
+    console.log("oega interpoliert ist:" + omega_exact)
+    console.log("As2 ist" + As1)
 }
