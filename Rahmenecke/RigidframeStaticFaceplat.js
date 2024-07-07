@@ -444,7 +444,7 @@ function QSK() {
         window.Ft3rdU = Ft3rdU;
 
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("evidenceFaceplate").innerHTML = "Evidence of Faceplate in Bending"
+            document.getElementById("evidenceFaceplate").innerHTML = "Verification of endplate in Bending"
             document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2").innerHTML = ""
             document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
@@ -458,7 +458,7 @@ function QSK() {
             document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
         }
         if (language_spanish == 1) {
-            document.getElementById("evidenceFaceplate").innerHTML = "evidencia de la placa frontal"
+            document.getElementById("evidenceFaceplate").innerHTML = "verificacion de la placa frontal"
             document.getElementById("Screwresult1").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2").innerHTML = ""
             document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
@@ -683,7 +683,7 @@ function QSK() {
 
 
         if (language_english == 1 && language_spanish == 0) {
-            document.getElementById("evidenceFaceplate").innerHTML = "Evidence of Faceplate in Bending"
+            document.getElementById("evidenceFaceplate").innerHTML = "Verification of Faceplate in Bending"
             document.getElementById("Screwresult1").innerHTML = "Results of upper Screwrow: ";
             document.getElementById("Screwresult2").innerHTML = "Results of middle Screwrow: "
             document.getElementById("Screwresult3").innerHTML = "Results of lower Screwrow: ";
@@ -697,7 +697,7 @@ function QSK() {
             document.getElementById("TensionWebBeam").innerHTML = "Ergebnis Zugbeanspruchung Trägersteg";
         }
         if (language_spanish == 1) {
-            document.getElementById("evidenceFaceplate").innerHTML = "evidencia de la placa frontal"
+            document.getElementById("evidenceFaceplate").innerHTML = "verificacion de la placa frontal"
             document.getElementById("Screwresult1").innerHTML = "Resultos de los tornillos altos: ";
             document.getElementById("Screwresult2").innerHTML = "Resultos de los tornillos en la mitad"
             document.getElementById("Screwresult3").innerHTML = "Resultos de los tornillos bajos: ";
