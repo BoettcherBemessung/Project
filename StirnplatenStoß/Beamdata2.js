@@ -1186,7 +1186,12 @@ function Beamdata() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
-    alert("   h: " + h + "mm   b: " + b + "mm   tw: " + tw + "mm   tf: " + tf + "mm    r: " + r + "mm                  " + " Avz: " + Avzb.toFixed(0) + "mm^2" + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0))
+    var I_alpha_b = (0.1 * r / tf + 0.145) * tw / tf
+    var D_w_b = ((tf + r) ** 2 + tw * (r + tw / 4)) / (2 * r + tf)
+    var It_b = 2 * (1 / 3 * b * tf ** 3 * (1 - 0.63 * tf / b)) + 1 / 3 * (h - 2 * tf) * tw ** 3 + 2 * I_alpha_b * D_w_b ** 4
+    var IW_b = 1 / 24 * tf * b ** 3 * (h - tf) ** 2
+
+    alert("   h: " + h + "mm   b: " + b + "mm   tw: " + tw + "mm   tf: " + tf + "mm    r: " + r + "mm                  " + " Avz: " + Avzb.toFixed(0) + "mm^2" + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0) + "  It = " + It_b.toFixed(0) + " mm^4" + " IW =" + (IW_b / (10 ** 9)).toFixed(0) + "*10^9 mm^6")
 }
 
 function Columndata() {
@@ -2376,5 +2381,13 @@ function Columndata() {
     var Wply = 2 * Sy
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
-    alert("   h: " + h + "mm   b: " + b + "mm   tw: " + tw + "mm   tf: " + tf + "mm    r: " + r + "mm                  " + " Avz: " + Avzb.toFixed(0) + "mm^2" + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0))
+    var I_alpha = (0.1 * r / tf + 0.145) * tw / tf
+    var D_w = ((tf + r) ** 2 + tw * (r + tw / 4)) / (2 * r + tf)
+    var It = 2 * (1 / 3 * b * tf ** 3 * (1 - 0.63 * tf / b)) + 1 / 3 * (h - 2 * tf) * tw ** 3 + 2 * I_alpha * D_w ** 4
+    var IW = 1 / 24 * tf * b ** 3 * (h - tf) ** 2
+
+    console.log(It)
+    console.log(IW)
+
+    alert("   h: " + h + "mm   b: " + b + "mm   tw: " + tw + "mm   tf: " + tf + "mm    r: " + r + "mm                  " + " Avz: " + Avzb.toFixed(0) + "mm^2" + "   Iy:" + Iy.toFixed(0) + "   Sy:" + Sy.toFixed(0) + "   Wely:" + Wely.toFixed(0) + "   Wply:" + Wply.toFixed(0) + "  It = " + It.toFixed(0) + " mm^4" + " IW =" + IW / (10 ** 9) + "*10^9 mm^6")
 }
