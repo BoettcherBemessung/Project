@@ -1183,10 +1183,9 @@ function loadColumndata() {
     var Avzb = (h - 2 * tf) * tw + 4 * 0.2146 * r ** 2 + 2 * 0.5 * tf * (tw + 2 * r)
 
     var Iw_alpha = (0.07 * r / tf + 0.076) * tw / tf
-    var D_w = ((tf + r) ** 2 + s * (r + s / 4)) / (2 * r + tf)
+    var D_w = ((tf + r) ** 2 + tw * (r + tw / 4)) / (2 * r + tf)
     var It = 2 * (1 / 3 * b ** tf ** 3 * (1 - 0.63 * tf / b)) + 1 / 3 * (h - 2 * tf) * tw ** 3 + 2 * Iw_alpha * D_w ** 4
-    console.log(It)
-    var IW = 1 / 24 * tf * b ** 3 * (h - t) ** 2
+    var IW = 1 / 24 * tf * b ** 3 * (h - tf) ** 2
     console.log(IW)
 
     window.It = It
