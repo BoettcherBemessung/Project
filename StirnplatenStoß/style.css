@@ -245,6 +245,30 @@
                         text-align: center;
                     }
                     
+                    #ValueMyed {
+                        text-align: center;
+                    }
+                    
+                    #ValueMzed {
+                        text-align: center;
+                    }
+                    
+                    #ValueVzed {
+                        text-align: center;
+                    }
+                    
+                    #ValueVyed {
+                        text-align: center;
+                    }
+                    
+                    #ValueNed {
+                        text-align: center;
+                    }
+                    
+                    #Value_f {
+                        text-align: center;
+                    }
+                    
                     .inputgu {
                         margin-left: 10px;
                         width: 100px;
@@ -296,13 +320,14 @@
                     
                     .StartCalc {
                         padding-top: 5px;
-                        padding-right: 50px;
+                        padding-right: 200px;
                         padding-bottom: 5px;
                         padding-left: 20px;
                         border: solid 2px;
                         border-radius: 40px;
                         background-color: rgb(247, 106, 106);
                         margin-right: 600px;
+                        margin-top: 30px;
                     }
                     
                     .innerStartCalc {
@@ -345,6 +370,14 @@
                     }
                     
                     .solutionlength {
+                        display: flex;
+                    }
+                    
+                    #restraintlength {
+                        display: flex;
+                    }
+                    
+                    .extraf {
                         display: flex;
                     }
                     
