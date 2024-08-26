@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <script src="../Koecherfundamente/Kocherfundamentelanguagefile.js"></script>
-    <script src="../Koecherfundamente/Beamdata3.js"></script>
+    <script src="BDK_calc.js"></script>
+    <script src="../StirnplatenStoß/Beamdata2.js"></script>
     <p class="language">choose language / Sprache wählen</p>
     <script>
         var language_english = 1
@@ -37,21 +37,16 @@
         <a href="../Service/Service.html">
             <p id="service" class="websiteHead">Service</p>
         </a>
+
     </div>
-    <h1 id="Website_Heading" class="Attention"> welcome to the first online steel column concrete foundation calculator</h1>
-    <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
+    <h1 id="Website_Heading" class="Attention"> welcome to the first online LateralBucklingTorsion calculator</h1>
+    <h4 id="Attention!" class="Attention"><strong>Attention! ONLY for fork-mounted beams </strong></h4>
     <br>
-    <p>
-        <a href="../Products/AnleitungRahmen.html">
-            <h2>Klicke hier um zur Anleitung des Programms zu kommen</h2>
-        </a>
-    </p>
 
     <div class="configuration">
-        <div class="sumsettings">
-            <p id="Columnconfiguration" class="websiteheadings"><strong> configure the Column:</strong> </p>
-            <label id="ProfilConfiguration" for="ColumnProfile"> profile:</label>
-            <select id="ColumnSelection3" class="dropdownmenu">
+        <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
+        <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
+        <select id="BeamSelection" class="dropdownmenu">
 <option value="IPEa140">IPEa 140</option>
 <option value="IPEa120">IPEa 120</option>
 <option value="IPEa160">IPEa 160</option>
@@ -201,83 +196,29 @@
 <option value="HEM900">HEM 900</option>
 <option value="HEM1000">HEM 1000</option>
 </select>
-            <script>
-                document.getElementById('ColumnSelection').addEventListener('change', function WerteBestimmen() {
-                    var selectedColumnProfile = this.value;
-                    var selectedScrewShape = this.value;
-                    var hsp = parseFloat(document.getElementById("hsp").value);
-                    var bsp = parseFloat(document.getElementById("bsp").value);
-                    var go = parseFloat(document.getElementById("distancego").value);
-                    var gu = parseFloat(document.getElementById("distancegu").value);
-                    var u1n = parseFloat(document.getElementById("distanceu1n").value);
-                    var e = parseFloat(document.getElementById("distancee1").value);
-
-                    if (isNaN(hsp) && isNaN(bsp) && isNaN(e) && isNaN(go) && isNaN(gu) && isNaN(u1n)) {
-                        getdraw()
-                    } else {
-                        draw_faceplate_width()
-                    }
-                })
-            </script>
-            <label id="ColumnSteeltype" for="SteelTypeColumn">steel type:</label>
-            <select id="ColumnYieldStrength" class="dropdownmenu">
-<option value="S235">S 235</option>
-<option value="S355">S 355</option>
+        <label id="ColumnSteeltype" for="SteelTypeColumn">steel type:</label>
+        <select id="YieldStrength" class="dropdownmenu">
+        <option value="S235">S 235</option>
+        <option value="S355">S 355</option>
 </select>
-            <button id="Columndata" class="buttons" onclick="Columndata3()">show Columninformation</button>
-            <script>
-                document.getElementById('ColumnYieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
-                    var selectedColumnSteel = this.value;
-                }, )
-            </script>
+        <button id="Columndata" class="buttons" onclick="Columndata3()">show Beaminformation</button>
 
-            <p id="Columnconfiguration" class="websiteheadings"><strong> configure the Concrete:</strong> </p>
-            <label id="Concreteconfiguration" for="Columnconcrete"> select concrete:</label>
-            <select id="ColumnConcreteSelection" class="dropdownmenu">
 
-<option value="B_25">B 25</option>
-<option value="B_35">B 35</option>
-<option value="C20_25">C 20/25</option>
-<option value="C20_25">C 25/30</option>
-<option value="C20_25">C 30/37</option>
-</select>
-            <img class="applicationpicture" src="../images/Koecherfundament/picture_Application.jpg">
-            <div class="StartCalc">
-                <p id="restraintlength" class="websiteheadings"><strong>length of column and restraint:</strong></p>
-                <br>
-                <form class="inputboxesForces">
-                    <div class="extraf">
-                        <div class="inserth">
-                            <label for="inputh_column" class="inputboxMed">h:</label>
-                            <input type="number" id="Value_h" name="inputboxh" placeholder="[m]" class="inputkNm">
-                        </div>
-                        <label for="inputf" class="inputboxMed">   f:</label>
-                        <input type="number" id="Value_f" name="inputboxf" placeholder="[mm]" class="inputkNm">
-                    </div>
-                </form>
+        <div class="inputs">
+            <div class="inputfirst">
+                <p id="faceplatemeasures" class="websiteheadings faceplate"><strong>Insert Length and forces </strong></p>
+                <form class="inputboxesFaceplatemeasures">
+                    <label for="faceplateheight">L:</label>
+                    <input type="number" id="length" name="inputboxhsp" placeholder="[m]" class="inputhsp"><br>
+                    <label for="faceplatewidth">q:</label>
 
-            </div>
-            <div class="StartCalc">
-                <p id="ActingForces" class="websiteheadings"><strong>Insert Acting forces:</strong></p>
-                <div class="innerStartCalc">
-                    <form class="inputboxesForces">
-                        <label for="inputMyed" class="inputboxMed">Myed:</label>
-                        <input type="number" id="ValueMyed" name="inputboxMed" placeholder="[kNm]" class="inputkNm">
-
-                        <label for="inputMzed" class="inputboxMed">Mzed:</label>
-                        <input type="number" id="ValueMzed" name="inputboxMed" placeholder="[kNm]" class="inputkNm">
-                        <br>
-                        <label for="inputVzed" class="inputboxVzed">Vzed:</label>
-                        <input type="number" id="ValueVzed" name="inputboxVed" placeholder="[kN]" class="inputkN">
-                        <label for="inputVyed" class="inputboxVzed">Vyed:</label>
-                        <input type="number" id="ValueVyed" name="inputboxVed" placeholder="[kN]" class="inputkN">
-                        <label for="inputNed" class="inputboxNed">Ned:</label>
-                        <input type="number" id="ValueNed" name="inputboxNed" placeholder="[kN]" class="inputkN">
-                    </form>
-                    <br>
-                    <script src="Drawing.js"></script>
-                    <button id="CalculationsComplete" class="buttons" onclick="QSK()"> Start Calculations </button>
-                </div>
+                    <input type="number" id="bsp" name="inputboxbsp" placeholder="[kN/m]" class="inputbsp"><br>
+                    <label id="zg" for="location">zg:</label>
+                    <select id="ColumnYieldStrength" class="dropdownmenu">
+                            <option value="topz">topflange</option>
+                            <option value="middlez">middle</option>
+                            <option value="bottomz">bottomflange</option>
+                            </select>
             </div>
 
-        </div>
+            <button id="Columndata" class="buttons" onclick="BDK()">Debug</button>

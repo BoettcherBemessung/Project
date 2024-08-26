@@ -217,6 +217,10 @@
                         border-radius: 8px;
                     }
                     
+                    .inserth {
+                        padding-right: 30px;
+                    }
+                    
                     #distancego {
                         text-align: center;
                     }
@@ -266,6 +270,10 @@
                     }
                     
                     #Value_f {
+                        text-align: center;
+                    }
+                    
+                    #Value_h {
                         text-align: center;
                     }
                     
@@ -379,6 +387,18 @@
                     
                     .extraf {
                         display: flex;
+                    }
+                    
+                    .sumcontent {
+                        display: flex;
+                    }
+                    
+                    .applicationpicture {
+                        margin-top: 25px;
+                        margin-left: 0px;
+                        height: 250px;
+                        width: 500px;
+                        border-radius: 50px;
                     }
                     
                     @media (max-width: 1000px) {
