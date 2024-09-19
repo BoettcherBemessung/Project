@@ -3,6 +3,10 @@
                         margin: 0px;
                     }
                     
+                    .Anleitung {
+                        display: flex;
+                    }
+                    
                     body {
                         height: 100%;
                         font-family: 'Open-Sans', sans-serif;
