@@ -1354,6 +1354,16 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculation not possible inner screw rows too close to each other" }
         if (hsp - u1n < h) { "Calculation not possible,too small faceplate/too huge u1n. Please rise faceplate height" }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculation not possible , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+
+        if (aw >= 0.7 * tsp) { alert("Calculation not possible, Welds at Web too huge") }
+        if (af >= 0.7 * tsp) { alert("Calculation not possible, Welds at Flange too huge") }
+
+        if (aw <= 3) { alert("Calculation not possible, Welds at Web too small") }
+        if (af <= 3) { alert("Calculation not possible, Welds at Flange too small") }
+        if (aw <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Web too small") }
+        if (af <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
+        if (aw <= tf ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Web too small") }
+        if (af <= tf ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
     }
     if (language_english == 0 && language_spanish == 0) {
         if (hsp < h) { alert("Berechnung nicht möglich, Stirnplatte kleiner als Trägerhöhe! Bitte wählen Sie eine höhere Stirnplatte") }
@@ -1365,6 +1375,12 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Berechnung nicht möglich Die inneren Schrauben liegen zu nah beieinander" }
         if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
+        if (aw <= 3) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
+        if (af <= 3) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
+        if (aw <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
+        if (af <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
+        if (aw <= tf ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
+        if (af <= tf ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
     }
     if (language_spanish == 1) {
         if (hsp < h) { alert("Calculacion no possible, placa frontal menor que  altura de la viga! elige placa frontal mas alta por favor") }
@@ -1376,6 +1392,12 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculacion no possible lost tornillos adentros estan demasido cerca al otro" }
         if (hsp - u1n < h) { "Calculacion no possible,placa de perfil demasiado pequeño o  u1 demasiado pequeño " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculacion no possible , los tornillos adentros etsan demasiado cerca al otro! usa g0/gu mas pequeño") }
+        if (aw <= 3) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
+        if (af <= 3) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
+        if (aw <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
+        if (af <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
+        if (aw <= tf ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
+        if (af <= tf ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
     if (selectedScrewRows === 3) {
@@ -1669,6 +1691,8 @@ function QSK() {
         var Fved2 = (1 - ((aFtrd2_new / 2) / (1.4 * 0.5 * Ft3rdU))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2
 
+        console.log(aFtrd1_new)
+
         // max Force due to avoiding Interaction of Vz/My in Beam
         var Vplzrd = Avzb * fy / 1.732050808
         var VoInteraction = 0.5 * Vplzrd
@@ -1706,9 +1730,6 @@ function QSK() {
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down)
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down)
 
-        console.log(Fbrdauthoritive1)
-        console.log(Fbrdauthoritive2)
-
 
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2
 
@@ -1739,31 +1760,7 @@ function QSK() {
             document.getElementById("Vmax").innerText = "max V : " + (Vmax / 1000).toFixed(2) + " kN ";
         }
 
-        //Calculations of Rotationstiffnes
 
-        if (Med < 2 / 3 * Mmax) { var mueh = 1 }
-
-        if (Med > 2 / 3 * Mmax) { var mueh = (1.5 * Med / Mmax) ** 2.7 }
-
-        var k_fourO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mvO ** 3
-        var k_fiveO = 0.9 * Math.min(leff1O, leff2O) * tsp ** 3 / mh
-        var k_ten = 1.6 * AScrew / (2 * tsp + 0.5 * kScrew + 0.5 * mmaxScrew)
-
-        var Sj = 210000 * hs1 ** 2 / (mueh * (1 / k_fiveO + 1 / k_ten))
-
-        var k_effO = 1 / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)
-        var zeq = (k_effO * hs1 ** 2) / (k_effO * hs1)
-        var k_eq = (k_effO * hs1) / zeq
-
-        var Sj = ((210000 * zeq ** 2) / (1 / k_fiveO + 1 / k_fourO + 1 / k_ten)) / 10 ** 6
-
-        console.log(k_ten)
-        console.log(k_fourO)
-        console.log(k_fiveO)
-        console.log(zeq)
-        console.log(k_eq)
-        console.log(mueh)
-        console.log(Sj)
     }
     //==============================================================================================================================================
     // =========================================== 4.2 calculations  endplate in bending 3 screwRows ===============================================

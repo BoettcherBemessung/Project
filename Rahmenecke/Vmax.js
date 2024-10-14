@@ -172,6 +172,9 @@ function Vmax() {
         var Fved3 = (1 - ((aFtrd3_new / 2) / (1.4 * 0.5 * Ftrd))) * 2 * Fvrd
         var FvedSum = Fved1 + Fved2 + Fved3
 
+        console.log(FvedSum)
+
+
         // max Force due to avoiding Interaction of Vz/My in Beam
         var Vplzrd = Avzb * fy / 1.732050808
         var VoInteraction = 0.5 * Vplzrd

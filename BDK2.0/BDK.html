@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Anschlussrechner
+    </title>
+    <link rel="stylesheet" href="../StirnplatenStoß/style.css" />
+    <link rel="stylesheet" href="../Rahmenecke/Rahmenecke.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+    <script src="BDK.js"></script>
+    <p class="language">choose language / Sprache wählen</p>
+    <script>
+        var language_english = 1
+        var language_spanish = 0
+        window.language_english = language_english
+        window.language_spanish = language_spanish
+    </script>
+    <img id="linklogo" class="linklogo" src="images/background.jpg">
+    <script>
+        var linklogo = document.getElementById("linklogo");
+        linklogo.style.display = "none"
+    </script>
+    <img id="Image_germanflag" class="pictureflag" src="images/germanflag.jpg" alt="Bild german" onclick="germanpage()">
+    <img id="Image_englishflag" class="pictureflag" src="images/englishflag.jpg" alt="Bild english" onclick="englishpage()">
+    <img id="Image_spanishflag" class="pictureflag" src="images/spanishflag.jpg" alt="Bild spanish" onclick="spanishpage()">
+
+    <div class="websitecontainer">
+        <img id="BBS" class="BBS" src="images/BBS.jpg" alt="Bild BBS">
+        <a href="Homepage/index.html">
+            <p id="startpage" class="websiteHead">Startseite</p>
+        </a>
+        <a href="Products/products.html">
+            <p id="products" class="websiteHead">Produkte</p>
+        </a>
+        <a href="Berechnungsgrundlagen/Berechnungsgrundlagen.html">
+            <p id="Berechnungsgrundlagen" class="websiteHead">Berechnungsgrundlagen</p>
+        </a>
+        <a href="Service/Service.html">
+            <p id="service" class="websiteHead">Service</p>
+        </a>
+    </div>
+
+    <h1 id="Website_Heading" class="Attention"> welcome to the first online lateral torsion buckling verificator</h1>
+
+    <h4 id="Attention!" class="Attention"><strong>Attention! Dont use this Tool for Real Projects! It's just an education tool and Experiment!!!</strong></h4>
+    <br>
+
+    <br>
+    <script src="BDK.js"></script>
+
+    <div class="configuration">
+        <p id="Beamconfiguration" class="websiteheadings"><strong> configure the beam:</strong> </p>
+        <label id="ProfilConfiguration" for="BeamProfile"> profile:</label>
+        <select id="BeamSelection" class="dropdownmenu">
+        <option value="IPEa120">IPEa 120</option>
+        <option value="IPEa140">IPEa 140</option>
+        <option value="IPEa160">IPEa 160</option>
+        <option value="IPEa180">IPEa 180</option>
+        <option value="IPEa200">IPEa 200</option>
+        <option value="IPEa220">IPEa 220</option>
+        <option value="IPEa240">IPEa 240</option>
+        <option value="IPEa270">IPEa 270</option>
+        <option value="IPEa300">IPEa 300</option>
+        <option value="IPEa330">IPEa 330</option>
+        <option value="IPEa360">IPEa 360</option>
+        <option value="IPEa400">IPEa 400</option>
+        <option value="IPEa450">IPEa 450</option>
+        <option value="IPEa500">IPEa 500</option>
+        <option value="IPEa550">IPEa 550</option>
+        <option value="IPEa600">IPEa 600</option>
+        <option value="IPE100">IPE 100</option>
+        <option value="IPE120">IPE 120</option>
+        <option value="IPE140">IPE 140</option>
+        <option value="IPE160">IPE 160</option>
+        <option value="IPE180">IPE 180</option>
+        <option value="IPE200">IPE 200</option>
+        <option value="IPE220">IPE 220</option>
+        <option value="IPE240">IPE 240</option>
+        <option value="IPE270">IPE 270</option>
+        <option value="IPE300">IPE 300</option>
+        <option value="IPE330">IPE 330</option>
+        <option value="IPE360">IPE 360</option>
+        <option value="IPE400">IPE 400</option>
+        <option value="IPE450">IPE 450</option>
+        <option value="IPE500">IPE 500</option>
+        <option value="IPE550">IPE 550</option>
+        <option value="IPE600">IPE 600</option>
+        <option value="IPEo180">IPEo 180</option>
+        <option value="IPEo200">IPEo 200</option>
+        <option value="IPEo220">IPEo 220</option>
+        <option value="IPEo240">IPEo 240</option>
+        <option value="IPEo270">IPEo 270</option>
+        <option value="IPEo300">IPEo 300</option>
+        <option value="IPEo330">IPEo 330</option>
+        <option value="IPEo360">IPEo 360</option>
+        <option value="IPEo400">IPEo 400</option>
+        <option value="IPEo450">IPEo 450</option>
+        <option value="IPEo500">IPEo 500</option>
+        <option value="IPEo550">IPEo 550</option>
+        <option value="IPEo600">IPEo 600</option>
+        <option value="IPEv400">IPEv 400</option>
+        <option value="IPEv450">IPEv 450</option>
+        <option value="IPEv500">IPEv 500</option>
+        <option value="IPEv550">IPEv 550</option>
+        <option value="IPEv600">IPEv 600</option>
+        <option value="HEAA100">HEAA 100</option>
+        <option value="HEAA120">HEAA 120</option>
+        <option value="HEAA140">HEAA 140</option>
+        <option value="HEAA160">HEAA 160</option>
+        <option value="HEAA180">HEAA 180</option>
+        <option value="HEAA200">HEAA 200</option>
+        <option value="HEAA220">HEAA 220</option>
+        <option value="HEAA240">HEAA 240</option>
+        <option value="HEAA260">HEAA 260</option>
+        <option value="HEAA280">HEAA 280</option>
+        <option value="HEAA300">HEAA 300</option>
+        <option value="HEAA320">HEAA 320</option>
+        <option value="HEAA340">HEAA 340</option>
+        <option value="HEAA360">HEAA 360</option>
+        <option value="HEAA400">HEAA 400</option>
+        <option value="HEAA450">HEAA 450</option>
+        <option value="HEAA500">HEAA 550</option>
+        <option value="HEAA550">HEAA 550</option>
+        <option value="HEAA600">HEAA 600</option>
+        <option value="HEAA650">HEAA 650</option>
+        <option value="HEAA700">HEAA 700</option>
+        <option value="HEAA800">HEAA 800</option>
+        <option value="HEAA900">HEAA 900</option>
+        <option value="HEAA1000">HEAA 1000</option>
+        <option value="HEA100">HEA 100</option>
+        <option value="HEA120">HEA 120</option>
+        <option value="HEA140">HEA 140</option>
+        <option value="HEA160">HEA 160</option>
+        <option value="HEA180">HEA 180</option>
+        <option value="HEA200">HEA 200</option>
+        <option value="HEA220">HEA 220</option>
+        <option value="HEA240">HEA 240</option>
+        <option value="HEA260">HEA 260</option>
+        <option value="HEA280">HEA 280</option>
+        <option value="HEA300">HEA 300</option>
+        <option value="HEA320">HEA 320</option>
+        <option value="HEA340">HEA 340</option>
+        <option value="HEA360">HEA 360</option>
+        <option value="HEA400">HEA 400</option>
+        <option value="HEA450">HEA 450</option>
+        <option value="HEA500">HEA 500</option>
+        <option value="HEA550">HEA 550</option>
+        <option value="HEA600">HEA 600</option>
+        <option value="HEA650">HEA 650</option>
+        <option value="HEA700">HEA 700</option>
+        <option value="HEA800">HEA 800</option>
+        <option value="HEA900">HEA 900</option>
+        <option value="HEA1000">HEA 1000</option>
+        <option value="HEB100">HEB 100</option>
+        <option value="HEB120">HEB 120</option>
+        <option value="HEB140">HEB 140</option>
+        <option value="HEB160">HEB 160</option>
+        <option value="HEB180">HEB 180</option>
+        <option value="HEB200">HEB 200</option>
+        <option value="HEB220">HEB 220</option>
+        <option value="HEB240">HEB 240</option>
+        <option value="HEB260">HEB 260</option>
+        <option value="HEB280">HEB 280</option>
+        <option value="HEB300">HEB 300</option>
+        <option value="HEB320">HEB 320</option>
+        <option value="HEB340">HEB 340</option>
+        <option value="HEB360">HEB 360</option>
+        <option value="HEB400">HEB 400</option>
+        <option value="HEB450">HEB 450</option>
+        <option value="HEB500">HEB 500</option>
+        <option value="HEB550">HEB 550</option>
+        <option value="HEB600">HEB 600</option>
+        <option value="HEB650">HEB 650</option>
+        <option value="HEB700">HEB 700</option>
+        <option value="HEB800">HEB 800</option>
+        <option value="HEB900">HEB 900</option>
+        <option value="HEB1000">HEB 1000</option>
+        <option value="HEM100">HEM 100</option>
+        <option value="HEM100">HEM 100</option>
+        <option value="HEM120">HEM 120</option>
+        <option value="HEM140">HEM 140</option>
+        <option value="HEM160">HEM 160</option>
+        <option value="HEM180">HEM 180</option>
+        <option value="HEM200">HEM 200</option>
+        <option value="HEM220">HEM 220</option>
+        <option value="HEM240">HEM 240</option>
+        <option value="HEM260">HEM 260</option>
+        <option value="HEM280">HEM 280</option>
+        <option value="HEM300">HEM 300</option>
+        <option value="HEM320">HEM 320</option>
+        <option value="HEM340">HEM 340</option>
+        <option value="HEM360">HEM 360</option>
+        <option value="HEM400">HEM 400</option>
+        <option value="HEM450">HEM 450</option>
+        <option value="HEM500">HEM 500</option>
+        <option value="HEM550">HEM 550</option>
+        <option value="HEM600">HEM 600</option>
+        <option value="HEM650">HEM 650</option>
+        <option value="HEM700">HEM 700</option>
+        <option value="HEM800">HEM 800</option>
+        <option value="HEM900">HEM 900</option>
+        <option value="HEM1000">HEM 1000</option>
+        </select>
+
+        <label id="Steeltype" for="SteelType">steel type:</label>
+        <select id="YieldStrength" class="dropdownmenu">
+        <option value="S235">S 235</option>
+        <option value="S355">S 355</option>
+        </select>
+
+        <button id="Beamdata" class="buttons" onclick="Beamdata()">show Beaminformation</button>
+        <script>
+            document.getElementById('YieldStrength').addEventListener('change', function QuerschnittsklasseBestimmen() {
+                var selectedSteel = this.value;
+            }, )
+        </script>
+        <div class="inputs">
+            <div class="inputfirst">
+                <p id="static system" class="websiteheadings faceplate"><strong>Insert length: </strong></p>
+                <form class="inputboxesFaceplatemeasures">
+
+                    <label for="faceplatewidth">length:</label>
+                    <input type="number" id="L" name="inputboxhsp" placeholder="[m]" class="inputhsp"><br>
+                    <label for="faceplateheight">zg:</label>
+                    <input type="number" id="zg" name="inputboxhsp" placeholder="[mm]" class="inputhsp"><br>
+                    <label for="faceplatewidth">qy:</label>
+                    <input type="number" id="qed" name="inputboxhsp" placeholder="[kN/m" class="inputhsp"><br>
+                    <label for="faceplatewidth">Ned [tension +]:</label>
+                    <input type="number" id="Ned" name="inputboxhsp" placeholder="[kN]" class="inputhsp"><br>
+
+            </div>
+            </form>
+            <br>
+            <br>
+
+        </div>
+
+        <div class="StartCalc">
+
+            <button id="CalculationsComplete" class="buttons" onclick="BDK()"> Start Calculations </button>
+        </div>
+    </div>
+
+
+    <div class="containerresults">
+        <h3 id="clickonresults" class="clicking">
+        </h3>
+        <div class="solutionblock">
+            <div class="solutionlength">
+                <p id="beamresultIy" class="Output " onclick="ShowCalculationIy()"> </p>
+                <p id="beamresultQsk" class="Output "> </p>
+                <p id="beamresultMcr" class="Output " onclick="McrCalculation()"> </p>
+                <p id="beamresultFcfbrd" class="Output " onclick="FcfbrdCalculation()"> </p>
+            </div>
+        </div>
+        <div class="solutionblock">
+            <div class="solutionlength">
+                <p id="columnresultIy" class="Output " onclick="ShowCalculationIyC()"> </p>
+                <p id="columnresultQsk" class="Output "> </p>
+                <p id="columnresultMcr" class="Output " onclick="McrCalculationC()"> </p>
+            </div>
+        </div>
+        <div class="evidence">
+            <h2 id="evidenceFaceplate" class="evidenceHeading">
+            </h2>
+            <p id="Screwresult1" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <P id="m1Oresult" class="Output" onclick="m1OCalculation()"></P>
+                    <p id="mxresult" class="Output" onclick="mxCalculation()"></p>
+                    <p id="leffcpresult1" class="Output" onclick="leffcpOCalculation()"> </p>
+                    <p id="leffncresult1" class="Output leffnc" onclick="leffncOnew()"> </p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult1" class="Output" onclick="MplrdO1()"> </p>
+                    <p id="Mpl2rdresult1" class="Output" onclick="MplrdO2()"> </p>
+                    <p id="Ft1rd1" class="Output" onclick="Ft1rdOshowResult()"> </p>
+                    <p id="Ft2rd1" class="Output" onclick="Ft2rdOshowcalculationMethod()"> </p>
+                    <p id="Ft3rd1" class="Output" onclick="Ft3rdOshowCalculationMethod()"> </p>
+                </div>
+            </div>
+            <p id="Screwresult2" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1Mresult" class="Output" onclick="m1MCalculation()"></p>
+                    <p id="m2Mresult" class="Output" onclick="m2MCalculation()"></p>
+                    <p id="leffcpresult2" class="Output" onclick="leffcpMCalculation()"></p>
+                    <p id="leffncresult2" class="Output" onclick="leffncMCalculation()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult2" class="Output" onclick="MplrdM1()"></p>
+                    <p id="Mpl2rdresult2" class="Output" onclick="MplrdM2()"></p>
+                    <p id="Ft1rd2" class="Output" onclick="Ft1rdMShowResult()"></p>
+                    <p id="Ft2rd2" class="Output" onclick="Ft2rdMShowResult()"></p>
+                    <p id="Ft3rd2" class="Output" onclick="Ft3rdMshowCalculationMethod()"></p>
+                </div>
+            </div>
+            <p id="Screwresult3" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1Uresult" class="Output" onclick="m1UCalculation()"></p>
+                    <p id="m2Uresult" class="Output" onclick="m2UCalculation()"></p>
+                    <p id="leffcpresult3" class="Output" onclick="leffcpUCalculation()"></p>
+                    <p id="leffncresult3" class="Output" onclick="leffncUCalculation()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult3" class="Output" onclick="MplrdU1()"></p>
+                    <p id="Mpl2rdresult3" class="Output" onclick="MplrdU2()"></p>
+                    <p id="Ft1rd3" class="Output" onclick="Ft1rdUShowResult()"></p>
+                    <p id="Ft2rd3" class="Output" onclick="Ft2rdUShowResult()"></p>
+                    <p id="Ft3rd3" class="Output" onclick="Ft3rdUshowCalculationMethod()"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="evidence">
+            <h2 id="evidenceColumnflange" class="evidenceHeading">
+            </h2>
+            <p id="Screwresult1C" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <P id="m1OresultC" class="Output" onclick="m1OCalculationC()"></P>
+                    <p id="mxresultC" class="Output" onclick="mxCalculationC()"></p>
+                    <p id="leffcpresult1C" class="Output" onclick="leffcpOCalculationC()"> </p>
+                    <p id="leffncresult1C" class="Output leffnc" onclick="leffncOnewC()"> </p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult1C" class="Output" onclick="MplrdO1C()"> </p>
+                    <p id="Mpl2rdresult1C" class="Output" onclick="MplrdO2C()"> </p>
+                    <p id="Ft1rd1C" class="Output" onclick="Ft1rdOshowResultC()"> </p>
+                    <p id="Ft2rd1C" class="Output" onclick="Ft2rdOshowcalculationMethodC()"> </p>
+                    <p id="Ft3rd1C" class="Output" onclick="Ft3rdOshowCalculationMethodC()"> </p>
+                </div>
+            </div>
+            <p id="Screwresult2C" class="OutputHeading"> </p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1MresultC" class="Output" onclick="m1MCalculationC()"></p>
+                    <p id="m2MresultC" class="Output" onclick="m2MCalculationC()"></p>
+                    <p id="leffcpresult2C" class="Output" onclick="leffcpMCalculationC()"></p>
+                    <p id="leffncresult2C" class="Output" onclick="leffncMCalculationC()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult2C" class="Output" onclick="MplrdM1C()"></p>
+                    <p id="Mpl2rdresult2C" class="Output" onclick="MplrdM2C()"></p>
+                    <p id="Ft1rd2C" class="Output" onclick="Ft1rdMShowResultC()"></p>
+                    <p id="Ft2rd2C" class="Output" onclick="Ft2rdMShowResultC()"></p>
+                    <p id="Ft3rd2C" class="Output" onclick="Ft3rdMshowCalculationMethodC()"></p>
+                </div>
+            </div>
+            <p id="Screwresult3C" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="m1UresultC" class="Output" onclick="m1UCalculationC()"></p>
+                    <p id="m2UresultC" class="Output" onclick="m2UCalculationC()"></p>
+                    <p id="leffcpresult3C" class="Output" onclick="leffcpUCalculationC()"></p>
+                    <p id="leffncresult3C" class="Output" onclick="leffncUCalculationC()"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="Mpl1rdresult3C" class="Output" onclick="MplrdU1C()"></p>
+                    <p id="Mpl2rdresult3C" class="Output" onclick="MplrdU2C()"></p>
+                    <p id="Ft1rd3C" class="Output" onclick="Ft1rdUShowResultC()"></p>
+                    <p id="Ft2rd3C" class="Output" onclick="Ft2rdUShowResultC()"></p>
+                    <p id="Ft3rd3C" class="Output" onclick="Ft3rdUshowCalculationMethodC()"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="TensionWebBeam" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="befftwb" class="Output"></p>
+                    <p id="Ftwbrd" class="Output" onclick="FtwbrdCalculation()"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Vwprd" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="VwprdResult" class="Output"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="FcwcrdHeading" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="kwc" class="Output"></p>
+                    <p id="omegacw" class="Output"></p>
+                    <p id="beffcwc" class="Output"></p>
+                    <p id="Fcwcrd" class="Output"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="FtwbrdHeading" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="omegatwO" class="Output"></p>
+                    <p id="befftwcO" class="Output"></p>
+                    <p id="FtwcrdO" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="omegatwM" class="Output"></p>
+                    <p id="befftwcM" class="Output"></p>
+                    <p id="FtwcrdM" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="omegatwU" class="Output"></p>
+                    <p id="befftwcU" class="Output"></p>
+                    <p id="FtwcrdU" class="Output"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Mmaxresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="Ft1eff" class="Output"></p>
+                    <p id="Ft2eff" class="Output"></p>
+                    <p id="Ft3eff" class="Output"></p>
+                    <p id="Mmax" class="Outputsignificant" onclick="MmaxCalculation()"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Vmaxresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="Vloadbearingcapacity" class="Output"></p>
+                    <p id="Vinteraction" class="Output"></p>
+                    <p id="Vwelding" class="Output"></p>
+                </div>
+                <div class="solutionlength">
+                    <p id="VpunchingShear" class="Output"></p>
+                    <p id="Vmax" class="Outputsignificant"></p>
+                </div>
+            </div>
+        </div>
+        <div class="evidence">
+            <p id="Endresults" class="OutputHeading"></p>
+            <div class="solutionblock">
+                <div class="solutionlength">
+                    <p id="UtilizationV" class="Output"></p>
+                    <p id="UtiliziationM" class="Output"></p>
+                    <p id="Utilization" class="Outputsignificant"></p>
+
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
