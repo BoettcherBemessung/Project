@@ -1362,7 +1362,6 @@ function QSK() {
         if (af <= 3) { alert("Calculation not possible, Welds at Flange too small") }
         if (aw <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Web too small") }
         if (af <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
-        if (aw <= tf ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Web too small") }
         if (af <= tf ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
     }
     if (language_english == 0 && language_spanish == 0) {
@@ -1379,7 +1378,6 @@ function QSK() {
         if (af <= 3) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
         if (aw <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
         if (af <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
-        if (aw <= tf ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
         if (af <= tf ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
     }
     if (language_spanish == 1) {
@@ -1396,7 +1394,6 @@ function QSK() {
         if (af <= 3) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
         if (aw <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
         if (af <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
-        if (aw <= tf ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
         if (af <= tf ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
