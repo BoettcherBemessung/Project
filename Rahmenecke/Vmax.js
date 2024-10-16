@@ -40,6 +40,9 @@ function Vmax() {
 
         var deltaM = Mmax - Med
 
+        if (deltaM <= 0) {
+            alert("fehlerhafte Ausgabe v. Resttragfähigkeit der Schrauben, da bereits durch Momente überbelastet")
+        }
         if (deltaM >= 0) {
             var aFtrd1_new = FtO
             var aFtrd2_new = FtU - deltaM / hs2
@@ -140,6 +143,9 @@ function Vmax() {
     if (selectedScrewRows == 3) {
 
         var deltaM = Mmax - Med
+        if (deltaM <= 0) {
+            alert("fehlerhafte Ausgabe v. Resttragfähigkeit der Schrauben, da bereits durch Momente überbelastet")
+        }
         var hs1 = window.hs1
         var hs2 = window.hs2
         var hs3 = window.hs3
