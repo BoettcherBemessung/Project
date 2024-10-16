@@ -40,9 +40,7 @@ function Vmax() {
 
         var deltaM = Mmax - Med
 
-        if (deltaM <= 0) {
-            alert("fehlerhafte Ausgabe v. Resttragfähigkeit der Schrauben, da bereits durch Momente überbelastet")
-        }
+
         if (deltaM >= 0) {
             var aFtrd1_new = FtO
             var aFtrd2_new = FtU - deltaM / hs2
@@ -53,6 +51,7 @@ function Vmax() {
         }
 
         if (deltaM < 0) {
+            alert("Fehlerhafte Ausgabe der Resttragfähigkeit, da Moment größer als maximal zulässiges!Siehe Nachweis Momentenauslastung")
             var aFtrd2_new = FtU;
             var aFtrd1_new = FtO;
         }
