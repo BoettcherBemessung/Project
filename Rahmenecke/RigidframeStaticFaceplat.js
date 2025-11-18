@@ -226,14 +226,9 @@ function QSK() {
     if (language_english == 1 && language_spanish == 0) {
         if (hsp < h) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the height of the faceplate") }
 
-        if (aw >= 0.7 * tsp) { alert("Calculation not possible, Welds at Web too huge") }
-        if (af >= 0.7 * tsp) { alert("Calculation not possible, Welds at Flange too huge") }
 
-        if (aw <= 3) { alert("Calculation not possible, Welds at Web too small") }
-        if (af <= 3) { alert("Calculation not possible, Welds at Flange too small") }
-        if (aw <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Web too small") }
-        if (af <= tsp ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
-        if (af <= tf ** 0.5 - 0.5) { alert("Calculation not possible, Welds at Flange too small") }
+
+
 
         if (bsp < b) { alert("Calculation not possible, faceplate smaller than Beamheight! please rise the width of the faceplate") }
         if (0.5 * bsp - e - 0.5 * tw < 2 * ew) { alert("Calculation not possible screws touching web of beam") }
@@ -271,17 +266,11 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Berechnung nicht möglich Die inneren Schrauben liegen zu nah beieinander" }
         if (hsp - u1n < h) { "Berechnung nicht möglich,zu kleine Stirnplatte bzw. zu kleines u1 " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Berechnung nicht möglich , inner Screw Rows lay too close to each other! Please user select smaller g0/gu") }
-        if (aw >= 0.7 * tsp) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu dick") }
-        if (af >= 0.7 * tsp) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu dick") }
         if (2 * ew > 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculation not possible Screws to close to web of Column") }
         if (bsp > b_Column) {
             if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculation not possible Screws to close to flange of Column ") }
         }
-        if (aw <= 3) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
-        if (af <= 3) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
-        if (aw <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Steg zu klein") }
-        if (af <= tsp ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
-        if (af <= tf ** 0.5 - 0.5) { alert("Berechnung nicht möglich, Schweißnähte am Flansch zu klein") }
+
     }
 
     if (language_spanish == 1) {
@@ -294,20 +283,10 @@ function QSK() {
         if (h - go - gu < 2.2 * dzero) { "Calculacion no possible lost tornillos adentros estan demasido cerca al otro" }
         if (hsp - u1n < h) { "Calculacion no possible,placa de perfil demasiado pequeño o  u1 demasiado pequeño " }
         if ((h - go - gu) < (2.2 * dzero)) { alert("Calculacion no possible , los tornillos adentros etsan demasiado cerca al otro! usa g0/gu mas pequeño") }
-
-        if (aw >= 0.7 * tsp) { alert("Calculacion no possible, soldadura de la alma demasiado grande") }
-        if (af >= 0.7 * tsp) { alert("Calculacion no possible, soldadura de la ala demasiado grande") }
-
         if (2 * ew > 0.5 * bsp - e - r - 0.5 * tw_Column) { alert("Calculacion no posible tornillos demasiado cerca a la alma de la columna") }
         if (bsp > b_Column) {
             if (e - (0.5 * bsp - 0.5 * b_Column) < 2 * ew) { alert("Calculacion no possible tornillos demasiado cerca a la ala de la columna ") }
         }
-        if (aw <= 3) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
-        if (af <= 3) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
-        if (aw <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la alma demasiado pequeño") }
-        if (af <= tsp ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
-        if (af <= tf ** 0.5 - 0.5) { alert("Calculacion no possible, soldaduras de la ala demasiado pequeño") }
-
     }
     var selectedScrewRows = parseFloat(document.getElementById("ScrewRows").value);
     window.selectedScrewRows = selectedScrewRows

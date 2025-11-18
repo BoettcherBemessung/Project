@@ -62,8 +62,11 @@ function bendingFlange() {
         var ec = e + (0.5 * (b_Column - bsp))
     }
     window.ec = ec
+    if (bsp == b_Column) {
+        var ec = e
+    }
     var pO = h - go - gu
-
+    console.log("ec ist" + ec)
     if (selectedScrewRows == 2) {
         var leffcpO_Column = Math.min(2 * 3.1415926535897932384626433832795 * mh, 2 * pO)
         var leffncO_Column = Math.min(4 * mh + 1.25 * ec, pO);
