@@ -70,7 +70,6 @@ function Vmax() {
 
         //max force due to punching shear
         //1.Screws "bite" to upper side
-
         var alphaPunch1Up = Math.min(1.0, (fub / fu))
         var kPunch1Up = Math.min(2.8 * e / dzero - 1.7, 2.5)
         var Fbrd1Up = (kPunch1Up * alphaPunch1Up * fu * d * tsp / GammaTwo) * 2
@@ -107,6 +106,7 @@ function Vmax() {
 
         //Selection of authoritive punching shear per Screw row
 
+        console.log("Fbrd1Up_column ist" + Fbrd1Up_Column + "kpunch1upcolumn ist" + kPunch1Up_Column + "e column ist" + e_Column + "dzero ist" + dzero)
         var Fbrdauthoritive1 = Math.min(Fbrd1Up, Fbrd1Down, Fbrd1Up_Column, Fbrd1Down_Column)
         var Fbrdauthoritive2 = Math.min(Fbrd2Up, Fbrd2Down, Fbrd2Up_Column, Fbrd2Down_Column)
         var VmaxPunshShear = Fbrdauthoritive1 + Fbrdauthoritive2

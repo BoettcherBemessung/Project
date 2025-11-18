@@ -61,6 +61,12 @@ function bendingFlange() {
     if (bsp < b_Column) {
         var ec = e + (0.5 * (b_Column - bsp))
     }
+
+    if (bsp = b_Column) {
+        var ec = e
+    }
+
+
     window.ec = ec
     if (bsp == b_Column) {
         var ec = e
